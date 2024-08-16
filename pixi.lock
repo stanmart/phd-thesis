@@ -819,7 +819,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/overrides-7.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/p11-kit-0.24.1-hc5aa10d_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/pandas-1.5.3-py311h2872171_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/pandas-2.2.2-py311h14de704_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pandoc-3.1.12.3-ha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pandocfilters-1.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pango-1.54.0-h84a9a3c_0.conda
@@ -873,6 +873,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-installer-0.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python_abi-3.11-4_cp311.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyyaml-6.0.2-py311h61187de_0.conda
@@ -1269,7 +1270,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/overrides-7.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/p11-kit-0.24.1-h29577a5_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pandas-1.5.3-py311h4eec4a9_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pandas-2.2.2-py311h4b4568b_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pandoc-3.1.12.3-hce30654_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pandocfilters-1.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pango-1.54.0-h9ee27a3_1.conda
@@ -1321,6 +1322,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-installer-0.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python_abi-3.11-4_cp311.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyyaml-6.0.2-py311hd3f4193_0.conda
@@ -1675,7 +1677,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/orc-2.0.1-h7e885a9_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/overrides-7.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/win-64/pandas-1.5.3-py311hf63dbb6_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/win-64/pandas-2.2.2-py311hcf9f919_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/pandoc-3.1.12.3-h57928b3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pandocfilters-1.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/win-64/pango-1.54.0-h2231ffd_0.conda
@@ -1730,6 +1732,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-installer-0.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/python_abi-3.11-4_cp311.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/pywin32-306-py311h12c1d0e_2.conda
@@ -2159,7 +2162,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/overrides-7.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/p11-kit-0.24.1-hc5aa10d_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/pandas-1.5.3-py311h2872171_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/pandas-2.2.2-py311h14de704_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pandoc-3.1.12.3-ha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pandocfilters-1.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pango-1.54.0-h84a9a3c_0.conda
@@ -2212,6 +2215,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-installer-0.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python_abi-3.11-4_cp311.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyyaml-6.0.2-py311h61187de_0.conda
@@ -2603,7 +2607,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/overrides-7.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/p11-kit-0.24.1-h29577a5_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pandas-1.5.3-py311h4eec4a9_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pandas-2.2.2-py311h4b4568b_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pandoc-3.1.12.3-hce30654_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pandocfilters-1.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pango-1.54.0-h9ee27a3_1.conda
@@ -2654,6 +2658,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-installer-0.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python_abi-3.11-4_cp311.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyyaml-6.0.2-py311hd3f4193_0.conda
@@ -3004,7 +3009,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/orc-2.0.1-h7e885a9_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/overrides-7.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/packaging-24.1-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/win-64/pandas-1.5.3-py311hf63dbb6_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/win-64/pandas-2.2.2-py311hcf9f919_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/pandoc-3.1.12.3-h57928b3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pandocfilters-1.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/win-64/pango-1.54.0-h2231ffd_0.conda
@@ -3058,6 +3063,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-fastjsonschema-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-installer-0.7.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-json-logger-2.0.7-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/python_abi-3.11-4_cp311.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/pywin32-306-py311h12c1d0e_2.conda
@@ -15459,68 +15465,72 @@ packages:
   timestamp: 1718189540074
 - kind: conda
   name: pandas
-  version: 1.5.3
-  build: py311h2872171_1
+  version: 2.2.2
+  build: py311h14de704_1
   build_number: 1
   subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/pandas-1.5.3-py311h2872171_1.conda
-  sha256: b53eda154e13fd49c494eb7ba95b22b2b7c72cbeab4ed3a2213144d75558bc9f
-  md5: 6bb03bf6d4fab68174eae8b06c3b6934
+  url: https://conda.anaconda.org/conda-forge/linux-64/pandas-2.2.2-py311h14de704_1.conda
+  sha256: d600c0cc42fca1ad36d969758b2495062ad83124ecfcf5673c98b11093af7055
+  md5: 84e2dd379d4edec4dd6382861486104d
   depends:
   - libgcc-ng >=12
   - libstdcxx-ng >=12
-  - numpy >=1.23.5,<2.0a0
+  - numpy >=1.19,<3
   - python >=3.11,<3.12.0a0
   - python-dateutil >=2.8.1
+  - python-tzdata >=2022a
   - python_abi 3.11.* *_cp311
   - pytz >=2020.1
   license: BSD-3-Clause
   license_family: BSD
-  size: 14424060
-  timestamp: 1680108166917
+  size: 15682728
+  timestamp: 1715898175468
 - kind: conda
   name: pandas
-  version: 1.5.3
-  build: py311h4eec4a9_1
+  version: 2.2.2
+  build: py311h4b4568b_1
   build_number: 1
   subdir: osx-arm64
-  url: https://conda.anaconda.org/conda-forge/osx-arm64/pandas-1.5.3-py311h4eec4a9_1.conda
-  sha256: 21f25fdb1cb947097eb83cd730efcf7d6e28ddeaeaa7245f7198da719f1d2fe2
-  md5: b70851b2bd189e56c4100194312ecb99
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/pandas-2.2.2-py311h4b4568b_1.conda
+  sha256: b08f214593af94dd9bb50d7bf432d1defde66312bd1a2476f27a5fdd9f45ef66
+  md5: b1790dadc62d0af23378d5a79b263893
   depends:
-  - libcxx >=14.0.6
-  - numpy >=1.23.5,<2.0a0
+  - __osx >=11.0
+  - libcxx >=16
+  - numpy >=1.19,<3
   - python >=3.11,<3.12.0a0
   - python >=3.11,<3.12.0a0 *_cpython
   - python-dateutil >=2.8.1
+  - python-tzdata >=2022a
   - python_abi 3.11.* *_cp311
   - pytz >=2020.1
   license: BSD-3-Clause
   license_family: BSD
-  size: 13789860
-  timestamp: 1680108642752
+  size: 14742444
+  timestamp: 1715898315491
 - kind: conda
   name: pandas
-  version: 1.5.3
-  build: py311hf63dbb6_1
+  version: 2.2.2
+  build: py311hcf9f919_1
   build_number: 1
   subdir: win-64
-  url: https://conda.anaconda.org/conda-forge/win-64/pandas-1.5.3-py311hf63dbb6_1.conda
-  sha256: 3cb430806e8818a93ca650d29ef3b74c21b4368a5dccbb2e74a292e3d845784a
-  md5: f9af1ae5b501548160bbcae6c324ba9c
+  url: https://conda.anaconda.org/conda-forge/win-64/pandas-2.2.2-py311hcf9f919_1.conda
+  sha256: 351b4f7211fc755ea1af8b218d2515418df3af08170197011934faf06bb5d98e
+  md5: ec3ed8d602148625469dc13c481f23b5
   depends:
-  - numpy >=1.23.5,<2.0a0
+  - numpy >=1.19,<3
   - python >=3.11,<3.12.0a0
   - python-dateutil >=2.8.1
+  - python-tzdata >=2022a
   - python_abi 3.11.* *_cp311
   - pytz >=2020.1
   - ucrt >=10.0.20348.0
   - vc >=14.2,<15
-  - vs2015_runtime >=14.29.30139
+  - vc14_runtime >=14.29.30139
   license: BSD-3-Clause
   license_family: BSD
-  size: 13224533
-  timestamp: 1680109726099
+  size: 14600290
+  timestamp: 1715898888392
 - kind: conda
   name: pandas
   version: 2.2.2
