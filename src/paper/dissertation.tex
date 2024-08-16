@@ -20,6 +20,7 @@
 \usepackage[section]{placeins}
 \usepackage{setspace}
 \usepackage{snapshot}
+\usepackage{epstopdf}
 \usepackage{appendix}
 \usepackage{apptools}
 \usepackage[backend=biber,style=authoryear,maxbibnames=99,hyperref=true]{biblatex}
@@ -92,10 +93,13 @@
 
 \begin{document}
 
-\maketitle
+\input{src/paper/dissertation/titlepage.tex}
+
 \tableofcontents
 
 \chapter{Introduction}
+
+\input{src/paper/dissertation/introduction.tex}
 
 \chapter{The value of being indispensable: a cooperative approach to bargaining with a continuum of players}
 

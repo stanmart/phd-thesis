@@ -5,6 +5,22 @@ SESSION_CODES = ["ykdzfw2h", "5r4374w0", "v0bpsxm2", "m7xcm95f"]
 PAPERS = ["theory", "application", "experiment"]
 
 
+rule prepare_to_publish:
+    input:
+        dissertation = "out/paper/dissertation.pdf",
+        papers = expand("out/paper/{paper}.pdf", paper=PAPERS),
+    output:
+        dissertation = "dist/dissertation.pdf",
+        papers = expand("dist/{paper}.pdf", paper=PAPERS),
+        nojekyll = "dist/.nojekyll"
+    run:
+        from shutil import copy2
+        from pathlib import Path
+        for file in input.papers + [input.dissertation]:
+            copy2(file, "dist")
+        Path(output.nojekyll).touch()
+
+
 rule papers:
     input:
         papers = expand("out/paper/{paper}.pdf", paper=PAPERS)
