@@ -11,16 +11,20 @@
 \usepackage[noabbrev,nameinlink]{cleveref}
 \usepackage{amsthm}
 \usepackage{xcolor}
-\usepackage{caption}
+\usepackage[labelsep=period]{caption}
 \usepackage{subcaption}
 \usepackage{setspace}
 \usepackage{snapshot}
 \usepackage{apptools}
 \usepackage[backend=biber,style=authoryear,maxbibnames=99,hyperref=true]{biblatex} 
+\usepackage{mfirstuc}
 
 \setstretch{1.15}
 
+\hypersetup{colorlinks, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue}
+
 \addbibresource{src/paper/references.bib}
+\DeclareFieldFormat{jtnoformat}{\capitalisewords{#1}}
 
 \usepgfplotslibrary{fillbetween}
 \usetikzlibrary{shapes}

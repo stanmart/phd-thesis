@@ -1,31 +1,30 @@
-\documentclass[12pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[right=1.25in,left=1.25in,top=1.1in,bottom=1.1in]{geometry}
-\usepackage{hyperref}
-\hypersetup{colorlinks, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue}
-\usepackage{graphicx}
-\usepackage{url}
+\documentclass[a4paper]{article}
+
+\usepackage{microtype}
+\usepackage{fullpage}
 \usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
 \usepackage{amsthm}
 \usepackage{amssymb} 
-\usepackage{engord}
 \usepackage{booktabs}
-\usepackage[labelsep=period]{caption} %% This switches "Table 1: Title" to "Table 1. Title"
+\usepackage[labelsep=period]{caption}
 \usepackage{subcaption}
-\captionsetup{justification=raggedright,singlelinecheck=false}
-\usepackage{cleveref}
-\usepackage{apptools}
+\usepackage[noabbrev,nameinlink]{cleveref}
 \usepackage[section]{placeins}
 \usepackage{listings}
-\usepackage{snapshot}
- 
 \usepackage{setspace}
-\onehalfspacing
+\usepackage{snapshot}
+\usepackage{apptools}
+\usepackage[backend=biber,style=authoryear,maxbibnames=99,hyperref=true]{biblatex}
+\usepackage{mfirstuc}
 
-\usepackage{sectsty}
-\sectionfont{\large}
-\subsectionfont{\normalsize}
-\subsubsectionfont{\normalsize}
+\setstretch{1.15}
+
+\hypersetup{colorlinks, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue}
+
+\addbibresource{src/paper/references.bib}
+\DeclareFieldFormat{jtnoformat}{\capitalisewords{#1}}
 
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -43,18 +42,6 @@
 }
 
 
-%%%% Citation
-\usepackage[noibid,authordate,backend=biber,numbermonth=false, doi=false,isbn=false,url=false,eprint=false]{biblatex-chicago} %for bibliography with Chicago Author Date style, w/o shorthand (noibid), numbermonth=false means no display of month and day in references.
-%\parencite[pre note][p.~118]{} e.g. (Voth, 2010);
-%\textcite[pre note][post note]{} e.g. Voth (2010)
-%\Citetitle{} only display title with automatic contextual capitalization
-% \bibliography{} % load bib file w/o .bib in name
-\addbibresource{src/paper/references.bib}
-\usepackage{mfirstuc}
-\DeclareFieldFormat{jtnoformat}{\capitalisewords{#1}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \title{
     Characterizing Multiplayer Free-Form Bargaining: A Lab experiment%
     \thanks{
@@ -64,31 +51,23 @@
     }
 }
 
-\author{\vspace*{0.5cm}
-Mia Lu\thanks{University of Zurich, mia.lu@econ.uzh.ch} 
-\and 
-Martin Stancsics\thanks{University of Zurich, martin.stancsics@econ.uzh.ch}
+\author{
+    Mia Lu\thanks{University of Zurich, mia.lu@econ.uzh.ch} 
+    \and 
+    Martin Stancsics\thanks{University of Zurich, martin.stancsics@econ.uzh.ch}
 }
 
-\date{\vspace*{0.5cm} 
-July 30, 2024\\
-} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{July 30, 2024} 
 
 \begin{document}
 
+\maketitle
+
 \input{src/paper/experiment/body.tex}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\printbibliography
-
-%%%%%%%%%%%%%%%%%%% Appendix %%%%%%%%%%%%%
-\newpage
 \appendix
 
+\printbibliography
 
 \input{src/paper/experiment/appendix.tex}
 
