@@ -46,7 +46,9 @@ rule paper:
     input:
         tex = "src/paper/{paper}.tex",
         bib = "src/paper/references.bib",
-        inputs = lambda wildcard: find_input_files(f"src/paper/{wildcard.paper}.tex"),
+        inputs = lambda wildcard: find_input_files(
+            f"src/paper/{wildcard.paper}.tex", recursive=True
+        ),
         util_script = "src/util/makeutils.py"
     output:
         pdf = "out/paper/{paper}.pdf",
