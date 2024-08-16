@@ -11,6 +11,7 @@ prepare-to-publish = "snakemake --cores 1 prepare_to_publish"
 dissertation = "snakemake --cores 1 dissertation"
 papers = "snakemake --cores 1 papers"
 presentations = "snakemake --cores 1 presentations"
+update-latex-deps = "snakemake --cores 1 update_latex_deps"
 
 [dependencies]
 altair = "5.3.*"
