@@ -1,0 +1,117 @@
+\documentclass[a4paper]{report}
+
+\usepackage{microtype}
+\usepackage{fullpage}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amssymb} 
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage[labelsep=period]{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{snapshot}
+\usepackage{appendix}
+\usepackage{apptools}
+\usepackage[backend=biber,style=authoryear,maxbibnames=99,hyperref=true]{biblatex}
+\usepackage{mfirstuc}
+
+\setstretch{1.15}
+
+\hypersetup{colorlinks, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue}
+
+\addbibresource{src/paper/references.bib}
+\DeclareFieldFormat{jtnoformat}{\capitalisewords{#1}}
+
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{shapes}
+\usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit}
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=1.17}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{assumption}{Assumption}
+
+\Crefname{assumption}{assumption}{assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+
+\AtAppendix{\counterwithin{definition}{section}}
+\AtAppendix{\counterwithin{proposition}{section}}
+\AtAppendix{\counterwithin{theorem}{section}}
+\AtAppendix{\counterwithin{corollary}{section}}
+\AtAppendix{\counterwithin{lemma}{section}}
+\AtAppendix{\counterwithin{assumption}{section}}
+\AtAppendix{\counterwithin{equation}{section}}
+\AtAppendix{\counterwithin{figure}{section}}
+
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    columns=flexible,
+    breaklines=true,
+}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dt}{\mathrm{d}t}
+\newcommand{\ds}{\mathrm{d}s}
+\newcommand{\di}{\mathrm{d}i}
+\newcommand{\dG}{\mathrm{d}G}
+\newcommand{\dH}{\mathrm{d}H}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\precede}{\mathrm{prec}}
+
+\DeclareMathOperator*{\argmax}{argmax}
+
+\definecolor{myblue}{rgb}{0.3, 0.45, 0.69}
+\definecolor{myred}{rgb}{0.87, 0.52, 0.32}
+\definecolor{mygreen}{rgb}{0.34, 0.68, 0.45}
+
+\pgfplotstableread[col sep=comma]{out/figures/equilibrium_profit_onesided_scale-1_lambda-1.csv}\equilibrium
+\pgfplotstableread[col sep=comma]{out/figures/equilibrium_welfare_onesided_scale-0.6_lambda-1.csv}\equilibriumFullSurplusOneSided
+\pgfplotstableread[col sep=comma]{out/figures/equilibrium_welfare_twosided_scale-0.6_lambda-1.csv}\equilibriumFullSurplusTwoSided
+\pgfplotstableread[col sep=comma]{out/figures/equilibrium_profit_onesided_scale-1_lambda-2.csv}\equilibriumProfitOneSidedHighLambda
+
+\title{Essays on bargaining}
+\author{Martin Stancsics \\ \normalsize{University of Zurich}}
+\date{\today}
+
+\begin{document}
+
+\chapter{Introduction}
+
+\chapter{The value of being indispensable: a cooperative approach to bargaining with a continuum of players}
+
+\input{src/paper/theory/body.tex}
+\begin{subappendices}
+    \input{src/paper/theory/appendix.tex}
+\end{subappendices}
+
+\chapter{Hybrid platforms and bargaining power}
+\input{src/paper/application/body.tex}
+\begin{subappendices}
+    \input{src/paper/application/appendix.tex}
+\end{subappendices}
+
+\chapter{Characterizing Multiplayer Free-Form Bargaining: A Lab experiment}
+\input{src/paper/experiment/body.tex}
+\begin{subappendices}
+    \input{src/paper/experiment/appendix.tex}
+\end{subappendices}
+
+\printbibliography
+
+\end{document}

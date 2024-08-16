@@ -10,6 +10,11 @@ rule papers:
         papers = expand("out/paper/{paper}.pdf", paper=PAPERS)
 
 
+rule dissertation:
+    input:
+        dissertation = "out/paper/dissertation.pdf"
+
+
 rule update_latex_deps:
     input:
         deps = expand("out/paper/{paper}.dep", paper=PAPERS)

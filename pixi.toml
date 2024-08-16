@@ -7,7 +7,7 @@ channels = ["conda-forge", "bioconda"]
 platforms = ["linux-64", "win-64", "osx-arm64"]
 
 [tasks]
-thesis = "snakemake --cores 1 thesis"
+dissertation = "snakemake --cores 1 dissertation"
 papers = "snakemake --cores 1 papers"
 presentations = "snakemake --cores 1 presentations"
 
