@@ -149,7 +149,7 @@ rule create_axiom_survey_plot:
         outcomes = "data/clean/_collected/outcomes.csv",
     wildcard_constraints:
         ncol = r"\-?.*",
-        axiom = "\w+"
+        axiom = r"\w+"
     output: 
         figure = "out/figures/axioms_survey_{axiom}{ncol}.{ext}",
     script: 

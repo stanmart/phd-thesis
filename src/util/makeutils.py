@@ -43,40 +43,48 @@ def find_opened_files(quarto_file: str, remove_leading_slash=True):
 @app.command()
 def find_input_files(
     tex_file: str,
-    remove_prefix: str = "",
+    recursive: bool = False,
     print_console: bool = False,
-):
+) -> set[str]:
     """Find all of the files that are included, inputted or includegraphics'
     in a tex file.
     Args:
         tex_file: The path of the tex file.
-        add_tex_folder: Whether to add the folder of the tex file to the
-            paths of the included files.
+        recursive: Whether to recursively find the included files.
         print_console: Whether to print the paths of the included files
     Returns:
-        List[str]: the list of included files
+        set[str]: the list of included files
     """
 
     with open(tex_file, "r") as file:
         tex_contents = file.read()
 
-    patterns = [
+    recursable_patterns = [
         re.compile(r"\\input\{(.*)\}"),
         re.compile(r"\\include\{(.*)\}"),
+    ]
+
+    terminal_patterns = [
         re.compile(r"\\includegraphics(?:\[.*\])?\{(.*)\}"),
         re.compile(r"\\pgfplotstableread(?:\[.*\])\{(.*)\}"),
     ]
 
-    paths = sum((pattern.findall(tex_contents) for pattern in patterns), [])
+    recursable_paths = sum((pattern.findall(tex_contents) for pattern in recursable_patterns), [])
+    terminal_paths = sum((pattern.findall(tex_contents) for pattern in terminal_patterns), [])
 
-    if remove_prefix:
-        paths = [path.lstrip(remove_prefix) for path in paths]
+    paths = set(recursable_paths) | set(terminal_paths)
+
+    if recursive:
+        for path in recursable_paths:
+            paths |= find_input_files(path, recursive=True)
 
     if print_console:
         for path in paths:
             print(path)
 
     return paths
+
+    
 
 
 @app.command()

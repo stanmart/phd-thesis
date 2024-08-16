@@ -1,0 +1,564 @@
+\section{Idiosyncratic entry costs are modeled explicitly}
+\label{sec:explicit_entry_costs}
+
+Assume that the total utility of an entrant on side $i$ also includes an idiosyncratic cost component.
+Let us order the players on side $i$ by this idiosyncratic cost in an increasing manner.
+That is, if we denote the idiosyncratic utility of player $n$ on side $i$ as $\kappa_i(n)$, then $\kappa_i$ is strictly increasing in $n$.
+Also assume that $\lim_{n \to \infty} \kappa_i(n) = \infty$.
+
+Entry is given by the usual assumption that a player enters if and only if the total utility of entering is non-negative.
+Due to the properties of $\kappa_i$, this implies that there is a well-defined, finite number of entrants on each side.
+Let us denote the number of entrants as a function of their non-idiosyncratic utility as $\phi_i(u_i)$.
+Then, the total number of players on side $i$ is 
+\begin{align*}
+    n_i = \kappa_i^{-1}(u_i) \coloneqq \phi_i(u_i).
+\end{align*}
+
+This microfoundation does not change the results of the welfare-maximizing and unilateral pricing cases in any fundamental way.
+Total welfare must be adjusted to include this idosyncratic cost, but entry fees do not change at all.
+The reason is that, in the welfare-maximizing case, optimal prices only depend on externalities, while in the unilateral pricing case, the only additional factor is the elasticity of entry\footnote{
+    With this microfoundation in mind, one also relate this entry elasticity as the marginal cost of entry.
+}.
+On the other hand, the bargaining case is more interesting.
+The reason is that this idiosyncratic cost becomes a part of the value that the players bargain over, and thus it affects the characteristic function and the resulting bargaining outcomes.
+
+I approach this problem by breaking it down into two parts: the bargaining over the idisyncratic and non-idiosyncratic parts of the value generated.
+Due to the linearity property of the Shapley value, the bargaining outcomes over the whole value are simply the sum of the bargaining outcomes over these two parts.
+Furthermore, the non-idiosyncratic part is simply the value function from the main text, and thus the resulting weighted values are the same as before.
+
+Let us continue by examining the idiosyncratic part of the value.
+Assume that, even though entrants with different costs have different contribution to the total value, there can be no discrimination between them in terms of the bargaining outcomes.
+That is, they each must share the same fraction of the total idiosyncratic cost (e.g. have the same value).
+
+Let us denote the total idiosyncratic cost incurred by all players on both sides as $K(n_1, n_2)$.
+Also, suppose that if $n_i$ players enter on side $i$, then they are the ones with the lowest idiosyncratic cost.
+Then, the total idiosyncratic cost is simply the sum of the idiosyncratic costs of the entrants on both sides:
+\begin{align*}
+    K(n_1, n_2) = \int_0^{n_1} \kappa_1(s) \ds + \int_0^{n_2} \kappa_2(s) \ds.
+\end{align*}
+One can obtain the weighted values of all sides using \Cref{prop:many_sided_weighted}.
+\begin{proposition}
+    \label{prop:platform_bargaining_idiosyncratic}
+    The weighted values of the idiosyncratic cost component are
+    \begin{align*}
+        K_P(n_1, n_2) &= \sum_{i \in \{1, 2\}} \int_0^{n_1} \left[ 1 - \lambda_i \left( \frac{s}{n_i} \right)^{\lambda_P + \lambda_i - 1} \right] \kappa_i(s) \ds, \\
+        K_i(n_1, n_2) &= \lambda_i \int_0^{n_1} \left( \frac{s}{n_i} \right)^{\lambda_P + \lambda_i - 1} \kappa_i(s) \ds.
+    \end{align*}
+\end{proposition}
+
+That is, each side only has to bear some part of the total idiosyncratic cost, and the rest is shared with the platform.
+As with the rest of the value, the share of the idiosyncratic cost is increasing in one's own bargaining weight.
+This might seem counterintuitive at first, as one may expect that a player with a higher bargaining weight would be able to shift more of the cost to the other side.
+However, in the case of random order values, this intuition is only correct for monotonic games, which it is not.
+One has to keep in mind though that this is just part of the final payoffs, and the other parts are increasing in one's own bargaining weight.
+Therefore, as long as the game over the total value is monotonic, the final payoffs will be increasing in one's own bargaining weight.
+
+Let us finally consider total welfare.
+As mentioned before, it is simply the sum of the value generated and the idiosyncratic cost.
+That is, the welfare of side $i \in \{1, 2\}$ is
+\begin{align*}
+    W_i^b(n_1, n_2) &= \frac{\lambda_i}{\lambda_P + \lambda_i + \lambda_j\gamma_i} \alpha_i n_i n_j^{\gamma_i} + \frac{\lambda_i \gamma_j}{\lambda_P + \lambda_j + \lambda_i\gamma_j} \alpha_j n_j n_i^{\gamma_j} - \frac{\lambda_i}{\lambda_P + \lambda_i} n_i F_i \\
+    &- \underbracket{\lambda_i \int_0^{n_1} \left( \frac{s}{n_i} \right)^{\lambda_P + \lambda_i - 1} \kappa_i(s) \ds }_{(*)}.
+\end{align*}
+In turn, the implied entry fee for side $i$ is
+\begin{align*}
+    p_i^b &= \frac{\lambda_i}{\lambda_P + \lambda_i} F_i - \frac{\lambda_i \gamma_j}{\lambda_P + \lambda_j + \lambda_i\gamma_j} \alpha_j n_j n_i^{\gamma_j - 1} \\
+    &+ \frac{\lambda_P + \lambda_j\gamma_i}{\lambda_P + \lambda_i + \lambda_j\gamma_i} \alpha_i n_j^{\gamma_i} - \underbracket{\int_0^{n_1} \left[ 1 - \lambda_i \left( \frac{s}{n_i} \right)^{\lambda_P + \lambda_i - 1} \right] \kappa_i(s) \ds}_{(**)}.
+\end{align*}
+
+As with the other components of the value, the idiosyncratic entry cost is also shared between the platform and the entrants.
+Part of it $(*)$ is incurred on the side of the entrants, while the other part $(**)$ paid by the platform as a reduction of entry fees.
+How this cost is divided is not straightforward, though.
+As in the case of non-linear network effects, it depends on the bargaining weights and the shape of the idiosyncratic cost function, with the two also interacting in a non-trivial way.
+
+
+\section{Miscellaneous lemmas}
+
+\begin{lemma}
+    \label{lemma:log_convergence}
+    Let 
+    \begin{align*}
+        \Delta_n(s) &= \frac{\log(s + 1/n) - \log(\lambda)}{n}, \\
+        \Delta(s) &= \frac{1}{s}.
+    \end{align*}
+    Then $\Delta_n \xrightarrow[]{\mathrm{u}} \Delta$ uniformly on $[t, 1]$ for any $t > 0, \lambda > 0$.
+\end{lemma}
+\begin{proof}[Proof of \Cref{lemma:log_convergence}]
+    First, note that $\Delta_n$ and $\Delta$ are all continuous functions.
+    Then, following the standard proof for $\frac{\mathrm{d}}{\mathrm{d}s}log(s) = \frac{1}{s}$ rewrite $\Delta_n(s)$ as
+    \begin{align*}
+        \Delta_n(s) &= \frac{\log(s + 1/n) - \log(\lambda)}{n} \\
+        &= \log \left( 1 + \frac{1}{sn} \right) ^ n .
+    \end{align*}
+    It is well known that $\left( 1 + \frac{1}{sn} \right) ^ n$ is monotone increasing in $n$ and converges to $\exp (1/s)$.
+    Therefore, the pointwise convergence of $\Delta_n(s) \to \Delta(s)$ is also monotone.
+
+    Finally, by Dini's theorem, the monotone pointwise convergence of a sequence of continuous functions to a continuous function on a compact set implies uniform convergence on that set.
+\end{proof}
+
+\begin{lemma}
+    \label{lemma:integral_convergence}
+    Let $f_n, f: [a, b] -> \mathbb{R}$ be Riemann-integrable functions with $f_n \xrightarrow[]{\mathrm{u}} f$ uniformly.
+    Then,
+    \begin{align*}
+        \lim_{n \to \infty} \frac{b-a}{n} \sum_{k=1}^n f_n \left( a + \frac{b-a}{n} \right) = \int_0^1 f(t) \dt.
+    \end{align*}
+\end{lemma}
+\begin{proof}[Proof of \Cref{lemma:integral_convergence}]
+    \begin{align*}
+        &\lim_{n \to \infty} \frac{b-a}{n} \sum_{k=1}^n f_n \left( a + \frac{b-a}{n} \right) \\
+        &= \lim_{n \to \infty} \frac{b-a}{n} \left[ \sum_{k=1}^n f \left( a + \frac{b-a}{n} \right) + \sum_{k=1}^n \left( f_n \left( a + \frac{b-a}{n} \right) - f \left( a + \frac{b-a}{n} \right) \right) \right] \\
+        &= \int_a^b f(t) \dt + \lim_{n \to \infty} \frac{b-a}{n}\sum_{k=1}^n \left( f_n \left( a + \frac{b-a}{n} \right) - f \left( a + \frac{b-a}{n} \right) \right) \\
+        &\leq \int_a^b f(t) \dt + \lim_{n \to \infty} \frac{b-a}{n}\sum_{k=1}^n \left| f_n \left( a + \frac{b-a}{n} \right) - f \left( a + \frac{b-a}{n} \right) \right| \\
+        &\leq \int_a^b f(t) \dt + \lim_{n \to \infty} \frac{b-a}{n}\sum_{k=1}^n \sup_{t \in [a, b]} \left| f_n(t) - f(t) \right| \\
+        &= \int_a^b f(t) \dt + (b-a) \underbrace{\lim_{n \to \infty} \sup_{t \in [a, b]} \left| f_n(t) - f(t) \right|}_{=0 \text{ due to uniform convergence}} \\
+        &= \int_a^b f(t) \dt
+    \end{align*}
+\end{proof}
+
+\begin{lemma}
+    \label{lem:convergence_to_manifold}
+    Consider the random vector $X_n$ with values from $[0, 1]^L$.
+    Let $S$, be a random variable with support $[0, 1]$ and cumulative distribution function $G_n(s)$.
+    Assume that for every $s \in [0, 1]$, $X_n \mid S = s \xrightarrow[]{a.s.} h(s)$ where $h(s)$ is some continuous function.
+    Then $X_n \xrightarrow[]{d} h(S)$.
+\end{lemma}
+
+\begin{proof}[Proof of \Cref{lem:convergence_to_manifold}]
+    We have to show that
+    \begin{align*}
+        \lim_{n \to \infty} \Pr(X_n \leq x) = \Pr(h(S) \leq x).
+    \end{align*}
+
+    First, note that 
+
+    Let us start by conditioning on $S$:
+    \begin{align*}
+        \Pr(X_n \leq x) = \int_0^1 \Pr(X_n \leq x \mid S = s) \dG(s).
+    \end{align*}
+    Now consider the following:
+    \begin{align*}
+        \lim_{n \to \infty} \left| \Pr(X_n \leq x) - \Pr(h(S) \leq x) \right| &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) \dG(s) - \Pr(h(S) \leq x)\right| \\
+        &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) \dG(s) - \int_0^1 \mathbf{1}[h(s) \leq 1] \dG(s) \right| \\
+        &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) - \mathbf{1}[h(s) \leq x] \dG(s) \right| \\
+        &\leq \lim_{n \to \infty} \int_0^1 \left| \Pr(X_n \leq x \mid S = s) - \mathbf{1}[h(s) \leq x] \right| \dG(s) \\
+        &= \int_0^1 \lim_{n \to \infty} \left| \Pr(X_n \leq x \mid S = s) - \mathbf{1}[h(s) \leq x] \right| \dG(s) \\
+        &= 0
+    \end{align*}
+    for all $x \in [0, 1]^L$.
+    The exchange of the limit and the integral is justified by the fact that the integrand is dominated by a constant function, and therefore the dominated convergence theorem applies.
+    The last equality follows from the fact that $X_n \mid S = s \xrightarrow[]{a.s.} h(s)$. 
+\end{proof}
+
+
+\section{Proofs of propositions in the main text}
+\label{sec:proofs}
+
+\begin{proof}[Proof of \Cref{prop:monotone}]
+    Monotonicity is evident.
+    For superadditivity, note that for any coalitions $S_1, s_2$ such that $S_1 \cap s_2 = \emptyset$, $P \notin S_1$ or $P \notin s_2$.
+    WLOG assume it is the latter, therefore $v(S_2) = 0$.
+    As a result, $v(S_1) + v(S_2) = v(S_1) \leq v(S_1 \cup S_2)$ holds if and only if $(N, v)$ is monotone.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:one_sided_general}]
+    First, observe that $f$ is continuous on the compact set $[0, 1]$, and is therefore also bounded.
+    Furthermore,
+    \begin{align*}
+        \varphi_P^n = \frac{1}{n+1} \sum_{k=0}^n \Pr(|\precede_P| / n = k) f(k/n) = \E[X_n].
+    \end{align*}
+    As $f$ is continuous and bounded, and $X_n \xrightarrow[]{d} X$, by the portmanteau lemma, $\E[f(X_n)] \to \E[f(X)]$.
+    Putting it together,
+    \begin{align*}
+        \lim_{n \to \infty} \varphi_P^n &= \frac{1}{n+1} \sum_{k=0}^n \Pr(|\precede_P| / n = k) f(k/n) \\
+        &= \lim_{n \to \infty} \E[X_n] \\
+        &= \E[X] \\
+        &= \int_0^1 f(t) \dG(t).
+    \end{align*}
+    Furthermore, if $G$ is differentiable, then
+    \begin{align*}
+        \int_0^1 f(t) \dG(t) = \int_0^1 g(t) f(t) \dt.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:one_sided}]
+    Let $R$ denote a permutation of the set of players ($N$).
+    Additionally, let us denote the players preceding $i$ by $\precede_i^R$.
+    The value of player $P$ is their expected marginal contribution averaged over all permutations of $N$:
+    \begin{align*}
+        \varphi_P^n = \frac{1}{(n+1)!} \sum_R v(\precede_P^R \cup \{i\}) - v(\precede_P^R)
+    \end{align*}
+    First, note that $v(\precede_P^R) = 0$ for any permutation, as no coalition can achieve a positive value without player $P$.
+    Furthermore, using the fact that all agents of type $A$ are identical implies that $v(\precede_P^R \cup \{i\})$ only depends on the number of agents in the coalition.
+    More precisely, 
+    \begin{align*}
+        v(\precede_P^R \cup \{i\}) = f(n_A(\precede_P^R \cup \{i\}) / n) = f(|\precede_P^R| / n).
+    \end{align*}
+    Finally, the set of permutations in which $k$ number of players precede $P$ is independent of $n$, i.e.
+    \begin{align*}
+        \{R \mid |\precede_P^R| = k\} = n! \quad \forall\, k.
+    \end{align*}
+    Putting all the above together, the value of player $P$ can be expressed as
+    \begin{align*}
+        \varphi_P^n &= \frac{1}{(n+1)!} \sum_{k=0}^n n! f(k / n) \\
+        &= \frac{1}{n+1} \sum_{k=0}^n f(k / n) \\
+        &= \frac{n}{n+1} \underbrace{\frac{1}{n} \sum_{k=0}^{n-1} f(k / n)}_{=S_n} + \frac{1}{n+1} f(1).
+    \end{align*}
+    $S_n$ are just the left Riemann-sums of function $f$ on the interval $[0, 1]$.
+    Therefore, if $f$ is continuous (and thus Riemann-integrable), then $S_n \to \int_0^1 f(t)$, and thus
+    \begin{align*}
+        \lim_{n \to \infty} \varphi_P^n &= \lim_{n \to \infty} \frac{1}{n+1} \sum_{k=1}^n f(k / n) \\
+        &= \lim_{n \to \infty}\underbrace{\frac{n}{n+1}}_{\to 1} \frac{1}{n} \sum_{k=0}^{n-1} f(k / n) + \underbrace{\frac{1}{n+1} f(1)}_{\to 0} \\
+        &= \int_0^1 f(t) \dt .
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:fringe_value}]
+    The first equality comes from the efficiency of the Shapley-value.
+    The values of all players sum up to $f(1)$ for all $n \in \mathbb{N}$, therefore
+    \begin{align*}
+        \lim_{n \to \infty} \sum_{i=1}^n \varphi_{A_i}^n = \lim_{n \to \infty} (1 - \varphi_P^n ) = 1 - \int_0^1 f(t).
+    \end{align*}
+    The second one can be obtained by integration by parts:
+    \begin{align*}
+        \int_0^1 t f'(t) \dt = tf(t) \mid_0^1 - \int_0^1 f(t) \dt = f(1) - \int_0^1 f(t) \dt
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{lem:entry_distr}] %\textcolor{red}{(Might have to fix sum indices)} \\
+    The probability of $P$ having at most fraction $t$ of the other players before itself is
+    \begin{align*}
+        \Pr(X_n \leq nt) &= \Pr(X_n \leq nt ) \\
+        &= \prod_{j = nt + 1}^n \frac{j}{j + \lambda} \\
+        &= \exp \Bigg( \underbrace{\sum_{j = nt + 1}^n \log(j) - \log(j+\lambda)}_{\equiv S_n} \Bigg).
+    \end{align*}
+    Taking limits,
+    \begin{align*}
+        \lim_{n \to \infty} S_n &= \lim_{n \to \infty} \sum_{j = nt + 1}^n \log(j) - \log(j+\lambda) \\
+        &= \lim_{n \to \infty} \sum_{i = 1}^{n - nt} \log(nt + i) - \log(nt + i + \lambda) \\
+        &= \lim_{n \to \infty} \frac{1}{n - nt} \sum_{i = 1}^{n - nt} \frac{\log \left( t + \frac{i}{n - nt} \right) - \log \left( t + \frac{i}{n - nt} + \frac{\lambda}{n - nt} \right)}{1 / (n - nt)}
+    \end{align*}
+    Let
+    \begin{align*}
+        \Delta_n(s) = \frac{\log \left( s \right) - \log \left( s + \frac{\lambda}{n - nt} \right)}{1 / (n - nt)}
+    \end{align*}
+    By lemma \ref{lemma:log_convergence}, 
+    \begin{align*}
+        \Delta_n \xrightarrow[]{\mathrm{u}} \lambda \frac{\mathrm{d}}{\mathrm{d}s}log(s) = -\frac{\lambda}{s}
+    \end{align*}
+    on the compact interval $[t, 1]$ for any $t > 0$ ($\xrightarrow[]{\mathrm{u}}$ denotes uniform convergence).
+    
+    Then, by lemma \ref{lemma:integral_convergence}, we have that
+    \begin{align*}
+        \lim_{n \to \infty} S_n &= \lim_{n \to \infty} \frac{1}{n-nt} \sum_{i=1}^{n-nt} \Delta_n \left( t + \frac{i}{n - nt} \right) \\
+        &= \int_t^1 (\lim_{n \to \infty} \Delta_n)(s) \ds \\
+        &= \int_t^1 \lim_{n \to \infty} -\frac{\lambda}{s} \ds \\
+        &= \lambda \log{t}
+    \end{align*}
+
+    Substituting $\lim_{n \to \infty} S_n$ into the original equation yields
+    \begin{align*}
+        \lim \Pr \left( \frac{X_n}{n} \leq t \right) &= \exp \Bigg( \lim_{n \to \infty} \sum_{j = nt + 1}^n \log(j) - \log(j+\lambda) \Bigg) \\
+        &= \exp(\lambda \log(t)) \\
+        &= t^\lambda.
+    \end{align*}
+
+    For $t=0$, simply observe that %\textcolor{red}{Have to elaborate on this}
+    \begin{align*}
+        \lim_{n \to \infty} \prod_{j = 1}^n \frac{j}{j + \lambda} = 0 = 0^\lambda.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:fringe_value_2}]
+    If $f$ is monotone increasing, then $f(0) \leq \int_0^1 f(t) \dt \leq f(1)$.
+    The inequalities become strict if $f$ is not constant on the whole interval.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:one_sided_weighted}]
+    The weighted value of player $P$ is its expected contribution across all permutations, with each permutation weighted by its probability of occurring.
+    \begin{align*}
+        \varphi_P^{n, \lambda} = \sum_R \Pr(R) [v(\precede_P^R \cup \{i\}) - v(\precede_P^R)]
+    \end{align*}
+    As before, using the fact that fringe players are identical, this can be rephrased as
+    \begin{align*}
+        \varphi_P^{n, \lambda} &= \sum_{k=0}^n \Pr(R) f(k/n) \\
+        &= \E[f(X_n / n)]
+    \end{align*}
+    where $X_n$ is defined as above.
+    $f$ is continuous, and therefore bounded on the compact set $[0, 1]$.
+    As a consequence, $\frac{X_n}{n} \xrightarrow[]{d} X$ implies $\E[f(X_n / n)] \to \E[f(X)]$, which in turn gives
+    \begin{align*}
+        \lim_{n \to \infty} \varphi_P^{n, \lambda} &= \lim_{n \to \infty} \E[f(X_n / n)] \\
+        &= \E[f(X)] \\
+        &= \int_0^1 f(t) \dG(t) \\
+        &= \int_0^1 g(t)f(t) \dt
+    \end{align*}
+    where $G(t)$ and $g(t)$ are the cdf and pdf of X, respectively.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:platform_value_weighted}]
+    Let $X$ and $X'$ be random variables with cdfs $G_X = t^\lambda$ and $G_{X'}t^{\lambda'}$, respectively.
+    For any $\lambda < \lambda'$, $t^\lambda > t^{\lambda'} \forall t \in [0, 1]$, meaning that $X'$ first-order stochastically dominates $X'$.
+    As a result, for any monotonically increasing $f$,
+    \begin{align*}
+        \int_0^1 g_X(t)f(t) \dt = \E[f(X)] \leq \E[f(X')] = \int_0^1 g_{X'}(t)f(t)
+    \end{align*}
+    with strict inequality unless $f$ is constant almost everywhere.
+    As $f$ is continuous, the latter is equivalent to $f$ being constant on the whole $[0, 1]$ interval.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:paltform_value_weighted_2}]
+    As $\lambda \to 0$, $X$ converges to the degenerate random variable $X_0$ for which $\Pr(X_0 = 0) = 1$.
+    As a consequence, the expected value of $f(X)$ converges to $\E[f(X_0)] = f(0)$.
+    $\lim_{\lambda \to \infty} \varphi^{\infty, \lambda}_P = f(1)$ can be shown along the same lines.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:multiple_platforms_total}]
+    Observe that, in any order, only the first big player has a positive marginal contribution.
+    Therefore, given $n$ fringe firms, the total value generated by the big players is
+    \begin{align*}
+        \varphi^{n, m}_P &= \sum_{j=1}^m \sum_R \Pr(R) [ v(\precede^R_{P_j} \cup \{i\}) - v(\precede^R_{P_j}) ] \\
+        &= \sum_{j=1}^m \sum_{k=0}^n \Pr(n_A(\precede^R_{P_j}) = k \land n_P(\precede^R_{P_j}) = 0) f(k/n),
+    \end{align*}
+    where $n_A(S)$ and $n_P(S)$ denote the number of fringe players and big players in coalition $S$, respectively.
+    This can be further rewritten as
+    \begin{align*}
+        \varphi^{n, m}_P &= \sum_{j=1}^m \sum_{k=0}^n \Pr(n_A(\precede^R_{P_j}) = k \mid n_P(\precede^R_{P_j}) = 0) \Pr(n_P(\precede^R_{P_j}) = 0) f(k/n) \\
+        &= \sum_{k=0}^n \Pr(n_A(\precede^R_{P_j}) = k \mid n_P(\precede^R_{P_j}) = 0) f(k/n),
+    \end{align*}
+    where the last equality follows from the fact that the big players are identical in terms of permutation probabilities.
+
+    Remember that the share of fringe players before player $j$ is described by the random variable $X_n^j = n_A(\precede^R_{P_j}) / n$.
+    Observe that
+    \begin{align*}
+        \Pr(X_n^j = k/n \mid n_P(\precede^R_{P_j}) = 0) &= \Pr(X_n^j = k/n \mid X_n^j = \min\{X_n^1, \dots, X_n^m\} \land n_P(\precede^R_{P_j}) = 0) \\
+        &= \Pr(\min\{X_n^1, \dots, X_n^m\} = k/n \mid n_P(\precede^R_{P_j}) = 0) \\
+        &= \Pr(\min\{X_n^1, \dots, X_n^m\} = k/n).
+    \end{align*}
+
+    All that remains to show is that
+    \begin{align*}
+        \min\{X_n^1, \dots, X_n^m\} \xrightarrow[]{d} \min\{X^1, \dots, X^m\}.
+    \end{align*}
+    First, note that $(X_n^1, \dots, X_n^m) \xrightarrow[]{d} (X^1, \dots, X^m)$ due to the convergence of the marginal distributions and the fact that $X_n^j$ are independent.
+    Furthermore, the mapping $x \mapsto \min\{x_1, \dots, x_m\}$ is continuous, and thus the continuous mapping theorem applies.
+
+    Putting it all together, we have that
+    \begin{align*}
+        \varphi^{n, m}_P &= \sum_{k=0}^n \Pr(n_A(\precede^R_{P_j}) \mid n_P(\precede^R_{P_j}) = 0) f(k/n) \\
+        &\xrightarrow[d]{} \sum_{k=0}^n \Pr(\min\{X_n^1, \dots, X_n^m\} = k/n) f(k/n) \\
+        &= \E[\min\{X_n^1, \dots, X_n^m\}] \\
+        &\to \E[\min\{X^1, \dots, X^m\}].
+    \end{align*}
+    If the cdf of $X^j$ is $G(t)$, then the cdf of $\min\{X^1, \dots, X^m\}$ is $1 - (1 - G(t))^m$, which concludes the proof.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:multiple_platforms}]
+    The allocation is efficient for all $n \in \mathbb{N}$, therefore efficient in the limit, as well.
+    The second equality can be obtained by integration by parts.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:multiple_platforms_2}] (Assuming $f$ is continuously differentiable) %\textcolor{red}{(Assuming $f$ is continuously differentiable -- will have to relax this)}
+    For any cdf $G$, the function $H(t) = 1 - [1 - G(t)]^m$ is increasing in $m$ for any $t$ unless $G(t) \equiv 0$ or $G(t) \equiv 1$.
+    Therefore, the random variable with cdf $G$ first-order stochastically dominates the one with cdf $H$.
+    As a result, the expected value of any monotonically increasing function is higher for the former than for the latter, unless the function is constant almost everywhere.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:many_sided_general}]
+    The proof mirrors that of \Cref{prop:one_sided_general}.
+    First, note that the random order value can be expressed as follows:
+    \begin{align*}
+        \varphi_P^n &= \sum_{k_1=0}^n \dots \sum_{k_L=0}^n \Pr(n_{A_1}(\precede_P) = k_1, \dots, n_{A_L}(\precede_P) = k_L) f\left(\frac{k_1}{n}, \dots, \frac{k_L}{n}\right) \\
+        &= \sum_{k_1=0}^n \dots \sum_{k_L=0}^n \Pr(n X_n = (k_1, \dots, k_L)) f\left(\frac{k_1}{n}, \dots, \frac{k_L}{n}\right) \\
+        &= \sum_{k_1=0}^n \dots \sum_{k_L=0}^n \Pr \left( X_n = \left(\frac{k_1}{n}, \dots, \frac{k_L}{n}\right) \right) f \left(\frac{k_1}{n}, \dots, \frac{k_L}{n}\right) \\
+        &= \E[f(X_n)].
+    \end{align*}
+    Furthermore, as $f$ is continuous (and therefore bounded on $[0, 1]^L$), and $X_n \xrightarrow[]{d} X$, by the portmanteau lemma, $\E[f(X_n)] \to \E[f(X)]$.
+    Putting it together,
+    \begin{align*}
+        \lim_{n \to \infty} \varphi_P^n &= \lim_{n \to \infty} \E[f(X_n)] \\
+        &= \E[f(X)] \\
+        &= \int_0^1 \dots \int_0^1 f(t_1, \dots, t_L) \dG(t_1, \dots t_L).
+    \end{align*}
+    Finally, if $X$ is a continuous random variable, then
+    \begin{align*}
+        \int_0^1 \dots \int_0^1 f(t_1, \dots, t_L) \dG(t_1, \dots t_L) = \int_0^1\dots \int_0^1 g(t_1, \dots, t_L) f(t_1, \dots, t_L) \dt_1 \dots \dt_L.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{lem:many_sided_manifold}]
+    Just like in the proof of \Cref{prop:many_sided_general}, the random order value can be expressed as follows:
+    \begin{align*}
+        \varphi_P^n &= \E[f(X_n)].
+    \end{align*}
+    Furthermore, as $f$ is continuous and bounded on $[0, 1]^L$, and $X_n \xrightarrow[]{d} X$, by the portmanteau lemma, $\E[f(X_n)] \to \E[f(X)]$.
+    Therefore,
+    \begin{align*}
+        \lim_{n \to \infty} \varphi_P^n &= \lim_{n \to \infty} \E[f(X_n)] \\
+        &= \E[f(X)] \\
+        &= \E[f(a_1(\xi), \dots, a_L(\xi))] \\
+        &= \int_0^1 f(a_1(s), \dots a_L(s)) \mathrm{d}H(s).
+    \end{align*}
+
+    For the fringe value, the proof is similar, with a couple of additional steps.
+    First, fix some fringe player $A_{li}$.
+    Let $Y_n$ be the random variable describing the share of each type of fringe player that precede player $A_{li}$.
+    Also, let $Q_n$ be the random variable describing whether player $P$ precedes player $A_{li}$.
+    Then, the value of fringe player $A_{li}$ is
+    \begin{align*}
+        \varphi_{A_{li}}^n &= \E[ \mathbf{1}[Q_n = 1] (f(Y_1, \dots, Y_l + 1/n, \dots, Y_L) - f(Y_1, \dots, Y_l, \dots, Y_L)) ],
+    \end{align*}
+    and the value of the whole fringe of type $A_l$ is
+    \begin{align*}
+        \varphi_{A_{l}}^n = n \varphi_{A_{li}}^n = \E \bigg[ \underbrace{\mathbf{1}[Q_n = 1] \frac{f(Y_1, \dots, Y_l + 1/n, \dots, Y_L) - f(Y_1, \dots, Y_l, \dots, Y_L)}{1/n}}_{\coloneqq \Delta_n} \bigg].
+    \end{align*}
+
+    Now notice that, because the number of fringe players goes to infinity,
+    \begin{align*}
+        X_n \xrightarrow[]{d} (a_1(\xi), \dots, a_L(\xi)) &\implies Y_n \xrightarrow[]{d} (a_1(\xi), \dots, a_L(\xi)) \\
+        &\implies (Y_1, \dots, Y_n) | Y_l = a_l(s) \xrightarrow[]{d} (a_1(s), \dots, a_l(s)) .
+    \end{align*}
+    Furthermore,
+    \begin{align*}
+        \Pr(Q_n = 1 | [Y_n]_l = a_l(s)) \to H(s).
+    \end{align*}
+    Finally, for fixed $(Y_1, \dots, Y_L)$,
+    \begin{align*}
+        \Delta_n \to \partial_l f(Y_1, \dots, Y_l, \dots, Y_L).
+    \end{align*}
+    
+    Putting it all together,
+    \begin{align*}
+        \lim_{n \to \infty} \varphi_{A_{l}}^n &= \lim_{n \to \infty} \E[\Delta_n (Y_n)] \\
+        &= \E[ H(s) \partial_l f(Y_1, \dots, Y_L) ] \\
+        &= \int_0^1 H(s) \partial_l f(a_1(s), \dots, a_L(s)) \mathrm{d} a_l(s) \\
+        &= \int_0^1 H(s) a_l'(s) \partial_l f(a_1(s), \dots, a_L(s)) \ds.
+    \end{align*}
+
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:many_sided_shapley}]
+    Let us show than $X_n$ converges in distribution to the degenerate random variable $X = (U, \dots, U)$, where $U$ is uniformly distributed on $[0, 1]$.
+
+    First, let us switch to an alternative formulation of the problem.
+    Remember, that the probability of each permutation is the same.
+    Therefore, the following procedure leads to the same distribution over permutations: (1) for each player, draw a random number from the uniform distribution on $[0, 1]$, then sort the players according to the drawn numbers.
+    This is equivalent to the original problem, as the probability of each permutation is the same.
+
+    Now let us characterize $X_n$ in terms of this procedure.
+    $[X_n]_l$ is the proportion of players of type $A_l$ that are placed before player $P$, or, equivalently, the number of players of type $A_l$ that have drawn a number less than player $P$.
+    I.e.,
+    \begin{align*}
+        [X_n]_l = \frac{1}{n}\sum_{i = 1}^n \mathbf{1}[U_{li} < U_P].
+    \end{align*}
+    For any finite $n$, we can disregard ties, as they have probability zero.
+
+    Now let us condition this probability distribution on the draw of player $P$:
+    \begin{align*}
+        [X_n]_l < x \mid U_P = u = \frac{1}{n} \sum_{i=1}^n \mathbf{1}[U_{li} < u].
+    \end{align*}
+    As the draws are independent, by the strong law of large numbers,
+    \begin{align*}
+        [X_n]_l < x \mid U_P \xrightarrow[]{a.s.} \E[\mathbf{1}[U_{li} < u]] = u.
+    \end{align*}
+    
+    Now we can use \Cref{lem:convergence_to_manifold} to conclude that $X_n \xrightarrow[]{d} (U, \dots, U)$.
+    Finally, by \Cref{lem:many_sided_manifold}, the Shapley-value is
+    \begin{align*}
+        \varphi_P^\infty & = \int_0^1 f(s, \dots, s) \dt
+    \end{align*}
+    and the value of fringe $l$ is
+    \begin{align*}
+        \varphi_{A_l}^\infty & = \int_0^1 \partial_l f(s, \dots, s) \ds
+    \end{align*}
+
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:many_sided_weighted}]
+    The proof uses the same approach as that of \Cref{prop:many_sided_shapley}.
+    I will show that $X_n \xrightarrow[]{d} h(S)$, where $h(s) = (s^{\lambda_1}, \dots, s^{\lambda_L})$, and $S$ is a random variable with cdf $G(s) = s^{\lambda_P}$, and then rely on \Cref{lem:many_sided_manifold}.
+
+    First, as before, let us characterize the probabilities of the various permutations.
+    The approach I am using relies on two main ideas.
+
+    First, as shown by \textcite{kalai1987weighted}, the probability of a permutation can be described by successively selecting the players with probabilities proportional to the weights of the players that have not been selected yet, and then reversing this ordering.\footnote{
+        For more details, see \Cref{sec:weighted_one_sided}.
+    }
+
+    The other key result I rely on is the main proposition of \textcite{efraimidis2006weighted}.
+    It states that weighted random sampling without replacement can be also be achieved by the following procedure.
+    First, for each player $i$, draw a random number from the distribution $U^{\frac{1}{\lambda_i}}$, where $U$ is uniformly distributed on $[0, 1]$, and $\lambda_i$ is the sampling weight of player $i$.
+    Then, for a sample size of $m$, select the $m$ players with the largest numbers.
+
+    An immediate corollary of the latter result is that the procedure described by \textcite{kalai1987weighted} is equivalent to the following procedure.
+    First, for each player $i$, draw a random number from the distribution $V_i = U^{\frac{1}{\lambda_i}}$, where $U$ is uniformly distributed on $[0, 1]$.
+    Then, for each player $i$, sort the players according to the drawn numbers in ascending order.
+
+    Now let us characterize $X_n$ in terms of this procedure.
+    $[X_n]_l$ is the proportion of players of type $A_l$ that are placed before player $P$, or, equivalently, the number of players of type $A_l$ that have drawn a number less than player $P$.
+    I.e.,
+    \begin{align*}
+        [X_n]_l = \frac{1}{n}\sum_{i = 1}^n \mathbf{1}[V_{li} < V_P].
+    \end{align*}
+
+    Now let us condition this probability distribution on the draw of player $P$:
+    \begin{align*}
+        [X_n]_l < x \mid V_P = s = \frac{1}{n} \sum_{i=1}^n \mathbf{1}[V_{li} < u].
+    \end{align*}
+    Then use the strong law of large numbers to deduce that
+    \begin{align*}
+        [X_n]_l < x \mid V_P \xrightarrow[]{a.s.} \E[\mathbf{1}[V_{li} < u]] = u^{\lambda_l}.
+    \end{align*}
+    Then we can rely on \Cref{lem:convergence_to_manifold} to conclude that $X_n \xrightarrow[]{d} (V_P^{\lambda_1}, \dots, V_P^{\lambda_L})$.
+
+    Finally, by \Cref{lem:many_sided_manifold}, the weighted value of player $P$ is
+    \begin{align*}
+        \varphi_P^\infty &= \int_0^1 f(s_1^{\lambda_1}, \dots, s_L^{\lambda_L}) \mathrm{d} V_P(s) \\
+        &= \int_0^1 f(s_1^{\lambda_1}, \dots, s_L^{\lambda_L}) \lambda_P s^{\lambda_P - 1} \ds,
+    \end{align*}
+    and the value of fringe $l$ is
+    \begin{align*}
+        \varphi_{A_l}^\infty &= \int_0^1 t^{\lambda_P} \lambda_l s^{\lambda_l - 1} \partial_l f(s_1^{\lambda_1}, \dots, s_L^{\lambda_L}) \lambda_P s^{\lambda_P - 1} \ds.
+    \end{align*}
+    
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:welfare_max_entry_fees}]
+    The (marginal) cost of serving an entrant on side $i$ is $F_i$.
+    The marginal network externality it generates on the other side is
+    \begin{align*}
+        n_j \frac{\partial u_j}{\partial n_i} = \alpha_j \gamma_j n_j n_i^{\gamma_j - 1}.
+    \end{align*}
+    Welfare is maximized when the cost of entry equals the externality from entry, i.e.:
+    \begin{align*}
+        p_i^* &= F_i - \alpha_j \gamma_j n_j n_i^{\gamma_j - 1}
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:unilateral_entry_fees}]
+    By assumption, $\pi_P(u_1, u_2)$ is concave in $u_1$ and $u_2$, therefore the first-order conditions are necessary and sufficient for a maximum.
+    Simply taking the partial derivatives with respect to $u_i$ yields the following condition for the optimal entry fees:
+    \begin{align*}
+        p_i^u = F_i - \alpha_j \gamma_j n_j n_i^{\gamma_j - 1} + \frac{\phi_1(u_1)}{\phi'_1(u_1)}.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:bargaining_entry_fees}]
+    From \Cref{prop:many_sided_weighted}, the value of player $P$ is
+    \begin{align*}
+        \pi_P &= \int_0^1 \lambda_P t^{\lambda_P - 1} w(t^{\lambda_1} n_1, t^{\lambda_2} n_2) \dt \\
+        &= \int_0^1 \lambda_P t^{\lambda_P - 1} \left[ \alpha_1 t^{\lambda_1} n_1 t^{\lambda_2\gamma_1} n_2^{\gamma_1} + \alpha_2 t^{\lambda_2} n_2 t^{\lambda_1\gamma_2} n_1^{\gamma_2} + t^{\lambda_1} F_1 n_1 + t^{\lambda_2} F_2 n_2 \right] \dt \\
+        &= \frac{\lambda_P}{\lambda_P + \lambda_1 + \lambda_2\gamma_1} \alpha_1 n_1 n_2^{\gamma_1} + \frac{\lambda_P}{\lambda_P + \lambda_2 + \lambda_1\gamma_2} \alpha_2 n_2 n_1^{\gamma_2} - \frac{\lambda_P}{\lambda_P + \lambda_1} n_1 F_1 - \frac{\lambda_P}{\lambda_P + \lambda_2} n_2 F_2.
+    \end{align*}
+    Similarly, the value of side $i \in \{1, 2\}$ is
+    % TODO: improve formalism in the first line of formula below?
+    \begin{align*}
+        W_i &= \int_0^1 t^{\lambda_P} \lambda_i t^{\lambda_i - 1} \partial_i w(t^{\lambda_1} n_1, t^{\lambda_2} n_2) \dt \\
+        &= \int_0^1 t^{\lambda_P} \lambda_i t^{\lambda_i - 1} \left[ \alpha_i n_i t^{\lambda_j \gamma_i} n_j^{\gamma_i} + \alpha_j \lambda_i \gamma_j t^{\lambda_j} n_j t^{\lambda_i (\gamma_j - 1)} n_i^{\gamma_j} - n_i F_i \right] \dt \\
+        &= \frac{\lambda_i}{\lambda_P + \lambda_i + \lambda_j\gamma_i} \alpha_i n_i n_j^{\gamma_i} + \frac{\lambda_i \gamma_j}{\lambda_P + \lambda_j + \lambda_i\gamma_j} \alpha_j n_j n_i^{\gamma_j} - \frac{\lambda_i}{\lambda_P + \lambda_1} n_i F_i.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:all_entry_fees}]
+    See the proof of \Cref{prop:welfare_max_entry_fees,prop:unilateral_entry_fees,prop:bargaining_entry_fees}.
+\end{proof}

@@ -1,0 +1,1364 @@
+\section{Extensions}
+\label{sec:extensions}
+
+\subsection{Players have different innate bargaining power}
+\label{sec:higher_bargaining_power}
+
+In the previous sections, I assumed that the platform and the fringe firms split total profits according to their Shapley values.
+Because of the symmetry property of the Shapley value, this excludes the possibility of players having some kind of innate bargaining power, which is not related to their profit functions.
+In this extension, I will relax this assumption, and assume instead that profits are shared according to \emph{weighed} values.
+These are a generalization of the Shapley value, where each player has a weight $w_i$ that can, in certain settings, be thought of as a parameter describing bargaining power.\footnote{
+    \textcite{hart1996bargaining} and \textcite{stole1996intra} provide foundations for this interpretation.
+}
+I still assume that fringe firms are identical, also in regard to their bargaining weights.
+Therefore, the only difference is between the platform and the fringe firms.
+Let us denote the platform's bargaining weight as $\lambda_P \in \mathbb{R}^+$, and without loss of generality, normalize the fringe firms' weights to 1.
+
+As shown in \Cref{sec:cooperative_game_weighted}, the weighted Shapley value, and thus final profits in this setting is given by
+\begin{proposition}
+    \label{prop:weighted_shapley_value}
+    The Shapley value of the platform and the fringe firms, and thus final total profits, are given by:
+    \begin{align*}
+        \pi^t_P(N_P, N_F) &= \int_0^1 \lambda_P s ^ {\lambda_P - 1} \Pi(N_P,s N_F) \ds, \\
+        \pi^t_F(N_P, N_F) &= \int_0^1 s ^ {\lambda_P} \partial_2 N_F \Pi(N_P,s N_F) \ds.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:weighted_shapley_value}]
+\end{proof}
+This result is a direct consequence of \Cref{prop:profit_sharing_weighted}.
+It is similar to the non-weighted value in that it is an average of marginal contributions, but now those averages are weighted, with the weight function depending on platform's bargaining weight.
+
+The interpretation of $\lambda_P$ as a bargaining weight for the platform is supported by the fact that the platform's profit function is increasing in it.
+\begin{proposition}
+    \label{prop:lambda_P_comparative}
+    For any fixed $N_F >0, N_P \geq 0$, the platform's total profits are increasing in its bargaining weight $\lambda_P$, while the fringe's profits are decreasing in it:
+    \begin{align*}
+        \frac{\partial \pi_P^t(N_P, N_F)}{\partial \lambda_P} &> 0, \\
+        \frac{\partial \pi_F^t(N_P, N_F)}{\partial \lambda_P} &< 0.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:lambda_P_comparative}]
+    For any $\lambda < \lambda'$, $\int_0^s \lambda t^{\lambda - 1} \dt = s^\lambda > s^{\lambda'} = \int_0^s \lambda' t^{\lambda' - 1} \dt \forall s \in [0, 1]$.
+    Therefore, for any (non-constant) function $\Pi$, $\int_0^1 \lambda s^{\lambda - 1} \Pi(s) \ds > \int_0^1 \lambda' s^{\lambda' - 1} \Pi(s) \ds$.
+\end{proof}
+In fact, the limits as $\lambda_P \to 0$ and $\lambda_P \to \infty$ are quite intuitive: in the former case, the platform's profits are zero, while in the latter case it is able to appropriate all profits.
+That is, these limits correspond to the platform either receiving or making take-it or leave-it offers.
+
+The example parametrizatrion is the same as in the main model, with the only difference that the platform has a higher innate bargaining power ($\lambda_P = 2$).
+The main result, namely that the platform's product variety has a negative effect on consumer welfare in the hybrid regime, still holds.
+That is, as shown on \Cref{fig:fringe_entry_eq_high_lambda}, total aggregate is decreasing in $N_P$ throughout the hybrid regime, due to the platform's products displacing more fringe products than their total number.
+
+The main difference is that, for any $N_P\geq 0$, the implied entry fee (\Cref{fig:platform_profits_high_lambda}) is higher than the benchmark, unilaterally set one,  due to the higher bargaining power of the platform.
+That is, for any $N_P$, the platform would prefer to set a lower entry fee, but it is unable to do so due to its high bargaining power.
+Total aggregate, and thus consumer surplus, is also below the main model's outcome in this case.
+
+Another major difference pertains to the total profits of the platform as a function of $N_P$.
+It is still true that they are increasing in the number of the platform's products, but now this increase is even slower in the hybrid regime.
+The reason is that the implied entry fee is always higher than the optimal one, therefore an increase the positive effect of an increase in $N_P$ is somewhat counterbalanced by the entry fee becoming even more suboptimal.
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$N_P$},
+                    xmin=0, xmax=4.5, % adjust these values as needed
+                    ymin=0, ymax=4.4, % adjust these values as needed
+                    width=\linewidth, % adjust the width of the plot
+                    axis lines=left,
+                    xtick={0, 4.5},
+                ]
+                \addplot[color=myblue,mark=none,thick] table[x=N_P,y=N_F_bench]{\equilibrium};
+                \addplot[color=myred,mark=none,thick] table[x=N_P,y=N_F]{\equilibrium};
+                \addplot[color=mygreen,mark=none,thick] table[x=N_P,y=N_F]{\equilibriumProfitOneSidedHighLambda};
+                \legend{Benchmark, Bargaining ($\lambda = 1$), Bargaining ($\lambda = 2$)}
+
+                \addplot[draw=none,name path=hybrid] table[x=N_P,y=hybrid]{\equilibrium};
+                \addplot[draw=none,name path=hybrid_alt] table[x=N_P,y=hybrid]{\equilibriumProfitOneSidedHighLambda};
+                \addplot[draw=none,name path=bottom] {0};
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid and bottom];
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid_alt and bottom];
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Equilibrium number of fringe firms ($N_F$)}
+        \label{fig:fringe_entry_eq_high_lambda}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$N_P$},
+                    xmin=0, xmax=4.5, % adjust these values as needed
+                    ymin=0, ymax=2, % adjust these values as needed
+                    width=\linewidth, % adjust the width of the plot
+                    axis lines=left,
+                    xtick={0, 4.5},
+                    legend pos=south east,
+                ]
+                \addplot[color=myblue,mark=none,thick] table[x=N_P,y=CS_bench]{\equilibrium};
+                \addplot[color=myred,mark=none,thick] table[x=N_P,y=CS]{\equilibrium};
+                \addplot[color=mygreen,mark=none,thick] table[x=N_P,y=CS]{\equilibriumProfitOneSidedHighLambda};
+                \legend{Benchmark, Bargaining ($\lambda = 1$), Bargaining ($\lambda = 2$)}
+
+                \addplot[draw=none,name path=hybrid] table[x=N_P,y=hybrid]{\equilibrium};
+                \addplot[draw=none,name path=hybrid_alt] table[x=N_P,y=hybrid]{\equilibriumProfitOneSidedHighLambda};
+                \addplot[draw=none,name path=bottom] {0};
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid and bottom];
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid_alt and bottom];
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Equilibrium consumer surplus ($CS$)}
+    \end{subfigure}
+    \caption{Equilibrium outcomes in the case when the platform has higher innate bargaining power ($V_P = 1, V_F = 1, I_F = 0.05$). As before, consumer surplus is decreasing in $N_P$ as a result in a decrease in total product variety. Dark shaded area represents hybrid mode under $\lambda=2$, while light shaded area represents additional hybrid mode under $\lambda=1$.}
+    \label{fig:equilibrium_high_lambda}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$N_P$},
+                    ylabel={},
+                    xmin=0, xmax=4.5, % adjust these values as needed
+                    ymin=0, ymax=0.9, % adjust these values as needed
+                    axis lines=left,
+                    xtick={0, 4.5},
+                    legend pos=south east,
+                    width=\linewidth,
+                ]
+                \addplot[color=myblue,mark=none,thick] table[x=N_P,y=pi_P_bench]{\equilibrium};
+                \addplot[color=myred,mark=none,thick] table[x=N_P,y=pi_P]{\equilibrium};
+                \addplot[color=mygreen,mark=none,thick] table[x=N_P,y=pi_P]{\equilibriumProfitOneSidedHighLambda};
+                \addplot[color=black,mark=none,thick,dashed] table[x=N_P,y=pi_P_noF]{\equilibrium};
+
+                \legend{Benchmark, Bargaining ($\lambda = 1$), Bargaining ($\lambda = 2$)}
+                
+                \addplot[draw=none,name path=hybrid] table[x=N_P,y=hybrid]{\equilibriumProfitOneSidedHighLambda};
+                \addplot[draw=none,name path=hybrid_orig] table[x=N_P,y=hybrid]{\equilibrium};
+                \addplot[draw=none,name path=bottom] {0};
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid and bottom];
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid_orig and bottom];
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Platform profits}
+        \label{fig:platform_profits_high_lambda}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$N_P$},
+                    ylabel={},
+                    xmin=0, xmax=4.5, % adjust these values as needed
+                    ymin=0, ymax=0.4, % adjust these values as needed
+                    axis lines=left,
+                    xtick={0, 4.5},
+                    legend pos=south east,
+                    width=\linewidth,
+                ]
+                \addplot[color=myblue,mark=none,thick] table[x=N_P,y=K_F_opt]{\equilibrium};
+                \addplot[color=myred,mark=none,thick] table[x=N_P,y=K_F_implied]{\equilibrium};
+                \addplot[color=mygreen,mark=none,thick] table[x=N_P,y=K_F_implied]{\equilibriumProfitOneSidedHighLambda};
+
+                \legend{Benchmark, Bargaining ($\lambda = 1$), Bargaining ($\lambda = 2$)}
+                
+                \addplot[draw=none,name path=hybrid] table[x=N_P,y=hybrid]{\equilibriumProfitOneSidedHighLambda};
+                \addplot[draw=none,name path=hybrid_orig] table[x=N_P,y=hybrid]{\equilibrium};
+                \addplot[draw=none,name path=bottom] {0};
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid and bottom];
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid_orig and bottom];
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Optimal/implied entry fee}
+        \label{fig:entry_fee_high_lambda}
+    \end{subfigure}
+    \caption{Platform profits and (implied) entry fees ($\mu = 0.2, V_P = 1, V_F = 1, I_F = 0.05$). Regardless of lambda, platform profits and entry fees are increasing in $N_P$. However, when the platform's innate bargaining power is higher, entry fees are above optimal levels already for $N_P = 0$, and the additional increase somewhat mitigates the benefits of the platform's increased product variety. When $\lambda$ is lower, the entry fees are below optimal for low $N_P$, therefore increasing $N_P$ has a larger positive effect on profits. Dark shaded area represents hybrid mode under $\lambda=2$, while light shaded area represents additional hybrid mode under $\lambda=1$.}
+    \label{fig:profits_and_entry_fees_high_lambda}
+\end{figure}
+
+
+\subsection{Three sided bargaining}
+\label{sec:two_sided}
+
+In the second extension, I consider the case when the other side also participate in the bargaining process.
+This is more plausible in business to business settings, therefore I use the term customers instead of consumers in this section.
+Nevertheless, I use the same demand structure as in the main model.
+
+This extension entails two changes compared to the main model.
+First, the players bargain over the total surplus generated on all sides of the market, not just total profits.
+Second, the outcomes are assumed to be described by a cooperative game with three types of players: the platform, the fringe firms, and the consumers.
+
+Let us start by deriving total surplus as a function of $N_P, N_F$ and $N_C$ (the number of customers).
+Under the logit-like demand structure described in \Cref{sec:demand}, the total surplus is given by
+\begin{proposition}
+    \label{prop:profits_total_surplus}
+    Assuming profit-maximizing prices from the platform and the fringe, total surplus as a function of $N_P, N_F$ and $N_C$ is given by
+    \begin{align*}
+        \Pi(N_P, N_F, N_C) = \mu N_C \left[ \frac{N_P V_P + N_F V_F}{N_P V_P + N_F V_F + 1} + \log(N_P V_P + N_F V_F + 1) \right].
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:profits_total_surplus}]
+    See \textcite{small1981applied} for a derivation for the discrete case.
+    The continuous case is analogous.
+\end{proof}
+Note, that this expression is of the form $\Pi(N_P, N_P, N_C) = N_C f(N_P, N_F)$.
+Furthermore, $f(N_P, N_F) = g(V_P N_P + V_F N_F)$ for an increasing, strictly concave $g$.
+
+Next, let us consider the bargaining outcomes in this three-sided setting.
+\Cref{sec:cooperative_game_two_sided} formally describes the corresponding cooperative game, and \Cref{prop:profit_sharing_two_sided} establishes the resulting profit shares.
+To summarize, the various players share the total surplus in the following way.
+\begin{proposition}
+    \label{prop:three_way_shapley_value}
+    \begin{align*}
+        \pi_P(N_P, N_F, N_C) &= \int_0^1 s \Pi(N_P, s N_F) \ds, \\
+        \pi_F(N_P, N_F, N_C) &= \int_0^1 s^2 N_F \partial_2 \Pi(N_P, s N_F) \ds \\
+        CS(N_P, N_F, N_C) &= \int_0^1 s \Pi(N_P, s N_F) \ds.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:three_way_shapley_value}]
+    \Cref{sec:cooperative_game_two_sided} formally describes the cooperative game corresponding to the three-sided bargaining assumption.
+    This result is a direct consequence of \Cref{prop:profit_sharing_two_sided}.
+\end{proof}
+
+There are a number of things to note here.
+First, and most importantly, the customers' share from total surplus is equal to the platform's.\footnote{
+    This is a consequence of the fact that customers are ex ante identical, and each of them buy one product, therefore demand, and in turn total surplus is linear in $N_C$.
+}
+As a consequence, what's good for the platform is also optimal for the customers.
+Therefore, if the platform can choose its mode of operation to maximize its profits, it maximizes the customers' surplus, as well (but not necessarily total surplus).
+
+Second, it can be shown that due to the fringe firms' total profit function having a similar shape as in the main model, the same results hold in terms of the platform's product variety displacing fringe products.
+\begin{proposition}
+    \label{prop:fringe_entry_two_sided}
+    In the hybrid regime under three-sided bargaining, the following holds:
+    \begin{align*}
+        N_F > 0 \implies \frac{\dd N_F}{\dd N_P} < -\frac{V_P}{V_F}.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:fringe_entry_two_sided}]
+    The proof is analogous to that of \Cref{prop:equilibrium_bargaining}.
+    To see that $\frac{\partial \pi_F}{\partial N_F}$ satisfies \Cref{ass:single_crossing}, first consider the function
+    \begin{align*}
+        g(x) = \frac{x}{1 + x} + \log(1 + x).
+    \end{align*}
+    Then observe that
+    \begin{align*}
+        G(x) \coloneq \int_0^1 g(sx) \ds = \frac{\frac{x^{2} \left(x + 1\right)}{2} + \left(1 - \log{\left(x + 1 \right)}\right) \left(x + 1\right) - 1}{x^{2} \left(x + 1\right)}
+    \end{align*}
+    is concave, and thus satisfies \Cref{ass:single_crossing}.
+    By \Cref{lem:single_crossing_affine_transformation}, $\pi_F$ then also satisfies \Cref{ass:single_crossing}.
+    Finally, as \Cref{ass:additive_profit,ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:single_crossing} are satisfied, it follows from \Cref{prop:aggregate_size_additive} that
+    \begin{align*}
+        \frac{\dd N_F}{\dd N_P} < -\frac{V_P}{V_F}
+    \end{align*}
+    in the hybrid regime.
+    
+\end{proof}
+
+As a consequence, the aggregate is decreasing in $N_P$ in the hybrid regime (\Cref{fig:fringe_entry_eq_full_surplus_two_sided}).
+\begin{corollary}
+    In the hybrid regime under three-sided bargaining, total aggregate is decreasing in the platform's product variety:
+    \begin{align*}
+        N_F > 0 \implies \frac{\partial A}{\partial N_P} < 0.
+    \end{align*}
+\end{corollary}
+\begin{proof}
+    This result also follows from the applicability of \Cref{prop:aggregate_size_additive}.
+\end{proof}
+
+Nevertheless, there is an important distinction compared to the previous results.
+While this does lead to a decrease in total surplus, in contrast to the two-sided bargaining case, this does not imply a decrease in the customers' surplus.
+Their share of total surplus is equal to the platform's profits, and thus it is increasing in $N_P$ if and only if platform profits (\Cref{fig:profits_full_surplus_two_sided}) are.
+Therefore, customers might prefer hybrid operation to the platform being a pure marketplace.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$N_P$},
+                    ylabel={},
+                    xmin=0, xmax=4.5, % adjust these values as needed
+                    ymin=0, ymax=7.5, % adjust these values as needed
+                    axis lines=left,
+                    xtick={0, 4.5},
+                    legend pos=south east,
+                    width=\linewidth,
+                ]
+                \addplot[color=myblue,mark=none,thick] table[x=N_P,y=N_P]{\equilibriumFullSurplusTwoSided};
+                \addplot[color=myred,mark=none,thick] table[x=N_P,y=N_F]{\equilibriumFullSurplusTwoSided};
+                \addplot[color=black,mark=none,thick] table[x=N_P,y=A]{\equilibriumFullSurplusTwoSided};
+                
+                \addplot[draw=none,name path=hybrid] table[x=N_P,y=hybrid]{\equilibriumFullSurplusTwoSided};
+                \addplot[draw=none,name path=bottom] {0};
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid and bottom];
+
+                
+                \legend{$N_P$, $N_F$, $A$}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Platform product variety and number of fringe entrants}
+        \label{fig:fringe_entry_eq_full_surplus_two_sided}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                    xlabel={$N_P$},
+                    ylabel={},
+                    xmin=0, xmax=4.5, % adjust these values as needed
+                    ymin=0, ymax=1.2, % adjust these values as needed
+                    axis lines=left,
+                    xtick={0, 0.6},
+                    legend pos=north west,
+                    width=\linewidth,
+                ]
+                \addplot[color=myblue,mark=none,thick] table[x=N_P,y=pi_P]{\equilibriumFullSurplusTwoSided};
+                \addplot[color=myred,mark=none,thick] table[x=N_P,y=pi_F]{\equilibriumFullSurplusTwoSided};
+                \addplot[color=black,mark=none,thick,dashed] table[x=N_P,y=pi_P]{\equilibriumFullSurplusTwoSided};
+
+                \addplot[draw=none,name path=hybrid] table[x=N_P,y=hybrid]{\equilibriumFullSurplusTwoSided};
+                \addplot[draw=none,name path=bottom] {0};
+                \addplot [fill=black, fill opacity=0.05] fill between [of=hybrid and bottom];
+
+                \legend{$\pi_P$, $\pi_F$, $CS$}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Platform and fringe profits}
+        \label{fig:profits_full_surplus_two_sided}
+    \end{subfigure}
+    \caption{Equilibrium outcomes in the case when the whole surplus is bargained over ($N_C = 0.6, V_P = 1, V_F = 1, I_F = 0.05$), and both consumers and fringe firms participate in the bargaining. As before, the platform's profits are increasing in $N_P$, while the fringe's profits are decreasing. On the other hand, consumer welfare is equal to platform profits, therefore it is increasing in $N_P$. The shaded region represents hybrid operation, while in the unshaded region, the platform operates in pure retail mode.}
+    \label{fig:equilibrium_full_surplus_two_sided}
+\end{figure}
+
+
+
+\section{Generalization and proofs}
+\label{sec:more_general}
+
+While the main text examines bargaining between the platform and the entrants in the context of a specific, logit-like demand system, many of the results are more general.
+This section presents those and the necessary assumptions.
+As the results on the main text are not proven directly, but rather derived from the general results, the proofs are also included here.
+
+\subsection{Production}
+\label{sec:more_general_production}
+
+Let us assume the following reduced-form, but rather general total profit (or, where applicable, surplus) function:
+\begin{assumption}
+    \label{ass:identical_fringe}
+    The total profits of the platform and the fringe are described by 
+    \begin{align*}
+        \Pi(N_P, N_F, N_C) = N_C f(N_P, N_F),
+    \end{align*}
+    where $f: \mathbb{R}^+_0 \times \mathbb{R}^+_0 \to \mathbb{R}^+_0$.
+\end{assumption}
+It can be justified for markets with the following features: (1) all fringe firms are identical, thus only their number matters in terms of total profit, and (2) consumers are also identical (bar their idiosyncratic taste shocks).
+
+I will assume that, in addition to being increasing in the number of consumers, total profits are also increasing in both the number of fringe firms and the platform' products.
+\begin{assumption}
+    \label{ass:monotone_profits}
+    $f(N_P, n_F)$ is increasing in both $N_P$ and $N_F$.
+\end{assumption}
+Such profit functions arise in settings in which the profit reduction from increased competition is dominated by extra sales due to increased product variety.
+One such example is \textcite{anderson2020aggregative}, where the demand exhibits love for variety, while consumers have access to an outside option.
+Alternatively, indirect network effects, such as those in two-sided markets, can also result in such increasing profits.
+\textcite{chen2008price} demonstrates that under certain circumstances an even more extreme phenomenon might occur: competition may not only increase industry-wide profits, but prices, as well.
+Finally, under the assumption that the platform can extract consumer surplus through entry fees or some similar mechanism, this assumption is be true for any demand system in which total surplus is increasing in product variety.
+
+\subsection{Profit sharing}
+\label{sec:more_general_profit_sharing}
+Next, assume that the platform and the fringe share profits according to the following rule:
+\begin{assumption}
+    \label{ass:profit_sharing}
+    Let $w_P, w_F: \mathbb{R}^+_0 \to \mathbb{R}^+_0$ be non-negative functions such that the following condition holds: $\pi_P(N_P, N_F, N_C) + \pi_F(N_P, N_F, N_C) \leq \Pi(N_P, N_F, N_C)$.
+    Then, the platform's profit ($\pi_P(N_P, N_F, N_C)$) and the fringe's profit ($\pi_F(N_P, N_F, N_C)$) are given by:
+    \begin{align*}
+        \pi_P(N_P, N_F, N_C) &= N_C \int_0^1 w_P(s) f(N_P, s N_F) \ds, \\
+        \pi_F(N_P, N_F, N_C) &= N_C \int_0^1 w_F(s) N_F \partial_2 f(N_P, s N_F) \ds.
+    \end{align*}
+\end{assumption}
+It covers the cases in the main text (namely the Shapley value and the weighted value, and three-way bargaining), but is also more general than those.
+In particular, in the platform game, any random order value \parencite{weber1988probabilistic} can be described by such a rule.
+
+In the main text, I use a simpler version of this profit sharing rule.
+I assume that $w_P(s) = w_F(s) \equiv 1$.
+As \Cref{sec:cooperative_game} demonstrates, this corresponds to players. Getting their Shapley values in the end.
+Together with the assumptions on the demand system, one can even derive a closed form expression for the platform's profit share (\Cref{prop:platform_profits_bargaining}).
+The proof if this proposition is given below.
+\begin{proof}[Proof of \Cref{prop:platform_profits_bargaining}]
+    Simply integrate the total industry profit function with respect to the mass of fringe entrants obtain the platform's share of the pie:
+    \begin{align*}
+        \pi^t_P &= \int_0^1 \Pi(N_P, sN_F) \ds \\
+        &= \mu \int_0^1 \frac{N_P V_P + s N_F V_F}{N_P V_P + s N_F V_F + 1} \ds \\
+        &= \mu \left[ 1 - \frac{\log \left(1 + \frac{N_F V_F}{N_P V_P + 1} \right)}{N_F V_F} \right].
+    \end{align*}
+    The fringe's share is just the remainder,
+    \begin{align*}
+        \Pi(N_P, N_F) - \int_0^1 \Pi(N_P, sN_F) \ds = \mu \left[ \frac{\log \left( 1 + \frac{N_F V_F}{N_P V_P + 1} \right)}{N_F V_F} - \frac{1}{N_P V_P + N_F V_F + 1} \right]
+    \end{align*}
+    Finally, remember that the investment cost of the fringe is fixed at the bargaining stage, and is therefore not included in the bargaining outcome.
+    Therefore, the total profits of the complete fringe are
+    \begin{align*}
+        \pi^t_P = \mu \left[ \frac{\log \left( 1 + \frac{N_F V_F}{N_P V_P + 1} \right)}{N_F V_F} - \frac{1}{N_P V_P + N_F V_F + 1} \right] - I_F N_F.
+    \end{align*}
+\end{proof}
+
+Apart from the cooperative foundations, one major justification for this profit allocation rule is its intuitive behavior in terms of comparative statics.
+To illustrate this, let us examine what happens when one varies the substitutability between the fringe firms.
+As it turns out, the platform's share increases if the fringe firms are more substitutable.
+The following observation demonstrates this idea.
+\begin{proposition}
+    \label{prop:outcome_based_bargaining_power}
+    Assume that \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing} hold.
+    Fix some $N_P, N_C \geq 0$. Let $f, \tilde{f}: \mathbb{R}^+_0 \times \mathbb{R}^+_0 \to \mathbb{R}^+_0$ two different profit functions such that $f(N_P, N_F) = \tilde{f}(N_P, N_F)$ for some $N_P, N_F$ and $f(N_P, n_F) \leq \tilde{f}(N_P, n_F)$ for all $n_F < N_F$.
+    Furthermore, let us denote the corresponding platform profit shares by $\pi_P$ and $\tilde{\pi}_P$.
+    
+    Then, $\pi_P \leq \tilde{\pi}_P$.
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:outcome_based_bargaining_power}]
+    Immediately follows from the monotonicity of the integral.
+\end{proof}
+
+In words, \Cref{prop:outcome_based_bargaining_power} describes two alternative worlds, in which $N_F$ fringe firms (assuming a platform with $N_P$ product variety and $N_C$ consumers) are able to achieve the same total profit level.
+However, in the case with $\tilde{f}$, the fringe firms are more substitutable to each other in the sense that fewer of them are needed to achieve a given level of profit (see \Cref{fig:outcome_based_bargaining_power}).
+The observation is that, in this situation, the platform's share is indeed higher when the fringe firms are more substitutable.
+This coincides with the intuitive idea that the platform's bargaining power is higher when it does not really mind losing a few fringe sellers.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \begin{tikzpicture}[scale=0.8]
+            \centering
+            \begin{axis}[xmin=0, xmax=1, ymin=0, ymax=1, samples at={0, 0.02, ..., 0.98, 1},
+                    xtick={0, 1}, ytick=\empty, xlabel={$s$}]
+                \addplot[name path=f, black, thick] {x^2};
+                \node[anchor= east] at (axis cs: .5, .5^2) {$N_C f(N_P, sN_F)$};
+                \path[name path=bottom] (axis cs:0,0) -- (axis cs:1,0);
+                \path[name path=top] (axis cs:0,1) -- (axis cs:1,1);
+    
+                \addplot [fill=blue, fill opacity=0.05] fill between [of=f and bottom];
+                \addplot [fill=red, fill opacity=0.05] fill between [of=f and top];
+    
+                \node[anchor=north west] at (axis cs: .05, .95) {Fringe ($F$)};
+                \node[anchor=south east] at (axis cs: .95, .05) {Platform ($P$)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Fringe firms are complements}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[xmin=0, xmax=1, ymin=0, ymax=1, samples at={0, 0.02, ..., 0.98, 1},
+                xtick={0, 1}, ytick=\empty, xlabel={$s$}]
+                \addplot[name path=f, black, thick] {x^0.5};
+                \node[anchor=north west] at (axis cs: .5, .5^0.5) {$N_C \tilde{f}(N_P, sN_F)$};
+                \path[name path=bottom] (axis cs:0,0) -- (axis cs:1,0);
+                \path[name path=top] (axis cs:0,1) -- (axis cs:1,1);
+    
+                \addplot [fill=blue, fill opacity=0.05] fill between [of=f and bottom];
+                \addplot [fill=red, fill opacity=0.05] fill between [of=f and top];
+    
+                \node[anchor=north west] at (axis cs: .05, .95) {Fringe ($F$)};
+                \node[anchor=south east] at (axis cs: .95, .05) {Platform ($P$)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Fringe firms are substitutes}
+    \end{subfigure}
+    \caption{Distribution of value between the platform and the fringe. Profit shares correspond to the shaded areas. The platform's profit share is higher when the fringe firms are more substitutable.}
+    \label{fig:outcome_based_bargaining_power}
+\end{figure}
+
+\subsection{Equilibrium}
+\label{sec:more_general_equilibrium}
+
+Let us now turn to the determination of the equilibrium number of fringe firms.
+Assume that each firm faces a lump-sum investment cost of $I_F$ to enter the market.\footnote{
+    The results would also hold if the investment cost was non-constant, as long as the marginal cost of investment is weakly increasing.
+}
+Thus, total investment cost for the fringe is given by $I_F N_F$.
+The equilibrium number of entrants is determined by a free entry condition: in the end, the fringe firms' total profits should be equal to the aggregated investment cost.
+\begin{assumption}
+    \label{ass:free_entry}
+    Let us define a free entry equilibrium by the following conditions: Entrants make zero profits after accounting for entry costs: 
+    \begin{align*}
+        \pi_F(N_P, N_F) = I_F N_F.
+    \end{align*}
+\end{assumption}
+
+Finally, in order to guarantee a unique equilibrium, let us make the following, an additional assumption about the profit function.
+\begin{assumption}
+    \label{ass:single_crossing}
+    Let $f$ be such that the following holds for all $N_F, N_P, N_C \geq 0$:
+    \begin{align*}
+        \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_F} < 0 \text{ or } \frac{\partial^2 \pi_F(N_P, N_F, N_C)}{\partial N_F^2} < 0
+    \end{align*}
+\end{assumption}
+This assumption essentially guarantees that the profit of the fringe (as a function of the number of entrants) has at most a single crossing with total entry cost (apart from the obvious $N_F=0$ intersection).
+The profit functions presented in the main text satisfy this assumption.
+
+Under the specific demand system and profit sharing rule described in the main text, it can be shown that this assumption is satisfied.
+\begin{proof}[Proof of \Cref{lem:shape_of_fringe_profit}]
+    First, consider the function
+    \begin{align*}
+        g(x) = \frac{sx}{1 + sx}.
+    \end{align*}
+    Also, let us define
+    \begin{align*}
+        G(x) &= \int_0^1 s g(sx) \ds \\
+        &= \frac{\log(x+1)}{x} + \frac{1}{x(x+1)} - \frac{1}{x}.
+    \end{align*}
+
+    Differentiation with respect to $x$ yields that
+    \begin{align*}
+        G'(x) < 0 \iff \log(x+1) > \frac{x (2x+1)}{(x+1)^2}
+    \end{align*}
+    and
+    \begin{align*}
+        G''(x) < 0 \iff \log(x+1) < \frac{x (5x^2 + 5x + 2)}{2 (x+1)^3}.
+    \end{align*}
+    There exists $\bar{x} > 0$\footnote{
+        $\bar{x} = 3$ is such a number.
+    }, such that the first equality holds for all $x > \bar{x}$, and the second for all $x < \bar{x}$.
+    Therefore, $G$ is either concave or decreasing for all $x > 0$.
+
+    Now let us consider the function $h(x) = N_C \mu g(N_P V_P + V_F x)$.
+    By \Cref{lem:single_crossing_affine_transformation}, $H(x) = \int_0^1 s h'(sx) \ds$ is also either concave or decreasing for any $x > 0$.
+    Finally, notice that $H(x)$ is exactly the profit function of the fringe:
+    \begin{align*}
+        \pi_F(N_P, N_F) = \int_0^1 N_F h'(s N_F) \ds,
+    \end{align*}
+    thus proving the lemma.
+\end{proof}
+
+
+With \Cref{ass:single_crossing} in place, uniqueness of the equilibrium can be established.
+\begin{proposition}
+    \label{prop:unique_equilibrium_more_general}
+    Under the conditions in \Cref{ass:free_entry,ass:single_crossing}, the equilibrium is unique if it exists.
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:unique_equilibrium_more_general}]
+    \Cref{lem:slope_at_eq} states that for any positive $N_F^*$ for which $\pi_F(N_P, N_F^*) - N_F I_F$, the partial derivative with respect to the number of fringe firms is negative.
+    Now assume by contradiction that $\exists 0 < N_F^* < N_F^{**}$ such that $\pi_F(N_P, N_F^*) = I_F N_F^*$ and $\pi_F(N_P, N_F^{**}) = I_F N_F^{**}$.
+    But then the mean value theorem implies that there is a $\bar{N}_F \in (N_F^*, N_F^{**})$ such that $\partial_F \pi_F(N_P, \bar{N}_F) = I_F$.
+    This is a contradiction, as $\partial_F \pi_F(N_P, N_F) < I_F$ for all $N_F^* < N_F$.
+\end{proof}
+
+The intuition behind this result is that \Cref{ass:single_crossing} ensures that the total profits achieved by the fringe is either concave or hump-shaped.
+Consequently, it has at most one crossing with the -- convex and increasing -- total entry cost function (for $n_F > 0$).
+This particular shape (concave or hump-shaped) is also the main driver for the later results about the comparative statics of equilibrium profits and entry.
+Given that \Cref{ass:free_entry,ass:single_crossing} is satisfied in the model presented in the main text, it immediately follows that the equilibrium in that model is also unique.
+\begin{proof}[Proof of \Cref{prop:unique_equilibrium}]
+    \Cref{lem:shape_of_fringe_profit} demonstrates that the fringe total profit function is either concave or decreasing in the number of fringe firms.
+    Thus, \Cref{ass:single_crossing} is satisfied, and \Cref{prop:unique_equilibrium_more_general} implies that the equilibrium number of fringe entrants is unique.
+\end{proof}
+
+\subsection{Comparative statics}
+\label{sec:more_general_results}
+
+This section presents a number of comparative statics that can be derived even in this rather abstract setting.
+It contains three sets of results: (1) participants' profits in a partial equilibrium setting, where the number of fringe firms is taken as fixed, (2) equilibrium entry as a function of the platform's product variety, and (3) the platform's profits in general equlibrium.
+Throughout the paper, I use $\frac{\partial X}{\partial N_P}$ to denote partial equilibrium results, while $\frac{\dd X}{\dd N_P} \coloneq \frac{\partial X(N_P, N_F(N_P))}{\partial N_P}$ indicates general equilibrium results, where fringe entry is endogeneous.
+
+\paragraph{Profits -- partial equilibrium}
+The following two propositions are partial equilibrium results: consider the number of fringe entrants $N_F$ as fixed.
+The first statement claims that the platform's profits are increasing in its own product variety.
+\begin{proposition}
+    \label{prop:share_of_platform}
+    Let \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing} hold.
+    Also assume that $f$ is continuously differentiable with respect to $N_P$ and also twice differentiable.
+    Let $N_F \geq 0$.
+    Then $\pi_P$ is also differentiable and
+    \begin{align*}
+        \frac{\partial \pi_P(N_P, N_F)}{\partial N_P} > 0.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:share_of_platform}]
+    $f(N_P, N_F)$ is continuously differentiable in $N_P$, therefore the Leibniz rule can be applied to obtain
+    \begin{align*}
+        \frac{\partial \pi_P(N_P, N_F, N_C)}{\partial N_P} &= N_C \frac{\partial}{\partial N_P} \int_0^1 w_P(s) f(N_P, N_F) \ds \\
+        &= \int_0^1 w_P(s) \underbrace{\frac{\partial f(N_P, sN_F)}{\partial N_P}}_{> 0} \ds > 0
+    \end{align*}
+    for any non-negative, continuous $w_P(s)$.
+\end{proof}
+While it might seem obvious, let us still examine what this result does and does not mean.
+First, remember that $f$ is increasing in both arguments, and $N_F$ is fixed.
+Therefore, an increase in $N_P$ also increases the size of the pie the participants bargain over.
+This result states that the slice of the pie that the platform gets increases in this case, too.
+It does not mean, however, that the \emph{relative share} of the pie that the platform gets is also bigger -- increase is only guaranteed in absolute terms.
+For example, it is possible that for the new, higher value of $N_P$, the complementarities between the fringe firms become stronger, and the platform's bargaining power decreases.\footnote{
+    In fact, one can show that this is the case if the cross-derivatives of $f$ are negative.
+}
+\Cref{fig:increase_N_P_platform} shows an example of this situation.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[xmin=0, xmax=1, ymin=0, ymax=1, samples at={0, 0.02, ..., 0.98, 1},
+                xtick={0, 1}, ytick=\empty, axis lines=left, xlabel={$s$}]
+                \addplot[name path=f, black, thick] {ln(1+x)};
+                % \addplot[name path=tildef, dashed, black] {x};
+                \node[anchor=north west] at (axis cs: .5, .4) {$N_C f(N_P, sN_F)$};
+                \path[name path=bottom] (axis cs:0,0) -- (axis cs:1,0);
+                \draw[name path=top] (axis cs:0,0.693) -- (axis cs:1,0.693);
+                \draw[name path=right] (axis cs:1,0) -- (axis cs:1,0.693);
+    
+                \addplot [fill=blue, fill opacity=0.05] fill between [of=f and bottom];
+                \addplot [fill=red, fill opacity=0.05] fill between [of=f and top];
+    
+                \node[anchor=north west] at (axis cs: .05, .65) {Fringe ($F$)};
+                \node[anchor=south east] at (axis cs: .95, .05) {Platform ($P$)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Profit shares with $N_P$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[xmin=0, xmax=1, ymin=0, ymax=1, samples at={0, 0.02, ..., 0.98, 1},
+                xtick={0, 1}, ytick=\empty, axis lines=left, xlabel={$s$}]
+                \addplot[name path=f, dashed, black] {ln(1+x)};
+                \addplot[name path=tildef, black, thick] {x};
+                \node[anchor=south east] at (axis cs: 0.6, 0.6) {$N_C f(N_P', sN_F)$};
+                \path[name path=bottom] (axis cs:0,0) -- (axis cs:1,0);
+                \draw[name path=top] (axis cs:0,1) -- (axis cs:1,1);
+                \draw[name path=right] (axis cs:1,0) -- (axis cs:1,1);
+    
+                \addplot [fill=blue, fill opacity=0.05] fill between [of=tildef and bottom];
+                \addplot [fill=red, fill opacity=0.05] fill between [of=tildef and top];
+    
+                \node[anchor=north west] at (axis cs: .05, .95) {Fringe ($F$)};
+                \node[anchor=south east] at (axis cs: .95, .05) {Platform ($P$)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Profit shares with $N_P'$}
+    \end{subfigure}
+    \caption{Illustration of \Cref{prop:share_of_platform} in the one-sided bargaining case. The right hand side figure shows a world with larger platform product variety ($N_P < N_P'$). Even though the platform's share of the total profits is smaller in relative terms in that case, it is still larger in absolute terms.}
+    \label{fig:increase_N_P_platform}
+\end{figure}
+
+Next, let us look at an analogous result for the fringe firms.
+In their case, the direction of the change depends on the complementarities between the platform and the fringe firms.
+\begin{proposition}
+    \label{prop:share_of_fringe}
+    Let \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing} hold.
+    Furthermore, assume that $f, w$ are twice continuously differentiable.
+    Let $N_F > 0$.
+    Then $\pi_F$ is also differentiable.
+    \begin{align*}
+        &\text{If } \frac{\partial^2 f(N_P, n_F)}{\partial n_P \partial n_F} < 0 \;\forall n_F \leq N_F, \text{ then } \frac{\partial \pi_F(N_P, N_F)}{\partial N_P} < 0, \\
+        &\text{if } \frac{\partial^2 f(N_P, n_F)}{\partial n_P \partial n_F} > 0 \;\forall n_F \leq N_F, \text{ then } \frac{\partial \pi_F(N_P, N_F)}{\partial N_P} > 0
+    \end{align*}
+    for all $N_P \geq 0$.
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:share_of_fringe}]
+    Remember that
+    \begin{align*}
+        \pi_F(N_P, N_F, N_C) = N_C \int_0^1 w_F(s) N_F \partial_2 f(N_P, s N_F) \ds,
+    \end{align*}
+    By assumption, $f$ is twice continuously differentiable, therefore $\partial_2$ is also continuously differentiable in $N_P$.
+    Thus, the Leibniz rule can be applied to obtain
+    \begin{align*}
+        \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_P} &= \frac{\partial}{\partial N_P} N_C \int_0^1 w_F(s) N_F \partial_2 f(N_P, s N_F) \ds \\
+        &= N_C \int_0^1 w_F(s) N_F \frac{\partial}{\partial N_P} \partial_2 f(N_P, s N_F) \ds \\
+        &= N_C \int_0^1 w_F(s) N_F \partial^2_{12} f(N_P, s N_F) \ds.
+    \end{align*}
+
+    As $w_F(s) \geq 0$ for $s > 0$, if $\partial_2 f(N_P, s N_F)$ has the same sign over $[0, N_F]$, then the integral also has the same sign.
+    Formally,
+    \begin{align*}
+        \forall n_F \in [0, N_F] \enspace \frac{\partial^2 f(N_P, n_F)}{\partial N_P \partial n_F} < 0 &\implies \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_P} < 0 \\
+        \forall n_F \in [0, N_F] \enspace \frac{\partial^2 f(N_P, n_F)}{\partial N_P \partial n_F} > 0 &\implies \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_P} > 0
+    \end{align*}
+\end{proof}
+In summary, when they are mostly substitutes (the cross-derivatives of $f$ are negative), the fringe's profits decrease as a result of an increase in $N_F$.
+The intuition is that, even though the total size of the pie increases, the bargaining power of the fringe deteriorates so much that its total profits decreases not only in relative, but also in absolute terms (as illustrated in \Cref{fig:increase_N_P_fringe}).
+On the other hand, when the fringe firms are mostly complements the fringe's profits increase.
+
+As the Shapley value of each player is their average marginal contribution to the total value, this result can best be understood through the lens of marginal contributions.
+When the cross derivative is positive, an increase in the platform's product variety increases the marginal contribution of the fringe firms to the total value for any given number of fringe firms.
+Therefore, the amount that the fringe gets also increases.
+On the other hand, when the cross derivative is negative, the marginal contribution of the fringe firms decreases, and so does the amount they obtain.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[xmin=0, xmax=1, ymin=0, ymax=1.225, samples at={0, 0.02, ..., 0.98, 1},
+                xtick={0, 1}, ytick=\empty, axis lines=left, xlabel={$s$}]
+                \addplot[name path=f, black, thick] {sqrt(x)};
+                % \addplot[name path=tildef, dashed, black] {sqrt(0.5+x)};
+                \node[anchor=north west] at (axis cs: .6, 0.77) {$N_C f(0, sN_F)$};
+                \path[name path=bottom] (axis cs:0,0) -- (axis cs:1,0);
+                \draw[name path=top] (axis cs:0,1) -- (axis cs:1,1);
+                \draw[name path=right] (axis cs:1,0) -- (axis cs:1,1);
+    
+                \addplot [fill=blue, fill opacity=0.05] fill between [of=f and bottom];
+                \addplot [fill=red, fill opacity=0.05] fill between [of=f and top];
+    
+                \node[anchor=north west] at (axis cs: .05, .95) {Fringe ($F$)};
+                \node[anchor=south east] at (axis cs: .95, .05) {Platform ($P$)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Profit shares with $N_P = 0$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[xmin=0, xmax=1, ymin=0, ymax=1.225, samples at={0, 0.02, ..., 0.98, 1},
+                xtick={0, 1}, ytick=\empty, axis lines=left, xlabel={$s$}]
+                \addplot[name path=f, dashed, black] {sqrt(x)};
+                \addplot[name path=tildef, black, thick] {sqrt(0.5+x)};
+                \node[anchor=north west] at (axis cs: 0.05, 0.75) {$N_C f(N_P', sN_F)$};
+                \path[name path=bottom] (axis cs:0,0) -- (axis cs:1,0);
+                \draw[name path=top] (axis cs:0,1.225) -- (axis cs:1,1.225);
+                \draw[name path=top_old, dashed] (axis cs:0,1) -- (axis cs:1,1);
+                \draw[name path=right] (axis cs:1,0) -- (axis cs:1,1.225);
+    
+                \addplot [fill=blue, fill opacity=0.05] fill between [of=tildef and bottom];
+                \addplot [fill=red, fill opacity=0.05] fill between [of=tildef and top];
+    
+                \node[anchor=north west] at (axis cs: .05, 1.17) {Fringe ($F$)};
+                \node[anchor=south east] at (axis cs: .95, .05) {Platform ($P$)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Profit shares with $N_P = 0.5$}
+    \end{subfigure}
+    \caption{Illustration of \Cref{prop:share_of_fringe} when fringe and platform products are substitutes. An increase in the platform's product variety increases total profits, yet, the fringe's share decreases in absolute terms.}
+    \label{fig:increase_N_P_fringe}
+\end{figure}
+
+\Cref{prop:profits_partial_bargaining} is a direct corollary of the two previous results.
+\begin{proof}[Proof of \Cref{prop:profits_partial_bargaining}]
+    The model presented in the main text adheres to \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing}. Thus, by \Cref{prop:share_of_platform},
+    \begin{align*}
+        \frac{\partial \pi_P(N_P, N_F)}{\partial N_P} > 0.
+    \end{align*}
+    Furthermore,
+    \begin{align*}
+        \frac{\partial^2 f(N_P, N_F)}{\partial N_P \partial N_F} = \frac{\partial^2}{\partial N_P \partial N_F} \mu \frac{N_F V_F + N_P V_P}{N_F V_F + N_P V_P + 1} < 0,
+    \end{align*}
+    therefore, by \Cref{prop:share_of_platform},
+    \begin{align*}
+        \frac{\partial \pi_F(N_P, N_F)}{\partial N_P} < 0.
+    \end{align*}    
+\end{proof}
+
+
+
+\paragraph{Number of entrants -- general equilibrium}
+Next, let us turn to equilibrium entry as a function of the platform's product variety.
+The previous proposition implies an almost immediate corollary regarding the equilibrium number of fringe entrants.
+\begin{corollary}
+    \label{cor:fringe_entry}
+    Let \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:free_entry,ass:single_crossing} hold.
+    Furthermore, assume that $f, w$ are twice continuously differentiable.
+    Let $N_F^*$ denote the equilibrium number of fringe firms.
+    Let us also assume that $N_F^* > 0$, and that
+    \begin{align*}
+        \frac{\partial^2 f(n_P, n_F)}{\partial n_P \partial n_F} < 0 \quad \forall n_F \leq N_F \\
+        \frac{\partial^2 f(n_P, n_F)}{\partial n_F^2} < 0 \quad \forall n_F \leq N_F.
+    \end{align*}
+    Then the equilibrium number of fringe firms is also differentiable and
+    \begin{align*}
+        \dd{\partial N_F}{\dd N_P} < 0.
+    \end{align*}
+\end{corollary}
+\begin{proof}[Proof of \Cref{cor:fringe_entry}]
+    \Cref{prop:unique_equilibrium} establishes that if an equilibrium with $N_F > 0$ exists, it is unique.
+    Use the implicit function theorem on the equation from \Cref{ass:free_entry} to obtain
+    \begin{align*}
+        \frac{\dd N_F}{\dd N_P} = \frac{\frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_P}}{I_F - \frac{\partial \pi_F (N_P, N_F, N_C)}{\partial N_F}}
+    \end{align*}
+    The derivative exists if the above expression is well-defined, i.e. $\frac{\partial \pi_F (N_P, N_F, N_C)}{\partial N_F} \neq I_F$.
+    Remember from \Cref{prop:share_of_fringe} that the numerator of this expression is negative under the condition $\frac{\partial^2 f(N_P, N_F, N_C)}{\partial N_P \partial N_F}$.
+    Now all we need to show to conclude the proof is that
+    \begin{align*}
+        \frac{\partial \pi_F (N_P, N_F, N_C)}{\partial N_F} < I_F,
+    \end{align*}
+    which is the statement of \Cref{lem:slope_at_eq}.
+\end{proof}
+
+That is, the equilibrium number of entrants increases as a response to an increase in $N_P$ if the platform and the fringe firms are complements, and decreases if they are substitutes.
+The underlying reason is again the concave or hump-shaped fringe profit function.
+If $N_F^*$ is an equilibrium, then fringe profits minus entry costs are strictly positive for all $N_F \leq N_F^*$ and strictly negative for all $N_F > N_F^*$.
+Therefore, if an increase in $N_P$ decreases the fringe's profits for every $N_F \geq 0$, equilibrium can be restored by decreasing the number of fringe entrants, (and vice versa for the other case).
+This is also related to the concept of strategic complementary and substitutability, which also depends on the cross-derivatives (i.e. the supermodularity or submodularity) of the profit function.
+
+Based on this general result, the corresponding on in the main text follows immediately.
+\begin{proof}[Proof of \Cref{prop:fringe_profits_partial}]
+    $\pi^t_F(N_P ,N_F)$ adheres to the \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing}.
+    Furthermore, 
+    \begin{align*}
+        \frac{\partial^2 \pi^t_F(N_P ,N_F)}{\partial N_P \partial N_F} < 0 \quad \forall\, N_P, N_F \geq 0.
+    \end{align*}
+    Therefore, by \Cref{prop:share_of_fringe},
+    \begin{align*}
+        \frac{\partial \pi^t_F(N_P, N_F)}{\partial N_P} < 0 \quad \forall\, N_P, N_F \geq 0.
+    \end{align*}
+\end{proof}
+
+Finally, let us conclude this section by establishing a stronger result for a more restrictive class of profit functions.
+In the following, I assume that the profit function has an additive form.
+Intuitively, this means that -- in terms of total profits generated -- the platform's and the fringe firms' products are substitutable to each other according to some constant ratio.
+\begin{assumption}
+    \label{ass:additive_profit}
+    Assume that $f$ has the following, additive form in $N_P$ and $N_F$:
+    \begin{align*}
+        f(N_P, N_F) = g(\alpha N_P + \beta N_F)
+    \end{align*}
+    where $\alpha, \beta > 0$, and $g$ is twice differentiable and that $g'' < 0$.
+\end{assumption}
+
+\begin{proposition}
+    \label{prop:aggregate_size_additive}
+    Let \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:free_entry,ass:single_crossing,ass:additive_profit} hold.
+    Then
+    \begin{align*}
+        \frac{\dd N_F}{\dd N_P} < -\frac{\alpha}{\beta}.
+    \end{align*}
+    Furthermore,
+    \begin{align*}
+        \frac{\dd \Pi(N_P, N_F, N_C)}{\dd N_P} < 0.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:aggregate_size_additive}]
+    Use the implicit function theorem to get the equilibrium number of fringe firms as a function of the platform's product variety:
+    \begin{align*}
+        \frac{\dd N_F}{\dd N_P} = \frac{\frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_P}}{I_F - \frac{\partial \pi_F (N_P, N_F, N_C)}{\partial N_F}}.
+    \end{align*}
+    Remember, that from \Cref{lem:slope_at_eq}, and the assumption on the investment cost function we have that $\frac{\partial \pi_F (N_P, N_F, N_C)}{\partial N_F} < I_F$.
+    Then, substitute $f(N_P, N_F) = g(\alpha N_P + \beta N_P)$ into $\pi_F$ to get the following fringe profit function:
+    \begin{align*}
+        \pi_F(N_P, N_F, N_C) = \beta N_C N_F \int_0^1 w_F(s) g'(\alpha N_P + s \beta N_F) \ds.
+    \end{align*}
+    Differentiate it with respect to $N_P$ and $N_F$ and substitute into the first expression to obtain
+    \begin{align*}
+        \frac{\dd N_F}{\dd N_P} = \frac{
+            \alpha \beta N_C N_P \int_0^1 w_F(s) g''(\alpha N_P + s \beta N_F) \ds
+        }{
+            \underbracket{I'_F(N_F) - \beta N_C \int_0^1 w_F(s) g'(\alpha N_P + s \beta N_F) \ds}_{(1)} - \underbracket{\beta^2 N_C N_F \int_0^1 w_F(s) s g''(\alpha N_P + s \beta N_F) \ds}_{(2)}.
+        }
+    \end{align*}
+    From \Cref{lem:slope_at_eq}, we know that the denominator of this expression is positive.
+    Furthermore, the concavity of $g$ implies that expression (2) is also positive.
+    Finally, from \Cref{prop:share_of_fringe}, we have that the whole expression must be negative.
+
+    First, let us show that (1) is non-negative, and, coupled with the fact that (2) is positive, omitting it increases the denominator in absolute value, thus making the whole expression larger.
+    To see this, observe that the second part of (1) is just the per-unit fringe profit.
+    Therefore, in equilibrium, (1) must be zero:
+    \begin{align*}
+        N_F (1) = N_F I_F - \pi_F(N_P, N_F, N_C) = 0.
+    \end{align*}
+
+    Next, observe that we can bound (2) from above using the fact that $0 \leq s \leq 1$:
+    \begin{align*}
+        (2) \leq \beta^2 N_C N_F \int_0^1 w_F(s) g''(\alpha N_P + s \beta N_F) \ds.
+    \end{align*}
+    For the same reason as before, it also bounds the whole expression from above.
+
+    Putting it all together, we have that
+    \begin{align*}
+        \frac{\dd N_F}{\dd N_P} \leq \frac{\alpha \beta N_C N_P \int_0^1 w_F(s) g''(\alpha N_P + s \beta N_F) \ds}{\beta^2 N_C N_F \int_0^1 w_F(s) g''(\alpha N_P + s \beta N_F) \ds} = -\frac{\alpha}{\beta},
+    \end{align*}
+    which is the first statement of the proposition.
+
+    To prove the second part of the proposition, differentiate total profits with respect to $N_P$:
+    \begin{align*}
+        \frac{\dd \Pi(N_P, N_F, N_C)}{\dd N_P}{\dd} &= \frac{\partial \Pi(N_P, N_F(N_P), N_C)}{\partial N_P} \\
+         &= \frac{\partial}{\partial N_P} N_C g(\alpha N_P + \beta N_F^*(N_P)) \\
+        &= \underbrace{N_C g'(\alpha N_P + \beta N_F^*(N_P))}_{> 0} \left[ \alpha + \beta \frac{\partial N_F^*(N_P)}{\partial N_P} \right] \\
+        &< N_C g'(\alpha N_P + \beta N_F^*(N_P)) \left[ \alpha + \beta \left( -\frac{\alpha}{\beta} \right) \right] \\
+        &= 0.
+    \end{align*}
+\end{proof}
+
+The first part of this proposition is a stronger version of \Cref{cor:fringe_entry}.
+It states that, not only does the equilibrium number of fringe firms decrease as a response to an increase in $N_P$, but it establishes a lower bound for this decrease.
+And, as the second part shows, this bound is sufficient to guarantee that the total size of the pie ($\Pi(N_P, N_F, N_C)$) also decreases in equilibrium.
+
+This result has particularly strong implications in models where total profits (or total product variety) has a monotone relationship with consumer welfare, such as those in \textcite{anderson2020aggregative}.
+The demand system presented in the main text also has this property, and thus the results of this proposition apply to it as well.
+\begin{proof}[Proof of \Cref{prop:platform_profits_comparative_benchmark}]
+    Simply differentiate \Cref{eq:platform_profits_hybrid_benchmark} with respect to $N_P$.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:equilibrium_bargaining}]
+    $\pi^t_F(N_P ,N_F)$ adheres to the \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:additive_profit,ass:single_crossing}.
+    Therefore, by \Cref{prop:aggregate_size_additive}
+    \begin{align*}
+        N_F > 0 \implies \frac{\dd N_F}{\dd N_P} < -\frac{V_P}{V_F}
+    \end{align*}
+    immediately follows.
+    The second set of results can be obtained from this, as well as \Cref{eq:aggregate_simple}:
+    \begin{align*}
+        \frac{\dd A}{\dd N_P}& = V_P \frac{\dd N_P}{\dd N_P} + V_F \frac{\dd N_F}{\dd N_P} \\
+        &< V_P - V_F \frac{V_P}{V_F} = 0,
+    \end{align*}
+    where the inequality follows from the previous proposition.
+    Finally, $CS$ is also decreasing as
+    \begin{align*}
+        \frac{\dd CS}{\dd N_P} = \frac{\dd \mu \log(A)}{\dd N_P} < 0.
+    \end{align*}
+    
+    For the results about the pure retailer regime, use the fact that $A = N_P V_P + 1$ and $CS(A) = \mu\log(A)$.
+\end{proof}
+
+\Cref{prop:implied_entry_fee_comparative} can be viewed as a corollary of the previous theorem.
+\begin{proof}[Proof of \Cref{prop:implied_entry_fee_comparative}]
+    Remember that in the hybrid regime, regardless of $N_P$, the size o the aggregate is pinned down by the entry fee $K_F$ (\Cref{eq:aggregate_eq}).
+    Conversely, when given some $A$, there is a unique entry fee that supports it:
+    \begin{align*}
+        K_F^{impl} = \frac{\mu V_F}{A} - I_F.
+    \end{align*}
+    Furthermore, this entry fee is decreasing in $A$.
+    \Cref{prop:equilibrium_bargaining} states that $A$ is decreasing in $N_P$, and thus it follows that
+    \begin{align*}
+        \frac{\dd K_F^{impl}}{\dd N_P} = \underbracket{\frac{\dd K_F^{impl}}{\dd A}}_{<0} \underbracket{\frac{\dd A}{\dd N_P}}_{<0} > 0.
+    \end{align*}
+\end{proof}
+
+\paragraph{Platform profits -- general equilibrium}
+Now let us consider how the platform's product variety impacts its total profits, also taking into account its effect on the number of fringe entrants.
+While \Cref{prop:share_of_platform} establishes that the platform's profits increase in its own product variety, it is not a general equilibrium result.
+In particular, we know that increasing the platform's product variety leads to a decrease in the number of fringe entrants, and in total profits.
+It would be conceivable that this decrease in entry is so large that the platform's profits decrease as well.
+
+While I do not have a general result for the platform's profits in equilibrium, useful can be made.
+No matter the form of the profit function, the platform's profits always prefers more fringe firms to fewer in the bargaining model.
+The following proposition formalizes this idea.
+\begin{proposition}
+    \label{prop:hybrid_vs_retail_general}
+    Under \Cref{ass:additive_profit,ass:monotone_profits,ass:monotone_profits}, for any $N_C, N_P\leq 0$ and $0 \geq N_F \leq N_F'$
+    \begin{align*}
+        \pi_P(N_P, N_F, N_C) \leq \pi_P(N_P, N_F', N_C).
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:hybrid_vs_retail_general}]
+    \begin{align*}
+        \pi_P(N_P, N_F, N_C) &= N_C \int_0^1 w_P(s) f(N_P, s N_F) \ds \\
+        &\leq  N_C \int_0^1 w_P(s) f(N_P, s N_F') \ds \\
+        &= \pi_P(N_P, N_F', N_C)
+    \end{align*}
+    with the inequality being strict if $N_F < N_F'$ and $f$ is not constant its second argument on $[0, N_F']$.
+\end{proof}
+
+\Cref{prop:hybrid_vs_retail} is then a special case of this result.
+\begin{proof}[Proof of \Cref{hybrid_vs_retail}]
+    $\Pi$ satisfies \Cref{ass:additive_profit,ass:monotone_profits,ass:monotone_profits}.
+    The result is an immediate corollary of \Cref{prop:hybrid_vs_retail_general} with $N_F=0$ and $N'F=N_F(N_P)$.
+\end{proof}
+
+This observation then makes characterizing the profit-maximizing platform product variety in \Cref{sec:endogenizing_n_p} easier, as one does not have to worry about comparing the different regimes in the case of the bargaining model.
+If, for a given $N_P$, hybrid mode would be feasible, then it is also optimal compared to being a pure retailer.
+This result allows us to prove an important result from the main text about the platform's profits as a function of its number of products.
+\begin{proof}[Proof of \Cref{prop:comparative_n_p_bargaining}]
+    In the bargaining model, \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:additive_profit,ass:single_crossing} are satisfied.
+    From the proof of \Cref{eq:platform_profits}, the platform's profits are strictly concave in the entry fee $K_F$.
+    This implies that for a fixed $N_P$,
+    \begin{align}
+        &\frac{\dd \pi_P}{\dd K_F} > 0 \text{ if } K_F < K_F^{opt}, \nonumber \\
+        &\frac{\dd \pi_P}{\dd K_F} < 0 \text{ if } K_F > K_F^{opt}. \label{eq:profit_on_entry_fee}
+    \end{align}
+    Now let us consider platform profits, but parametrized through $N_P$ and $K_F$ instead of the usual $N_P$ and $N_F$:
+    \begin{align*}
+        \frac{\dd \pi_P}{\dd N_P} &= \frac{\dd \pi_P(N_P, K_F(N_P))}{\dd N_P} \\
+        &= \frac{\pi_P(N_P, K_F)}{\partial N_P} + \frac{\pi_P(N_P, K_F)}{\partial K_F} \frac{\partial K_F}{\partial N_P}.
+    \end{align*}
+    \Cref{prop:platform_profits_comparative_benchmark} establishes that
+    \begin{align*}
+        \frac{\pi_P(N_P, K_F)}{\partial N_P} = \frac{V_P}{V_F} I_F
+    \end{align*}
+    in the hybrid regime, while \Cref{prop:implied_entry_fee_comparative} states that
+    \begin{align*}
+        \frac{\partial K_F}{\partial N_P}.
+    \end{align*}
+    Together with \Cref{eq:profit_on_entry_fee}, the statement of the proposition follows.
+\end{proof}
+
+
+\subsection{Additional lemmas and proofs}
+\label{sec:lemmas}
+This subsection contains a couple of lemmas that are, while not very interesting on their own, necessary for the proofs in the previous sections.
+Furthermore, it contains the proofs of the results presented in \Cref{sec:results_benchmark}, as they are not related to the bargaining framework, and are thus omitted from the previous sections.
+
+The first lemma is helpful for establishing whether \Cref{ass:single_crossing} holds under a certain $f$ function.
+It states that showing that it holds for any affine transformation of $f$ is sufficient.
+\begin{lemma}
+    \label{lem:single_crossing_affine_transformation}
+    Let $g: \mathbb{R}^+ \to \mathbb{R}$ be a twice continuously differentiable function.
+    Define
+    \begin{align*}
+        G(x) = \int_0^1 g(sx) \ds.
+    \end{align*}
+    Assume that for any $x \geq 0$, $G'(x) < 0$ or $G''(x) < 0$.
+
+    Let $h(x) = c g(a + bx)$ for some $a, c > 0$ and $b > 0$.
+    Then the function $H(x) = \int_0^1 h(sx) \ds$ satisfies the same conditions: for any $x \geq 0$, $h'(x) < 0$ or $h''(x) < 0$.
+\end{lemma}
+\begin{proof}[Proof of \Cref{lem:single_crossing_affine_transformation}]
+    Differentiating $H$ yields
+    \begin{align*}
+        H'(x) &= \int_0^1 h'(sx) \ds \\
+              &= \int_0^1 c b g'(a + bsx) \ds \\
+              &= c b G'(a + bsx).
+    \end{align*}
+    Similarly, the second derivative is
+    \begin{align*}
+        H''(x) &= \int_0^1 h''(sx) \ds \\
+               &= \int_0^1 c b^2 g''(a + bsx) \ds \\
+               &= c b^2 G''(a + bsx).
+    \end{align*}
+    Now, for any $x \geq 0$, $y = a + bsx \geq 0$, therefore $G'(y) < 0$ or $G''(y) < 0$.
+    As $c, b > 0$, this implies that $H'(x) < 0$ or $H''(x) < 0$.
+\end{proof}
+
+The second one is useful for establishing the single crossing property for the fringe profits and investment costs.
+It states that in an equilibrium, the slope of the fringe profit function is smaller than the investment cost.
+\begin{lemma}
+    \label{lem:slope_at_eq}
+    Let the conditions in \Cref{ass:single_crossing} hold. Then for any $N_F^* > 0$ for which $\pi_F(N_P, N_F^*, N_C) = I_F N_F$, the partial derivative of fringe profits with respect to the number of fringe firms is smaller than the investment cost $I_F$:
+    \begin{align*}
+        \left. \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_F} \right|_{N_F = N_F^*} < I_F.
+    \end{align*}
+\end{lemma}
+\begin{proof}[Proof of \Cref{lem:slope_at_eq}]
+    \Cref{ass:single_crossing} states that at any $N_F \geq 0$, $\pi_F(N_P, N_F, N_C)$ is either concave or decreasing in $N_F$.
+    In the remainder, let us denote partial derivatives as follows:
+    \begin{align*}
+        \partial_F \pi_F(N_P^*, N_F^*, N_C^*) \coloneqq \left. \frac{\partial \pi_F(N_P, N_F,  )}{\partial N_F} \right|_{N_P = N_P*, N_F = N_F^*, N_C = N_C^*}.
+    \end{align*}
+
+    Notice that the fact that $\pi_F$ is concave or decreasing in $N_F$ implies that if $\partial_F \pi_F(N_P, N_F', N_C)$ for some $N_F' \geq 0$, then $\partial_F \pi_F(N_P, N_F'', N_C) < \partial_F \pi_F(N_P, N_F', N_C)$ for any $\tilde{N_F} < \bar{N_F}$.
+
+    Next, observe that if $\partial_F \pi_F(N_P, 0, N_C) < I_F$, then there is no equilibrium with $N_F > 0$.
+    To show this, assume by contradiction that $\exists N_F^* > 0$ such that $\pi_F(N_P, N_F^*, N_C) = I_F N_F^*$.
+    Then the mean value theorem implies that there is a $\bar{N}_F \in (0, N_F^*)$ such that $\partial_F \pi_F(N_P, \bar{N}_F, N_C) = I_F$.
+    However, this clearly cannot be the case as $\partial_F \pi_F(N_P, N_F, N_C) < I_F$ or $\pi_F(N_P, N_F, N_C) \leq 0$ for all $N_F > 0$.
+
+    Now let $N_F^*$ be a positive number for which $f(N_P, N_F^*, N_C) = I_F N_F^*$.
+    It is easy to see that $\partial \pi(N_P, N_F^*, N_C) < I_F$.
+    The reason is that if it exists, then $\partial_F \pi_F(N_P, 0, N_C) > I_F$.
+    Now if $\partial_F \pi_F(N_P, N_F, N_C) \geq I_F \forall N_F > 0$, then $f(N_P, N_F, N_F) > I_F N_F$, and the two functions do not intersect.
+    Therefore, there must exist some $\bar{N}_F > 0$ for which $\partial_F \pi_F(N_P, \bar{N}_F, N_C) < I_F$.
+    This in turn implies that $\partial_F \pi_F(N_P, N_F, N_C) \leq \partial_F \pi_F(N_P, \bar{N}_F, N_C) < I_F$ for all $N_F > \bar{N}_F$.
+\end{proof}
+
+The remainder of this section contains the proofs related to optimal product pricing and various results for the benchmark model.
+
+\begin{proof}[Proof of \Cref{prop:optimal_profit}]
+    The profit function for product $Ti$ is the following:
+    \begin{align*}
+        \pi^v_{T_i}(p_{T_i}) &= (p_{T_i} - c_T) x_{T_i}(p_{Ti}) \\
+        &= (p_{T_i} - c_T) \frac{\exp\left( \frac{v_T - p_{T_i}}{\mu} \right)}{A}.
+    \end{align*}
+    Note that $A$ is not influenced by changes in $p_{T_i}$, as $A$ is an integral and $p_T$ is only changed on a zero-measure (singleton) set.
+    Therefore, let calculate the first order condition while treating $A$ as a constant:
+    \begin{align}
+        \mu \frac{\exp\left( \frac{v_T - p_{T_i}}{\mu} \right)}{A} \left[ \frac{p_T - c_T}{\mu} - 1 \right] = 0.
+        \label{eq:foc_profit}
+    \end{align}
+    Also note that $\pi_{T_i}(p_{T_i})$ is strictly concave, so the FOC is sufficient for optimality.
+
+    Now simply rearrange \Cref{eq:foc_profit} to obtain
+    \begin{align*}
+        p_{T_i}^* = c_T + \mu
+    \end{align*}
+    and substitute it into the profit function to get
+    \begin{align*}
+        \pi_{T_i}^{v*} = \mu \frac{\exp \left( \frac{v_T - c_T - \mu}{\mu} \right)}{A}.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:equilibrium_aggregate_benchmark}]
+    From \Cref{prop:optimal_profit}, the variable profit of each fringe firm is $\pi_{F_i}^{v*} = \mu V_F / A$.
+    Total profit after entry fees and investment costs is therefore $\pi_{F_i}^{t*} = \mu V_F / A - I_F - K_F$.
+    Under free entry, total profits are zero:
+    \begin{align*}
+        0 = \pi_{F_i}^{t*} = \mu V_F / A - K_F - I_F.
+    \end{align*}
+    Simple rearrangement gives the formula we are looking for,
+    \begin{align*}
+        A = \mu \frac{V_F}{K_F + I_F},
+    \end{align*}
+    and substituting in $A = N_P V_P + N_F V_F + 1$ yields the equilibrium number of fringe firms,
+    \begin{align*}
+        N_F = \frac{\mu}{K_F + I_F} - N_P \frac{V_P}{V_F} - \frac{1}{V_F}.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:optimal_entry_fee}]
+    The total profit function of the platform is the following:
+    \begin{align}
+        \pi_P^t &= \pi_P^v + K_F N_F \nonumber \\
+        &= \mu \frac{N_P V_P}{K_F + I_F} + K_F \left[ \frac{\mu}{K_F + I_F} - N_P \frac{V_P}{V_F} - \frac{1}{V_F} \right]. \label{eq:platform_profits}
+    \end{align}
+    The function is strictly concave in $K_F$, so the first order condition is sufficient for optimality in the case of an interior solution.
+    Assume that the optimum is indeed interior.
+    Then the FOC is
+    \begin{align*}
+        \frac{\mu I_F V_F - (K_F + I_F)^2}{V_F (K_F + I_F)^2} = 0.
+    \end{align*}
+    Rearranging it gives the optimal entry fee
+    \begin{align*}
+        K_F^{opt} = \sqrt{\mu I_F V_F} - I_F,
+    \end{align*}
+    and substituting it into the profit function leads to
+    \begin{align*}
+        \pi_P^{*t} = \mu - 2\sqrt{\frac{I_F \mu}{V_F}} + \frac{I_F}{V_F} (N_P V_P + 1).
+    \end{align*}
+    Finally, note that
+    \begin{align*}
+        \pi_P^{*t} \geq \mu \frac{N_P V_P}{N_P V_P + 1},
+    \end{align*}
+    i.e., the profit that the platform could achieve by excluding the fringe completely.
+    Therefore, the optimum is indeed interior whenever $K_F$ is low enough
+
+    Now consider the case when $K_F^{opt}$ is so large that it would lead to no fringe entry.
+    In that case, the platform's only source of profit is selling its own products, and thus
+    \begin{align*}
+        \pi_P^{t} = \pi_P^{v} = \mu \frac{ N_P V_P}{N_P V_P + 1}.
+    \end{align*}
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:platform_profits_comparative_benchmark}]
+    Simply differentiate \Cref{eq:platform_profits_hybrid_benchmark} with respect to $N_P$.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:equilibrium_benchmark}]
+    The first statement follows from differentiating \Cref{eq:N_F_eq} with respect to $N_P$.
+    $\frac{\dd A}{\dd N_P} = 0$ follows from the fact that $A$ does not depend on $N_P$ in \Cref{eq:aggregate_eq}.
+    Finally, $\frac{\dd A}{\dd N_P} = 0$ follows from the fact that consumer surplus only depends on $A$.
+    
+    For the results about the pure retailer regime, use the fact that $A = N_P V_P + 1$ and $CS(A) = \mu\log(A)$.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{prop:optimal_n_p_benchmark}]
+    From \Cref{prop:optimal_entry_fee,prop:equilibrium_benchmark} we have that
+    \begin{itemize}
+        \item $\frac{\dd \pi_P}{\dd N_P} = \frac{V_P}{V_F} I_F$ if $N_F(N_P) > 0$,
+        \item $\frac{\dd \pi_P}{\dd N_P} < \frac{V_P}{V_F} I_F$ if $N_F(N_P) = 0$.
+    \end{itemize}
+    It immediately follows that if the platform can invest in $N_P$ at cost $I_P$, then the optimal number of products is the one that maximizes profits:
+    \begin{align*}
+        \frac{V_P}{I_P} < \frac{V_F}{I_F} &\implies N_P^* = 0, \\
+        \frac{V_P}{I_P} > \frac{V_F}{I_F} &\implies N_P^* > 0, N_F(N_P^*) = 0, \\
+        \frac{V_P}{I_P} = \frac{V_F}{I_F} &\implies N_P^* \in [0, \bar{N}_P] \text{ for some } \bar{N}_P > 0.
+    \end{align*}
+    \Cref{fig:optimal_n_p_benchmark} demonstrates this graphically.
+\end{proof}
+
+\section{Bargaining microfoundations and the cooperative game}
+This section examines the bargaining assumption from the main text in more detail.
+I proceed in two steps.
+First, I provides non-cooperative microfoundations for using the cooperative approach in the first place.
+Afterwards, I describe the aforementioned cooperative game in full formality, and derive the (weighted) Shapley value of this game.
+
+
+\subsection{Non-cooperative microfoundations for the bargaining outcome}
+\label{sec:bargaining_microfoundation}
+
+As part of the Nash program\footnote{
+    The research agenda aiming to find links between cooperative and non-cooperative game theory, started by nash1953two
+}, there have been a number of papers proposing microfoundations for the Shapley value in terms of non-cooperative, bargaining-related games \parencite[e.g.][]{gul1989bargaining,winter1994demand,hart1996bargaining,stole1996intra}.
+The cooperative platform game described in \Cref{sec:cooperative_game} satisfies the assumption for a number of these models, and thus any of those could be used to build microfoundations for the platform game.
+Among those, I will focus on \textcite{stole1996intra} for the reason that it specifically pertains to a setting with one indispensable player and many small players, just like the current paper.
+
+The model in \textcite{stole1996intra} is phrased in terms of intra-firm bargaining between the workers and the firm itself.
+The workers are assumed to have a fixed outside option, and the firm is the indispensable player.
+This translates directly to the platform game, with the platform being the indispensable player, and fringe firms having a zero outside option.
+Furthermore, in \textcite{stole1996intra}, the bargaining outcome is interpreted as the wage for the workers.
+In the current setting, this would translate to bargaining over profit shares.
+However, as I argue later on, it is equivalent to bargaining over entry fees.
+While this section focuses on the main model, with two-sided bargaining, and the Shapley value as the solution, the same logic can be applied to the extensions presented in \Cref{sec:extensions}, based on sections 3.1 and 3.2 of \textcite{stole1996intra}.
+Finally, the model is defined for a finite number of small players.
+The continuous version in this paper is the limit of this model as the number of fringe firms goes to infinity.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[node distance=2cm, auto]
+        \node[align=center] (entry_decision) {Potential entrants decide to invest \\ at cost $I_F$ \\ $[N_F]$};
+        \node[align=center, draw, dashed] (entry_fee) [below of=entry_decision] {Entry fees are negotiated \\ between platform \\ and $N_F$ fringe firms \\ $[K_F]$};
+        \node[align=center] (sales) [below of=entry_fee] {Platform and fringe \\ set product prices \\ $[p_{P_i}, p_{F_i}]$};
+        \node[align=center] (final) [below of=sales] {Consumers make \\ consumption decisions \\ $[x_{P_i}, x_{F_i}]$};
+        \draw[->] (entry_decision) -- (entry_fee);
+        \draw[->] (entry_fee) -- (sales);
+        \draw[->] (sales) -- (final);
+        
+        \node[align=center, right=of entry_decision, distance=3cm] (arrange_fringe) {Arrange fringe firms in some fixed order};
+        \node[align=center, below of=arrange_fringe] (foreach) {For each (remaining) fringe firm $F_i$:};
+        \node[align=center] (choose_proposer) [below=1cm of foreach] {$F_i$ or $P$ is chosen as the proposer};
+        \node[align=center] (proposal) [below of=choose_proposer] {Proposer proposes entry fee $K_{F_i}$};
+        \node[align=center] (accept) [below left=2cm and -2cm of proposal] {Responder accepts $K_{F_i}$};
+        \node[align=center] (reject) [below right=2cm and -2cm of proposal] {Responder rejects $K_{F_i}$};
+        \node[align=center] (next_player) [below of=accept] {Move on to the \\ next fringe firm};
+        \node[align=center] (eliminate) [below of=reject] {Eliminate $F_i$};
+
+        \draw[->] (arrange_fringe) -- (foreach);
+        \draw[->] (foreach) -- (choose_proposer);
+        \draw[->] (choose_proposer) -- (proposal);
+        \draw[->] (proposal) -- (accept);
+        \draw[->] (proposal) -- (reject);
+        \draw[->] (accept) -- (next_player);
+        \draw[->] (reject) -- (eliminate) node[midway,right] {$\rho$};
+
+        \draw[->] (reject.north) to [out=45, in=-45] node[midway,right] {$1 - \rho$} (choose_proposer.east);
+        \draw[->] (eliminate.east) to [out=45, in=-40] (foreach.east);
+        
+        \node [draw, dashed, fit=(arrange_fringe)(foreach)(proposal)(accept)(reject)(next_player)(eliminate), inner sep=1em] (expanded_game) {};
+        \draw[-, dashed] (entry_fee.north east) -- (expanded_game.north west);
+        \draw[-, dashed] (entry_fee.south east) -- (expanded_game.south west);
+    \end{tikzpicture}
+    \caption{Timing of the model with extensive-form bargaining. The panel on the right-hand side details the negotiation procedure for determining the entry fees.}
+    \label{fig:bargaining_microfoundations}
+\end{figure}
+
+Let us now describe the bargaining process in the platform game.
+First, a random order is determined for the fringe firms.
+This order will remain fixed throughout the bargaining phase
+
+Then, for each fringe firm (following the order determined earlier), the platform and the fringe firm negotiate over the entry fee.
+This bilateral negotiation follows the alternating offer procedure described in \textcite{binmore1986nash}.
+One of the two players is chosen as a proposer, and can propose an entry fee for the given firm: $K_{F_i}$.
+The other player can either accept or reject the proposal.
+
+If the proposal is accepted, the negotiation moves on to the next fringe firm.
+If it is rejected, with probability $1-\rho$, the other player becomes the proposer, and the negotiation continues.
+Finally, with probability $\rho$, the negotiations break down, and the fringe firm is eliminated from the rest of the game.
+Crucially, after a breakdown occurs, all of the previous offers are voided, and the platform and the remaining fringe firms start the negotiation process from the beginning (following the same, pre-determined order, but skipping the eliminated firms).
+
+This bargaining process is repeated until all fringe firms have either accepted an offer or been eliminated.
+\Cref{fig:bargaining_microfoundations} provides an illustration of the bargaining process, and how it fits into the broader game.
+Theorem 2 in \textcite{stole1996intra} shows that regardless of the ordering of the fringe firms, the unique subgame perfect equilibrium of this game is the Shapley value of the cooperative game.
+Note, that this result is not only true in expectation: conditioning on any ordering of the fringe firms, the result still holds.
+
+The final piece that is needed to establish the interpretation in terms of entry fees is that for any given configuration of firms emerging from the bargaining process, and, crucially, regardless of the agreed upon entry fees, the unique equilibrium of the subsequent game is the one described in \Cref{sec:results_demand}.
+According to the previous theorem, players want to agree on a contract such that their final, total profits $\pi^t_{F_i}$ are equal to their Shapley value ($\varphi_{F_i}$).
+Given any equilibrium sales profits ($\pi^v_{F_i}$), they can achieve it by setting the entry fees to $K_{F_i} = \varphi_{F_i} - \pi^v_{F_i}$.
+Finally, \Cref{sec:cooperative_game} and \Cref{sec:results_demand} establish that both the Shapley value and the equilibrium sales profits are identical for each fringe firms, and thus a single, common entry fee $K_F$ will be agreed upon.
+
+\subsection{Cooperative game}
+\label{sec:cooperative_game}
+
+Now let us examine how the profit sharing rule from \Cref{ass:profit_sharing} can be derived from various cooperative games.
+In each of the following subsections, I formally define a cooperative game that models the platform setting, and derive the (weighted) Shapley values of the various players.
+I show that they correspond to the formulas given in \Cref{ass:profit_sharing}, with a specific choice of weight functions $w_P$ and $w_F$ for each case.
+
+I start with the simplest case: one-sided bargaining and the usual Shapley value \parencite{shapley1953additive}.
+Then, I look at weighted values \parencite{weber1988probabilistic} in the same cooperative game.
+Finally, I consider the case when the consumers also participate in the bargaining process, and derive the corresponding Shapley values.
+
+\subsubsection{One-sided case}
+\label{sec:cooperative_game_one_sided}
+
+In the first setting, the platform and the fringe firms bargain over the total profits they generate together, and the consumers are not included in the negotiations.
+This corresponds to the model in the main text.
+The following cooperative game describes this case.
+
+Consider the game $\mathcal{G} = (\mathcal{N}, v)$, characterized by the set of players $\mathcal{N}$ and its characteristic function $v$.
+The set of players consists of the platform plus the fringe firms: $\mathcal{N} = \{P, F_i\}, i \in [0, N_F]$.
+Because the platform is indispensable, the value of a coalition $S$ is zero without the platform, and depends on the number of fringe firms otherwise:
+\begin{align*}
+    v(S) = \begin{cases}
+        0 & \text{if } P \notin S \\
+        f(N_P, n_F(S)) & \text{if } P \in S
+    \end{cases},
+\end{align*}
+where $n_F(S)$ is the measure of fringe firms in $S$.
+
+The following proposition describes the Shapley value of the platform ($\varphi_P(\mathcal{G})$) and the fringe firms ($\varphi_F(\mathcal{G})$) in this game.
+
+\begin{proposition}
+    \label{prop:profit_sharing_one_sided}
+    Consider the cooperative game above.
+    Then, the Shapley values of the platform and the fringe firms are given by
+    \begin{align*}
+        \varphi_P(\mathcal{G}) &= \int_0^1 f(N_P, s N_F) \ds, \\
+        \varphi_P(\mathcal{F}) &= \int_0^1 s N_F \partial_2 f(N_P, s N_F) \ds.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:profit_sharing_one_sided}]
+    This result is a direct application of Proposition 3 and Corollary 2 in \textcite{stancsics2023value}.
+\end{proof}
+
+As an immediate consequence, if bargaining outcomes are described by the Shapley value, then the resulting allocations satisfy \Cref{ass:profit_sharing} with $w_P(s) \equiv 1$ and $w_F(s) = s$.
+
+
+\subsubsection{Weighted value}
+\label{sec:cooperative_game_weighted}
+
+Now let us generalize the previous result, and assume instead that players' shares are described by their weighted values.
+As before, let us start by formally describing the cooperative game.
+The set of players and the characteristic function are the same as in \Cref{sec:cooperative_game_one_sided}, but now the game is additionally endowed with a weight system $\mathbf{\lambda} = \{\lambda_P, \lambda_{F}(i)\}$.
+Let us assume that all fringe players have the same weight $\lambda_{F}(i) \equiv 1$.
+This describes the situation in \Cref{sec:higher_bargaining_power}.
+
+Then, the weighted values of the players are described by the following proposition.
+
+\begin{proposition}
+    \label{prop:profit_sharing_weighted}
+    Consider the cooperative game above.
+    Then, the weighted values of the platform and the fringe firms are given by
+    \begin{align*}
+        \varphi_P(\mathcal{G}) &= \int_0^1 \lambda_P s ^ {\lambda_P - 1} f(N_P, s N_F) \ds, \\
+        \varphi_F(\mathcal{G}) &= \int_0^1 s ^ {\lambda_P} N_F \partial_2 f(N_P, s N_F) \ds.
+    \end{align*}
+\end{proposition}
+\begin{proof}[Proof of \Cref{prop:profit_sharing_weighted}]
+    This result is a direct application of Proposition 4 in \textcite{stancsics2023value}.
+\end{proof}
+
+As before, the resulting allocations satisfy \Cref{ass:profit_sharing} with $w_P(s) \equiv \lambda_P s ^ {\lambda_P - 1}$ and $w_F(s) = s ^ {\lambda_P}$.
+
+
+\subsubsection{Two-sided case}
+\label{sec:cooperative_game_two_sided}
+
+Finally, in certain settings, it might be appropriate to assume that the consumers (or, more generally, the entities on the other side of the market) also engage in the bargaining process.
+An example for this is \Cref{sec:two_sided}
+In such a case, cooperative game describing can be formalized as follows.
+
+The set of players consists of the platform plus the fringe firms: $\mathcal{N} = \{P, F_i, C_j\}, i \in [0, N_F], j \in [0, N_C]$.
+The value of a coalition $S$ is zero without the platform, and depends on the number of fringe firms otherwise:
+\begin{align*}
+    v(S) = \begin{cases}
+        0 & \text{if } P \notin S \\
+        n_C(S) f(N_P, n_F(S)) & \text{if } P \in S
+    \end{cases},
+\end{align*}
+where $n_F(S)$ and $n_C(S)$ is the measure of fringe firms and consumers, respectively, in $S$.
+
+As in the one-sided case, simple expressions exist for the Shapley value of the platform ($\varphi_P(\mathcal{G})$), fringe firms ($\varphi_F(\mathcal{G})$) and consumers ($\varphi_C(\mathcal{G})$).
+
+\begin{proposition}
+    \label{prop:profit_sharing_two_sided}
+    Consider the case when only the platform and the fringe firms participate in the bargaining process.
+    Then, the resulting profit shares are given by
+    \begin{align*}
+        \varphi_P(\mathcal{G}) &= N_C \int_0^1 s f(N_P, s N_F) \ds, \\
+        \varphi_F(\mathcal{G}) &= N_C \int_0^1 s^2 N_F \partial_2 f(N_P, s N_F) \ds \\
+        \varphi_C(\mathcal{G}) &= N_C \int_0^1 s f(N_P, s N_F) \ds.
+    \end{align*}
+\end{proposition}
+\begin{proof}[proof of \Cref{prop:profit_sharing_two_sided}]
+    This result is a direct application of Proposition 11 in \textcite{stancsics2023value}.
+\end{proof}
+
+One thing to note is that the platform's and fringe firms' shares are lower than in the one-sided case.
+This is due to the fact of needing to share the pie with the consumers, too.
+Additionally, the platform's share is identical to the consumers' (aggregated) share.\footnote{
+    This stems from the linearity of the profit function in the number of consumers.
+}
+This foreshadows the idea that -- even though it might not be welfare-maximizing -- what's good for the platform might also good for the consumers in the two-sided case.
+Finally, as in both examples before, these values satisfy \Cref{ass:profit_sharing} with $w_P(s) = s$ and $w_F(s) = s^2$.
