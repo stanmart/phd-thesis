@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import subprocess
 
@@ -69,22 +70,25 @@ def find_input_files(
         re.compile(r"\\pgfplotstableread(?:\[.*\])\{(.*)\}"),
     ]
 
-    recursable_paths = sum((pattern.findall(tex_contents) for pattern in recursable_patterns), [])
-    terminal_paths = sum((pattern.findall(tex_contents) for pattern in terminal_patterns), [])
+    recursable_paths = sum(
+        (pattern.findall(tex_contents) for pattern in recursable_patterns), []
+    )
+    terminal_paths = sum(
+        (pattern.findall(tex_contents) for pattern in terminal_patterns), []
+    )
 
     paths = set(recursable_paths) | set(terminal_paths)
 
     if recursive:
         for path in recursable_paths:
-            paths |= find_input_files(path, recursive=True)
+            if os.path.exists(path):
+                paths |= find_input_files(path, recursive=True)
 
     if print_console:
         for path in paths:
             print(path)
 
     return paths
-
-    
 
 
 @app.command()
