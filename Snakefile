@@ -33,7 +33,7 @@ rule dissertation:
 
 rule update_latex_deps:
     input:
-        deps = expand("out/paper/{paper}.dep", paper=PAPERS)
+        deps = expand("out/paper/{paper}.dep", paper=PAPERS + ["dissertation"]),
     output:
         dep_file = "tl_packages.txt"
     shell:

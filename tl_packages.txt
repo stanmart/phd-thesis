@@ -1,6 +1,7 @@
 amscls
 amsfonts
 amsmath
+appendix
 apptools
 auxhook
 biber
