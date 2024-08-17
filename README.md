@@ -52,4 +52,4 @@ The project uses Github Actions to automatically compile the outputs and upload 
  * `pyright` for Python type checking
  * `codespell` for spell checking
 
-If they do, the `publish` job is triggered, which compiles the outputs and uploads them to the `gh-pages` branch. The results can be found at `stanmart.github.io/ValueOfIntermediation/{output}`.
+If they do, the `publish` job is triggered, which compiles the outputs and uploads them to the `gh-pages` branch. The results can be found at `stanmart.github.io/phd-thesis/{output}`.
