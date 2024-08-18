@@ -11,8 +11,10 @@ bitset
 booktabs
 caption
 cleveref
+datetime
 etexcmds
 etoolbox
+fmtcount
 gettitlestring
 graphics
 hycolor
@@ -49,3 +51,4 @@ tools
 uniquecounter
 url
 xcolor
+xkeyval
