@@ -25,8 +25,6 @@
 \usepackage[backend=biber,style=authoryear,maxbibnames=99,hyperref=true]{biblatex}
 \usepackage{mfirstuc}
 
-\setstretch{1.15}
-
 \hypersetup{colorlinks, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue}
 
 \addbibresource{src/paper/references.bib}
@@ -129,13 +127,22 @@
 
 \input{src/paper/dissertation/titlepage.tex}
 
+\setstretch{1.1}
+
 \tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\onehalfspacing
 
 \chapter{Introduction}
+\setcounter{page}{1}
 
 \input{src/paper/dissertation/introduction.tex}
 
-\chapter{The value of being indispensable: a cooperative approach to bargaining with a continuum of players}
+\chapter[The value of being indispensable]{%
+    The value of being indispensable\\\vspace{0.4cm}%
+    \large{A cooperative approach to bargaining with a continuum of players}%
+}
 
 \input{src/paper/theory/body.tex}
 \begin{subappendices}
@@ -148,11 +155,17 @@
     \input{src/paper/application/appendix.tex}
 \end{subappendices}
 
-\chapter{Characterizing Multiplayer Free-Form Bargaining: A Lab experiment}
+\chapter[Characterizing Multiplayer Free-Form Bargaining]{%
+    Characterizing Multiplayer Free-Form Bargaining\\\vspace{0.4cm}%
+    \large{A Lab experiment}\\\vspace{0.2cm}%
+    \large{\textit{joint work with Mia Lu}}%
+}
 \input{src/paper/experiment/body.tex}
 \begin{subappendices}
     \input{src/paper/experiment/appendix.tex}
 \end{subappendices}
+
+\singlespacing
 
 \printbibliography
 
