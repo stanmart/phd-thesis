@@ -32,6 +32,8 @@
 \addbibresource{src/paper/references.bib}
 \DeclareFieldFormat{jtnoformat}{\capitalisewords{#1}}
 
+\setcounter{tocdepth}{1}
+
 \usepgfplotslibrary{fillbetween}
 \usetikzlibrary{shapes}
 \usetikzlibrary{intersections}
@@ -57,7 +59,40 @@
 \AtAppendix{\counterwithin{lemma}{section}}
 \AtAppendix{\counterwithin{assumption}{section}}
 \AtAppendix{\counterwithin{equation}{section}}
-\AtAppendix{\counterwithin{figure}{section}}
+% \AtAppendix{\counterwithin{figure}{section}}
+
+\AtBeginEnvironment{subappendices}{%
+    \addcontentsline{toc}{chapter}{Appendices}
+    \counterwithin{figure}{section}
+    \counterwithin{table}{section}
+    \counterwithin{definition}{section}
+    \counterwithin{proposition}{section}
+    \counterwithin{theorem}{section}
+    \counterwithin{corollary}{section}
+    \counterwithin{lemma}{section}
+    \counterwithin{assumption}{section}
+    \counterwithin{equation}{section}
+}
+\AtEndEnvironment{subappendices}{%
+    \counterwithout{figure}{section}
+    \counterwithout{table}{section}
+    \counterwithout{definition}{section}
+    \counterwithout{proposition}{section}
+    \counterwithout{theorem}{section}
+    \counterwithout{corollary}{section}
+    \counterwithout{lemma}{section}
+    \counterwithout{assumption}{section}
+    \counterwithout{equation}{section}
+    \counterwithin{figure}{section}
+    \counterwithin{table}{section}
+    \counterwithin{definition}{section}
+    \counterwithin{proposition}{section}
+    \counterwithin{theorem}{section}
+    \counterwithin{corollary}{section}
+    \counterwithin{lemma}{section}
+    \counterwithin{assumption}{section}
+    \counterwithin{equation}{section}
+}
 
 \lstset{
     basicstyle=\footnotesize\ttfamily,
