@@ -1,29 +1,55 @@
+\makeatletter
+    \let\inserttitle\@title
+    \let\insertauthor\@author
+    \let\insertdate\@date
+    \let\insertchairman\@chairman
+    \let\insertcommittee\@committee
+\makeatother
+
 \begin{titlepage}
-    \begin{singlespace}
+    \begin{doublespace}
     \begin{center}
-        \vspace*{1cm}
+        \vspace*{3cm}
 
-        \textbf{Essays on Bargaining}
-
-        \vspace{0.5cm}
-         Thesis Subtitle
-             
-        \vspace{1.5cm}
- 
-        \textbf{Martin Stancsics}
+        \begin{LARGE}
+            \textbf{\inserttitle}
+        \end{LARGE}
 
         \vfill
-             
-        A thesis presented for the degree of\\
-        Doctor of Philosophy
-             
-        \vspace{0.8cm}
 
-        Department of Economics\\
-        Universität Zürich\\
-        Switzerland\\
-        August 30, 2024
+        \begin{large}
+            Dissertation submitted to the\\Faculty of Economics, Business Administrationand Information Technology\\of the University of Zurich
+        \end{large}
+ 
+        \vfill
+
+        \begin{large}
+            to obtain the degree of\\
+            Doctor of Philosophy in Economics
+        \end{large}
+
+        \vfill
+
+        \begin{large}
+            presented by\\
+            \textbf{\insertauthor}\\
+            from Zalaegerszeg, Hungary
+        \end{large}
+
+        \vfill
+
+        \begin{large}
+            approved in \monthyeardate\insertdate
+        \end{large}
+
+        \vfill
+
+        \begin{large}
+            at the request of\\\insertcommittee
+        \end{large}
+
+    \vspace*{1cm}
 
     \end{center}
-    \end{singlespace}
+    \end{doublespace}
 \end{titlepage}

@@ -22,8 +22,17 @@
 \usepackage{snapshot}
 \usepackage{appendix}
 \usepackage{apptools}
+\usepackage{datetime}
 \usepackage[backend=biber,style=authoryear,maxbibnames=99,hyperref=true]{biblatex}
 \usepackage{mfirstuc}
+
+\makeatletter
+    \def\chairman#1{\gdef\@chairman{#1}}
+    \def\@chairman{\@latex@warning@no@line{No \noexpand\chairman given}}
+    \def\committee#1{\gdef\@committee{#1}}
+    \def\@committee{\@latex@warning@no@line{No \noexpand\committee given}}
+\makeatother
+
 
 \hypersetup{hidelinks}
 
@@ -49,15 +58,6 @@
 
 \Crefname{assumption}{assumption}{assumptions}
 \Crefname{assumption}{Assumption}{Assumptions}
-
-\AtAppendix{\counterwithin{definition}{section}}
-\AtAppendix{\counterwithin{proposition}{section}}
-\AtAppendix{\counterwithin{theorem}{section}}
-\AtAppendix{\counterwithin{corollary}{section}}
-\AtAppendix{\counterwithin{lemma}{section}}
-\AtAppendix{\counterwithin{assumption}{section}}
-\AtAppendix{\counterwithin{equation}{section}}
-% \AtAppendix{\counterwithin{figure}{section}}
 
 \AtBeginEnvironment{subappendices}{%
     \addcontentsline{toc}{chapter}{Appendices}
@@ -98,6 +98,9 @@
     breaklines=true,
 }
 
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
+\newdateformat{monthdayyeardate}{\monthname[\THEMONTH] \THEDAY, \THEYEAR}
+
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\dt}{\mathrm{d}t}
 \newcommand{\ds}{\mathrm{d}s}
@@ -120,14 +123,20 @@
 \pgfplotstableread[col sep=comma]{out/figures/equilibrium_profit_onesided_scale-1_lambda-2.csv}\equilibriumProfitOneSidedHighLambda
 
 \title{Essays on bargaining}
-\author{Martin Stancsics \\ \normalsize{University of Zurich}}
+\author{Martin Stancsics}
 \date{\today}
+\chairman{Prof. Dr. Steven Ongena}
+\committee{%
+    Prof. Dr. Armin Schmutzler\\%
+    Prof. Dr. Marek Pycia
+}
 
 \begin{document}
 
 \input{src/paper/dissertation/titlepage.tex}
+\input{src/paper/dissertation/uzh_disclaimer.tex}
 
-\setstretch{1.1}
+\setstretch{1.05}
 
 \tableofcontents
 \addtocontents{toc}{\protect\thispagestyle{empty}}
@@ -167,6 +176,7 @@
 
 \singlespacing
 
+\addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 
 \end{document}
