@@ -5,16 +5,16 @@
 \label{sec:higher_bargaining_power}
 
 In the previous sections, I assumed that the platform and the fringe firms split total profits according to their Shapley values.
-Because of the symmetry property of the Shapley value, this excludes the possibility of players having some kind of innate bargaining power, which is not related to their profit functions.
-In this extension, I will relax this assumption, and assume instead that profits are shared according to \emph{weighed} values.
-These are a generalization of the Shapley value, where each player has a weight $w_i$ that can, in certain settings, be thought of as a parameter describing bargaining power.\footnote{
+The symmetry property of the Shapley value excludes the possibility of players having some innate bargaining power which is not related to their profit functions.
+In this extension, I will relax this assumption and assume instead that profits are shared according to \emph{weighed} values.
+These are a generalization of the Shapley value, where each player has a weight $w_i$ that can, in certain settings, be considered a parameter describing bargaining power.\footnote{
     \textcite{hart1996bargaining} and \textcite{stole1996intra} provide foundations for this interpretation.
 }
 I still assume that fringe firms are identical, also in regard to their bargaining weights.
 Therefore, the only difference is between the platform and the fringe firms.
 Let us denote the platform's bargaining weight as $\lambda_P \in \mathbb{R}^+$, and without loss of generality, normalize the fringe firms' weights to 1.
 
-As shown in \Cref{sec:cooperative_game_weighted}, the weighted Shapley value, and thus final profits in this setting is given by
+As shown in \Cref{sec:cooperative_game_weighted}, the weighted Shapley value, and thus final profits in this setting, is given by
 \begin{proposition}
     \label{prop:weighted_shapley_value}
     The Shapley value of the platform and the fringe firms, and thus final total profits, are given by:
@@ -26,7 +26,7 @@ As shown in \Cref{sec:cooperative_game_weighted}, the weighted Shapley value, an
 \begin{proof}[Proof of \Cref{prop:weighted_shapley_value}]
 \end{proof}
 This result is a direct consequence of \Cref{prop:profit_sharing_weighted}.
-It is similar to the non-weighted value in that it is an average of marginal contributions, but now those averages are weighted, with the weight function depending on platform's bargaining weight.
+It is similar to the non-weighted value in that it is an average of marginal contributions.However, now those averages are weighted, with the weight function depending on the platform's bargaining weight.
 
 The interpretation of $\lambda_P$ as a bargaining weight for the platform is supported by the fact that the platform's profit function is increasing in it.
 \begin{proposition}
@@ -41,21 +41,20 @@ The interpretation of $\lambda_P$ as a bargaining weight for the platform is sup
     For any $\lambda < \lambda'$, $\int_0^s \lambda t^{\lambda - 1} \dt = s^\lambda > s^{\lambda'} = \int_0^s \lambda' t^{\lambda' - 1} \dt \forall s \in [0, 1]$.
     Therefore, for any (non-constant) function $\Pi$, $\int_0^1 \lambda s^{\lambda - 1} \Pi(s) \ds > \int_0^1 \lambda' s^{\lambda' - 1} \Pi(s) \ds$.
 \end{proof}
-In fact, the limits as $\lambda_P \to 0$ and $\lambda_P \to \infty$ are quite intuitive: in the former case, the platform's profits are zero, while in the latter case it is able to appropriate all profits.
+In fact, the limits as $\lambda_P \to 0$ and $\lambda_P \to \infty$ are quite intuitive: in the former case, the platform's profits are zero, while in the latter case, it can appropriate all of the profits.
 That is, these limits correspond to the platform either receiving or making take-it or leave-it offers.
 
-The example parametrizatrion is the same as in the main model, with the only difference that the platform has a higher innate bargaining power ($\lambda_P = 2$).
-The main result, namely that the platform's product variety has a negative effect on consumer welfare in the hybrid regime, still holds.
-That is, as shown on \Cref{fig:fringe_entry_eq_high_lambda}, total aggregate is decreasing in $N_P$ throughout the hybrid regime, due to the platform's products displacing more fringe products than their total number.
+The example parametrization is the same as in the main model, with the only difference being that the platform has a higher innate bargaining power ($\lambda_P = 2$).
+The main result, namely that increasing the platform's product variety has a negative effect on consumer welfare in the hybrid regime, still holds.
+That is, as shown on \Cref{fig:fringe_entry_eq_high_lambda}, the total aggregate is decreasing in $N_P$ throughout the hybrid regime due to the platform's products displacing more fringe products than their total number.
 
-The main difference is that, for any $N_P\geq 0$, the implied entry fee (\Cref{fig:platform_profits_high_lambda}) is higher than the benchmark, unilaterally set one,  due to the higher bargaining power of the platform.
+The main difference is that, for any $N_P\geq 0$, the implied entry fee (\Cref{fig:platform_profits_high_lambda}) is higher than the benchmark, unilaterally set one,  due to the higher bargaining power of the platform.
 That is, for any $N_P$, the platform would prefer to set a lower entry fee, but it is unable to do so due to its high bargaining power.
 Total aggregate, and thus consumer surplus, is also below the main model's outcome in this case.
 
-Another major difference pertains to the total profits of the platform as a function of $N_P$.
-It is still true that they are increasing in the number of the platform's products, but now this increase is even slower in the hybrid regime.
-The reason is that the implied entry fee is always higher than the optimal one, therefore an increase the positive effect of an increase in $N_P$ is somewhat counterbalanced by the entry fee becoming even more suboptimal.
-
+Another significant difference pertains to the total profits of the platform as a function of $N_P$.
+It is still true that they are increasing in the number of the platform's products, but now this increase is slower in the hybrid regime.
+The reason is that the implied entry fee is always higher than the optimal one, therefore the positive effect of an increase in $N_P$ is somewhat counterbalanced by the entry fee becoming even more suboptimal.
 
 \begin{figure}
     \centering
@@ -187,15 +186,15 @@ The reason is that the implied entry fee is always higher than the optimal one, 
 \subsection{Three sided bargaining}
 \label{sec:two_sided}
 
-In the second extension, I consider the case when the other side also participate in the bargaining process.
-This is more plausible in business to business settings, therefore I use the term customers instead of consumers in this section.
+In the second extension, I consider the case when the other side also participates in the bargaining process.
+This is more plausible in business-to-business settings, so I use the term customers instead of consumers in this section.
 Nevertheless, I use the same demand structure as in the main model.
 
 This extension entails two changes compared to the main model.
-First, the players bargain over the total surplus generated on all sides of the market, not just total profits.
+First, the players bargain over the total surplus generated on all sides of the market, not just the total profits from selling the products.
 Second, the outcomes are assumed to be described by a cooperative game with three types of players: the platform, the fringe firms, and the consumers.
 
-Let us start by deriving total surplus as a function of $N_P, N_F$ and $N_C$ (the number of customers).
+Let us start by deriving total surplus as a function of $N_P, N_F$, and $N_C$ (the number of customers).
 Under the logit-like demand structure described in \Cref{sec:demand}, the total surplus is given by
 \begin{proposition}
     \label{prop:profits_total_surplus}
@@ -208,7 +207,7 @@ Under the logit-like demand structure described in \Cref{sec:demand}, the total 
     See \textcite{small1981applied} for a derivation for the discrete case.
     The continuous case is analogous.
 \end{proof}
-Note, that this expression is of the form $\Pi(N_P, N_P, N_C) = N_C f(N_P, N_F)$.
+Note that this expression is of the form $\Pi(N_P, N_P, N_C) = N_C f(N_P, N_F)$.
 Furthermore, $f(N_P, N_F) = g(V_P N_P + V_F N_F)$ for an increasing, strictly concave $g$.
 
 Next, let us consider the bargaining outcomes in this three-sided setting.
@@ -229,10 +228,10 @@ To summarize, the various players share the total surplus in the following way.
 
 There are a number of things to note here.
 First, and most importantly, the customers' share from total surplus is equal to the platform's.\footnote{
-    This is a consequence of the fact that customers are ex ante identical, and each of them buy one product, therefore demand, and in turn total surplus is linear in $N_C$.
+ This is a consequence of the fact that customers are ex ante identical, and each of them buy one product, therefore demand, and in turn total surplus is linear in $N_C$.
 }
-As a consequence, what's good for the platform is also optimal for the customers.
-Therefore, if the platform can choose its mode of operation to maximize its profits, it maximizes the customers' surplus, as well (but not necessarily total surplus).
+As a consequence, what is good for the platform is also beneficial for the customers.
+Therefore, if the platform can choose its mode of operation to maximize its profits, it also maximizes the customers' surplus (but not necessarily total surplus).
 
 Second, it can be shown that due to the fringe firms' total profit function having a similar shape as in the main model, the same results hold in terms of the platform's product variety displacing fringe products.
 \begin{proposition}
@@ -274,8 +273,8 @@ As a consequence, the aggregate is decreasing in $N_P$ in the hybrid regime (\Cr
 \end{proof}
 
 Nevertheless, there is an important distinction compared to the previous results.
-While this does lead to a decrease in total surplus, in contrast to the two-sided bargaining case, this does not imply a decrease in the customers' surplus.
-Their share of total surplus is equal to the platform's profits, and thus it is increasing in $N_P$ if and only if platform profits (\Cref{fig:profits_full_surplus_two_sided}) are.
+While this does decrease total surplus, in contrast to the two-sided bargaining case, it does not imply a decrease in the customers' surplus.
+Their share of the total surplus is equal to the platform's profits, and thus, it is increasing in $N_P$ if and only if platform profits (\Cref{fig:profits_full_surplus_two_sided}) are.
 Therefore, customers might prefer hybrid operation to the platform being a pure marketplace.
 
 \begin{figure}
@@ -347,7 +346,7 @@ Therefore, customers might prefer hybrid operation to the platform being a pure 
 
 While the main text examines bargaining between the platform and the entrants in the context of a specific, logit-like demand system, many of the results are more general.
 This section presents those and the necessary assumptions.
-As the results on the main text are not proven directly, but rather derived from the general results, the proofs are also included here.
+As the results in the main text are not proven directly, but rather derived from the general results, the proofs are also included here.
 
 \subsection{Production}
 \label{sec:more_general_production}
@@ -361,18 +360,15 @@ Let us assume the following reduced-form, but rather general total profit (or, w
     \end{align*}
     where $f: \mathbb{R}^+_0 \times \mathbb{R}^+_0 \to \mathbb{R}^+_0$.
 \end{assumption}
-It can be justified for markets with the following features: (1) all fringe firms are identical, thus only their number matters in terms of total profit, and (2) consumers are also identical (bar their idiosyncratic taste shocks).
+It can be justified for markets with the following features: (1) all fringe firms are identical, so only their number matters in terms of total profit, and (2) consumers are also identical (bar their idiosyncratic taste shocks).
 
 I will assume that, in addition to being increasing in the number of consumers, total profits are also increasing in both the number of fringe firms and the platform' products.
 \begin{assumption}
     \label{ass:monotone_profits}
     $f(N_P, n_F)$ is increasing in both $N_P$ and $N_F$.
 \end{assumption}
-Such profit functions arise in settings in which the profit reduction from increased competition is dominated by extra sales due to increased product variety.
-One such example is \textcite{anderson2020aggregative}, where the demand exhibits love for variety, while consumers have access to an outside option.
-Alternatively, indirect network effects, such as those in two-sided markets, can also result in such increasing profits.
-\textcite{chen2008price} demonstrates that under certain circumstances an even more extreme phenomenon might occur: competition may not only increase industry-wide profits, but prices, as well.
-Finally, under the assumption that the platform can extract consumer surplus through entry fees or some similar mechanism, this assumption is be true for any demand system in which total surplus is increasing in product variety.
+Such profit functions arise in settings where the profit reduction from increased competition is dominated by extra sales due to increased product variety.
+\Cref{sec:results_discussion} discusses this assumption in more detail.
 
 \subsection{Profit sharing}
 \label{sec:more_general_profit_sharing}
@@ -386,14 +382,14 @@ Next, assume that the platform and the fringe share profits according to the fol
         \pi_F(N_P, N_F, N_C) &= N_C \int_0^1 w_F(s) N_F \partial_2 f(N_P, s N_F) \ds.
     \end{align*}
 \end{assumption}
-It covers the cases in the main text (namely the Shapley value and the weighted value, and three-way bargaining), but is also more general than those.
-In particular, in the platform game, any random order value \parencite{weber1988probabilistic} can be described by such a rule.
+It covers the cases in the main text and the extensions (namely, the Shapley value, the weighted value, and three-way bargaining) but is also more general than those.
+In particular, in the platform game, such a rule can describe any random order value \parencite{weber1988probabilistic}.
 
 In the main text, I use a simpler version of this profit sharing rule.
 I assume that $w_P(s) = w_F(s) \equiv 1$.
-As \Cref{sec:cooperative_game} demonstrates, this corresponds to players. Getting their Shapley values in the end.
-Together with the assumptions on the demand system, one can even derive a closed form expression for the platform's profit share (\Cref{prop:platform_profits_bargaining}).
-The proof if this proposition is given below.
+As \Cref{sec:cooperative_game} demonstrates, this corresponds to players getting their Shapley values.
+Together with the assumptions on the demand system, one can even derive a closed-form expression for the platform's profit share (\Cref{prop:platform_profits_bargaining}).
+The proof of this proposition is given below.
 \begin{proof}[Proof of \Cref{prop:platform_profits_bargaining}]
     Simply integrate the total industry profit function with respect to the mass of fringe entrants obtain the platform's share of the pie:
     \begin{align*}
@@ -412,9 +408,9 @@ The proof if this proposition is given below.
     \end{align*}
 \end{proof}
 
-Apart from the cooperative foundations, one major justification for this profit allocation rule is its intuitive behavior in terms of comparative statics.
+Apart from the cooperative foundations, one primary justification for this profit allocation rule is its intuitive behavior in terms of comparative statics.
 To illustrate this, let us examine what happens when one varies the substitutability between the fringe firms.
-As it turns out, the platform's share increases if the fringe firms are more substitutable.
+As it turns out, the platform's share increases when the fringe firms are more substitutable.
 The following observation demonstrates this idea.
 \begin{proposition}
     \label{prop:outcome_based_bargaining_power}
@@ -428,10 +424,10 @@ The following observation demonstrates this idea.
     Immediately follows from the monotonicity of the integral.
 \end{proof}
 
-In words, \Cref{prop:outcome_based_bargaining_power} describes two alternative worlds, in which $N_F$ fringe firms (assuming a platform with $N_P$ product variety and $N_C$ consumers) are able to achieve the same total profit level.
+In words, \Cref{prop:outcome_based_bargaining_power} describes two alternative worlds in which $N_F$ fringe firms and a platform with $N_P$ product variety can achieve the same total profit level.
 However, in the case with $\tilde{f}$, the fringe firms are more substitutable to each other in the sense that fewer of them are needed to achieve a given level of profit (see \Cref{fig:outcome_based_bargaining_power}).
 The observation is that, in this situation, the platform's share is indeed higher when the fringe firms are more substitutable.
-This coincides with the intuitive idea that the platform's bargaining power is higher when it does not really mind losing a few fringe sellers.
+This coincides with the intuitive idea that the platform's bargaining power is higher when it does not mind losing a few fringe sellers.
 
 \begin{figure}
     \centering
@@ -480,11 +476,11 @@ This coincides with the intuitive idea that the platform's bargaining power is h
 \subsection{Equilibrium}
 \label{sec:more_general_equilibrium}
 
-Let us now turn to the determination of the equilibrium number of fringe firms.
+Let us now turn to determining the equilibrium number of fringe firms.
 Assume that each firm faces a lump-sum investment cost of $I_F$ to enter the market.\footnote{
-    The results would also hold if the investment cost was non-constant, as long as the marginal cost of investment is weakly increasing.
+    The results would also hold if the investment costs were non-constant, as long as the marginal cost of investment is weakly increasing.
 }
-Thus, total investment cost for the fringe is given by $I_F N_F$.
+Thus, the total investment cost for the fringe is given by $I_F N_F$.
 The equilibrium number of entrants is determined by a free entry condition: in the end, the fringe firms' total profits should be equal to the aggregated investment cost.
 \begin{assumption}
     \label{ass:free_entry}
@@ -494,18 +490,15 @@ The equilibrium number of entrants is determined by a free entry condition: in t
     \end{align*}
 \end{assumption}
 
-Finally, in order to guarantee a unique equilibrium, let us make the following, an additional assumption about the profit function.
-\begin{assumption}
+\begin{assumption}Finally, in order to guarantee a unique equilibrium, let us make the following additional assumption about the profit function.
     \label{ass:single_crossing}
     Let $f$ be such that the following holds for all $N_F, N_P, N_C \geq 0$:
     \begin{align*}
         \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_F} < 0 \text{ or } \frac{\partial^2 \pi_F(N_P, N_F, N_C)}{\partial N_F^2} < 0
     \end{align*}
 \end{assumption}
-This assumption essentially guarantees that the profit of the fringe (as a function of the number of entrants) has at most a single crossing with total entry cost (apart from the obvious $N_F=0$ intersection).
-The profit functions presented in the main text satisfy this assumption.
-
-Under the specific demand system and profit sharing rule described in the main text, it can be shown that this assumption is satisfied.
+This assumption essentially guarantees that the profit of the fringe (as a function of the number of entrants) has at most one single crossing with total entry cost (apart from the obvious $N_F=0$ intersection).
+This assumption is satisfied under the specific demand system and profit-sharing rule described in the main text.
 \begin{proof}[Proof of \Cref{lem:shape_of_fringe_profit}]
     First, consider the function
     \begin{align*}
@@ -540,7 +533,7 @@ Under the specific demand system and profit sharing rule described in the main t
 \end{proof}
 
 
-With \Cref{ass:single_crossing} in place, uniqueness of the equilibrium can be established.
+With \Cref{ass:single_crossing} in place, the uniqueness of the equilibrium can be established.
 \begin{proposition}
     \label{prop:unique_equilibrium_more_general}
     Under the conditions in \Cref{ass:free_entry,ass:single_crossing}, the equilibrium is unique if it exists.
@@ -552,9 +545,9 @@ With \Cref{ass:single_crossing} in place, uniqueness of the equilibrium can be e
     This is a contradiction, as $\partial_F \pi_F(N_P, N_F) < I_F$ for all $N_F^* < N_F$.
 \end{proof}
 
-The intuition behind this result is that \Cref{ass:single_crossing} ensures that the total profits achieved by the fringe is either concave or hump-shaped.
+The intuition behind this result is that \Cref{ass:single_crossing} ensures that the total profits achieved by the fringe are either concave or hump-shaped.
 Consequently, it has at most one crossing with the -- convex and increasing -- total entry cost function (for $n_F > 0$).
-This particular shape (concave or hump-shaped) is also the main driver for the later results about the comparative statics of equilibrium profits and entry.
+This particular shape (concave or hump-shaped) is also the main driver for the later comparative statics results of equilibrium profits and number of entrants.
 Given that \Cref{ass:free_entry,ass:single_crossing} is satisfied in the model presented in the main text, it immediately follows that the equilibrium in that model is also unique.
 \begin{proof}[Proof of \Cref{prop:unique_equilibrium}]
     \Cref{lem:shape_of_fringe_profit} demonstrates that the fringe total profit function is either concave or decreasing in the number of fringe firms.
@@ -564,9 +557,9 @@ Given that \Cref{ass:free_entry,ass:single_crossing} is satisfied in the model p
 \subsection{Comparative statics}
 \label{sec:more_general_results}
 
-This section presents a number of comparative statics that can be derived even in this rather abstract setting.
+This section presents a number of comparative statics results that can be obtained even in this rather abstract setting.
 It contains three sets of results: (1) participants' profits in a partial equilibrium setting, where the number of fringe firms is taken as fixed, (2) equilibrium entry as a function of the platform's product variety, and (3) the platform's profits in general equilibrium.
-Throughout the paper, I use $\frac{\partial X}{\partial N_P}$ to denote partial equilibrium results, while $\frac{\dd X}{\dd N_P} \coloneq \frac{\partial X(N_P, N_F(N_P))}{\partial N_P}$ indicates general equilibrium results, where fringe entry is endogeneous.
+Throughout the paper, I use $\frac{\partial X}{\partial N_P}$ to denote partial equilibrium results, while $\frac{\dd X}{\dd N_P} \coloneq \frac{\partial X(N_P, N_F(N_P))}{\partial N_P}$ indicates general equilibrium results, where fringe entry is endogenous.
 
 \paragraph{Profits -- partial equilibrium}
 The following two propositions are partial equilibrium results: consider the number of fringe entrants $N_F$ as fixed.
@@ -589,11 +582,11 @@ The first statement claims that the platform's profits are increasing in its own
     \end{align*}
     for any non-negative, continuous $w_P(s)$.
 \end{proof}
-While it might seem obvious, let us still examine what this result does and does not mean.
-First, remember that $f$ is increasing in both arguments, and $N_F$ is fixed.
+Let us examine what this result does and does not mean.
+First, remember that $f$ is increasing in both arguments, and $N_F$ is assumed to be fixed for the moment.
 Therefore, an increase in $N_P$ also increases the size of the pie the participants bargain over.
-This result states that the slice of the pie that the platform gets increases in this case, too.
-It does not mean, however, that the \emph{relative share} of the pie that the platform gets is also bigger -- increase is only guaranteed in absolute terms.
+This result states that the slice of the pie the platform gets increases in this case, too.
+It does not mean, however, that the \emph{relative share} of the pie that the platform gets is also bigger -- the increase guaranteed only in absolute terms.
 For example, it is possible that for the new, higher value of $N_P$, the complementarities between the fringe firms become stronger, and the platform's bargaining power decreases.\footnote{
     In fact, one can show that this is the case if the cross-derivatives of $f$ are negative.
 }
@@ -681,11 +674,11 @@ In their case, the direction of the change depends on the complementarities betw
         \forall n_F \in [0, N_F] \enspace \frac{\partial^2 f(N_P, n_F)}{\partial N_P \partial n_F} > 0 &\implies \frac{\partial \pi_F(N_P, N_F, N_C)}{\partial N_P} > 0
     \end{align*}
 \end{proof}
-In summary, when they are mostly substitutes (the cross-derivatives of $f$ are negative), the fringe's profits decrease as a result of an increase in $N_F$.
-The intuition is that, even though the total size of the pie increases, the bargaining power of the fringe deteriorates so much that its total profits decreases not only in relative, but also in absolute terms (as illustrated in \Cref{fig:increase_N_P_fringe}).
+In summary, when they are primarily substitutes (the cross-derivatives of $f$ are negative), the fringe's profits decrease as a result of an increase in $N_F$.
+The intuition is that, even though the total size of the pie increases, the bargaining power of the fringe deteriorates so much that its total profits decrease not only in relative but also in absolute terms (as illustrated in \Cref{fig:increase_N_P_fringe}).
 On the other hand, when the fringe firms are mostly complements the fringe's profits increase.
 
-As the Shapley value of each player is their average marginal contribution to the total value, this result can best be understood through the lens of marginal contributions.
+As each player's Shapley value is their average marginal contribution to the total value, this result can best be understood through the lens of marginal contributions.
 When the cross derivative is positive, an increase in the platform's product variety increases the marginal contribution of the fringe firms to the total value for any given number of fringe firms.
 Therefore, the amount that the fringe gets also increases.
 On the other hand, when the cross derivative is negative, the marginal contribution of the fringe firms decreases, and so does the amount they obtain.
@@ -790,13 +783,13 @@ The previous proposition implies an almost immediate corollary regarding the equ
     which is the statement of \Cref{lem:slope_at_eq}.
 \end{proof}
 
-That is, the equilibrium number of entrants increases as a response to an increase in $N_P$ if the platform and the fringe firms are complements, and decreases if they are substitutes.
+That is, the equilibrium number of entrants increases as a response to an increase in $N_P$ if the platform and the fringe firms are complements and decreases if they are substitutes.
 The underlying reason is again the concave or hump-shaped fringe profit function.
 If $N_F^*$ is an equilibrium, then fringe profits minus entry costs are strictly positive for all $N_F \leq N_F^*$ and strictly negative for all $N_F > N_F^*$.
-Therefore, if an increase in $N_P$ decreases the fringe's profits for every $N_F \geq 0$, equilibrium can be restored by decreasing the number of fringe entrants, (and vice versa for the other case).
-This is also related to the concept of strategic complementary and substitutability, which also depends on the cross-derivatives (i.e. the supermodularity or submodularity) of the profit function.
+Therefore, if an increase in $N_P$ decreases the fringe's profits for every $N_F \geq 0$, equilibrium can be restored by decreasing the number of fringe entrants (and vice versa for the other case).
+This result is related to the concept of strategic complementary and substitutability, which also depends on the profit function's cross-derivatives (i.e., supermodularity or submodularity).
 
-Based on this general result, the corresponding on in the main text follows immediately.
+Based on this general result, the corresponding one in the main text follows immediately.
 \begin{proof}[Proof of \Cref{prop:fringe_profits_partial}]
     $\pi^t_F(N_P ,N_F)$ adheres to the \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing}.
     Furthermore, 
@@ -811,7 +804,7 @@ Based on this general result, the corresponding on in the main text follows imme
 
 Finally, let us conclude this section by establishing a stronger result for a more restrictive class of profit functions.
 In the following, I assume that the profit function has an additive form.
-Intuitively, this means that -- in terms of total profits generated -- the platform's and the fringe firms' products are substitutable to each other according to some constant ratio.
+Intuitively, this means that, in terms of total profits generated, the platform's and the fringe firms' products are substitutable according to some constant ratio.
 \begin{assumption}
     \label{ass:additive_profit}
     Assume that $f$ has the following, additive form in $N_P$ and $N_F$:
@@ -885,11 +878,11 @@ Intuitively, this means that -- in terms of total profits generated -- the platf
 \end{proof}
 
 The first part of this proposition is a stronger version of \Cref{cor:fringe_entry}.
-It states that, not only does the equilibrium number of fringe firms decrease as a response to an increase in $N_P$, but it establishes a lower bound for this decrease.
-And, as the second part shows, this bound is sufficient to guarantee that the total size of the pie ($\Pi(N_P, N_F, N_C)$) also decreases in equilibrium.
+It states that, not only does the equilibrium number of fringe firms decrease as a response to an increase in $N_P$, but there is a lower bound for this decrease.
+Moreover, as the second part shows, this bound is sufficient to guarantee that the total size of the pie ($\Pi(N_P, N_F, N_C)$) also decreases in equilibrium.
 
-This result has particularly strong implications in models where total profits (or total product variety) has a monotone relationship with consumer welfare, such as those in \textcite{anderson2020aggregative}.
-The demand system presented in the main text also has this property, and thus the results of this proposition apply to it as well.
+This result has powerful implications in models where total profits (or total product variety) have a monotone relationship with consumer welfare, such as those in \textcite{anderson2020aggregative}.
+The demand system presented in the main text also has this property, and thus, the results of this proposition apply to it, as well.
 \begin{proof}[Proof of \Cref{prop:platform_profits_comparative_benchmark}]
     Simply differentiate \Cref{eq:platform_profits_hybrid_benchmark} with respect to $N_P$.
 \end{proof}
@@ -930,13 +923,13 @@ The demand system presented in the main text also has this property, and thus th
 \end{proof}
 
 \paragraph{Platform profits -- general equilibrium}
-Now let us consider how the platform's product variety impacts its total profits, also taking into account its effect on the number of fringe entrants.
+Now, let us consider how the platform's product variety impacts its total profits, while also taking into account its effect on the number of fringe entrants.
 While \Cref{prop:share_of_platform} establishes that the platform's profits increase in its own product variety, it is not a general equilibrium result.
-In particular, we know that increasing the platform's product variety leads to a decrease in the number of fringe entrants, and in total profits.
+In particular, we know that increasing the platform's product variety decreases the number of fringe entrants and total profits.
 It would be conceivable that this decrease in entry is so large that the platform's profits decrease as well.
 
-While I do not have a general result for the platform's profits in equilibrium, useful can be made.
-No matter the form of the profit function, the platform's profits always prefers more fringe firms to fewer in the bargaining model.
+While I do not have a general result for the platform's profits in equilibrium, useful observations can be made.
+No matter the form of the profit function, the platform always prefers having more fringe firms to fewer in the bargaining model.
 The following proposition formalizes this idea.
 \begin{proposition}
     \label{prop:hybrid_vs_retail_general}
@@ -955,13 +948,13 @@ The following proposition formalizes this idea.
 \end{proof}
 
 \Cref{prop:hybrid_vs_retail} is then a special case of this result.
-\begin{proof}[Proof of \Cref{hybrid_vs_retail}]
+\begin{proof}[Proof of \Cref{prop:hybrid_vs_retail}]
     $\Pi$ satisfies \Cref{ass:additive_profit,ass:monotone_profits,ass:monotone_profits}.
     The result is an immediate corollary of \Cref{prop:hybrid_vs_retail_general} with $N_F=0$ and $N'F=N_F(N_P)$.
 \end{proof}
 
 This observation then makes characterizing the profit-maximizing platform product variety in \Cref{sec:endogenizing_n_p} easier, as one does not have to worry about comparing the different regimes in the case of the bargaining model.
-If, for a given $N_P$, hybrid mode would be feasible, then it is also optimal compared to being a pure retailer.
+If hybrid mode is be feasible for a given $N_P$, then it is also optimal compared to being a pure retailer.
 This result allows us to prove an important result from the main text about the platform's profits as a function of its number of products.
 \begin{proof}[Proof of \Cref{prop:comparative_n_p_bargaining}]
     In the bargaining model, \Cref{ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:additive_profit,ass:single_crossing} are satisfied.
@@ -990,11 +983,11 @@ This result allows us to prove an important result from the main text about the 
 
 \subsection{Additional lemmas and proofs}
 \label{sec:lemmas}
-This subsection contains a couple of lemmas that are, while not very interesting on their own, necessary for the proofs in the previous sections.
-Furthermore, it contains the proofs of the results presented in \Cref{sec:results_benchmark}, as they are not related to the bargaining framework, and are thus omitted from the previous sections.
+This subsection contains a couple of lemmas that, while not very interesting on their own, are necessary for the proofs in the previous sections.
+Furthermore, it contains the proofs of the results presented in \Cref{sec:results_benchmark}, as they are unrelated to the bargaining framework and are thus omitted from the previous section.
 
-The first lemma is helpful for establishing whether \Cref{ass:single_crossing} holds under a certain $f$ function.
-It states that showing that it holds for any affine transformation of $f$ is sufficient.
+The first lemma helps establish whether \Cref{ass:single_crossing} holds under a specific function $f$.
+It states that it is sufficient to show that it holds for some affine transformation of $f$.
 \begin{lemma}
     \label{lem:single_crossing_affine_transformation}
     Let $g: \mathbb{R}^+ \to \mathbb{R}$ be a twice continuously differentiable function.
@@ -1162,26 +1155,26 @@ The remainder of this section contains the proofs related to optimal product pri
 \section{Bargaining microfoundations and the cooperative game}
 This section examines the bargaining assumption from the main text in more detail.
 I proceed in two steps.
-First, I provides non-cooperative microfoundations for using the cooperative approach in the first place.
-Afterwards, I describe the aforementioned cooperative game in full formality, and derive the (weighted) Shapley value of this game.
-
+First, I provide non-cooperative microfoundations for using the cooperative approach as a reduced-form way of describing bargaining outcomes.
+Afterwards, I describe the cooperative game in full formality and derive the (weighted) Shapley value of this game.
 
 \subsection{Non-cooperative microfoundations for the bargaining outcome}
 \label{sec:bargaining_microfoundation}
 
 As part of the Nash program\footnote{
     The research agenda aiming to find links between cooperative and non-cooperative game theory, started by nash1953two
-}, there have been a number of papers proposing microfoundations for the Shapley value in terms of non-cooperative, bargaining-related games \parencite[e.g.][]{gul1989bargaining,winter1994demand,hart1996bargaining,stole1996intra}.
-The cooperative platform game described in \Cref{sec:cooperative_game} satisfies the assumption for a number of these models, and thus any of those could be used to build microfoundations for the platform game.
-Among those, I will focus on \textcite{stole1996intra} for the reason that it specifically pertains to a setting with one indispensable player and many small players, just like the current paper.
+}, there have been several papers proposing microfoundations for the Shapley value in terms of non-cooperative, bargaining-related games \parencite[e.g.][]{gul1989bargaining,winter1994demand,hart1996bargaining,stole1996intra}.
+The cooperative platform game described in \Cref{sec:cooperative_game} satisfies the assumption for many of those models.
+Any one of those could be used to build microfoundations for the platform game.
+I will focus on \textcite{stole1996intra} because it specifically pertains to a setting with one indispensable player and many small players, just like the current paper.
 
 The model in \textcite{stole1996intra} is phrased in terms of intra-firm bargaining between the workers and the firm itself.
-The workers are assumed to have a fixed outside option, and the firm is the indispensable player.
-This translates directly to the platform game, with the platform being the indispensable player, and fringe firms having a zero outside option.
-Furthermore, in \textcite{stole1996intra}, the bargaining outcome is interpreted as the wage for the workers.
-In the current setting, this would translate to bargaining over profit shares.
-However, as I argue later on, it is equivalent to bargaining over entry fees.
-While this section focuses on the main model, with two-sided bargaining, and the Shapley value as the solution, the same logic can be applied to the extensions presented in \Cref{sec:extensions}, based on sections 3.1 and 3.2 of \textcite{stole1996intra}.
+The workers are assumed to have a fixed outside option, and the firm is an indispensable player.
+This translates directly to the platform game, with the platform being the indispensable player and fringe the firms' outside option having zero value.
+Furthermore, in \textcite{stole1996intra}, the bargaining outcome is interpreted as workers' wages.
+In the current setting, this translates to bargaining over profit shares.
+However, as I argue later, it is equivalent to bargaining over entry fees.
+While this section focuses on the main model with two-sided bargaining and the Shapley value as the solution, the same logic can be applied to the extensions presented in \Cref{sec:extensions}, based on sections 3.1 and 3.2 of \textcite{stole1996intra}.
 Finally, the model is defined for a finite number of small players.
 The continuous version in this paper is the limit of this model as the number of fringe firms goes to infinity.
 
@@ -1226,49 +1219,45 @@ The continuous version in this paper is the limit of this model as the number of
 
 Let us now describe the bargaining process in the platform game.
 First, a random order is determined for the fringe firms.
-This order will remain fixed throughout the bargaining phase
+This order will remain fixed throughout the bargaining phase.
 
 Then, for each fringe firm (following the order determined earlier), the platform and the fringe firm negotiate over the entry fee.
 This bilateral negotiation follows the alternating offer procedure described in \textcite{binmore1986nash}.
-One of the two players is chosen as a proposer, and can propose an entry fee for the given firm: $K_{F_i}$.
+One of the two players is chosen as the proposer and can propose an entry fee for the given firm: $K_{F_i}$.
 The other player can either accept or reject the proposal.
 
 If the proposal is accepted, the negotiation moves on to the next fringe firm.
-If it is rejected, with probability $1-\rho$, the other player becomes the proposer, and the negotiation continues.
+If it is rejected, then with probability $1-\rho$, the other player becomes the proposer, and the negotiation continues.
 Finally, with probability $\rho$, the negotiations break down, and the fringe firm is eliminated from the rest of the game.
-Crucially, after a breakdown occurs, all of the previous offers are voided, and the platform and the remaining fringe firms start the negotiation process from the beginning (following the same, pre-determined order, but skipping the eliminated firms).
+Crucially, after a breakdown occurs, all previous agreements are void, and the platform and the remaining fringe firms start the negotiation process from the beginning (following the same pre-determined order, but skipping the eliminated firms).
 
-This bargaining process is repeated until all fringe firms have either accepted an offer or been eliminated.
-\Cref{fig:bargaining_microfoundations} provides an illustration of the bargaining process, and how it fits into the broader game.
+This bargaining process is repeated until all fringe firms either accept an offer or are eliminated.
+\Cref{fig:bargaining_microfoundations} illustrates the bargaining process and how it fits into the broader game.
 Theorem 2 in \textcite{stole1996intra} shows that regardless of the ordering of the fringe firms, the unique subgame perfect equilibrium of this game is the Shapley value of the cooperative game.
-Note, that this result is not only true in expectation: conditioning on any ordering of the fringe firms, the result still holds.
+Note that this result is not only true in expectation: conditioning on any ordering of the fringe firms, the result still holds.
 
-The final piece that is needed to establish the interpretation in terms of entry fees is that for any given configuration of firms emerging from the bargaining process, and, crucially, regardless of the agreed upon entry fees, the unique equilibrium of the subsequent game is the one described in \Cref{sec:results_demand}.
-According to the previous theorem, players want to agree on a contract such that their final, total profits $\pi^t_{F_i}$ are equal to their Shapley value ($\varphi_{F_i}$).
+The final piece that is needed to establish the interpretation in terms of entry fees is that for any given configuration of firms emerging from the bargaining process, and, crucially, regardless of the agreed-upon entry fees, the unique equilibrium of the subsequent game is the one described in \Cref{sec:results_demand}.
+According to the previous theorem, players want to agree on a contract such that their final total profits $\pi^t_{F_i}$ are equal to their Shapley value ($\varphi_{F_i}$).
 Given any equilibrium sales profits ($\pi^v_{F_i}$), they can achieve it by setting the entry fees to $K_{F_i} = \varphi_{F_i} - \pi^v_{F_i}$.
-Finally, \Cref{sec:cooperative_game} and \Cref{sec:results_demand} establish that both the Shapley value and the equilibrium sales profits are identical for each fringe firms, and thus a single, common entry fee $K_F$ will be agreed upon.
+Finally, \Cref{sec:cooperative_game} and \Cref{sec:results_demand} establish that both the Shapley value and the equilibrium sales profits are identical for each fringe firm, and thus a single common entry fee $K_F$ will be agreed upon.
 
 \subsection{Cooperative game}
 \label{sec:cooperative_game}
 
-Now let us examine how the profit sharing rule from \Cref{ass:profit_sharing} can be derived from various cooperative games.
-In each of the following subsections, I formally define a cooperative game that models the platform setting, and derive the (weighted) Shapley values of the various players.
+Now let us examine how the profit sharing rule from \Cref{ass:profit_sharing} can be derived from the random order values of cooperative games.
+In each of the following subsections, I formally define a cooperative game that models the platform setting and derive the (weighted) Shapley values of the various players.
 I show that they correspond to the formulas given in \Cref{ass:profit_sharing}, with a specific choice of weight functions $w_P$ and $w_F$ for each case.
 
 I start with the simplest case: one-sided bargaining and the usual Shapley value \parencite{shapley1953additive}.
 Then, I look at weighted values \parencite{weber1988probabilistic} in the same cooperative game.
 Finally, I consider the case when the consumers also participate in the bargaining process, and derive the corresponding Shapley values.
+Now let us examine how the profit sharing rule from \Cref{ass:profit_sharing} can be derived from the random order values of cooperative games.
+In each of the following subsections, I formally define a cooperative game that models the platform setting, and derive the (weighted) Shapley values of the various players.
+I show that they correspond to the formulas given in \Cref{ass:profit_sharing}, with a specific choice of weight functions $w_P$ and $w_F$ for each case.
 
-\subsubsection{One-sided case}
-\label{sec:cooperative_game_one_sided}
-
-In the first setting, the platform and the fringe firms bargain over the total profits they generate together, and the consumers are not included in the negotiations.
-This corresponds to the model in the main text.
-The following cooperative game describes this case.
-
-Consider the game $\mathcal{G} = (\mathcal{N}, v)$, characterized by the set of players $\mathcal{N}$ and its characteristic function $v$.
-The set of players consists of the platform plus the fringe firms: $\mathcal{N} = \{P, F_i\}, i \in [0, N_F]$.
-Because the platform is indispensable, the value of a coalition $S$ is zero without the platform, and depends on the number of fringe firms otherwise:
+I start with the simplest case: one-sided bargaining and the usual Shapley value \parencite{shapley1953additive}.
+Then, I look at weighted values \parencite{weber1988probabilistic} in the same cooperative game.
+Finally, I consider the case when the consumers also participate in the bargaining process and derive the corresponding Shapley values.
 \begin{align*}
     v(S) = \begin{cases}
         0 & \text{if } P \notin S \\
@@ -1298,8 +1287,8 @@ As an immediate consequence, if bargaining outcomes are described by the Shapley
 \subsubsection{Weighted value}
 \label{sec:cooperative_game_weighted}
 
-Now let us generalize the previous result, and assume instead that players' shares are described by their weighted values.
-As before, let us start by formally describing the cooperative game.
+Now, let us generalize the previous result by assuming that players' shares are described by their weighted values.
+As before, I start by formally describing the cooperative game.
 The set of players and the characteristic function are the same as in \Cref{sec:cooperative_game_one_sided}, but now the game is additionally endowed with a weight system $\mathbf{\lambda} = \{\lambda_P, \lambda_{F}(i)\}$.
 Let us assume that all fringe players have the same weight $\lambda_{F}(i) \equiv 1$.
 This describes the situation in \Cref{sec:higher_bargaining_power}.
@@ -1327,10 +1316,10 @@ As before, the resulting allocations satisfy \Cref{ass:profit_sharing} with $w_P
 
 Finally, in certain settings, it might be appropriate to assume that the consumers (or, more generally, the entities on the other side of the market) also engage in the bargaining process.
 An example for this is \Cref{sec:two_sided}
-In such a case, cooperative game describing can be formalized as follows.
+In such a case, the underlying cooperative game can be formalized as follows.
 
 The set of players consists of the platform plus the fringe firms: $\mathcal{N} = \{P, F_i, C_j\}, i \in [0, N_F], j \in [0, N_C]$.
-The value of a coalition $S$ is zero without the platform, and depends on the number of fringe firms otherwise:
+The value of a coalition $S$ is zero without the platform and depends on the number of fringe firms otherwise:
 \begin{align*}
     v(S) = \begin{cases}
         0 & \text{if } P \notin S \\
@@ -1360,5 +1349,5 @@ This is due to the fact of needing to share the pie with the consumers, too.
 Additionally, the platform's share is identical to the consumers' (aggregated) share.\footnote{
     This stems from the linearity of the profit function in the number of consumers.
 }
-This foreshadows the idea that -- even though it might not be welfare-maximizing -- what's good for the platform might also good for the consumers in the two-sided case.
+This foreshadows the idea that, even though it might not be welfare-maximizing, what is good for the platform might also benefit the consumers in the two-sided case.
 Finally, as in both examples before, these values satisfy \Cref{ass:profit_sharing} with $w_P(s) = s$ and $w_F(s) = s^2$.

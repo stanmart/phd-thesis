@@ -1,67 +1,65 @@
-\section{Motivation}
+\section{Introduction}
 
-Although market structures resembling various aspects of what we call platforms have existed for some time, the term has only gained widespread usage in the 2000s, with the advent of digitization, and a number of behemoth technology companies playing matchmakers on the internet.
-Since then, platforms have become a buzzword in the business world, the subject of increasing regulatory scrutiny, and also a topic of intense academic interest.
-Platforms have a number of unique features that make them different from more traditional market structures.
+Although market structures resembling various aspects of what we call platforms have existed for some time, the term gained widespread usage only in the 2000s, with the advent of digitization and a number of behemoth technology companies playing matchmakers on the Internet.
+Since then, the concept of a platform has become prominent in the business world, drawn increasing regulatory attention, and become a topic of intense academic interest.
+Platforms have several unique features that differentiate them from more traditional market structures.
 The most prominent of those are multi-sidedness and network effects, which most of the early literature \parencite[for an overview, see][]{rochet2006two} and policy debate \parencite[e.g.][]{fletcher2021consumer,calvano2021market} has focused on.
-However, in the more recent years, another important and potentially concerning aspect has been getting more attention: the hybrid operation of certain platforms.
-Essentially, this means that platforms act as an intermediary (deciding the rules) and a market participant (competing with other entrants) at the same time.
+However, in recent years, another important and potentially concerning aspect has been getting more attention: the hybrid operation of certain platforms.
+Such platforms act as intermediaries (deciding the rules) and market participants (competing with other entrants) at the same time.
 
-While hybrid platforms are not a completely new phenomenon, they are becoming more and more common in various industries.
-Perhaps the most prominent example is Amazon, which, on the one hand sells its own products, and at the same time hosts ax large number of third-party sellers.
+While hybrid platforms are not an entirely new phenomenon, they are becoming increasingly common in various industries.
+Perhaps the most prominent example is Amazon, which sells its own products while simultaneously hosting a large number of third-party sellers.
 However, examples abound in other industries, as well.
-For example, each of the largest digital distribution platforms for computer and smartphone applications (Google Play, Apple App Store and Microsoft Store) sell their own applications besides their third party offerings.
-In the video game industry, platform owners studios and publishing games under their own brand is the standard.
+For example, each of the largest digital distribution platforms for computer and smartphone applications (Google Play, Apple App Store, and Microsoft Store) sells its own applications in addition to third-party offerings.
+In the video game industry, platforms owning studios and publishing games under their own brand is the standard.
 Many video streaming services (e.g. Netflix, Amazon Prime Video, Hulu) offer a mix of their own and licensed content.
-One can also find examples of similar behavior outside the platform setting, too.
-For example, a number of car manufacturers are planning to sell directly to consumers in addition to selling through their dealership networks.
+One can find examples of similar behavior outside the platform setting, too.
+For example, several car manufacturers are planning to sell directly to consumers in addition to selling through their dealership networks.
 
-As deciding the rules of the game and competing in it at the same time gives rise to some obvious concerns, policymakers have been paying increasingly close attention to these platforms in the recent years.
-Various pieces of legislation have been proposed to regulate, or even ban e-commerce platforms from selling their own products \parencite[][]{phartiyal_2019,reynolds_2022,eu-2022}.
-Furthermore, one of the most prominent recent antitrust cases, Microsoft acquiring the video game publisher Activision/Blizzard for a sum of 69 billion USD, is also a case of a platform becoming increasingly hybrid.
-This merger not only increased market concentration on the software side of the video game industry, but might also have further implications for the competition between Microsoft as a platform owner and the other game developers.
+As deciding the rules of the game and competing in it at the same time gives rise to some obvious concerns, policymakers have been paying increasingly close attention to these platforms in recent years.
+Various pieces of legislation have been proposed to regulate or even ban e-commerce platforms from selling their own products \parencite[][]{phartiyal_2019,reynolds_2022,eu-2022}.
+Furthermore, one of the most prominent recent antitrust cases, Microsoft acquiring the video game publisher Activision/Blizzard for 69 billion USD, is also a case of a platform becoming increasingly hybrid.
+This merger not only increased market concentration on the publishing side of the video game industry, but also had implications for the competition between Microsoft as a platform owner and the other game publishers.
 The deal was under investigation by multiple antitrust authorities, including the US Federal Trade Commission, the European Commission, and the UK Competition and Markets Authority \parencite{livni_merced_2023}.
 
-In parallel to the increasing regulatory interest, the academic literature on the topic of hybrid platforms has also been steadily growing.
-\textcite{hagiu2022should} investigate how practices, such as self-preferencing and steering can distort competition on hybrid platforms.
-They argue that -- while such practices are problematic and can have negative welfare effects -- with proper regulation the platform selling its own products can be beneficial for consumers.
-In contrast to this positive result, \textcite[]{anderson2021hybrid} find that even in the absence of such behavior, allowing hybrid operation might have negative consequences due to platforms having an incentive to exclude competitors from the market.
-\textcite[]{gutierrez2021welfare} shows that general conclusions are hard to draw, and welfare effects are platform and product specific.
-For example, using a mechanism design approach, \textcite{kang2022contracting} demonstrate that welfare consequences greatly depend on whether the platform faces competition in the upstream market.
+Parallel to the increasing regulatory interest, the academic literature on hybrid platforms has also been steadily growing.
+\textcite{hagiu2022should} investigate how practices, such as self-preferencing and steering, can distort competition on hybrid platforms.
+They argue that, while such practices are problematic and can have negative welfare effects, with proper regulation the platform selling its own products can be beneficial for consumers.
+In contrast to this positive result, \textcite[]{anderson2021hybrid} find that even in the absence of such behavior, allowing hybrid operation might have negative consequences due to platforms' incentive to exclude competitors from the market.
+\textcite[]{gutierrez2021welfare} shows that general conclusions are hard to draw, and welfare effects are platform and product-specific.
+For example, using a mechanism design approach, \textcite{kang2022contracting} demonstrates that welfare consequences greatly depend on whether the platform faces competition in the upstream market.
 
-This paper aims to contribute to this discussion by examining an important, but so far underexplored aspect of platforms: the bargaining power disparity between them and the other market participants, and how this disparity is affected by the platforms' hybrid operation.
-I propose an analytically tractable model of a which captures many important aspects of bargaining between one large and a continuum of small players: namely a hybrid platform facing a continuum of potential entrants.
-I show that, in the presence of bargaining, hybrid operation can indeed have negative welfare consequences for consumers.
-This result is particularly striking in this otherwise distortion-free\footnote{
-    In the benchmark model without bargaining, the platform's hybrid operation does not affect consumer welfare.
-} setting. 
+This paper aims to contribute to this discussion by examining an important but underexplored aspect of platforms: the bargaining power disparity between the latter and the other market participants, and how this disparity is affected by the platforms' hybrid operation.
+I propose an analytically tractable that captures many important aspects of bargaining between one large and a continuum of small players: namely, a hybrid platform facing a continuum of potential entrants.
+In this paper's distortion-free setting with lump-sum entry fees, hybrid platforms are not detrimental to consumer welfare under the usual assumption of the platform setting the entry fee unilaterally.
+I show that, in contrast, in the presence of bargaining, hybrid operation can reduce consumer welfare.
 The intuition is that hybrid operation increases the platform's bargaining power against the entrant sellers.
-This in turn leads to a higher entry fee, fewer entrants, then results in lower consumer surplus.
-These observations constitute a so-far overlooked aspect of hybrid platforms that policymakers should be aware of.
-Due to the relative generality of this model, these results are applicable not only to hybrid platform, but to other similar settings, such as upstream producers having their own downstream outlets, or retailers with private labels, as well.
+This, in turn, leads to a higher entry fee and fewer entrants, resulting in lower consumer surplus.
+These observations constitute a so far overlooked aspect of hybrid platforms that policymakers should be aware of.
+Due to this model's generality, these results are applicable not only to hybrid platforms, but also to many other settings, such as upstream producers having their own downstream outlets or retailers with private labels.
 
-Many of the results are not tied to the specifics of the model, but are more general instead.
-They do not depend on a specific demand structure and investment cost assumptions, and there is even some flexibility to the assumptions about bargaining outcomes.
-I show that, even in such stylized setting, some interesting observations can be made about the effects of hybrid operation. 
+Many of the results are not tied to the specifics of the model but are more general.
+They do not depend on a specific demand structure, and there is even some flexibility with regard to the assumptions about bargaining outcomes.
+I show that, even in such a stylized setting, some interesting observations can be made about the effects of the hybrid operation. 
 In particular, when the platform's and the potential entrants' products are substitutes, increasing the platform's product variety will lead to a decrease in the number of entrants.
-I also give sufficient conditions for this decrease in entry being so large as to cause a decrease in total profits, as well.
+I also give sufficient conditions for this decrease in entry being so large as to cause a decrease in total profits.
 
 The closest model to the one proposed in this paper is \textcite{anderson2021hybrid}.
-The key difference between the two boils down to how the entry fee is decided.
-In \textcite{anderson2021hybrid}, the platform sets a percentage entry fee, and the entrants decide whether to enter or not.
+The key difference between the two boils down to how the entry fee is determined.
+In \textcite{anderson2021hybrid}, the platform sets a percentage entry fee, and the entrants decide whether or not to enter.
 In contrast to this, I assume that (1) platforms charge a lump-sum entry fee and that (2) this entry fee is the result of a negotiation process\footnote{
-    The bargaining process is modeled using a solution concept from cooperative game theory, namely the Shapley-value.
-    This allows for a tractable analysis while at the same time capturing many of the important features of bargaining.
+    The bargaining process is modeled using a solution concept from cooperative game theory, namely the Shapley value.
+    This allows for a tractable analysis while at the same time capturing many of the essential features of bargaining.
     Examples of this approach in the industrial organization literature include \textcite{montez2007downstream}, as well as \textcite{hart1990property}, \textcite{levy1997individual}, \textcite{inderst2003bargaining} and \textcite{brugemann2019intra} among others.
 }
 between the platform and the entrants.
 The second point is a novelty not only compared to \textcite{anderson2021hybrid}, but also to the existing literature on hybrid platforms.
 Furthermore, in contrast to \textcite{hagiu2022should}, this model is free from any distortive behavior, such as self-preferencing or steering, and the negative results are purely driven by changes in the platform's bargaining position.
 
-The set of more general results in this paper go beyond the aforementioned studies in the sense that they illuminate the effects of hybridness as a more abstract phenomenon, and thus also highlight the similarities between the hybrid platform literature and adjacent ones.
-Certain structures, such as vertical relationships, or even traditional retail stores share a number of features with platforms (notably, the presence of a dominant, indispensable entity), and can be modeled in much the same way.
+The set of more general results in this paper goes beyond the aforementioned studies in the sense that they illuminate the effects of hybrid operation as a more abstract phenomenon, and thus also highlight the similarities between the hybrid platform literature and adjacent ones.
+Certain structures, such as vertical relationships or even traditional retail stores, share several features with platforms (notably, the presence of a dominant, indispensable entity) and can be modeled in much the same way.
 Therefore, the methodology and results in this paper are also of interest to researchers studying questions such as retailers having their own private labels \parencite{steiner2004nature} or vertical integration in upstream-downstream markets \parencite{hart1990vertical,aghion2006vertical}.
-\textcite{de2005vertical} and \textcite{montez2007downstream}, in which bargaining between the upstream and downstream firms take the center stage, are particularly closely related.
+\textcite{de2005vertical} and \textcite{montez2007downstream}, in which bargaining between the upstream and downstream firms take center stage, are particularly closely related.
 Among empirical studies in related settings, \textcite{ho2017insurer} looks at the effect of insurer competition on health care prices, while \textcite{crawford2018welfare} explores the effects of vertical integration on television markets.
 
 This paper is also related to various other strands of the industrial organization literature.
@@ -69,10 +67,10 @@ Most generally, it is a contribution to the research agenda on understanding pla
 Furthermore, it is somewhat adjacent to the literature on the importance of exclusive content \parencite[e.g.][]{hagiu2011exclusivity,lee2013vertical,dou2014sell,weeds2016tv}, with the difference that instead of exclusive content giving an advantage against competing platforms, in this paper, own products provide an advantage over potential entrants.
 More generally, many results and concepts of this paper are also applicable outside the context of (multi-sided) platforms.
 
-Finally, this paper also belongs to the not too large set of models using concepts from cooperative game theory in an industrial organization setting.
+Finally, this paper also belongs to the relatively small set of models that use concepts from cooperative game theory in an industrial organization setting.
 Such examples include the aforementioned \textcite{montez2007downstream}, as well as \textcite{hart1990property}, \textcite{levy1997individual}, \textcite{inderst2003bargaining} and \textcite{brugemann2019intra}, among others.
-In contrast to the majority of those, which focus on games with a finite number of players, I utilize an oceanic game (a continuum of small players instead of a finite number), and demonstrate that this can considerably simplify the analysis in certain cases.
-Therefore, the modeling approach presented in this paper may be of use in other settings as well.
+In contrast to the majority of those, which focus on games with a finite number of players, I utilize an oceanic game (a continuum of small players instead of a finite number), demonstrating that this can considerably simplify the analysis in certain cases.
+Therefore, the modeling approach presented in this paper may also be useful in other settings.
 
 The rest of the paper is organized as follows.
 In \Cref{sec:model}, I introduce two model of hybrid platforms: a benchmark with the platform setting an entry fee unilaterally, and the main model, where the platform and the fringe firms engage in bargaining.
@@ -85,24 +83,21 @@ Finally, \Cref{sec:conclusion} summarizes the results and discusses possible fut
 \label{sec:model}
 
 This section introduces the model used throughout the paper.
-% TODO: better motivation
-I use the terms ``platform'' and ``fringe sellers'', and present my ideas in the context of an intermediated market, such as an online marketplace or an application store.
-However, the model is quite general, and the results apply to a broader class of settings, such as vertical markets where the upstream firm can sell directly to consumers, or retail stores with their own private labels.
+I use the terms ``platform'' and ``fringe sellers'' and present my ideas in the context of an intermediated market, such as an online marketplace or an application store.
+However, the model is quite general, and the results apply to a broader class of settings, such as vertical markets where the upstream firm can sell directly to consumers or retail stores with their own private labels.
 Furthermore, while the discussion in the main text focuses on a specific demand structure and profit sharing rule, most of the results apply to a broader class of models.
-\Cref{sec:more_general} explores the generalizability of these results, and highlights some common themes in settings with hybrid behavior.
+\Cref{sec:more_general} explores the generalizability of these results, highlighting some common themes in settings with hybrid behavior.
 
-Assume that there are two types of players in the market: a platform $P$, a continuum of fringe sellers $F_i$ ($i \in \mathbb{R}^+$) and a continuum of consumers $C_j$ ($j \in [0, 1]$).
+Assume that there are two types of players in the market: a platform $P$, a continuum of fringe sellers $F_i$ ($i \in \mathbb{R}^+$), and a continuum of consumers $C_j$ ($j \in [0, 1]$).
 The fringe firms have one product each, which they can only sell through the platform.
 Without the platform, they make zero profits.
 In addition to acting as an intermediary between the fringe and the consumers, the platform itself may also produce and sell a number of products directly to the consumers.
 If it does, it is referred to as a hybrid platform.
 
-The main distinguishing feature of this model is that, instead of assuming that entry fees or royalties are set by the platform and the fringe treat it as take it or leave it offers, I assume that the platform and the fringe engage in some kind of bargaining over their total profits.
-The bargaining rule, as well as other details of the model, are described in the rest of this section.
-
-The rest of this section is structured as follows.
-\Cref{sec:model_overview} provides an overview of the model's stages, the timing of the game, as well as the qeuilibrium concept used in this paper.
-Then, \Cref{sec:model_details} describes each stage of the game formally.
+The main distinguishing feature of this model is that instead of assuming that entry fees or royalties are set by the platform and that the fringe treats them as take-it-or-leave-it offers, I assume that the platform and the fringe engage in some kind of bargaining over their total profits.
+The rest of this section describes the bargaining rule and other details of the model and is structured as follows.
+\Cref{sec:model_overview} provides an overview of the model's stages, the timing of the game, as well as the equilibrium concept used in this paper.
+Then, \Cref{sec:model_details} formally describes each stage of the game.
 Finally, \Cref{sec:model_discussion} discusses some of the assumptions made in the model, and their implications.
 
 \subsection{Overview and timing}
@@ -110,28 +105,29 @@ Finally, \Cref{sec:model_discussion} discusses some of the assumptions made in t
 
 I consider two versions of the model: a benchmark case with the platform setting the entry fee unilaterally, and a bargaining model where the platform and the fringe firms negotiate over the entry fee.
 Each version has four main stages corresponding to determining four sets of endogenous variables: (1) the platform (and the fringe) setting (negotiating) the entry fee, (2) the fringe firms deciding whether to enter the market, (3) the platform and the fringe setting the prices of their products, and (4) consumers making their purchase decisions.
-The main difference between them lies in how the entry fee is determined, and, correspondingly, the order of the first two stages.
+The main difference between them lies in how the entry fee is determined and, correspondingly, the order of the first two stages.
 
 The timing of both models is illustrated in \Cref{fig:timing}.
 The square brackets indicate the endogenous variables decided at that stage of the game.
-In the benchmark model (\Cref{fig:timing_benchmark}), the game starts by the platform announcing and committing to an entry fee $K_F$ ($\mathbf{T_1}$).
+In the benchmark model (\Cref{fig:timing_benchmark}), the game starts with the platform announcing and committing to an entry fee $K_F$ ($\mathbf{T_1}$).
 Next, each fringe firm decides whether to create a product at cost $I_F$ and enter the market. ($\mathbf{T_2}$)
 After that, the platform and the fringe firms simultaneously choose the prices for their products, engaging in monopolistic competition ($\mathbf{T_3}$).
-Finally, consumers make their purchase decisions, and profits are realized ($\mathbf{T_3}$).
+Finally, consumers make their purchase decisions and profits are realized ($\mathbf{T_3}$).
 
-The bargaining model has a slightly different timing, as shown in \Cref{fig:timing_bargaining}.
+The bargaining model has slightly different timing, as shown in \Cref{fig:timing_bargaining}.
 The platform cannot commit to an entry fee at the beginning, so the game starts with the fringe firms deciding whether to invest in creating a product at cost $I_F$ ($\mathbf{T_1}$).
 After that, the entry fee is decided as a result of some negotiation\footnote{
-    The negotiation process, or rather its outcome is described in detail in \Cref{sec:cooperative_game}.
+    The negotiation process, or rather its outcome, is described in detail in \Cref{sec:cooperative_game}.
 } between the platform and the firms that have made the investment ($\mathbf{T_2}$).
-Then, the firms that made the investment pay the platform entry fees, too.
+Then, the firms that invested pay the platform entry fees, too.
 From this point on, the game proceeds in the same way as in the benchmark model: the platform and the fringe firms set their prices ($\mathbf{T_3}$), and consumers make their purchase decisions ($\mathbf{T_4}$). 
 
-The main difference between the benchmark and the bargaining model is in determining the entry fee $K_F$.
-In the former, the platform unilaterally sets the fee, and the fringe treats it as a take it or leave it offer.
-On the other hand, in the bargaining model, I assume that the entry fee is the result of a negotiation between the parties.
+The main difference between the benchmark and the bargaining model lies in determining the entry fee $K_F$.
+In the former, the platform unilaterally sets the fee, and the fringe treats it as a take-it-or-leave-it offer.
+On the other hand, in the bargaining model, I assume that the entry fee results from negotiation between the parties.
 More precisely, in the latter case, I assume that the platform's and the fringe's total profits at the end of the game correspond to their Shapley values.
-This in turn uniquely determines the entry fee, and thus the negotiation at time ($\mathbf{T_2}$) can be equivalently conceptualized as bargaining over the final profit as well as the entry fee.
+This, in turn, uniquely determines the entry fee.
+Thus, the negotiation at time ($\mathbf{T_2}$) can equivalently be conceptualized as bargaining over the final profits, as well.
 
 \begin{figure}
     \centering
@@ -169,10 +165,10 @@ This in turn uniquely determines the entry fee, and thus the negotiation at time
 \end{figure}
 
 For both models, this structure corresponds to a perfect-information extensive-form game.
-As a consequence, the solution concept I use is the subgame perfect equilibrium.
+Consequently, the solution concept I use is the subgame perfect equilibrium.
 As the platform's product variety ($N_P$) is assumed to be exogenous, the only strategic variables are (1) the fringe players' entry decisions, (2) the platform's entry fee (only in the benchmark model), (3) the prices of the products and (4) the consumers' purchase decisions.
 
-In these two specific games, the subgame perfect can be charactrerized as follows.
+The subgame perfect can be characterized in these two specific games as follows.
 \begin{definition}
     \label{def:equilibrium}
     An equilibrium of the game is a tuple $(N_F, K_F, p_{P_i}, p_{F_i}, x_{P_i}, x_{F_i})$ such that:
@@ -195,24 +191,24 @@ In these two specific games, the subgame perfect can be charactrerized as follow
 \label{sec:demand}
 
 Let us now describe each stage of the game in more detail, starting with the final two subgames, as they are identical in both models.
-This part of the model is based on \textcite[]{anderson2021hybrid}, who utilize the exact same utility structure as th one described here.
-Imagine that there is a unit mass of consumers, looking to buy one product each.
-They choose from a continuum of products, which are either produced by the fringe (indexed by $F_i$), by the platform ($P_i$) and a unit mass of outside options ($0_i$).
+This part of the model is based on \textcite[]{anderson2021hybrid}, who utilize the exact same utility structure as the one described here.
+Imagine that there is a unit mass of consumers looking to buy one product each.
+They choose from a continuum of products, which are either produced by the fringe (indexed by $F_i$), by the platform ($P_i$) or are amongst a unit mass of outside options ($0_i$).
 Customer $j$ derives the following utility from buying product $T_i$\footnote{
-    To avoid duplication, I denote the different types of products by $T_i$, where $T \in \{F, P, 0\}$ (fringe products, platform profucts, and outside options, respectively).
-    This notation is used throughout the paper for other variables having fringe and platform counterparts, as well.
+ To avoid duplication, I denote the different types of products by $T_i$, where $T \in \{F, P, 0\}$ (fringe products, platform products, and outside options, respectively).
+ This notation is used throughout the paper for other variables having fringe and platform counterparts, as well.
 }:
 \begin{align*}
-    u_{T_i}^j = v_{T_i} - p_{T_i} + \mu\epsilon_{T_i}^j \quad \text{for } T_i \in \{F, P\},
+ u_{T_i}^j = v_{T_i} - p_{T_i} + \mu\epsilon_{T_i}^j \quad \text{for } T_i \in \{F, P\},
 \end{align*}
 where $v_{T_i}$ is the value of product $T_i$, $p_{T_i}$ is its price, and $\epsilon_{T_i}^j$ is an idiosyncratic taste shock.
-Throughout this section I assume that the value of each fringe product is the same, and the same goes for the platform products.
+Throughout this section, I assume that the value of each fringe product is the same, and the same goes for the platform products.
 I.e., $v_{T_i} = v_T \, \forall\,i$.
-This is to simplify the analysis, but is not crucial for the results.
+This is to simplify the analysis but is not crucial for the results.
 
-$\epsilon_{T_i}^j$ is assumed to be independent and identically distributed (i.i.d.) across consumers and products, and follow a standardized Type I Extreme Value distribution.
+$\epsilon_{T_i}^j$ is assumed to be independent and identically distributed (i.i.d.) across consumers and products and follow a standardized Type I Extreme Value distribution.
 This distributional assumption, along with the fact that each consumer consumes only one product, will lead to a tractable, logit-form demand function.
-The demand for product $T_i$ is that arises from the consumers maximizing their utility is denoted by $x_{T_i}$.
+The demand for product $T_i$, which arises from consumers maximizing their utility, is denoted by $x_{T_i}$.
 
 \subsubsection{Production}
 
@@ -224,15 +220,15 @@ The price of the outside option is normalized to zero.
 
 \subsubsection{Fringe entry and platform fees}
 
-Now let us turn to stage 1 and 2 of the game: the determination of the entry fee and the fringe firms' entry decision.
+Now, let us turn to stages 1 and 2 of the game: the determination of the entry fee and the fringe firms' entry decision.
 I start with the benchmark model, where the platform sets the entry fee unilaterally.
-Then, I compare and contrast this with the bargaining model, where the entry fee is the result of a negotiation between the platform and the fringe firms.
+Then, I compare and contrast this with the bargaining model, where the entry fee results from a negotiation between the platform and the fringe firms.
 
 \paragraph{Benchmark case}
 
 I assume that there is a continuum of potential fringe entrants, indexed by $i \in \mathbb{R}^+_0$.
-Each of them can create a product at an exogenous investment cost $I_F$.
-If they decide not to, they make zero profits and do not participate in the later stages of the game.
+Each can create a product at an exogenous investment cost $I_F$.
+If they decide not to, they make zero profits and do not participate in the game's later stages.
 Furthermore, these firms can only sell their products through the platform, for which the platform can charge a lump-sum entry fee $K_F$.
 The timing of these decisions is as follows: (1) the platform sets and commits to an entry fee $K_F$, (2) the fringe firms decide whether to enter the market and pay investment cost $I_F$ and entry fee $K_F$.
 
@@ -244,7 +240,7 @@ In order to keep the model tractable, I model this in a reduced-form manner: I a
 Due to this assumption, the timing of the model is also different.
 First, the fringe firms decide whether to invest in creating a product at cost $I_F$.
 After this, the platform and the firms that have made the investment negotiate the entry fee.
-Finally, the firms that have entered pay the entry fee to the platform.
+Finally, the firms that entered pay the entry fee to the platform.
 
 More specifically, the resulting entry fees look as follows.
 Assume that $N_F$ fringe firms choose to invest in creating a product in the first stage of the game.
@@ -270,103 +266,102 @@ Let us denote these profits by $\pi^v_{F}(N_P,s N_F)$ and $\pi^v_{P}(N_P,s N_F)$
 \subsection{Discussion}
 \label{sec:model_discussion}
 
-Let us now discuss some of the non-standard assumptions made in the model, and their implications.
+Let us now discuss some of the non-standard assumptions made in the model and their implications.
 I look at four main categories in this section: the timing of the game, the costs of entry for fringe firms, the way the monopolistic competition is modeled, and the way the bargaining process is modeled.
 
 \subsubsection{Costs of entry}
 
-For each potential fringe entrant $F_i$, entering the marker has two, separate costs: an exogenous investment cost $I_F$, and the lump-sum platform entry fee $K_F$.
-One can conceptualize the first one, $I_F$, as usual fixed costs, such as the cost of setting up production, or designing a product.
-Without it, fringe firms would always make positive profits in the bargaining model, and therefore the free entry equilibrium would not exist.
-Furthermore, it is a quite reasonable assumption in most settings, as some of the costs of entering the market are sunk, and not paid to the platform.
+For each potential fringe entrant $F_i$, entering the market has two separate costs: an exogenous investment cost $I_F$ and the lump-sum platform entry fee $K_F$.
+The first one, $I_F$, can be conceptualized as usual fixed costs, such as the cost of setting up production or designing a product.
+Without it, fringe firms would always make positive profits in the bargaining model, and therefore, the free-entry equilibrium would not exist.
+Furthermore, it is quite a reasonable assumption in most settings, as some of the costs of entering the market are sunk and not paid to the platform.
 
 Meanwhile, the second cost, $K_F$, is a payment to the platform for using its services.
 While percentage fees are more common both in the literature and in practice, I assume a lump-sum fee for a few reasons.
-First, and most importantly, revenue-based fees enter the entrants' pricing decision, and thus create a channel through which platforms distort competition.
-I want to show that even in the absence such distortions, hybrid platforms can have a significant impact on competition.
+First, and most importantly, revenue-based fees enter the entrants' pricing decisions, and thus create a channel through which platforms distort competition.
+I want to show that hybrid platforms can significantly impact competition even in the absence of such distortions.
 Furthermore, due to this distortion, the resulting game could not be represented as a transferable utility game, and the proposed solution concept would not be applicable.
 Finally, lump-sum fees do make sense in settings when individual negotiation takes place and contracts are not standardized.
 
 \subsubsection{Timing of the game}
 
 The two models are designed to be as similar as possible, also with respect to the timing of the game.
-The only difference is in the order of the first two stages, which is necessary due to the nature of the two different entry fee setting mechanisms.
+The only difference is in the order of the first two stages, which is necessary due to the nature of the two different entry fee-setting mechanisms.
 
 In the case of the benchmark model, if the platform set entry fees after fringe firms make their investment decisions, the platform would charge an entry fee that would make the fringe profits zero without taking into account the investment cost $I_F$.
-This would lead to negative fringe profits, and thus to a trivial equilibrium, where no firm enters.
-Therefore, entry fee setting must come before the fringe firms' investment decisions.
+This would lead to negative fringe profits and, thus, to a trivial equilibrium where no firm enters.
+Therefore, the entry fee setting must come before the investment decisions of the fringe firms.
 
 Contrary to this, in the bargaining model, the opposite order is necessary.
-This is because the entry fee is the result of a negotiation, so by the time the negotiation takes place, it must already be clear which firms are engaging in it.
-Otherwise, the bargaining process (either in its cooperative, reduced-form version, or in the non-cooperative, extensive form one) would not be well defined.
+This is because the entry fee is the result of a negotiation, and by the time the negotiation takes place, it must already be clear which firms are engaging in it.
+Otherwise, the bargaining process (either in its cooperative, reduced-form version or in the non-cooperative, extensive form one) would not be well defined.
 Therefore, the fringe firm's entry decisions\footnote{
     With respect to creating a product.
-    Entering the platform and paying the entry fee is a separate decision, which takes place during the negotiation.
+    Entering the platform and paying the entry fee are separate decisions, which take place during the negotiation.
 } must come before the determination of the entry fee.
 
 \subsubsection{Product pricing}
 
-The pricing decision of the fringe sellers is rather straightforward, due to their infinitesimal market share: they do not have to take into account the effect of their prices on the aggregate demand.
-This normally is not the case for the platform, as it can affect a non-zero measure of the prices.
+Due to their infinitesimal market share, the fringe sellers' pricing decisions are rather straightforward: they do not have to take into account the effect of their prices on the aggregate demand.
+This is typically not the case for the platform, as it can affect a non-zero measure of the prices.
 Therefore, when setting the price for product $P_i$, it would optimally like to take into account how it affects demand on its other products $P_j$ $(j \neq i)$.
 Despite this, I assume that the platform prices its products as if they were produced by separate, monopolistically competitive sellers.
 
 I do this for a number of reasons.
-For one, it simplifies the analysis without affecting the main results qualitatively.  % TODO: refer to results if I can
-More importantly, it lets me focus on the main question of this paper: how the platform's hybrid operation affects the bargaining power.
-If the platform priced its products strategically, there would be an additional channel through which its product variety could affect the outcomes: in contrast to the fringe firms, it takes into account the effect of its prices on the aggregate demand.
+For one, it simplifies the analysis without affecting the main results qualitatively.
+More importantly, it lets me focus on the main question of this paper: how the platform's hybrid operation affects bargaining power.
+If the platform priced its products strategically, there would be an additional channel through which its product variety could affect the outcomes, as, in contrast to the fringe firms, it takes into account the effect of its prices on the aggregate demand.
 This would make it harder to disentangle the effects of hybrid operation from the effects of strategic pricing.
-This assumption can be seen as a best-case scenario for consumers and the fringe, where as little market power as possible is given to the platform.
+This assumption can then be seen as a best-case scenario for consumers and the fringe, in which the platform is given as little market power as possible.
 
 A number of other papers using the same demand system \parencite[e.g.][]{anderson2020aggregative,anderson2021hybrid} achieve essentially the same outcome by relying on the timing of the model.
 Specifically, if the platform sets product prices before the fringe firms make their entry decisions, the aggregate demand will not depend on the platform's product prices\footnote{
-    At least in the hybrid regime.
-    The optimum in the pure retailer regime is somewhat different.
+ At least in the hybrid regime.
+ The optimum in the pure retailer regime is somewhat different.
 }.
-This in turn means that the platform will optimally price its products as if they were produced by separate sellers.
-In the current paper, such a timing would be problematic, because the aim is to keep the benchmark and bargaining models as similar as possible.
-It would be unrealistic to assume that the platform can commit to prices before the fringe firms make their investment decisions, while at the same time it cannot commit to an entry fee in the latter model.
+This, in turn, means that the platform will optimally price its products as if they were produced by separate sellers.
+Such timing would be problematic in the current paper because the aim is to keep the benchmark and bargaining models as similar as possible.
+It would be unrealistic to assume that the platform can commit to prices before the fringe firms make their investment decisions, while at the same time, it cannot commit to an entry fee in the latter model.
 
-Finally, even taken at face value, this assumption about the platform's pricing is quite reasonable in a number of settings.
-For example, the platform might be producing its products through a number of subsidiaries, which are legally separate entities, thus having no control over operational decisions, but still getting the profits from the sales.
-Alternatively, there might be some kind of internal competition between the different product teams, which would lead to a similar outcome.
+Finally, even taken at face value, this assumption about the platform's pricing is quite reasonable in certain settings.
+For example, the platform might produce its products through many legally separate subsidiaries, thus having no control over operational decisions but still earning profits from their sales.
+Alternatively, even within a single firm, there might be some internal competition between the different product teams, leading to a similar outcome.
 
 \subsubsection{Bargaining over the platform entry fee}
 
 Although the main reason for utilizing cooperative game theory in this model is tractability, it is by no means the only one.
-This way of modelling bargaining outcomes, while uncommon, has been used to great effect in a number of other papers in the industrial organization literature \parencite[e.g.][]{montez2007downstream,hart1990property,levy1997individual,inderst2003bargaining,brugemann2019intra}.
+This way of modeling bargaining outcomes, while uncommon, has been used to great effect in several other papers in the industrial organization literature \parencite[e.g.][]{montez2007downstream,hart1990property,levy1997individual,inderst2003bargaining,brugemann2019intra}.
 Furthermore, it has a number of appealing properties.
 For example, it is closely related to the marginal contributions of the players to the total value, and, as shown in \Cref{sec:more_general_results}, it is also quite intuitive in terms of comparative statics.
-Furthermore, and perhaps more importantly, there are a number of ways to place it on non-cooperative microfoundations by setting up non-cooperative games for which the Shapley value is a subgame perfect equilibrium \parencite[e.g.][]{gul1989bargaining,hart1996bargaining,stole1996organizational}.
-\Cref{sec:bargaining_microfoundation} provides an example on how this specific model can be placed on such microfoundations.
+Furthermore, and perhaps more importantly, there are many ways to place it on non-cooperative microfoundations by setting up non-cooperative games for which the Shapley value is a subgame perfect equilibrium \parencite[e.g.][]{gul1989bargaining,hart1996bargaining,stole1996organizational}.
+\Cref{sec:bargaining_microfoundation} provides an example of how this specific model can be placed on such microfoundations.
 The subgame perfect equilibrium of the fully non-cooperative model described in that section coincides with the equilibrium of the bargaining model in the main text.
 Therefore, one can think of the cooperative game as a more tractable representation of the one from \Cref{sec:bargaining_microfoundation}.
 
-Let us also discuss the specifics of the cooperative game of which the Shapley value is calculated.
-For the Shapley value (or any other cooperative solution concept) to be well-defined, the corresponding coalitional game must be precisely specified, as well.
-\Cref{sec:cooperative_game} describes it in detail. 
+Let us also discuss the specifics of the cooperative game in which the Shapley value is calculated.
+For the Shapley value (or any other cooperative solution concept) to be well-defined, the corresponding coalitional game must also be precisely specified.
+\Cref{sec:cooperative_game} describes the latter in detail. 
 In short, the idea is the following: given any subset of the players (coalition), players can predict total, industry-wide profits, as the pricing subgame has a unique subgame perfect equilibrium for any subset of the players.
 This total profit is taken as the value of that coalition, thus defining a characteristic function.
-Then, according to the definition of the Shapley value, every firm (including the platform) will get their average marginal contribution this industry-wide profit (with the average taken over all possible orderings of the firms).
+Then, according to the definition of the Shapley value, every firm (including the platform) will get their average marginal contribution to this industry-wide profit (with the average taken over all possible orderings of the firms).
 
-One simple extension of this bargaining process would be to use the more general concept of random order values \parencite{weber1988probabilistic}.
-\textcite{stancsics2023value} examines this solution concept for a similar game, but in a more abstract setting.
-\Cref{sec:cooperative_game_weighted} takes a step in this direction by introducing bargaining weights and utilizing the weighted value.
-
+A straightforward extension of this bargaining process would be to use the more general concept of random order values \parencite{weber1988probabilistic}.
+\textcite{stancsics2023value} examines this solution concept for a similar game but in a more abstract setting.
+\Cref{sec:cooperative_game_weighted} also takes a step in this direction by introducing bargaining weights and utilizing the weighted value.
 \section{Results}
 \label{sec:results}
 
-I will now present the main results of the model, again, starting from the final subgame and working backwards.
-For each subgame, I also demonstrate that the equilibrium exists and is unique, and therefore the complete game also has a unique equilibrium.
-The propositions in this section are generally proven for a more general framework, and those presented here are special cases of those.
-The reason for presenting the more special case in the main text is twofold.
-First, it the more concrete model is better for expositional purposes, and is a good fit for the setting.
-Second, the link between consumer surplus and the number of products is straightforward under the logit assumption, making it possible to state welfare results, as well.
+I will now present the model's main results, starting from the final subgame and working backward.
+I also demonstrate that the equilibrium exists and is unique in each subgame, and therefore, the complete game also has a unique equilibrium.
+The propositions in this section are generally proven within a more general framework, and those presented here are special cases.
+The reason for emphasizing the more special case is twofold.
+First, the more concrete model is better for expositional purposes and is a good fit for the context of platforms.
+Second, the link between consumer surplus and the number of products is straightforward under the logit assumption, making obtaining welfare results possible.
 
-For this reason, the proofs are also presented together with the more general model in \Cref{sec:more_general}.
+For this reason, the proofs are presented together with the more general model in \Cref{sec:more_general}.
 Most of the results only rely on \Cref{ass:additive_profit,ass:free_entry,ass:identical_fringe,ass:monotone_profits,ass:profit_sharing,ass:single_crossing}, and do not require the specific, logit-like demand function described previously.
 Therefore, I proceed to prove those results in two steps.
-First, I demonstrate that the model satisfied the aforementioned assumptions.
+First, I demonstrate that the model satisfied these assumptions.
 Second, in \Cref{sec:more_general}, I prove the corresponding results for the more general case.
 
 \subsection{Demand and producer profits}
@@ -374,7 +369,7 @@ Second, in \Cref{sec:more_general}, I prove the corresponding results for the mo
 
 As the final, price-setting subgame is the same in both the benchmark and the bargaining model, the results in this subsection apply to both.
 Discrete choice models with type I Extreme Value errors give rise to a logit-type demand function \parencite[e.g.][]{small1981applied}.
-More specifically, \textcite[]{anderson2021hybrid} show that it gives rise to the following demand function.
+More specifically, \textcite[]{anderson2021hybrid} shows that it gives rise to the following demand function.
 \begin{proposition}
     \label{prop:demand_function}
     The demand for product $i$ of producer $T \in \{P, F\}$ is given by:
@@ -392,9 +387,9 @@ More specifically, \textcite[]{anderson2021hybrid} show that it gives rise to th
 \end{proof}
 
 Let us call $v_T - p_{Ti}$ the net value of product $i$.
-As one would expect, demand is increasing in this net value, and decreasing in the competitors' net values.
+As one would expect, demand is increasing in this net value and decreasing in the competitors' net values.
 Furthermore, demand for each product is increasing in $\mu$, which describes the degree of product differentiation or the importance of taste shocks.
-Finally, notice that, as each producer is infinitesimal, its pricing decision does not affect the aggregate $A$.
+Finally, as each producer is infinitesimal, its pricing decision does not affect the aggregate $A$.
 This last property makes the optimal prices and profits of the producers very simple, as shown in the next proposition.
 \begin{proposition}
     \label{prop:optimal_profit}
@@ -421,18 +416,18 @@ In fact, equilibrium per-product demand and variable profit can simply be expres
     \label{eq:aggregate_simple}
 \end{align}
 denotes the total aggregate.
-Therefore, to simplify the notation, I will use $V_T$ and $A$ in the rest of the paper, instead of the more cumbersome expressions.
+Therefore, to simplify the notation, I will use $V_T$ and $A$ instead of the more cumbersome expressions in the rest of the paper.
 
-Finally, another important feature of this demand system is that, assuming optimal pricing, consumer welfare only depends on the size of the aggregate \parencite{anderson2020aggregative}.
-In particular, consumer surplus is proportional to the logarithm of the aggregate: $CS = \mu \log(A)$. This fact makes welfare analysis rather simple in this setting.
+Finally, another key feature of this demand system is that under optimal pricing, consumer welfare only depends on the size of the aggregate \parencite{anderson2020aggregative}.
+In particular, consumer surplus is proportional to the logarithm of the aggregate: $CS = \mu \log(A)$. This fact makes welfare analysis relatively simple in this setting.
 
 \subsection{Benchmark: platform sets entry fee unilaterally}
 \label{sec:results_benchmark}
 
-Let us now examine entry fees and fringe entry decisions in the benchmark model.
+Now, let us examine entry fees and fringe entry decisions in the benchmark model.
 Recall that there is an infinity of potential fringe entrants looking to enter the market.
 Therefore, total profits in equilibrium must be zero.
-Combined with the  profit function, this gives the following expressions for the equilibrium number of fringe firms and the equilibrium size of the aggregate.
+Combined with the profit function, this gives the following expressions for the equilibrium number of fringe firms and the equilibrium size of the aggregate.
 \begin{proposition}
     \label{prop:equilibrium_aggregate_benchmark}
     If entry costs $I_F$ and $K_F$ are low enough, the equilibrium size of the aggregate is
@@ -453,9 +448,9 @@ Combined with the  profit function, this gives the following expressions for the
 Note that in the first case (\Cref{eq:aggregate_eq}), the size of the aggregate does not depend on the platforms' product variety or the platform's product value.
 The intuition behind this is that per-firm fringe profits only depend on these factors indirectly, through the size of the aggregate.
 Therefore, the zero profit condition for the fringe firms pins down the aggregate in equilibrium (as long as the fringe is feasible).
-That is, an increase in $N_P$ will simply replace some fringe entrants, but the free entry condition will pin down the same aggregate regardless of the number of platform products.
+That is, an increase in $N_P$ will replace some fringe entrants, but the free entry condition will pin down the same aggregate regardless of the number of platform products.
 
-Now let us turn to the optimal entry fee set by the platform, and its total profits (consisting of revenue from its own sales and the collected entry fees).
+Now, let us turn to the optimal entry fee set by the platform and its total profits (consisting of revenue from its own sales and the collected entry fees).
 The following proposition establishes these both for the hybrid and the pure retail regimes, and \Cref{fig:entry_fee,fig:platform_profits} demonstrates them graphically.
 
 \begin{theorem}
@@ -474,15 +469,16 @@ The following proposition establishes these both for the hybrid and the pure ret
     \end{align}
 \end{theorem}
 
-First, let us look at the case when the platform finds it optimal to operate in the hybrid regime.
+First, let us look at the case of the platform finding it optimal to operate in the hybrid regime.
 As illustrated by \Cref{fig:entry_fee}, the optimal entry fee (\Cref{eq:entry_fee_benchmark}) does not depend on either the platform's product value or product variety.
 This is because due to the lump-sum nature of the entry fee, the platform can extract all the surplus from the fringe firms, and thus chooses $K_F$ to maximize total industry profits.
-The latter is essentially a function of the aggregate, minus the investment costs of the fringe firms.
-As I show later in \Cref{prop:equilibrium_benchmark}, the aggregate is independent of the platform's product variety in the hybrid regime, and therefore the optimal entry fee is also independent of it.
+The latter is a function of the aggregate minus the investment costs of the fringe firms.
+As I show later in \Cref{prop:equilibrium_benchmark}, the aggregate is independent of the platform's product variety in the hybrid regime.
+Therefore, the optimal entry fee is also independent of it.
 
 On the other hand, \Cref{fig:platform_profits}\footnote{
     $\frac{\dd X}{\dd N_P}$ denotes equilibrium comparative statics.
-    I.e., if the variable $X$ is a function of $N_P$ and $N_F$, then $$\frac{\dd X}{\dd N_P} = \frac{\partial X(N_P, N_F(N_P))}{\partial N_P}$$.
+ I.e., if the variable $X$ is a function of $N_P$ and $N_F$, then $$\frac{\dd X}{\dd N_P} = \frac{\partial X(N_P, N_F(N_P))}{\partial N_P}$$.
 } shows the platform's profit (\Cref{eq:platform_profits_hybrid_benchmark,eq:platform_profits_retail_benchmark}) is increasing in the number of its products.
 \begin{corollary}
     \label{prop:platform_profits_comparative_benchmark}
@@ -490,16 +486,16 @@ On the other hand, \Cref{fig:platform_profits}\footnote{
         N_F(N_P) > 0 \implies \frac{\dd \pi_P^t}{\dd N_P} = \frac{V_P}{V_F} I_F.
     \end{align*}
 \end{corollary}
-This is a rather mechanical result: the platform's product variety is exogenous, and therefore possible investment costs are not modeled.
-If the platform is operating in the hybrid regime, less fringe firms are needed to achieve the (fixed) equilibrium aggregate, therefore there is less expenditure on (essentially wasted) investment costs.
+This is a rather mechanical result: the platform's product variety is exogenous, and possible investment costs are not modeled.
+If the platform is operating in the hybrid regime, fewer fringe firms are needed to achieve the (fixed) equilibrium aggregate, so less is spent on (essentially wasted) investment costs.
 Consequently, in the hybrid regime, the derivative of optimal profits with respect to the platform's product variety is simply the fringe's investment cost, adjusted for the possible difference in product value.
 
 Now let us examine consumer welfare as a function of the platform's product variety\footnote{
     The comparative statics for the platform's product value, $V_P$, are similar.
 }.
 Under the assumed demand system, consumer surplus is proportional to the logarithm of the aggregate.
-Therefore, one only needs to understand how fringe entry, and thus the aggregate changes with the platform's product variety to understand the effect of the latter on consumer welfare.
-The next theorem establishes results for these three variables in the benchmark model.
+Therefore, one only needs to understand how fringe entry, and thus the aggregate, changes with the platform's product variety to understand the latter's effect on consumer welfare.
+The following theorem establishes results for these three variables in the benchmark model.
 \begin{theorem}
     \label{prop:equilibrium_benchmark}
     In the benchmark model, if $N_F(N_P) > 0$ (hybrid regime), then the following hold.
@@ -514,35 +510,35 @@ The next theorem establishes results for these three variables in the benchmark 
     \end{itemize}
 \end{theorem}
 
-The most important, and perhaps surprising, results of this theorem is that the platform's product variety has no effect on consumer welfare in the hybrid regime.
-This is due to the fact that the optimal entry fee, which is independent of $N_P$, pins down the aggregate.
+The most important, and perhaps surprising, result of this theorem is that the platform's product variety does not affect consumer welfare in the hybrid regime.
+This is because the optimal entry fee, which is independent of $N_P$, pins down the aggregate.
 As shown in \Cref{fig:fringe_entry_eq}, an increase in the platform's product variety will simply replace fringe firms in a constant ratio, such that the aggregate remains constant (\Cref{fig:welfare_aggregate}).
 This, in turn, implies that consumer surplus is also unaffected by the platform's product variety in the hybrid regime, as demonstrated in \Cref{fig:welfare_consumer_surplus}.
 
-When the platform finds it optimal to operate as a pure retailer, the only products on the market are the platform's own products.
+When the platform finds it optimal to operate as a pure retailer, its own products are the only products on the market.
 Therefore, quite mechanically, the aggregate, and thus consumer surplus, are increasing in the number of the platform's products (unshaded parts of \Cref{fig:welfare}).
 
-Finally, note that the profit of the platform under the hybrid regime is higher than under the retail regime, whenever the former is feasible.
-Therefore, for a given $N_P$, the platform prefers to operate in hybrid mode, and does not want to exclude fringe firms from the market.
+Finally, note that the platform's profit under the hybrid regime is higher than under the retail regime whenever the former is feasible.
+Therefore, for a given $N_P$, the platform prefers to operate in hybrid mode and does not want to exclude fringe firms from the market.
 This fact, together with the \Cref{prop:equilibrium_benchmark}, implies that the platform's product variety always has a weakly positive effect on consumer welfare.\footnote{
     This is in contrast to \textcite{anderson2021hybrid}, where a platform operating in hybrid mode sets higher royalties to create a price advantage for its own products.
     The reason for this difference lies in the type of entry fee: they assume a revenue-based, proportional fee, which distorts prices.
-    In contrast, in this paper, I assume a non-distortive, lump sum fee.
+    In contrast, I assume a non-distortive lump sum fee in this paper.
 }
 
 \subsection{Bargaining: platform and entrants negotiate over entry fees}
 
 Let us now turn to the main contribution of this paper: the case where the platform and the fringe firms negotiate over the division of profits.
 As the platform cannot choose and commit to an entry fee, the first two periods are switched compared to the benchmark model.
-The game starts by fringe firms' investment decisions, after which, in the second period, bargaining takes place between the platform and the entrants to determine the entry fee.
+The game starts with fringe firms' investment decisions, after which, in the second period, bargaining takes place between the platform and the entrants to determine the entry fee.
 
-As described in \Cref{sec:model_bargaining}, participants negotiate over the aggregate profits that they expect to obtain in the subsequent period (assuming the same non-collusive, monopolistic pricing, as before).
+As described in \Cref{sec:model_bargaining}, participants negotiate over the aggregate profits that they expect to obtain in the subsequent period (assuming the same non-collusive, monopolistic pricing as before).
 From \Cref{eq:optimal_profit}, the total profit achieved by the platform and $N_F$ fringe firms is given by
 \begin{align}
-    \Pi(N_P, N_F) = \mu \frac{N_F V_F + N_P V_P}{N_F V_F + N_P V_P + 1}.  \label{eq:total_profits}
+    \Pi(N_P, N_F) = \mu \frac{N_F V_F + N_P V_P}{N_F V_F + N_P V_P + 1}.  \label{eq:total_profits}
 \end{align}
 Bargaining outcomes are determined according to Shapley values, given by \Cref{prop:shapley_value}.
-Based on these, one can obtain closed-form expressions for platform and fringe profit shares for this class of demand systems.
+Based on these, closed-form expressions for platform and fringe profit shares for this class of demand systems can be obtained.
 \begin{proposition}
     \label{prop:platform_profits_bargaining}
     The platform's total profits are
@@ -555,8 +551,8 @@ Based on these, one can obtain closed-form expressions for platform and fringe p
     \end{align*}
 \end{proposition}
 
-Let us establish a couple of partial equilibrium results about the profir shares before moving on to the main results.
-Consider the number of fringe firms $N_F$ fixed.
+Let us establish a couple of partial equilibrium results about the profit shares before moving on to the main results.
+Consider the number of fringe firms $N_F$ as fixed.
 Then, total profits, as given by \Cref{eq:total_profits}, are clearly increasing in the number of platform products.
 The next proposition shows that the platform's profits are also increasing in $N_P$, while the fringe's profits are decreasing.
 \begin{proposition}
@@ -566,13 +562,13 @@ The next proposition shows that the platform's profits are also increasing in $N
         \frac{\partial \pi_P^t}{\partial N_P} &> 0, \quad \frac{\partial \pi_F^t}{\partial N_P} < 0.
     \end{align*}
 \end{proposition}
-This is actually a rather striking results.
+This is a rather striking result.
 Even though the total size of the pie increases, the slice that the fringe can obtain decreases.
-This is due to the substitutability of the fringe and the platform's own products\footnote{
+This happens because of the substitutability of the fringe's and the platform's products\footnote{
     \Cref{prop:share_of_fringe} demonstrates that the direction of the change depends on the cross derivative of the total profit function.
-}: as the latter increases its product variety, the marginal benefit of adding each fringe firm decreases, leading to a detoriation in the fringe's bargaining position.
+}: as the latter increases its product variety, the marginal benefit of adding each fringe firm decreases, leading to a deterioration in the fringe's bargaining position.
 
-Let us now endogeneize $N_F$, and turn to the main results of this section: how the platform's dual mode operation affects product variety and consumer welfare.
+Let us now endogenize $N_F$ and turn to this section's main results: how the platform's dual-mode operation affects product variety and consumer welfare.
 I start by showing that, like in the benchmark model, the equilibrium is unique in this case, as well.
 This, and many other results in this section, rely on the following lemma.
 \begin{lemma}
@@ -583,15 +579,15 @@ This, and many other results in this section, rely on the following lemma.
     \end{align*}
 \end{lemma}
 This lemma states that the fringe profit function is hump-shaped in the sense that it starts with an increasing\footnote{
-    More precisely, while the lemma does not explicitly state that the function is increasing for low values of $N_F$, the fact that $\pi_F^t(N_P, 0) = 0$ and $\pi_F^t(N_P, N_F) > 0 \forall\, N_F > 0$ implies it.
+ More precisely, while the lemma does not explicitly state that the function is increasing for low values of $N_F$, the fact that $\pi_F^t(N_P, 0) = 0$ and $\pi_F^t(N_P, N_F) > 0 \forall\, N_F > 0$ implies it.
 }, concave part, after which it may turn into a decreasing (but not necessarily concave or convex) function of $N_F$.
 \Cref{fig:equilibrium} illustrates this property.
 
-While this lemma's main purpose is to help establish the results about fringe entry and consumer surplus for the bargaining case, it is also interesting in its own right.
-It shows that the number of fringe firms do not necessarily have a monotonic effect on the total profits of the fringe.
-That is, even though industry-wide profits are increasing in $N_F$, the amount that the fringe can obtain may decrease after a certain point, not only as a fraction of the total, but also in absolute terms.
+While this lemma's primary purpose is to help establish the results about fringe entry and consumer surplus for the bargaining case, it is also interesting in its own right.
+It shows that the number of fringe firms does not necessarily have a monotonic effect on the total profits of the fringe.
+That is, even though industry-wide profits are increasing in $N_F$, the amount that the fringe can obtain may decrease after a certain point, not only as a fraction of the total but also in absolute terms.
 The underlying reason is that as the number of fringe firms increases, their bargaining power decreases due to their substitutability with each other.
-This decrease can be large enough to offset the total pie getting larger.
+This decrease can be large enough to offset the increase in the size of the total pie.
 
 \begin{figure}[ht]
     \centering
@@ -612,20 +608,19 @@ This decrease can be large enough to offset the total pie getting larger.
     \label{fig:equilibrium}
 \end{figure}
 
-An almost immediate corollary is that such a function must have (apart from the trivial $N_F=0$ case) at most one crossing with total investment costs, which is a linear function of $N_F$.
+An almost immediate corollary is that such a function must have (apart from the trivial $N_F=0$ case) at most one crossing with total investment costs, a linear function of $N_F$.
 Let us denote this point as $N_F^*$.
 Furthermore, if such a crossing exists, then it must be that $\pi_F^t(N_F) > I_F N_F \;\forall\, N_F < N_F^*$, and $\pi_F^t(N_F) < I_F N_F \;\forall\, N_F > N_F^*$ (see \Cref{fig:equilibrium} for an illustration of this idea).
 Therefore, $N_F^*$ must be the unique number of equilibrium entrants.
 The following proposition formalizes this observation.
 \begin{proposition}
     \label{prop:unique_equilibrium}
-    The equilibrium number of entrants $N_F^*$ is unique in the bargaining case.
+    The equilibrium number of entrants, $N_F^*$, is unique in the bargaining case.
 \end{proposition}
 
-Now let us examine how the platform's product variety affects fringe profits and the equilibrium number of fringe firms.
+Now, let us examine how the platform's product variety affects fringe profits and the equilibrium number of fringe firms.
 First, let us establish that fringe profits are decreasing in the number of the platform's products.
-Note, that this is a partial equilibrium result: $N_F$ is assumed to be fixed, and the platform's product variety is increased.
-Later on, 
+Note that this is a partial equilibrium result: $N_F$ is assumed to be fixed, while the platform's product variety is increased.
 \begin{proposition}
     \label{prop:fringe_profits_partial}
     For any $N_P, N_F \geq 0$, the fringe profit function is decreasing in $N_P$:
@@ -661,10 +656,10 @@ Later on,
     \label{fig:comparative_N_F}
 \end{figure}
 
-As illustrated in \Cref{fig:comparative_N_F}, together with the hump-shaped fringe profit function, this implies that an increase in the platform's product variety leads to a reduction in the number of fringe firms.
-What is not immediately clear is how this affects the total size of the aggregate, and consumer welfare.
+As illustrated in \Cref{fig:comparative_N_F}, together with the hump-shaped fringe profit function, \Cref{prop:fringe_profits_partial} implies that an increase in the platform's product variety leads to a reduction in the number of fringe firms.
+What is not immediately apparent is how this affects the total size of the aggregate and consumer welfare.
 In the benchmark case, the decrease in the number of fringe firms was exactly offset by an increase in the platform's product variety, and the aggregate remained constant.
-The following results shows that this is not the case in the bargaining model: as long as the platform is in the hybrid regime, the aggregate decreases in the number of the platform's products.\footnote{
+The following results show that this is not the case in the bargaining model: as long as the platform is in the hybrid regime, the aggregate decreases in the number of the platform's products.\footnote{
     As before, similar results hold for an increase in the platform's product value $V_P$.
 }
 
@@ -682,21 +677,21 @@ The following results shows that this is not the case in the bargaining model: a
     \end{itemize}
 \end{theorem}
 
-The main takeaway from this theorem is that the increasing the platform's product variety can actually decrease consumer welfare in the bargaining model.
+The main takeaway from this theorem is that increasing the platform's product variety can decrease consumer welfare in the bargaining model.
 The underlying reason is illustrated in \Cref{fig:fringe_entry_eq}: the decrease in the number of fringe entrants is large enough to not only to offset the increase in the platform's product variety, but also to decrease the aggregate (\Cref{fig:welfare_aggregate}).
-This in turn leads to a decrease in consumer surplus (\Cref{fig:welfare_consumer_surplus}).
+This, in turn, leads to a decrease in consumer surplus (\Cref{fig:welfare_consumer_surplus}).
 
 This set of results is in stark contrast to the benchmark model.
-Instead of increased product variety weakly increasing consumer welfare, when entry fees are negotiated, it can actually decrease it if the platform stays in the hybrid regime.
+Instead of the increased product variety weakly increasing consumer welfare, when entry fees are negotiated, it has the opposite effect if the platform stays in the hybrid regime.
 
-The intuition behind these results can be understood by looking at entry fees.
+The intuition behind these results can be understood by examining entry fees.
 First, define the implied entry fee in the bargaining case as the difference between the variable profit and the final, total profit of the fringe firms (bar the investment cost)\footnote{
     Or, in light of \Cref{sec:bargaining_microfoundation}, it can also directly be interpreted as the entry fee that the parties agree on after negotiating.
 }:
 \begin{align*}
     K_F^{impl} = \frac{\pi_F^v - \pi_F^t}{N_F} - I_F.
 \end{align*}
-As shown before, as the platform's product variety grows, its bargaining power also increases.
+As shown before, as the platform's product variety grows, its bargaining power increases.
 This can be thought of as an increase in (implied) entry fees $K_F^{impl}$, which in turn discourages fringe entry.
 \begin{proposition}
     \label{prop:implied_entry_fee_comparative}
@@ -705,9 +700,8 @@ This can be thought of as an increase in (implied) entry fees $K_F^{impl}$, whic
         N_F(N_P) > 0 \implies \frac{\partial K_F^{impl}(N_P)}{\partial N_P} > 0.
     \end{align*}
 \end{proposition}
-This is not happening in the benchmark model, because, as stated in \Cref{prop:optimal_entry_fee}, the optimal entry fee does not depend on the platform's product variety.
+This does not happen in the benchmark model because, as stated in \Cref{prop:optimal_entry_fee}, the optimal entry fee does not depend on the platform's product variety.
 \Cref{fig:entry_fee} demonstrates this difference between the two models.
-
 
 \begin{figure}
     \centering
@@ -767,7 +761,6 @@ This is not happening in the benchmark model, because, as stated in \Cref{prop:o
     \caption{Equilibrium number of fringe entrants and (implied) entry fees ($\mu = 1, V_P = 1, V_F = 1, I_F = 0.05$). In the benchmark model, the entry fee does not depend on the platform's product variety, and an increase in $N_P$ leads to a proportional reduction in $N_F$. In contrast, in the bargaining case, the entry fee is increasing in $N_P$, and the reduction in $N_F$ is more than proportional. Dark shaded area represents hybrid mode under the bargaining assumption, while light shaded area represents additional hybrid mode under the benchmark assumption.}
     \label{fig:entry_and_fees}
 \end{figure}
-
 
 \begin{figure}
     \centering
@@ -895,10 +888,10 @@ This is not happening in the benchmark model, because, as stated in \Cref{prop:o
 While completely endogenizing the platform's mode of operation (i.e., the determination of $N_P$) is outside the scope of this paper, some insights can be gained by building on the previous results.
 Let us start by examining whether the platform would prefer to switch to the pure retail regime and exclude the fringe firms.
 
-Assume that $N_P$ is still fixed, but now at time 0, the platform can decide whether to exclude the fringe.
+Assume that $N_P$ is still fixed, but now, at time 0, the platform can decide whether to exclude the fringe.
 As the next proposition shows, the platform never has an incentive to do so.\footnote{
-    Note, that it is possible that the optimal or negotiated entry fee is such that zero fringe firms enter the market.
-    This proposition's main statements is about the platform's decision to exclude the fringe, when the entry fee would be such that the fringe would enter.
+    Note that it is still possible that the optimal or negotiated entry fee is such that zero fringe firms enter the market.
+    The proposition's main statement concerns the platform's decision to exclude the fringe when the entry fee would be such that the fringe would enter.
 }
 \begin{proposition}
     \label{prop:hybrid_vs_retail}
@@ -908,18 +901,17 @@ As the next proposition shows, the platform never has an incentive to do so.\foo
     \end{align*}
     The inequality is strict whenever $N_F(N_P) > 0$.
 \end{proposition}
-In the case of the benchmark model, this result is rather straightforward: if the platform would find it optimal to exclude the fringe, it could do so by setting the entry fee to a sufficiently high level.
-In the bargaining case, the reasoning is less obvious, as it is not immediately clear that the share of profits that the platform can negotiate for itself is higher than what it could achieve by itself.
-However, it turns out that it is indeed the case.
-The intuition is that the platform's profit is just the average of total profits, with the average taken over the number of fringe firms.
+This result is straightforward in the case of the benchmark model: if the platform finds it optimal to exclude the fringe, it can always do so by setting the entry fee to a sufficiently high level.
+In the bargaining case, the reason is less obvious, as it is not immediately clear that the share of profits the platform can negotiate for itself is higher than what it could achieve alone.
+However, it turns out that this is indeed the case.
+The intuition is that the platform's profit is the average of total profits, with the average taken over the number of fringe firms.
 As total profits are increasing in the number of the fringe entrants, this average is also increasing in $N_F$.
 
-A related, but different question is whether the platform how the platform would decide between operating in pure retail and pure marketplace modes, if hybrid regime is not an option.
+A related, but different question is how the platform would decide between operating in pure retail and pure marketplace modes, if hybrid regime was not an option.
 It is particularly relevant from a policy perspective, as it can help understand what happens if hybrid operation is banned.
 The answer to this is less clear-cut, and depends on the parameters of the model.
-For low enough values of $V_P$ and $N_P$, the platform would clearly choose the pure marketplace mode, as with pure retail, its profits can be arbitrarily low.
+For low enough values of $V_P$ and $N_P$, the platform chooses the pure marketplace mode, as with pure retail, its profits can be arbitrarily low.
 The opposite is true for high enough values of $V_P$ and $N_P$.
-
 
 \begin{figure}
     \centering
@@ -984,10 +976,10 @@ The opposite is true for high enough values of $V_P$ and $N_P$.
 
 
 Finally, let us look at the more general case, where the platform can choose its number of products at the beginning of the game.
-Similarly to the fringe, assume that it faces an investment cost of $I_P$ per product.
+Similarly to the fringe, assume that the platform faces an investment cost of $I_P$ per product.
 \Cref{fig:optimal_n_p} illustrates the platform's final profits as a function of its product variety.
 
-As before, things are straightforward in the benchmark model: the platform invests in own products only if $\frac{V_P}{I_P} \geq \frac{V_F}{I_F}$.
+As before, things are straightforward in the benchmark model: the platform invests in its own products only if $\frac{V_P}{I_P} \geq \frac{V_F}{I_F}$.
 The following proposition characterizes the platform's optimal investment more precisely.
 \begin{proposition}
     \label{prop:optimal_n_p_benchmark}
@@ -1000,13 +992,14 @@ The following proposition characterizes the platform's optimal investment more p
     \end{align*}
 \end{proposition}
 
-The intuition behind this result is that the platform can extract all profits from the fringe firms through the lump-sum entry fee, end thus it invests in its own products only if it has a product advantage (either in terms of less costly investment or more valuable product).
-A consequence of this proposition is that, apart from the knife-edge case of $\frac{V_P}{I_P} = \frac{V_F}{I_F}$, the platform never finds it optimal to operate in hybrid mode: it either creates so many products that it excludes the fringe, or it creates none at all.
+The intuition behind this result is that the platform can extract all profits from the fringe firms through the lump-sum entry fee.
+Thus, it invests in its own products only if it has a product advantage (either a less costly investment or a more valuable product).
+A consequence of this proposition is that, apart from the knife-edge case of $\frac{V_P}{I_P} = \frac{V_F}{I_F}$, the platform never finds it optimal to operate in hybrid mode: either it creates so many products that the fringe is not viable, or it creates none at all.
 \Cref{fig:optimal_n_p_benchmark} displays this result: for low values of $I_P$, the equilibrium is a corner solution with $N_P = 0$, and for high values, the maximum is reached in the pure retail regime.
 
 As before, the situation is more complicated in the bargaining model.
 Instead of characterizing the platform's optimal investment directly, let us look at it through the lens of implied entry fees.
-Remember, that in the bargaining model, the implied entry fee is increasing in the number of the platform's products.
+Remember that in the bargaining model, the implied entry fee increases with the number of the platform's products.
 Together with the concavity of platform profits as a function of $N_P$, and the statement of \Cref{prop:platform_profits_comparative_benchmark}, this implies the following result:
 \begin{proposition}
     \label{prop:comparative_n_p_bargaining}
@@ -1016,89 +1009,91 @@ Together with the concavity of platform profits as a function of $N_P$, and the 
         K_F^{impl}(N_P) > K_F^{opt} &\implies \frac{\dd \pi_P^t}{\dd N_P} < \frac{V_P}{V_F} I_F.
     \end{align*}
 \end{proposition}
-The intuition is that if, for a certain $N_P$, the implied entry fee is lower than optimal, then the platform investing in more products will bring it closer to the optimal level, and the increase in platform profits will be higher than in the benchmark model.
-Conversely, if the entry fee is already higher than optimal for a given $N_P$, an additional increase will lead to an even more suboptimal (implied) entry fee, and thus a lower increase in platform profits.
+The intuition is that if, for some $N_P$, the implied entry fee is lower than optimal, then the platform investing in more products will bring it closer to the optimal level, and the increase in platform profits will be higher than the increase in the benchmark model.
+Conversely, if the entry fee is already higher than optimal for a given $N_P$, an additional increase will lead to an even more suboptimal (implied) entry fee and, thus, a lower increase in platform profits.
 
-The consequence of this result is that in the bargaining model, hybrid operation can be optimal, and not only for knife-edge cases.
-Furthermore, and even more strikingly, the platform may find it optimal to invest in its own products even if it has a product disadvantage, if it helps it to negotiate a more optimal entry fee.
+This result implies that in the bargaining model, hybrid operations can be optimal, and not only for knife-edge cases.
+Furthermore, and even more strikingly, the platform may find it optimal to invest in its own products even if it has a product disadvantage, when this investment helps it to negotiate a more optimal entry fee.
 \Cref{fig:optimal_n_p_bargaining} showcases such an example.
-When the platform has a not too large product disadvantage ($I_P = 0.55$ case), the maximum of its profits is reached in the hybrid regime.
-This is doubly unfortunate from a welfare perspective: not only does the platform make an investment that the fringe could have made more efficiently, but it also decreases consumer welfare by reducing the total product variety.
+When the platform has a not-too-large product disadvantage ($I_P = 0.55$ case), its profits are maximized by operating in the hybrid regime.
+This result is doubly unfortunate from a welfare perspective: not only does the platform make an investment that the fringe could have made more efficiently, but it also decreases consumer welfare by reducing the total product variety.
 
 \subsection{Discussion}
 \label{sec:results_discussion}
 
 \paragraph{Generality of the figures}
 While \Cref{fig:entry_and_fees,fig:platform_profits,fig:welfare} illustrate the main results of this paper under a specific parametrization, many of the insights are more general.
-In particular, the higher-than-proportional decrease in the number of fringe firms as the platform's product variety increases, and the resulting negative effect on consumer welfare, have corresponding theorems that hold for any parametrization (\Cref{prop:equilibrium_benchmark,prop:equilibrium_bargaining}).
-Similarly, the implied entry fee being increasing in the number of the platform's products is a general result (\Cref{prop:implied_entry_fee_comparative}).
+In particular, the higher-than-proportional decrease in the number of fringe firms and the resulting negative effect on consumer welfare have corresponding theorems that hold for any parametrization (\Cref{prop:equilibrium_benchmark,prop:equilibrium_bargaining}).
+Similarly, the implied entry fee increasing in the number of the platform's products is also a general result (\Cref{prop:implied_entry_fee_comparative}).
 
 One aspect that is not general is the fact that the optimal and implied entry fees, in the benchmark and bargaining models, respectively, coincide for some value of $N_P$.
-In the example parametrization, the implied entry fee is lower than what the platform would prefer to set for low values of $N_P$, and higher afterwards.
-There is an optimal platform product variety $N_P^*$ for which the implied entry fee is the same as the optimal entry fee in the benchmark model, and therefore the results of the two models are the same.
-It is possible, however, that even for arbitrarily low values of $N_P$, the implied entry fee is higher than optimal.
+In the example parametrization, the implied entry fee is lower than what the platform would prefer to set for low values of $N_P$ and higher afterward.
+Therefore, there is an optimal platform product variety $N_P^*$ for which the implied entry fee is the same as the optimal entry fee in the benchmark model, and the results of the two models are the same.
+However, it is possible that even for arbitrarily low values of $N_P$, the implied entry fee is higher than optimal.
 In such a case, the platform would like to commit to a lower entry fee to incentivize more fringe entry, but it cannot do so.
 \Cref{sec:higher_bargaining_power} presents an example where this is the case.
 In such a setting, bargaining does not improve consumer welfare compared to unilateral price-setting, even if the platform is a pure marketplace: it can be a lose-lose situation for both the platform and the consumers.
 
 
 \paragraph{Consequences of the assumptions}
-The results from the benchmark model suggest that the platform's product variety is always weakly beneficial for consumers.
+The results from the benchmark model suggest that the platform having its own products is always weakly beneficial for consumers.
 Furthermore, if the platform's product variety (and thus also the pure marketplace/ hybrid mode decision) was endogenous, an improvement in the platform's product (either higher value or lower cost) would also have a positive effect on consumer welfare.
 This surprising result depends on a number of -- admittedly unrealistic -- assumptions.
-Namely, the lump-sum nature of the entry fee, no entry fee for consumers, and the platform pricing its products as if they were produced by separate sellers.
-Therefore, one should not take this result as a conclusion applicable to the real world, but as a best-case benchmark.
-On the other hand, these assumptions are also why this model is so useful as a benchmark: as I show in the case of the bargaining model, even with these assumptions in place, the platform's product can have negative welfare consequences if the entry fee is set through bargaining.
+Namely, the lump-sum nature of the entry fee, no entry fee for consumers, and the platform pricing its products as if separate sellers produced them.
+Therefore, this result should not be taken as a conclusion applicable to the real world but as a best-case benchmark.
+On the other hand, these assumptions are also why this model is so useful as a benchmark: as I show in the case of the bargaining model, even with these assumptions in place, the platform selling its own products can have negative welfare consequences when the entry fee is set through bargaining.
 
-Nevertheless, the results of the bargaining model do not hinge on the majority of these assumptions.
-For example, the number of consumers could be endogenous, with the platform setting an entry fee for them.
+Nonetheless, the results of the bargaining model do not hinge on the majority of these assumptions.
+For example, the number of consumers could be endogenized, with the platform setting an entry fee for them.
 Similarly, the platform could take into account the fact that its product prices affect the demand for its other products.
-These changes would translate into a different, possibly less tractable total profit function, but its main properties (i.e. being increasing in the number of platform products and fringe firms) would still hold.
+These changes would translate into a different, possibly less tractable total profit function, but its main properties (notably, being increasing in the number of platform products and fringe firms) would still be the same.
 As long as \Cref{lem:shape_of_fringe_profit} holds, the main results of the bargaining model would also be valid.
 
 Furthermore, the logit-like nature of the demand function is also not necessary.
 It does simplify the analysis, especially in terms of consumer welfare, but the main results would also hold for a larger class of demand functions\footnote{
     In particular, demand functions for which the implied profit functions satisfy the assumptions in \Cref{sec:more_general}.
 }.
-It is however important that the demand function is such that total profits are increasing in the number of fringe firms.
-Without this, the corresponding cooperative game is not monotone, and the bargaining microfoundations do not apply.
-%TODO: more on this assumption
+It is, however, important that the demand function is such that total profits are increasing in the number of fringe firms.
+Without this, the corresponding cooperative game would not be monotone, and the bargaining interpretation would be less applicable.
+In the model presented in the main text, monotonicity arises due to consumers' taste for variety preferences.
+This assumption might also be justified in settings with network effects \parencite{rochet2003platform}, or when the platform can extract consumer surplus through entry fees or some other mechanism.\footnote{
+    \textcite{chen2008price} demonstrates that under certain circumstances, an even more extreme phenomenon might occur: competition may increase not only industry-wide profits but prices, as well.
+}
 
-The other assumption that is crucial for the results is the lump-sum nature of the entry fee.
+The other assumption crucial for the results is the lump-sum nature of the entry fee.
 Without it, the corresponding cooperative game would not have transferable utility, and the Shapley value would not be a meaningful solution concept.
 One alternative solution concept for that case would be the consistent Shapley value from \textcite{maschler1992consistent}, which can also be interpreted as a bargaining solution \parencite{hart1996bargaining}.
 
 \paragraph{Relation to the literature}
-Similarly to the existing literature on hybrid platforms, the latter conclusion highlights the possibly problematic aspects of hybrid operation, albeit through a novel channel.
-In \textcite{hagiu2022should}, the negative consequences are due to its incentives to engage in anti-competitive behavior, such as self-preferencing or imitation, but in lieu of those, they argue that hybrid platforms can actually be beneficial.
+Similar to the existing literature on hybrid platforms, this paper highlights the problematic aspects of hybrid operation, albeit through a novel channel.
+In \textcite{hagiu2022should}, the negative consequences are due to its incentives to engage in anti-competitive behavior, such as self-preferencing or imitation.
+However, in lieu of those, they argue that hybrid platforms can be beneficial.
 \textcite{anderson2021hybrid}, on the other hand, shows that even in the absence of such behavior, hybrid platforms can harm consumers, as platforms are inclined to set higher than optimal royalties to create a price advantage for their own products.
-The distortion in their model comes from the percentage-based nature of the entry fee (royalty), incentivizing the platform to set it higher than in the pure intermediary case, to advantage its own products.
+The distortion in their model comes from the percentage-based nature of the entry fee (royalty), which incentivizes the platform to set it higher than in the pure intermediary case to give an advantage to its own products.
 This paper goes one step further.
-Due to the lump-sum nature of the entry fee and platforms pricing their products as if they were produced by separate sellers, the incentive is no more present (as demonstrated by the benchmark model).
-However, I demonstrate that there is another source of distortion when the entry fee is negotiated: a hybrid platform is in a better bargaining than it would be if it had no products on its own.
-This in turn leads to a higher entry fee, and thus lower consumer welfare.
+Due to the lump-sum nature of the entry fee and platforms pricing their products as if they were produced by separate sellers, the latter incentive is no longer present (as demonstrated by the benchmark model).
+However, I demonstrate that there is another source of distortion when the entry fee is negotiated: a hybrid platform is in a better bargaining position than it would be if it had no products on its own.
+This, in turn, leads to a higher entry fee and, thus, lower consumer welfare.
 
 \section{Conclusion and future work}
 \label{sec:conclusion}
 
 This paper introduces a new model of hybrid platforms in which bargaining between the platform and the entrant firms plays a key role.
-It highlights the importance of a so far overlooked aspect of platforms having their own products: the fact that it increases their bargaining power compared to other players'.
+It highlights the importance of a so-far overlooked aspect of platforms having their own products: the fact that it increases their bargaining power compared to other players.
+In certain situations, such as the one described in this paper, this can lead to fewer fringe reduced product variety and, ultimately, lower consumer welfare.
 As a result, even in the absence of other frictions, hybrid platforms might have detrimental effects on fringe entry.
-This, in certain situations, such as the one described in this paper, this can lead to fewer fringe reduced product variety, and ultimately, lower consumer welfare.
 
-The contributions of this paper can be broken down into two categories.
-First, a simple, but quite general model of bargaining between one indispensable player and a continuum of potential market entrants is introduced.
-This model is applicable beyond the platform setting, and can describe other markets, such as upstream-downstream relations, or franchising, as well.
-The quite general results obtained from this model also highlight the similarities between those markets.
-Furthermore, many of the results from this paper can be applied in a plug-and-play fashion to other models of large-player-small-player interactions.
-
-The second set of contributions pertains to applying the aforementioned model to a setting with a hybrid platform.
 The demand structure is similar to the one in \textcite{anderson2021hybrid}, and the results convey the same general message: hybrid platforms can have detrimental welfare effects.
 However, the mechanism behind this result is quite different.
-This paper relies on the change in bargaing power, and shows that even in the case of lump-sum entry fees, hybrid platforms can be problematic from a welfare perspective.
-An extension of the main model also highlight the importance of the assumptions on who is participating in the bargaining process.
+This paper showcases the channel of changes in bargaining power and shows that even in the case of lump-sum entry fees, hybrid platforms can be problematic from a welfare perspective.
+An extension of the main model also highlights the importance of the assumptions on who is participating in the bargaining process.
 
-There is a number of avenues for future research in this direction.
+As shown in the appendix, the model can be generalized beyond the hybrid platform setting, and can describe other markets, such as upstream-downstream relations or franchising, as well.
+The generality of the results obtained also highlights the similarities between such markets.
+Furthermore, many of those results from can be applied in a plug-and-play fashion to other models of large-player-small-player bargaining.
+
+There are several avenues for future research in this direction.
 First, although the results provide some suggestions about what endogenizing the number of the platform's products might entail, a more formal analysis is needed for a more complete picture.
-Second, applying the same bargaining framework, but using a different demand structure (e.g. CES utility) for microfounding the profit functions would have important implications for the robustness of the results.
-Finally, I believe this approach for modeling bargaining is a rather good compromise between assuming that one party has all the bargaining power, and modeling the bargaining process in detail, and some of the main ideas in this paper might be a good fit for different settings and and more applied models.
+Second, applying the same bargaining framework but using a different demand structure (e.g., CES utility) for microfounding the profit functions would have important implications for the robustness of the results.
+Finally, I believe this approach for modeling bargaining is a rather good compromise between assuming that one party has all the bargaining power and modeling the bargaining process in detail.
+Therefore, certain ideas in this paper might be a good fit for modeling different settings involving bargaining power disparities.

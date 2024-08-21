@@ -7,7 +7,7 @@ That is, if we denote the idiosyncratic utility of player $n$ on side $i$ as $\k
 Also assume that $\lim_{n \to \infty} \kappa_i(n) = \infty$.
 
 Entry is given by the usual assumption that a player enters if and only if the total utility of entering is non-negative.
-Due to the properties of $\kappa_i$, this implies that there is a well-defined, finite number of entrants on each side.
+Due to the properties of $\kappa_i$, this implies a well-defined, finite number of entrants on each side.
 Let us denote the number of entrants as a function of their non-idiosyncratic utility as $\phi_i(u_i)$.
 Then, the total number of players on side $i$ is 
 \begin{align*}
@@ -15,23 +15,24 @@ Then, the total number of players on side $i$ is
 \end{align*}
 
 This microfoundation does not change the results of the welfare-maximizing and unilateral pricing cases in any fundamental way.
-Total welfare must be adjusted to include this idosyncratic cost, but entry fees do not change at all.
-The reason is that, in the welfare-maximizing case, optimal prices only depend on externalities, while in the unilateral pricing case, the only additional factor is the elasticity of entry\footnote{
-    With this microfoundation in mind, one also relate this entry elasticity as the marginal cost of entry.
-}.
+Total welfare must be adjusted to include this idiosyncratic cost, but entry fees do not change at all.
+The reason is that, in the welfare-maximizing case, optimal prices only depend on externalities, while in the unilateral pricing case, the only additional factor is the elasticity of entry.
 On the other hand, the bargaining case is more interesting.
-The reason is that this idiosyncratic cost becomes a part of the value that the players bargain over, and thus it affects the characteristic function and the resulting bargaining outcomes.
+The reason is that this idiosyncratic cost becomes a part of the value the players bargain over, and thus, it affects the characteristic function and the resulting bargaining outcomes.
 
-I approach this problem by breaking it down into two parts: the bargaining over the idisyncratic and non-idiosyncratic parts of the value generated.
+I approach this problem by splitting it into two parts: bargaining over the idiosyncratic and non-idiosyncratic parts of the value generated.
 Due to the linearity property of the Shapley value, the bargaining outcomes over the whole value are simply the sum of the bargaining outcomes over these two parts.
-Furthermore, the non-idiosyncratic part is simply the value function from the main text, and thus the resulting weighted values are the same as before.
+Furthermore, the non-idiosyncratic part is the same as in the main text.
+Thus, the weighted values arising from it are also identical.
 
 Let us continue by examining the idiosyncratic part of the value.
-Assume that, even though entrants with different costs have different contribution to the total value, there can be no discrimination between them in terms of the bargaining outcomes.
-That is, they each must share the same fraction of the total idiosyncratic cost (e.g. have the same value).
+Assume that, even though entrants with different costs have different contribution to the total value, there can be no discrimination between them in terms of the bargaining outcomes.\footnote{
+    In other words, the entry fee must be the same for each player on the same side.
+}
+That is, they must each share the same fraction of the total idiosyncratic cost.
 
 Let us denote the total idiosyncratic cost incurred by all players on both sides as $K(n_1, n_2)$.
-Also, suppose that if $n_i$ players enter on side $i$, then they are the ones with the lowest idiosyncratic cost.
+Also, suppose that if $n_i$ players enter on side $i$, then they are the ones with the lowest idiosyncratic cost amongst all possible entrants.
 Then, the total idiosyncratic cost is simply the sum of the idiosyncratic costs of the entrants on both sides:
 \begin{align*}
     K(n_1, n_2) = \int_0^{n_1} \kappa_1(s) \ds + \int_0^{n_2} \kappa_2(s) \ds.
@@ -46,12 +47,12 @@ One can obtain the weighted values of all sides using \Cref{prop:many_sided_weig
     \end{align*}
 \end{proposition}
 
-That is, each side only has to bear some part of the total idiosyncratic cost, and the rest is shared with the platform.
+That is, each side only has to bear some part of their idiosyncratic entry cost, with the rest being shared with the platform.
 As with the rest of the value, the share of the idiosyncratic cost is increasing in one's own bargaining weight.
 This might seem counterintuitive at first, as one may expect that a player with a higher bargaining weight would be able to shift more of the cost to the other side.
-However, in the case of random order values, this intuition is only correct for monotonic games, which it is not.
-One has to keep in mind though that this is just part of the final payoffs, and the other parts are increasing in one's own bargaining weight.
-Therefore, as long as the game over the total value is monotonic, the final payoffs will be increasing in one's own bargaining weight.
+However,  this intuition is only correct for monotonic games, which it is not.
+One has to remember that this is just part of the final payoffs, and the other parts are increasing in one's own bargaining weight.
+Therefore, as long as the game over the total value is monotonic, the final payoffs will be increasing in one's own bargaining weight, too.
 
 Let us finally consider total welfare.
 As mentioned before, it is simply the sum of the value generated and the idiosyncratic cost.
@@ -67,9 +68,9 @@ In turn, the implied entry fee for side $i$ is
 \end{align*}
 
 As with the other components of the value, the idiosyncratic entry cost is also shared between the platform and the entrants.
-Part of it $(*)$ is incurred on the side of the entrants, while the other part $(**)$ paid by the platform as a reduction of entry fees.
-How this cost is divided is not straightforward, though.
-As in the case of non-linear network effects, it depends on the bargaining weights and the shape of the idiosyncratic cost function, with the two also interacting in a non-trivial way.
+Part of it, $(*)$, is incurred on the side of the entrants, while the other part, $(**)$, is paid by the platform as a reduction of entry fees.
+However, how this cost is divided is quite intricate.
+As in the case of non-linear network effects, it depends on the bargaining weights and the shape of the idiosyncratic cost function, with the two also interacting in a complex way.
 
 
 \section{Miscellaneous lemmas}
@@ -214,7 +215,7 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
 \end{proof}
 
 \begin{proof}[Proof of Corollary \ref{cor:fringe_value}]
-    The first equality comes from the efficiency of the Shapley-value.
+    The first equality comes from the efficiency of the Shapley value.
     The values of all players sum up to $f(1)$ for all $n \in \mathbb{N}$, therefore
     \begin{align*}
         \lim_{n \to \infty} \sum_{i=1}^n \varphi_{A_i}^n = \lim_{n \to \infty} (1 - \varphi_P^n ) = 1 - \int_0^1 f(t).
@@ -463,7 +464,7 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
     \end{align*}
     
     Now we can use \Cref{lem:convergence_to_manifold} to conclude that $X_n \xrightarrow[]{d} (U, \dots, U)$.
-    Finally, by \Cref{lem:many_sided_manifold}, the Shapley-value is
+    Finally, by \Cref{lem:many_sided_manifold}, the Shapley value is
     \begin{align*}
         \varphi_P^\infty & = \int_0^1 f(s, \dots, s) \dt
     \end{align*}
@@ -551,9 +552,8 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
         &= \frac{\lambda_P}{\lambda_P + \lambda_1 + \lambda_2\gamma_1} \alpha_1 n_1 n_2^{\gamma_1} + \frac{\lambda_P}{\lambda_P + \lambda_2 + \lambda_1\gamma_2} \alpha_2 n_2 n_1^{\gamma_2} - \frac{\lambda_P}{\lambda_P + \lambda_1} n_1 F_1 - \frac{\lambda_P}{\lambda_P + \lambda_2} n_2 F_2.
     \end{align*}
     Similarly, the value of side $i \in \{1, 2\}$ is
-    % TODO: improve formalism in the first line of formula below?
     \begin{align*}
-        W_i &= \int_0^1 t^{\lambda_P} \lambda_i t^{\lambda_i - 1} \partial_i w(t^{\lambda_1} n_1, t^{\lambda_2} n_2) \dt \\
+        W_i &= \int_0^1 t^{\lambda_P} \lambda_i t^{\lambda_i - 1} \partial_i n_i w(t^{\lambda_1} n_1, t^{\lambda_2} n_2) \dt \\
         &= \int_0^1 t^{\lambda_P} \lambda_i t^{\lambda_i - 1} \left[ \alpha_i n_i t^{\lambda_j \gamma_i} n_j^{\gamma_i} + \alpha_j \lambda_i \gamma_j t^{\lambda_j} n_j t^{\lambda_i (\gamma_j - 1)} n_i^{\gamma_j} - n_i F_i \right] \dt \\
         &= \frac{\lambda_i}{\lambda_P + \lambda_i + \lambda_j\gamma_i} \alpha_i n_i n_j^{\gamma_i} + \frac{\lambda_i \gamma_j}{\lambda_P + \lambda_j + \lambda_i\gamma_j} \alpha_j n_j n_i^{\gamma_j} - \frac{\lambda_i}{\lambda_P + \lambda_1} n_i F_i.
     \end{align*}
