@@ -403,7 +403,7 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
 
     For the fringe value, the proof is similar, with a couple of additional steps.
     First, fix some fringe player $A_{li}$.
-    Let $Y_n$ be the random variable describing the share of each type of fringe player that precede player $A_{li}$.
+    Let $Y_n = (Y_n^1, \dots, Y_n^L)$ be the random variable describing the share of each type of fringe player that precede player $A_{li}$.
     Also, let $Q_n$ be the random variable describing whether player $P$ precedes player $A_{li}$.
     Then, the value of fringe player $A_{li}$ is
     \begin{align*}
@@ -411,17 +411,17 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
     \end{align*}
     and the value of the whole fringe of type $A_l$ is
     \begin{align*}
-        \varphi_{A_{l}}^n = n \varphi_{A_{li}}^n = \E \bigg[ \underbrace{\mathbf{1}[Q_n = 1] \frac{f(Y_1, \dots, Y_l + 1/n, \dots, Y_L) - f(Y_1, \dots, Y_l, \dots, Y_L)}{1/n}}_{\coloneqq \Delta_n} \bigg].
+        \varphi_{A_{l}}^n = n \varphi_{A_{li}}^n &= \E \bigg[ \mathbf{1}[Q_n = 1] \underbrace{\frac{f(Y_n^1, \dots, Y_n^l + 1/n, \dots, Y_n^L) - f(Y_n^1, \dots, Y_n^l, \dots, Y_n^L)}{1/n}}_{\coloneqq \Delta_n} \bigg] \\
+        &= \E_{Y_n^L} \Bigg[ \E \bigg[ \mathbf{1}[Q_n = 1] \underbrace{\frac{f(Y_n^1, \dots, Y_n^l + 1/n, \dots, Y_n^l) - f(Y_n^1, \dots, Y_n^l, \dots, Y_n^L)}{1/n}}_{\coloneqq \Delta_n} \bigg| Y_n^l \bigg] \Bigg].
     \end{align*}
 
-    Now notice that, because the number of fringe players goes to infinity,
+    Now, notice that, because the number of fringe players goes to infinity,
     \begin{align*}
-        X_n \xrightarrow[]{d} (a_1(\xi), \dots, a_L(\xi)) &\implies Y_n \xrightarrow[]{d} (a_1(\xi), \dots, a_L(\xi)) \\
-        &\implies (Y_1, \dots, Y_n) | Y_l = a_l(s) \xrightarrow[]{d} (a_1(s), \dots, a_l(s)) .
+        X_n \xrightarrow[]{d} (a_1(\xi), \dots, a_L(\xi)) &\implies Y_n \mid Y_n^l = y \xrightarrow[]{d} (a_1(a_l^{-1}(y)), \dots, a_L(a_l^{-1}(y))).
     \end{align*}
     Furthermore,
     \begin{align*}
-        \Pr(Q_n = 1 | [Y_n]_l = a_l(s)) \to H(s).
+        \Pr(Q_n = 1 | Y_n^l = y) \to H(a_l^{-1}(y)).
     \end{align*}
     Finally, for fixed $(Y_1, \dots, Y_L)$,
     \begin{align*}
@@ -430,9 +430,9 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
     
     Putting it all together,
     \begin{align*}
-        \lim_{n \to \infty} \varphi_{A_{l}}^n &= \lim_{n \to \infty} \E[\Delta_n (Y_n)] \\
+        \lim_{n \to \infty} \varphi_{A_{l}}^n &= \lim_{n \to \infty} \E[\mathbf{1}[Q_n = 1] \Delta_n (Y_n)] \\
         &= \E[ H(s) \partial_l f(Y_1, \dots, Y_L) ] \\
-        &= \int_0^1 H(s) \partial_l f(a_1(s), \dots, a_L(s)) \mathrm{d} a_l(s) \\
+        &= \int_0^1 H(a_l^{-1}(y)) \partial_l f(a_1(a_l^{-1}(y)), \dots, a_L(a_l^{-1}(y))) \mathrm{d}y \\
         &= \int_0^1 H(s) a_l'(s) \partial_l f(a_1(s), \dots, a_L(s)) \ds.
     \end{align*}
 
