@@ -1,0 +1,89 @@
+How economic actors come together to create value and how they divide this value among themselves are central questions in economics.
+The process of bargaining is at the heart of these questions.
+It occurs in a pleathora of situations, ranging from banal, eveyday interactions, such as choosing the destination and distributing the costs of a road trip among friends, to high-stakes negotiations, such as wage bargaining or business to business transactions.
+Therefore, a good understanding of it is essential for modeling several economic phenomena.
+
+Many important real-world bargaining situations are characterized by an imbalance of power among the parties involved.
+For example, in the case of a road trip, the person owning the car might argue that they should pay less for gas, since without them, the trip would not be possible.
+Similarly, in the context of wage negotiations, the employer usually has more bargaining power than each individual employee, since the latter can be replaced more easily.
+Nevertheless, in both cases, the other parties can still exert some influence on the outcome of the negotiation, as they also bring something to the table (e.g., more passengers make the trip more enjoyable, and more employees make the firm more productive).
+Such situations are common in many economic contexts, especially within the domain of industrial organization and labor economics.
+Apart from the examples mentioned above, this structure often characterizes platform markets (where a platform is crucial for connecting buyers and sellers), upstream-downstream relationships (with a key input supplier and several downstream firms), and several other settings.
+This thesis studies bargaining outcomes in such situations.
+
+The importance of bargaining has long been recognized in economics.
+\textcite{zeuthen1930problems} and \textcite{hicks1932theory} are among the first to model it formally, and incorporate it into models of economic behavior in what came to be known as industrial organization and labor economics, respectively.
+The next major step in the development of bargaining theory came with the work of \textcite{nash1950bargaining}, who introduced the concept of the Nash bargaining solution for two-person games, and, in doing so, created axiomatic (or cooperative) bargaining theory.
+This line of research focuses on posing a set of axioms that a bargaining solution should satisfy, and then characterizing the solution that these.\footnote{
+    The Kalai-Smorodinsky solution \parencite{kalai1975other} and the egalitarian solution \parencite{kalai1977proportional} are other examples of cooperative bargaining solutions, which assume different sets of axioms.
+}
+Later, based on the characteristic function form of cooperative games\footnote{
+    Introduced in the seminal work of \textcite{neumann1944theory}.
+}, various cooperative solution concepts were introduced for n-person games.
+Arguably the most prominent among these are the Shapley value \parencite{shapley1953value} and the core \parencite{gillies1959solutions}.
+
+In the latter half of the 20th century, the focus in modeling strategic interactions shifted to non-cooperative game theory\footnote{
+    The foundations of which were also laid by John Nash in \textcite{nash1950non}.
+}, which models the behavior of agents in more detail.
+Already in the early 50s, Nash saw the need to reconcile the cooperative and non-cooperative approaches to bargaining \parencite{nash1953two}.\footnote{
+    This line of research is also known as the Nash program.
+    See \textcite{serrano2021sixty} for an overview.
+}
+For bargaining games, the breakthrough came with the work of \textcite{rubinstein1982perfect}, who introduced the alternating-offers bargaining model, and how it provides microfoundations for the Nash bargaining solution.\footnote{
+    Although \textcite{harsanyi1956approaches} can be seen as a precursor to this work by showing the close connection between the Nash bargaining solution \parencite{nash1950bargaining} and Zeuthen's model \parencite{zeuthen1930problems}.
+}
+This was followed by several papers providing microfoundations for other cooperative solution concepts, such as the Shapley value \parencite[e.g.,][]{gul1989bargaining,winter1994demand,hart1996bargaining,stole1996intra} and the core \parencite[e.g.,][]{serrano1995market}.
+These studies demonsrate the relevance of cooperative game theory to describing bargaining outcomes.
+
+In this thesis, I rely on the cooperative approach to bargaining.
+Furthermore, I focus on a specific type of bargaining game: one, where there is a bargaining power disparity among the players.
+More specifically, I study situations, where there is one (or a few) central player(s) who are crucial for creating value, and a relatively large number of peripheral, individually less important players.
+I am interested in what cooperative game theory predicts about the outcome of such games, what the implications of these predictions are, and how well they hold up in practice.
+The three main chapters of this thesis each focus on a different aspect of this question.
+\Cref{ch:theory} provides an abstract, theoretical treatment of the problem, with a focus on random order values \parencite{weber1988probabilistic}. Then, \Cref{ch:application} uses this framework to study a specific application: hybrid platforms, i.e. platforms that act as intermediaries and sellers at the same time.
+Finally, \Cref{ch:experiment} presents a laboratory experiment that tests the theoretical predictions of the Shapley value and the nucleolus in a controlled environment.
+The rest of this chapter provides a more detailed overview of the research questions and the contributions of each of these parts.
+
+\paragraph{Theoretical framework}
+This chapter investigates the idea of using random order values \parencite{weber1988probabilistic}, a generalization of the Shapley value, to model bargaining outcomes in games with a small number of central players and a continuum of fringe players.
+It also provides results for the two most important special cases of random order values: the Shapley value and the weighted value.
+The combination of the cooperative approach and the continuous fringe assumption allows for a tractable analysis of the bargaining outcomes in such games, while having a number of desirable properties.
+For example, the resulting profit shares depend on the production function in a similar way to how they do in the finite player case, and align with one's intuitive expectations of bargaining power in such situations.
+Furthermore, even though the fringe players are individually infinitesimal, their collective bargaining power does not vanish, and they get a non-zero share of the surplus.
+
+
+This chapter contributes to the literature on bargaining between central and fringe players in several ways.
+By relying on a generalization of the Shapley value, namely, random order values, it provides a general framework for modeling bargaining outcomes in this setting.
+This highlights the common themes between various results found in a number of more applied papers.
+Apart from the general framework, this paper a;sp extends the results of the related literature.
+Most importantly, I relax the usual assumption that there is only one indispensable player, and show how the results can be generalized when (1) there are multiple central players and (2) when the central player is not completely indispensable.
+Further contributions include new results for the case of heterogeneous fringe players, such as the value distribution in the case of the weighted value.
+An example application is presented at the end of the chapter, which demonstrates how this model can be used as an almost drop-in replacement for assuming take-it-or-leave-it offers in a two-sided market.
+
+\paragraph{Application to hybrid platforms}
+This paper explores the effects of a platform operating in hybrid mode (acting as an intermediary while also selling its own products) in a setting where entry fees for the other sellers are determined through negotiation.
+Such platforms are becoming increasingly common in various industries, with perhaps the most prominent example being Amazon.
+As deciding the rules of the game and competing in it at the same time gives rise to abuse of power concerns, they have been the subject of increasing regulatory scrutiny and academic interest, as well.
+
+To model bargaining between the platform and the entrants, I use the framework developed in \Cref{ch:theory}.
+I assume an otherwise frictionless market, with lump-sum entry fees and the platform pricing its own product as if they were priced by competing sellers.
+In such a setting, under the assumption of the platforms setting the entry fees unilaterally, hybrid operation would not be detrimental to consumer welfare.
+However, when the platform has to negotiate the entry fees with the entrants, the situation changes.
+Operating in hybrid mode increases the bargaining power of the platform, which leads to higher entry fees and lower product variety.
+This is a so-far underappreciated aspect of hybrid platforms, which might be of interest to policymakers and competition authorities.
+The results and methods described in this paper are also applicable to other similar settings, such as vertical integration with a monopolistic upstream supplier.
+
+\paragraph{Laboratory experiment}
+In \Cref{ch:experiment}, Mia Lu and I take the theoretical predictions of the Shapley value and the nucleolus to the lab, and test them in the context of a free-form bargaining game with three players.
+In this context, free-form bargaining means that communication is unrestricted between the players: they can send each other any message they want, including (non-binding) proposals and acceptance decisions.
+We choose this approach over more traditional, structured bargaining games as we it is more realistic and captures many relevant aspects of real-world bargaining, such as persuasion and explicitly expressed intention.
+
+The central question of this paper is how the big player's bargaining power (as measured by the value of the small coalition, and thus the necessity of having both small players in the coalition) affects outcomes in this multiplayer free-form bargaining setting.
+Furthermore, we are interested in how well it is captured by the Shapley value and the nucleolus.
+Additionally, given our rich data (chat logs, timing of proposals and acceptances, survey questions), we characterize bargaining behavior in an exploratory manner.
+
+We find that players' payoffs are increasing in their bargaining power, as predicted by both of the solution concepts under consideration.
+However, this is only the case when forming a smaller coalition and excluding one of the small players is a credible threat.
+This is qualitatively consistent with the theoretical predictions of the nucleolus from cooperative game theory, but the observed payoff inequality is significantly lower than the theoretical predictions.
+Our results highlight that fairness considerations seem to play an important role even under free-form bargaining: equal splits make up a large fraction of the outcomes, and fairness-related arguments are used frequently during bargaining.
+We also find considerable heterogeneity between players both in terms of bargaining behavior and stated preferences.
