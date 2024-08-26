@@ -11,6 +11,12 @@ This repository contains code to compile my PhD dissertation, as well as the thr
  * `application.pdf`: An IO paper about a hybrid platform, which engages in bargaining with the fringe entrants.
  * `experiment.pdf`: A lab experiment that examines the outcomes of bargaining and coalition formation in a setting with one indispensable and two smaller players.
 
+> [!TIP]
+> The code for the papers and the analysis were tracked in different repositories during the majority of their development.
+> You can find the original repositories with the full histories at the following links:
+> * [stanmart/ValueOfIntermediation](https://github.com/stanmart/ValueOfIntermediation)
+> * [stanmart/unstructured-bargaining-analysis](https://github.com/stanmart/unstructured-bargaining-analysis)
+
 ## How to compile
 
 The project is set up so that `pixi` installs required dependencies into a local virtual environment. The exception is latex (required texlive packages are listed in `tl_packages.txt`).
