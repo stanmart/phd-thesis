@@ -133,15 +133,21 @@
 \author{Martin Stancsics}
 \date{TBD}
 \chairman{Prof. Dr. Steven Ongena}
-\committee{%
-    Prof. Dr. Armin Schmutzler\\%
+\committee{
+    Prof. Dr. Armin Schmutzler\\
     Prof. Dr. Marek Pycia
 }
 
 \begin{document}
 
+\pagenumbering{gobble}
+
 \input{src/paper/dissertation/titlepage.tex}
 \input{src/paper/dissertation/uzh_disclaimer.tex}
+
+\onehalfspacing
+\chapter*{Preface}
+\input{src/paper/dissertation/preface.tex}
 
 \setstretch{1.05}
 
@@ -152,6 +158,7 @@
 
 \chapter{Introduction}
 \label{ch:introduction}
+\pagenumbering{arabic}
 \setcounter{page}{1}
 
 \input{src/paper/dissertation/introduction.tex}
