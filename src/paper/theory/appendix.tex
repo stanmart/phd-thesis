@@ -139,7 +139,8 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
     \end{align*}
     Now consider the following:
     \begin{align*}
-        \lim_{n \to \infty} \left| \Pr(X_n \leq x) - \Pr(h(S) \leq x) \right| &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) \dG(s) - \Pr(h(S) \leq x)\right| \\
+        \lim_{n \to \infty} & \left| \Pr(X_n \leq x) - \Pr(h(S) \leq x) \right| \\
+        &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) \dG(s) - \Pr(h(S) \leq x)\right| \\
         &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) \dG(s) - \int_0^1 \mathbf{1}[h(s) \leq 1] \dG(s) \right| \\
         &= \lim_{n \to \infty} \left| \int_0^1 \Pr(X_n \leq x \mid S = s) - \mathbf{1}[h(s) \leq x] \dG(s) \right| \\
         &\leq \lim_{n \to \infty} \int_0^1 \left| \Pr(X_n \leq x \mid S = s) - \mathbf{1}[h(s) \leq x] \right| \dG(s) \\
@@ -332,7 +333,8 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
     Remember that the share of fringe players before player $j$ is described by the random variable $X_n^j = n_A(\precede^R_{P_j}) / n$.
     Observe that
     \begin{align*}
-        \Pr(X_n^j = k/n \mid n_P(\precede^R_{P_j}) = 0) &= \Pr(X_n^j = k/n \mid X_n^j = \min\{X_n^1, \dots, X_n^m\} \land n_P(\precede^R_{P_j}) = 0) \\
+        \Pr&(X_n^j = k/n \mid n_P(\precede^R_{P_j}) = 0)\\
+        &= \Pr(X_n^j = k/n \mid X_n^j = \min\{X_n^1, \dots, X_n^m\} \land n_P(\precede^R_{P_j}) = 0) \\
         &= \Pr(\min\{X_n^1, \dots, X_n^m\} = k/n \mid n_P(\precede^R_{P_j}) = 0) \\
         &= \Pr(\min\{X_n^1, \dots, X_n^m\} = k/n).
     \end{align*}
@@ -411,7 +413,7 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
     \end{align*}
     and the value of the whole fringe of type $A_l$ is
     \begin{align*}
-        \varphi_{A_{l}}^n = n \varphi_{A_{li}}^n &= \E \bigg[ \mathbf{1}[Q_n = 1] \underbrace{\frac{f(Y_n^1, \dots, Y_n^l + 1/n, \dots, Y_n^L) - f(Y_n^1, \dots, Y_n^l, \dots, Y_n^L)}{1/n}}_{\coloneqq \Delta_n} \bigg] \\
+        \varphi_{A_{l}}^n &= n \varphi_{A_{li}}^n = \E \bigg[ \mathbf{1}[Q_n = 1] \underbrace{\frac{f(Y_n^1, \dots, Y_n^l + 1/n, \dots, Y_n^L) - f(Y_n^1, \dots, Y_n^l, \dots, Y_n^L)}{1/n}}_{\coloneqq \Delta_n} \bigg] \\
         &= \E_{Y_n^L} \Bigg[ \E \bigg[ \mathbf{1}[Q_n = 1] \underbrace{\frac{f(Y_n^1, \dots, Y_n^l + 1/n, \dots, Y_n^l) - f(Y_n^1, \dots, Y_n^l, \dots, Y_n^L)}{1/n}}_{\coloneqq \Delta_n} \bigg| Y_n^l \bigg] \Bigg].
     \end{align*}
 

@@ -1139,10 +1139,10 @@ The remainder of this section contains the proofs related to optimal product pri
 
 \begin{proof}[Proof of \Cref{prop:optimal_n_p_benchmark}]
     From \Cref{prop:optimal_entry_fee,prop:equilibrium_benchmark} we have that
-    \begin{itemize}
-        \item $\frac{\dd \pi_P}{\dd N_P} = \frac{V_P}{V_F} I_F$ if $N_F(N_P) > 0$,
-        \item $\frac{\dd \pi_P}{\dd N_P} < \frac{V_P}{V_F} I_F$ if $N_F(N_P) = 0$.
-    \end{itemize}
+    \begin{align*}
+        &\frac{\dd \pi_P}{\dd N_P} = \frac{V_P}{V_F} I_F \text{ if } N_F(N_P) > 0, \\
+        &\frac{\dd \pi_P}{\dd N_P} < \frac{V_P}{V_F} I_F \text{ if } N_F(N_P) = 0.
+    \end{align*}
     It immediately follows that if the platform can invest in $N_P$ at cost $I_P$, then the optimal number of products is the one that maximizes profits:
     \begin{align*}
         \frac{V_P}{I_P} < \frac{V_F}{I_F} &\implies N_P^* = 0, \\
@@ -1181,20 +1181,20 @@ The continuous version in this paper is the limit of this model as the number of
 \begin{figure}
     \centering
     \begin{tikzpicture}[node distance=2cm, auto]
-        \node[align=center] (entry_decision) {Potential entrants decide to invest \\ at cost $I_F$ \\ $[N_F]$};
-        \node[align=center, draw, dashed] (entry_fee) [below of=entry_decision] {Entry fees are negotiated \\ between platform \\ and $N_F$ fringe firms \\ $[K_F]$};
-        \node[align=center] (sales) [below of=entry_fee] {Platform and fringe \\ set product prices \\ $[p_{P_i}, p_{F_i}]$};
-        \node[align=center] (final) [below of=sales] {Consumers make \\ consumption decisions \\ $[x_{P_i}, x_{F_i}]$};
+        \node[align=center] (entry_decision) {Potential entrants \\ decide to invest \\ at cost $I_F$ \\ $[N_F]$};
+        \node[align=center, draw, dashed] (entry_fee) [below=1cm of entry_decision] {Entry fees are negotiated \\ between platform \\ and $N_F$ fringe firms \\ $[K_F]$};
+        \node[align=center] (sales) [below=1cm of entry_fee] {Platform and fringe \\ set product prices \\ $[p_{P_i}, p_{F_i}]$};
+        \node[align=center] (final) [below=1cm of sales] {Consumers make \\ consumption decisions \\ $[x_{P_i}, x_{F_i}]$};
         \draw[->] (entry_decision) -- (entry_fee);
         \draw[->] (entry_fee) -- (sales);
         \draw[->] (sales) -- (final);
         
-        \node[align=center, right=of entry_decision, distance=3cm] (arrange_fringe) {Arrange fringe firms in some fixed order};
-        \node[align=center, below of=arrange_fringe] (foreach) {For each (remaining) fringe firm $F_i$:};
-        \node[align=center] (choose_proposer) [below=1cm of foreach] {$F_i$ or $P$ is chosen as the proposer};
-        \node[align=center] (proposal) [below of=choose_proposer] {Proposer proposes entry fee $K_{F_i}$};
-        \node[align=center] (accept) [below left=2cm and -2cm of proposal] {Responder accepts $K_{F_i}$};
-        \node[align=center] (reject) [below right=2cm and -2cm of proposal] {Responder rejects $K_{F_i}$};
+        \node[align=center] (arrange_fringe) [right=4.5cm of entry_decision] {Arrange fringe firms \\ in some fixed order};
+        \node[align=center, below of=arrange_fringe] (foreach) {For each (remaining) \\ fringe firm $F_i$:};
+        \node[align=center] (choose_proposer) [below=1cm of foreach] {$F_i$ or $P$ is chosen \\ as the proposer};
+        \node[align=center] (proposal) [below of=choose_proposer] {Proposer proposes \\ entry fee $K_{F_i}$};
+        \node[align=center] (accept) [below left=2cm and -1cm of proposal] {Responder \\ accepts $K_{F_i}$};
+        \node[align=center] (reject) [below right=2cm and -1cm of proposal] {Responder \\ rejects $K_{F_i}$};
         \node[align=center] (next_player) [below of=accept] {Move on to the \\ next fringe firm};
         \node[align=center] (eliminate) [below of=reject] {Eliminate $F_i$};
 

@@ -1,7 +1,8 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper,11pt]{report}
 
 \usepackage{microtype}
 \usepackage{fullpage}
+\usepackage{setspace}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{tikz}
@@ -18,7 +19,6 @@
 \usepackage{subcaption}
 \usepackage{listings}
 \usepackage[section]{placeins}
-\usepackage{setspace}
 \usepackage{snapshot}
 \usepackage{appendix}
 \usepackage{apptools}
@@ -38,6 +38,8 @@
 
 \addbibresource{src/paper/references.bib}
 \DeclareFieldFormat{jtnoformat}{\capitalisewords{#1}}
+
+\onehalfspacing
 
 \setcounter{tocdepth}{1}
 
@@ -145,16 +147,11 @@
 \input{src/paper/dissertation/titlepage.tex}
 \input{src/paper/dissertation/uzh_disclaimer.tex}
 
-\onehalfspacing
 \chapter*{Preface}
 \input{src/paper/dissertation/preface.tex}
 
-\setstretch{1.05}
-
 \tableofcontents
 \addtocontents{toc}{\protect\thispagestyle{empty}}
-
-\onehalfspacing
 
 \chapter{Introduction}
 \label{ch:introduction}
