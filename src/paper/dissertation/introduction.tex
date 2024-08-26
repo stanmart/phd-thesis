@@ -24,7 +24,7 @@ Arguably, the Shapley value \parencite{shapley1953value} and the core \parencite
 
 In the latter half of the 20th century, the focus in modeling strategic interactions shifted to non-cooperative game theory\footnote{
     The foundations of which were also laid by John Nash in \textcite{nash1950non}.
-}, which models the behavior of agents in more detail.
+}, which models the behavior of agents assuming that they act in their own self-interest within the constraints of a strategy space.
 Already in the early 50s, Nash saw the need to reconcile the cooperative and non-cooperative approaches to bargaining \parencite{nash1953two}.\footnote{
     This line of research is also known as the Nash program.
     See \textcite{serrano2021sixty} for an overview.
@@ -33,9 +33,9 @@ For bargaining games, the breakthrough came with the work of \textcite{rubinstei
     Although \textcite{harsanyi1956approaches} can be seen as a precursor to this work by showing the close connection between the Nash bargaining solution \parencite{nash1950bargaining} and Zeuthen's model \parencite{zeuthen1930problems}.
 }
 This was followed by several papers providing microfoundations for other cooperative solution concepts, such as the Shapley value \parencite[e.g.,][]{gul1989bargaining,winter1994demand,hart1996bargaining,stole1996intra} and the core \parencite[e.g.,][]{serrano1995market}.
-These studies confirm the relevance of cooperative game theory in describing bargaining outcomes.
 
 In this thesis, I rely on the cooperative approach to modeling bargaining.
+However, in light of the microfoundations mentioned above, it can also be seen as a reduced-form representation of a more detailed non-cooperative model.
 Furthermore, I focus on a specific type of bargaining game: one in which there is a bargaining power disparity among the players.
 More specifically, I study situations where one (or a few) central player(s) are crucial for creating value, and there is also a relatively large number of peripheral, individually less important players.
 I am interested in what cooperative game theory predicts about the outcome of such games, the implications of these predictions, and how well they hold up in practice.
@@ -48,8 +48,11 @@ The rest of this chapter provides a more detailed overview of the research quest
 This chapter investigates the idea of using random order values \parencite{weber1988probabilistic}, a generalization of the Shapley value, to model bargaining outcomes in games with a small number of central players and a continuum of fringe players.
 It examines how the total value is distributed between the various players depending on the substitutability of the fringe players, the number of central players, and bargaining weights.
 I also provide results for the two most important special cases of random order values: the Shapley value and the weighted value.
-The combination of the cooperative approach and the continuous fringe assumption allows for a tractable analysis of the bargaining outcomes in such games, and the resulting values have several desirable properties.
-For example, the profit shares depend on the production function in a similar way to how they do in the finite player case, and align with one's intuitive expectations of bargaining power in such situations.
+
+While random order values are very general, and thus, often unwieldy, I show that in the case of this specific class of games, they produce results that are surprisingly sharp and tractable.
+The continuous fringe assumption is key to this tractability.
+Furthermore, the infinite-player model retains the main desirable properties of its finite-player counterpart.
+For example, the profit shares depend on the production function in a similar way to how they do in the case of a finite number of players, also aligning with one's intuitive expectations of bargaining power in such situations.
 Furthermore, even though the fringe players are individually infinitesimal, their collective bargaining power does not vanish, and they get a non-zero share of the surplus.
 
 This chapter contributes to the literature on bargaining between central and fringe players in several ways.
