@@ -6,10 +6,10 @@
 
 This repository contains code to compile my PhD dissertation, as well as the three papers that it consists of. The main outputs are the following:
 
- * `dissertation.pdf`: The full dissertation, the main topic of which is the bargaining between a few central and many fringe players.
- * `theory.pdf`: A paper with an abstract, theoretical treatment of the problem.
- * `application.pdf`: An IO paper about a hybrid platform, which engages in bargaining with the fringe entrants.
- * `experiment.pdf`: A lab experiment that examines the outcomes of bargaining and coalition formation in a setting with one indispensable and two smaller players.
+ * [`dissertation.pdf`](stanmart.github.io/phd-thesis/dissertation.pdf): The full dissertation, the main topic of which is the bargaining between a few central and many fringe players.
+ * [`theory.pdf`](stanmart.github.io/phd-thesis/theory.pdf): A paper with an abstract, theoretical treatment of the problem.
+ * [`application.pdf`](stanmart.github.io/phd-thesis/application.pdf): An IO paper about a hybrid platform, which engages in bargaining with the fringe entrants.
+ * [`experiment.pdf`](stanmart.github.io/phd-thesis/experiment.pdf): A lab experiment that examines the outcomes of bargaining and coalition formation in a setting with one indispensable and two smaller players.
 
 > [!TIP]
 > The code for the papers and the analysis were tracked in different repositories during the majority of their development.
