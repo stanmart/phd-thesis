@@ -19,7 +19,7 @@ This repository contains code to compile my PhD dissertation, as well as the thr
 
 ## How to compile
 
-The project is set up so that `pixi` installs required dependencies into a local virtual environment. The exception is latex (required texlive packages are listed in `tl_packages.txt`).
+The project is set up so that `pixi` installs required dependencies into a local virtual environment. The exception is latex, which has to be install manually, and `latexmk` must be on the search path (required texlive packages are listed in `tl_packages.txt`).
 
 Other than these, simply [install `pixi`](https://pixi.sh/latest/#installation), and then you can use the following commands to compile the outputs:
 
