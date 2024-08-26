@@ -75,8 +75,8 @@ Therefore, the modeling approach presented in this paper may also be useful in o
 The rest of the paper is organized as follows.
 In \Cref{sec:model}, I introduce two model of hybrid platforms: a benchmark with the platform setting an entry fee unilaterally, and the main model, where the platform and the fringe firms engage in bargaining.
 After that, \Cref{sec:results} demonstrates that the two have very different implications for consumer welfare.
-\Cref{sec:extensions} then examines the effect of different assumptions about the bargaining process.
-Finally, \Cref{sec:conclusion} summarizes the results and discusses possible future work.
+\Cref{sec:application_extensions} then examines the effect of different assumptions about the bargaining process.
+Finally, \Cref{sec:application_conclusion} summarizes the results and discusses possible future work.
 
 
 \section{Model}
@@ -251,14 +251,14 @@ Let us denote these profits by $\pi^v_{F}(N_P,s N_F)$ and $\pi^v_{P}(N_P,s N_F)$
 }
 
 \begin{proposition}
-    \label{prop:shapley_value}
+    \label{prop:shapley_value_platform}
     The Shapley value of the platform and the fringe firms, and thus final total profits, are given by:
     \begin{align*}
         \pi^t_P(N_P, N_F) &= \int_0^1 \Pi(N_P,s N_F) \ds, \\
         \pi^t_F(N_P, N_F) &= \int_0^1 \partial_2 N_F \Pi(N_P,s N_F) \ds.
     \end{align*}
 \end{proposition}
-\begin{proof}[Proof of \Cref{prop:shapley_value}]
+\begin{proof}[Proof of \Cref{prop:shapley_value_platform}]
     The cooperative game is described in detail in \Cref{sec:cooperative_game}.
     This result is a direct consequence of \Cref{prop:profit_sharing_one_sided}.
 \end{proof}
@@ -537,7 +537,7 @@ From \Cref{eq:optimal_profit}, the total profit achieved by the platform and $N_
 \begin{align}
     \Pi(N_P, N_F) = \mu \frac{N_F V_F + N_P V_P}{N_F V_F + N_P V_P + 1}.  \label{eq:total_profits}
 \end{align}
-Bargaining outcomes are determined according to Shapley values, given by \Cref{prop:shapley_value}.
+Bargaining outcomes are determined according to Shapley values, given by \Cref{prop:shapley_value_platform}.
 Based on these, closed-form expressions for platform and fringe profit shares for this class of demand systems can be obtained.
 \begin{proposition}
     \label{prop:platform_profits_bargaining}
@@ -1075,7 +1075,7 @@ However, I demonstrate that there is another source of distortion when the entry
 This, in turn, leads to a higher entry fee and, thus, lower consumer welfare.
 
 \section{Conclusion and future work}
-\label{sec:conclusion}
+\label{sec:application_conclusion}
 
 This paper introduces a new model of hybrid platforms in which bargaining between the platform and the entrant firms plays a key role.
 It highlights the importance of a so-far overlooked aspect of platforms having their own products: the fact that it increases their bargaining power compared to other players.
