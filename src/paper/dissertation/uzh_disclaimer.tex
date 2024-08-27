@@ -1,19 +1,24 @@
 \makeatletter
     \let\insertdate\@date
     \let\insertchairman\@chairman
+    \newcommand{\unchapter}[1]{%
+        \begingroup
+        \let\@makeschapterhead\@gobble % make \@makechapterhead do nothing
+        \chapter*{#1}
+        \endgroup
+    }
 \makeatother
 
-\begin{titlepage}
-    \begin{singlespace}
-        \noindent
-        The Faculty of Economics, Business Administration and Information Technology of the University of Zurich hereby authorizes the printing of this dissertation, without indicating an opinion of the views expressed in the work.
+\unchapter{Disclaimer}
+\begin{singlespace}
+    \noindent
+    The Faculty of Economics, Business Administration and Information Technology of the University of Zurich hereby authorizes the printing of this dissertation, without indicating an opinion of the views expressed in the work.
+
+    \vspace{1cm}
+    \noindent
+    Zurich, \monthdayyeardate\insertdate
     
-        \vspace{1cm}
-        \noindent
-        Zurich, \monthdayyeardate\insertdate
-        
-        \vspace{0.4cm}
-        \noindent
-        Chairman of the Doctoral Board: \insertchairman
-    \end{singlespace}
-\end{titlepage}
+    \vspace{0.4cm}
+    \noindent
+    Chairman of the Doctoral Board: \insertchairman
+\end{singlespace}
