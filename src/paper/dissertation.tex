@@ -62,7 +62,6 @@
 \Crefname{assumption}{Assumption}{Assumptions}
 
 \AtBeginEnvironment{subappendices}{%
-    \addcontentsline{toc}{chapter}{Appendices}
     \counterwithin{figure}{section}
     \counterwithin{table}{section}
     \counterwithin{definition}{section}
@@ -167,6 +166,11 @@
 \label{ch:theory}
 \input{src/paper/theory/body.tex}
 \begin{subappendices}
+    \chapter*{
+        Appendices\\\vspace{0.4cm}%
+        \large{to \Cref{ch:theory}: ``The value of being indispensable''}
+    }
+    \addcontentsline{toc}{chapter}{Appendices}
     \input{src/paper/theory/appendix.tex}
 \end{subappendices}
 
@@ -174,6 +178,11 @@
 \label{ch:application}
 \input{src/paper/application/body.tex}
 \begin{subappendices}
+    \chapter*{
+        Appendices\\\vspace{0.4cm}%
+        \large{to \Cref{ch:application}: ``Hybrid platforms and bargaining power''}
+    }
+    \addcontentsline{toc}{chapter}{Appendices}
     \input{src/paper/application/appendix.tex}
 \end{subappendices}
 
@@ -185,6 +194,11 @@
 \label{ch:experiment}
 \input{src/paper/experiment/body.tex}
 \begin{subappendices}
+    \chapter*{
+        Appendices\\\vspace{0.4cm}%
+        \large{to \Cref{ch:experiment}: ``Characterizing Multiplayer Free-Form Bargaining''}
+    }
+    \addcontentsline{toc}{chapter}{Appendices}
     \input{src/paper/experiment/appendix.tex}
 \end{subappendices}
 
