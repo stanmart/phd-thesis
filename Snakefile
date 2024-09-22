@@ -1,22 +1,28 @@
 from os.path import splitext, basename, dirname
-from src.util.makeutils import find_input_files
+from src.util.makeutils import find_input_files, find_opened_files, find_quarto_images
 
 SESSION_CODES = ["ykdzfw2h", "5r4374w0", "v0bpsxm2", "m7xcm95f"]
 PAPERS = ["theory", "application", "experiment"]
+PRESENTATIONS = ["defense"]
 
 
 rule prepare_to_publish:
     input:
         dissertation = "out/paper/dissertation.pdf",
         papers = expand("out/paper/{paper}.pdf", paper=PAPERS),
+        presentations = expand(
+            "out/presentation/{presentation}.html",
+            presentation=PRESENTATIONS
+        ),
     output:
         dissertation = "dist/dissertation.pdf",
         papers = expand("dist/{paper}.pdf", paper=PAPERS),
+        presentations = expand("dist/{presentation}.html", presentation=PRESENTATIONS),
         nojekyll = "dist/.nojekyll"
     run:
         from shutil import copy2
         from pathlib import Path
-        for file in input.papers + [input.dissertation]:
+        for file in input.papers + input.presentations + [input.dissertation]:
             copy2(file, "dist")
         Path(output.nojekyll).touch()
 
@@ -29,6 +35,11 @@ rule papers:
 rule dissertation:
     input:
         dissertation = "out/paper/dissertation.pdf"
+
+
+rule presentations:
+    input:
+        expand("out/presentation/{presentation}.html", presentation=PRESENTATIONS)
 
 
 rule update_latex_deps:
@@ -61,6 +72,25 @@ rule paper:
                  -outdir={params.outdir} \
                  -jobname={params.pdf_wo_ext} \
                  -interaction=nonstopmode {input.tex}"
+
+
+rule presentation:
+    input:
+        qmd = "src/presentation/{presentation}.qmd",
+        python_input = lambda wildcard: find_opened_files(
+            f"src/presentation/{wildcard.presentation}.qmd"
+        ),
+        images = lambda wildcard: find_quarto_images(
+            f"src/presentation/{wildcard.presentation}.qmd"
+        ),
+        bib = "src/paper/references.bib",
+        css = "src/presentation/include/custom.scss",
+        marhjax_js = "src/presentation/include/mathjax-settings.html",
+        section_js = "src/presentation/include/sections-in-footer.html",
+    output:
+        "out/presentation/{presentation}.html",
+    shell:
+        "quarto render {input.qmd}"
 
 
 rule figure_equilibrium:

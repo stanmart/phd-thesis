@@ -1,0 +1,31 @@
+---
+title: "Essays on Cooperative Bargaining"
+author:
+ - Martin Stancsics
+format:
+  revealjs:
+    embed-resources: true
+    theme:
+      - default
+      - include/custom.scss
+    include-in-header:
+      - include/mathjax-settings.html
+      - include/sections-in-footer.html
+    toc: true
+    toc-depth: 1
+    toc-title: Agenda
+---
+
+# Introduction
+
+## Motivation
+
+# Thank you {.unnumbered .unlisted}
+
+## References
+
+::: {#refs}
+:::
+
+## Appendix 
+
