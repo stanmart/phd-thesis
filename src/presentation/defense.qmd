@@ -20,6 +20,58 @@ format:
 
 ## Motivation
 
+::: {.fragment}
+- How to **distribute value** is a fundamental question in economics
+  - Wage bargaining
+  - Sharing the costs of a road trip
+:::
+
+::: {.fragment}
+- Many of such situations are characterized by an **imbalance of power**
+  - Employer vs. employees
+  - Driver vs. passengers
+:::
+
+::: {.fragment}
+- The **one indispensable / many smaller plyers** is an economically important special case
+:::
+
+
+## History
+
+::: {.fragment}
+- Bargaining theory has a long history in economics
+  - @zeuthen1930problems, @hicks1932theory
+:::
+
+::: {.fragment}
+- Cooperative (or axiomatic) bargaining theory in the 1950s
+  - Seminal paper: @nash1950bargaining
+  - More general cooperative game theory: @shapley1953value, @gillies1959solutions
+:::
+
+::: {.fragment}
+- The Nash-program: non-cooperative microfoundations [@nash1953two]
+  - Most well-known is @rubinstein1982perfect, @harsanyi1956approaches is an early example
+  - Microfoundations for the Shapley value: @gul1989bargaining, @winter1994demand, @hart1996bargaining, @stole1996intra
+:::
+
+
+## This thesis
+
+::: {.fragment}
+- Focus on the case of
+  - Predictions from **cooperative game theory**
+  - **One** (few) **central player**(s) and many smaller ones
+:::
+
+::: {.fragment}
+- Three aspects
+  - A general, **abstract** treatment of the problem
+  - An application to **hybrid platforms**
+  - A **lab experiment** to get a better understanding of bargaining behavior
+:::
+
 # Thank you {.unnumbered .unlisted}
 
 ## References
