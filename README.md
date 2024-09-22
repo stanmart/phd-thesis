@@ -26,6 +26,7 @@ Other than these, simply [install `pixi`](https://pixi.sh/latest/#installation),
 
  * `pixi run dissertation` to compile the dissertation
  * `pixi run papers` to compile three papers
+ * `pixi run presentations` to compile the slide decks
  * `pixi run prepare-to-publish` to compile everything and place it in the `dist` folder
 
 <details>
