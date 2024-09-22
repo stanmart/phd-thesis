@@ -1,7 +1,11 @@
 ---
 title: "Essays on Cooperative Bargaining"
+subtitle: "PhD Thesis Defense"
 author:
- - Martin Stancsics
+ - name: Martin Stancsics
+   email: martin.stancsics@econ.uzh.ch
+   affiliations:
+     - name: University of Zürich
 format:
   revealjs:
     embed-resources: true
