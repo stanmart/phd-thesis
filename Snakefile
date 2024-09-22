@@ -1,5 +1,11 @@
 from os.path import splitext, basename, dirname
-from src.util.makeutils import find_input_files, find_opened_files, find_quarto_images
+from src.util.makeutils import (
+    find_input_files,
+    find_manim_sections,
+    find_opened_files,
+    find_quarto_images,
+    find_videos
+)
 
 SESSION_CODES = ["ykdzfw2h", "5r4374w0", "v0bpsxm2", "m7xcm95f"]
 PAPERS = ["theory", "application", "experiment"]
@@ -49,7 +55,7 @@ rule update_latex_deps:
         dep_file = "tl_packages.txt"
     shell:
         "python src/util/makeutils.py collect-latex-packages \
-            --add-biber --add-latexmk --check-against-tl \
+            --add-biber --add-latexmk --add-manim-deps --check-against-tl \
             --output-file tl_packages.txt --force-add ms {input.deps}"
 
 
@@ -83,6 +89,9 @@ rule presentation:
         images = lambda wildcard: find_quarto_images(
             f"src/presentation/{wildcard.presentation}.qmd"
         ),
+        manim_videos = lambda wildcards: find_videos(
+            f"src/presentation/{wildcards.presentation}.qmd", remove_prefix="../.."
+        ),
         bib = "src/paper/references.bib",
         css = "src/presentation/include/custom.scss",
         marhjax_js = "src/presentation/include/mathjax-settings.html",
@@ -91,6 +100,24 @@ rule presentation:
         "out/presentation/{presentation}.html",
     shell:
         "quarto render {input.qmd}"
+
+
+rule manim_shapley_value:
+    input:
+        script = "src/manim_figures/shapley_value_demo.py"
+    output:
+        videos = expand(
+            "out/manim_figures/videos/shapley_value_demo/{height}p{fps}/sections/{section}.mp4",
+            section = find_manim_sections("src/manim_figures/shapley_value_demo.py"),
+            allow_missing=True
+        )
+    params:
+        width = lambda wildcards: int(wildcards.height) * 4 // 3,
+    shell:
+        "manim render -qh {input.script} --save_sections --media_dir out/manim_figures \
+                      -r {params.width},{wildcards.height} --fps {wildcards.fps} && \
+         python src/util/makeutils.py rename-manim-sections \
+                out/manim_figures/videos/shapley_value_demo/{wildcards.height}p{wildcards.fps}/sections"
 
 
 rule figure_equilibrium:

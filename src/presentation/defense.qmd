@@ -76,6 +76,128 @@ format:
   - A **lab experiment** to get a better understanding of bargaining behavior
 :::
 
+
+# Cooperative game theory
+
+## Coalitional form games
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- A game $\mathcal{G} = (N, v)$ consists of
+  - A set of **players** $N$
+  - A **characteristic function** $v: 2^N \to \mathbb{R}$
+
+::: {.fragment}
+- Example 3-player game
+  - Two producers ($A_1, A_2$): can each make \$1 on their own
+  - A platform: ($P$): triples the firms' profits
+:::
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column .fragment width="40%" .smaller}
+
+Players: $$N = \{P, A_1, A_2\}$$
+
+Characteristic function $v(S)$:
+
+Coalition ($S$) | Profits
+----------|---------:
+$\{P\}$     |  0
+$\{A_i\}$   | 1
+$\{A_1, A_2\}$  | 2
+$\{P, A_i\}$  | 3
+$\{P, A_1, A_2\}$  | 6
+:::
+
+::::
+
+::: {.notes}
+ - Two ingredients: players (left) and characteristic function (right)
+ - We don't care about strategies, only about value achieved by coalitions
+:::
+
+
+## The Shapley-value
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Each player gets their **expected marginal contribution**
+
+::: {.r-stack}
+
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/draw_objects.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/value_P12.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/value_P21.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/value_2P1.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/value_1P2.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/value_12P.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/value_21P.mp4" />
+:::
+::: {.fragment}
+   <video data-autoplay src="../../out/manim_figures/videos/shapley_value_demo/800p60/sections/final.mp4" />
+:::
+
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%" .smaller}
+
+Players: $$N = \{P, A_1, A_2\}$$
+
+Characteristic function $v(S)$:
+
+Coalition ($S$) | Profits
+----------|---------:
+$\{P\}$     |  0
+$\{A_i\}$   | 1
+$\{A_1, A_2\}$  | 2
+$\{P, A_i\}$  | 3
+$\{P, A_1, A_2\}$  | 6
+:::
+
+::::
+
+
+## Why do we care about it?
+
+Same idea as with the Nash bargaining solution
+
+ - Axiomatic reasoning
+    - The Shapley-value is the only sharing rule that satisfies a nice set of axioms: efficiency, symmetry, linearity, dummy player axiom [@shapley1953additive]
+ - Bargaining foundations
+    - The value arises as the subgame-perfect equilibrium of various alternating-offer bargaining games [e.g. @gul1989bargaining; @winter1994demand; @hart1996bargaining; @stole1996intra; @inderst2003bargaining]
+ - A tractable and sensible-looking gain-sharing rule
+    - Comparative statics show that it behaves as one would expect
+
+::: {.notes}
+ - You don't need to think about cooperative game theory in the following part
+ - Think of it as a convenient gain sharing rule with some (cooperative and non-cooperative) micro-foundations
+:::
+
+
 # Thank you {.unnumbered .unlisted}
 
 ## References
