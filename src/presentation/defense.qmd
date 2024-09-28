@@ -201,16 +201,16 @@ Same idea as with the Nash bargaining solution
 
 <!-- CHAPTER 1 -->
 
-# Chapter 1 – theory
+# Chapter 1 – Theory
 The value of being indispensable
 
 <!-- CHAPTER 2 -->
-# Chapter 2 – application
+# Chapter 2 – Application
 Hybrid platforms and bargaining power
 
 
 <!-- CHAPTER 3 -->
-# Chapter 3 – experiment
+# Chapter 3 – Experiment
 Characterizing multiplayer free-form bargaining
 
 *joint work with Mia Lu*
