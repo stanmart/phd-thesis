@@ -40,7 +40,7 @@ sympy = "1.11.*"
 typer = ">=0.9.4,<0.10"
 
 [environments]
-default = { solve-group = "main"}
+default = { solve-group = "main" }
 checks = { features = ["checks"], solve-group = "main" }
 build-graphs = { features = ["build-graphs"], no-default-feature = true }
 
