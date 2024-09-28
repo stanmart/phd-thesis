@@ -18,8 +18,10 @@ format:
     toc: true
     toc-depth: 1
     toc-title: Agenda
+    slide-number: true
 ---
 
+<!-- INTRO -->
 # Introduction
 
 ## Motivation
@@ -76,7 +78,7 @@ format:
   - A **lab experiment** to get a better understanding of bargaining behavior
 :::
 
-
+<!-- CGT INTRO -->
 # Cooperative game theory
 
 ## Coalitional form games
@@ -197,28 +199,477 @@ Same idea as with the Nash bargaining solution
  - Think of it as a convenient gain sharing rule with some (cooperative and non-cooperative) micro-foundations
 :::
 
+<!-- CHAPTER 1 -->
 
 # Chapter 1 – theory
 The value of being indispensable
 
-
+<!-- CHAPTER 2 -->
 # Chapter 2 – application
 Hybrid platforms and bargaining power
 
 
+<!-- CHAPTER 3 -->
 # Chapter 3 – experiment
 Characterizing multiplayer free-form bargaining
 
 *joint work with Mia Lu*
 
 
+## Motivation
+
+::: {.fragment}
+- Much work on bargaining in experimental economics (understatement)
+:::
+::: {.fragment}
+- Much less work on **free-form bargaining**
+  - especially between **more than two players**
+:::
+::: {.fragment}
+- The **one indispensable player / multiple small players** setting has real-world relevance
+  - Wage bargaining
+  - An inventor with an idea and multiple investors
+  - A band, where one member owns the PA system
+:::
+
+::: {.notes}
+ - Need some asymmetry for interesting bargaining outcomes
+ - One player being indispensable is
+   - Natural
+   - Maximally asymmetrix → stronger effect
+:::
+
+
+## Research question
+
+::: {.fragment}
+- Problem: non-cooperative game theory cannot provide predictions without structure
+  - E.g. timing of the game, who makes the offers
+  - NCGT solution is alternating offer games, but a lot depends on minor details [@hart1996bargaining]
+:::
+
+::: {.highlight-block .fragment}
+- How does bargaining power affect bargaining outcomes?
+- How well do cooperative game theory solution concepts describe the outcomes?
+:::
+
+::: {.notes}
+- Bargaining power ~ how important it is to have all small players on board (see later)
+:::
+
+
+## What we do
+
+::: {.fragment}
+- **Free-form bargaining between three players**
+  - Almost no structure
+  - Group-level unrestricted **chat**
+  - An interface for proposing and accepting allocations
+  - No binding decision until the very last second
+:::
+
+::: {.fragment}
+- Vary the bargaining power of the indispensable player
+  - How important it is to have all small players on board
+:::
+
+::: {.fragment}
+- We test, whether:
+  - Outcomes vary as we would expect, based on bargaining power
+  - Certain CGT solution concepts provide good predictions
+:::
+
+::: {.notes}
+- Everything before the final seconds is cheap talk
+- What the big player and one small player can achieve on their own
+- Also, lots of data for exploratory analysis
+:::
+
+
+## Literature
+:::: {.smaller}
+::: {.fragment}
+- Early unstructured bargaining papers (1950s-1990s):  
+  - E.g. @Kalischetal1952, @Maschler1965, @NydeggerOwen1974, @RapoportKahan1976, **@MurnighanRoth1977**, @MurnighanRoth1978, @Micheneretal1979, @MichenerPotter1981, **@LeopoldWildburger1992** 
+  - Face to face bargaining, different experimental standards
+:::
+::: {.fragment}
+- Free-form bargaining
+  - E.g. @Galeottietal2018, @HossainLyonsSiow2020, **@NavarroVeszteg2020**
+  - Almost always bilateral
+:::
+::: {.fragment}
+- Multi-lateral bargaining
+  - E.g. @MonteroSeftonZhang2008, @MitsutsuneTakanori2014, @TremewanVanberg2016, @chessa2023experiment, **@ShinodaFunaki2022**
+  - Structured or semi-structured
+:::
+::: {.fragment}
+- Fairness views in bargaining
+  - E.g. @LuhanPoulsenRoos2019, @Schwaninger2022, **@ClippelRozen2022**
+:::
+::::
+
+::: {.notes}
+- @MurnighanRoth1977: shoes game ($Y=0$); series of papers: information and communication structure are important
+- @LeopoldWildburger1992: face to face, very long rounds, convex comb. of N + ES or SV + ES
+- @NavarroVeszteg2020: bilateral, chat, tests axioms (rejets scale invariance)
+- @ShinodaFunaki2022: chat in some treatments, semi-unstructured; how existence of core affects outcomes
+- @ClippelRozen2022: outside party assigns payoffs, SV + ES
+:::
+
+
+## The game
+
+::: {.fragment}
+- **Players**: $N = \{A, B_1, B_2\}$
+:::
+::: {.fragment}
+- **Value function**: $v: 2^N \to \mathbb{R}$
+  - No one can create any value alone: $v(\{A\}) = v(\{B_i\}) = 0$
+  - Player $A$ is indispensable: $v(\{B_1, B_2\}) = 0$
+  - Small players contribute to the value: $v(\{A, B_i\}) = Y \in [0, 100]$
+  - The more small players the better: $v(\{A, B_1, B_2\}) = 100$
+:::
+
+::: {.highlight-block .fragment}
+How to divide the value between the players?
+:::
+
+::: {.notes}
+- No need to define strategy spaces, only players plus payoffs
+- It "makes sense" for the grand coalition to form (but wait for results)
+:::
+
+
+## Solution concepts
+![](/out/figures/values_theory.svg)
+
+::: {.notes}
+- Both are increasing in Y
+  - Nucleolus is flat for low Y (no real bargaiing power)
+  - SV predictions are less extreme
+- Core would contain ES for Y < 67
+:::
+
+
+## Experimental setup
+
+::: {.fragment}
+- **4 treatments/sessions** and **144 subjects**
+:::
+::: {.fragment}
+- Timing: 
+  - Instructions with comprehension checks
+  - Slider task
+  - Trial round + 5 bargaining rounds (5 minutes each)
+  - Survey (demographics, reasoning, axioms)
+:::
+::: {.fragment}
+- Free-form bargaining via **public chat** and interface for submitting **proposals** and current **acceptances**
+  - Unlimited number of messages and proposals 
+  - Acceptances are **not binding** and can be changed any time
+:::
+
+::: {.notes}
+- Have to solve tasks on a mock interface to proceed
+- Slider task to make the bargaining position feel earned
+- Slider task performance not disclosed
+:::
+
+
+## Main results: average payoffs
+:::: {.columns}
+
+::: {.column width="65%"}
+![](/out/figures/payoff_average_rounds_all.svg){width=100% height=100%}
+:::
+
+:::{.column width="35%" .smaller .fragment}
+- Dummy player gets something
+- $Y=10$ and $Y=30$ treatments look similar
+- Player A gets more in $Y=30$ treatment
+- Nucleolus better in terms of 'shape' but worse in terms of 'distance'
+- Linear regression and Mann-Whitney test yield the same conclusion
+:::
+
+::::
+
+
+## A deeper look {#sec-by-agreement}
+:::: {.columns}
+
+::: {.column width="65%"}
+![](/out/figures/payoff_by_agreement_type_rounds_all.svg){width=100% height=100%}
+:::
+
+:::{.column width="35%" .smaller .fragment}
+- In all treatments, equal(ish) split is a frequent outcome
+  - Even in the dummy player treatment!
+- $Y=10$ and $Y=30$ treatments still look similar
+- In the $Y=90$ treatment
+  - $A$ only achieves significantly higher by excluding one small player (@sec-timing)
+  - Neither efficient nor stable
+:::
+
+::::
+
+
+## Testing the axioms {#sec-axioms}
+
+::: {.fragment}
+- Axioms charactetrizing the Shapley value and the core
+  - Look at observed **behavior**
+  - **Survey** at the end of the experiment
+:::
+
+::: {.fragment}
+- Observed choices provide
+  - Strong evidence **against dummy player and stability** axiom
+  - Evidence **against symmetry and efficiency** axioms in **$Y=90$** groups
+  - Evidence **for symmetry and efficiency** axioms in **other treatments**
+  - Some evidence **against linearity**
+:::
+
+::: {.fragment}
+- **Stated preferences and actions disagree**
+  - Concerns about subjects understanding the questions
+:::
+
+::: {.crossref}
+Details: @sec-axioms-appendix
+:::
+
+
+## Chat topics (before final agreement) #{#sec-chat-topics}
+
+:::: {.columns}
+
+::: {.column width="65%"}
+![](/out/figures/chat_topics_until_agreement.svg){width=100% height=100%}
+:::
+
+:::{.column width="35%" .smaller .fragment}
+- Lots of **small talk**
+  - Early agreement → **boredom**
+  - **Negotiation** tactic for small players
+- Relatively **few fairness-related arguments**
+  - Although **more** in treatments **with high bargaining power disparity**
+- Discussion **about the experiment** itself
+  - Players can clarify the rules for others
+  - Provides feeddback for the experimenters
+:::
+
+::::
+
+::: {.crossref}
+All chat messages: @sec-chat-topics-all
+:::
+
+
+## Main takeaways
+
+::: {.fragment}
+- Lots of **equal splits** in all treatments, but considerable **heterogeneity**
+  - Heterogeneity in fairness concepts?
+  - Norms established in early rounds?
+:::
+::: {.fragment}
+- **Nucleolus** gives **qualitatively correct** predictions
+  - No bargaining power advantage when there is no profitable deviation
+:::
+::: {.fragment}
+- Both **overestimate big player's share**
+  - They do not capture all relevant fairness considerations
+  - Combining other-regarding preferences and CGT might be promising
+:::
+::: {.fragment}
+- People's stated **preferences and actions disagree**
+:::
+
+::: {.notes}
+- In general, considerable heterogeneity in outcomes
+  - Heterogeneity in fairness concepts?
+:::
+
 
 # Thank you {.unnumbered .unlisted}
 
-## References
+## References {visibility="uncounted"}
 
 ::: {#refs}
 :::
 
-## Appendix 
 
+# Appendix – Chapter 3 {visibility="uncounted" .unnumbered .unlisted}
+
+
+## Time of accepting final allocation {visibility="uncounted" #sec-timing}
+![](/out/figures/timing_until_agreement_scatterplot.svg)
+
+::: {.smaller}
+- Most agreement times are well before the end of the bargaining time
+- In the $Y=90$ treatment, partial agreements come later
+- Otherwise, agreement times are broadly similar across the main treatments
+:::
+
+::: {.crossref}
+🔙 @sec-by-agreement
+:::
+
+
+## Efficiency {visibility="uncounted" #sec-axioms-appendix}
+:::: {.columns}
+
+::: {.column width="60%"}
+![](/out/figures/axioms_outcomes_efficiency.svg){width=100% height=100%}
+:::
+
+:::{.column width="40%"}
+![](/out/figures/axioms_survey_efficiency-2col.svg){width=100% height=80%}
+:::
+
+::::
+
+::: {.crossref}
+🔙 @sec-axioms
+:::
+
+## Symmetry {visibility="uncounted"}
+:::: {.columns}
+
+::: {.column width="60%"}
+![](/out/figures/axioms_outcomes_symmetry.svg){width=100% height=100%}
+:::
+
+:::{.column width="40%"}
+![](/out/figures/axioms_survey_symmetry-2col.svg){width=100% height=80%}
+:::
+
+::::
+
+::: {.crossref}
+🔙 @sec-axioms
+:::
+
+## Dummy player axiom {visibility="uncounted"}
+:::: {.columns}
+
+::: {.column width="60%"}
+![](/out/figures/axioms_outcomes_dummy_player.svg){width=100% height=100%}
+:::
+
+:::{.column width="40%"}
+![](/out/figures/axioms_survey_dummy_player-2col.svg){width=100% height=80%}
+:::
+
+::::
+
+::: {.crossref}
+🔙 @sec-axioms
+:::
+
+## Stability {visibility="uncounted"}
+:::: {.columns}
+
+::: {.column width="60%"}
+![](/out/figures/axioms_outcomes_stability.svg){width=100% height=100%}
+:::
+
+:::{.column width="40%"}
+![](/out/figures/axioms_survey_stability-2col.svg){width=100% height=80%}
+:::
+
+::::
+
+::: {.crossref}
+🔙 @sec-axioms
+:::
+
+## Linearity {visibility="uncounted"}
+![](/out/figures/axioms_outcomes_linearity_additivity.svg)
+
+::: {.crossref}
+🔙 @sec-axioms
+:::
+
+## Linearity {visibility="uncounted"}
+:::: {.columns}
+
+::: {.column width="40%"}
+![](/out/figures/axioms_survey_linearity_HD1-2col.svg){width=100% height=100%}
+:::
+
+:::{.column width="40%"}
+![](/out/figures/axioms_survey_linearity_additivity-2col.svg){width=100% height=80%}
+:::
+
+::::
+
+::: {.crossref}
+🔙 @sec-axioms
+:::
+
+
+## Chat – Stability-based reasoning {visibility="uncounted"}
+
+::: {layout-ncol=3}
+![Y = 10](/out/figures/chat_excerpt-2702-2707.svg){.chatlog}
+
+![Y = 30](/out/figures/chat_excerpt-5640,5647-5648,5660-5663.svg){.chatlog}
+
+![Y = 90](/out/figures/chat_excerpt-6846-6847,6849,6851,6853,6855,6857,6859.svg){.chatlog}
+:::
+
+## Chat – Fairness-based reasoning {visibility="uncounted"}
+
+::: {layout-ncol=3}
+![Equal split](/out/figures/chat_excerpt-7052,7054,7057-7063.svg){.chatlog}
+
+![A gets a bit more](/out/figures/chat_excerpt-7590-7596,7598-7599.svg){.chatlog}
+
+![Rejecting small offers](/out/figures/chat_excerpt-7894-7901,7906.svg){.chatlog}
+:::
+
+## Chat – Dummy player treatment {visibility="uncounted"}
+
+::: {layout-ncol=3}
+![Altruism](/out/figures/chat_excerpt-8,10,11,17-21.svg){.chatlog}
+
+![Abuse of position](/out/figures/chat_excerpt-1104-1111.svg){.chatlog}
+
+![Appeal to pity](/out/figures/chat_excerpt-1371-1376.svg){.chatlog}
+:::
+
+## Chat – Feedback about experiment {visibility="uncounted"}
+
+::: {layout-ncol=3}
+![Having a chat](/out/figures/chat_excerpt-6508-6509,6511,6513,6524,6527,6528-6529.svg){.chatlog}
+
+![Payouts](/out/figures/chat_excerpt-286-291.svg){.chatlog}
+
+![Bargaining time](/out/figures/chat_excerpt-5501-5508.svg){.chatlog}
+:::
+
+
+## Chat topics (all) #{#sec-chat-topics-all}
+
+:::: {.columns}
+
+::: {.column width="65%"}
+![](/out/figures/chat_topics_all.svg){width=100% height=100%}
+:::
+
+:::{.column width="35%" .smaller}
+- Roughly **similar** picture 
+- More **small talk**
+  - Agreement was often early
+  - Subjects had plenty of time to kill
+- **Some bargaining** still happening
+  - Agreements are not binding
+:::
+
+::::
+
+::: {.crossref}
+Back: @sec-chat-topics
+:::
