@@ -118,3 +118,8 @@ nav[role="doc-toc"] a:hover {
   border-color: black;
   border-width: 2px;
 }
+
+// Fix incremental list spacing
+div.fragment > ul {
+  margin-bottom: 0 !important;
+}
