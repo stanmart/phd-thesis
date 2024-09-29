@@ -166,7 +166,7 @@ def collect_latex_packages(
         )
 
     if add_matplotlib_deps:
-        deps.add("type1cm")
+        deps.update(["type1cm", "underscore"])
 
     packages = set()
     for dep in deps:
