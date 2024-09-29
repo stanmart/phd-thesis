@@ -8,6 +8,7 @@ author:
      - name: University of Zürich
 format:
   revealjs:
+    html-math-method: mathjax
     embed-resources: true
     theme:
       - default
@@ -18,6 +19,7 @@ format:
     toc: true
     toc-depth: 1
     toc-title: Agenda
+    transition: fade
     slide-number: true
 ---
 
@@ -46,20 +48,20 @@ format:
 ## History
 
 ::: {.fragment}
-- Bargaining theory has a long history in economics
-  - @zeuthen1930problems, @hicks1932theory
+- Bargaining theory has a **long history** in economics
+  - **@zeuthen1930problems**, @hicks1932theory
 :::
 
 ::: {.fragment}
-- Cooperative (or axiomatic) bargaining theory in the 1950s
-  - Seminal paper: @nash1950bargaining
+- **Cooperative** (or axiomatic) **bargaining theory** in the 1950s
+  - Seminal paper: **@nash1950bargaining**
   - More general cooperative game theory: @shapley1953value, @gillies1959solutions
 :::
 
 ::: {.fragment}
-- The Nash-program: non-cooperative microfoundations [@nash1953two]
-  - Most well-known is @rubinstein1982perfect, @harsanyi1956approaches is an early example
-  - Microfoundations for the Shapley value: @gul1989bargaining, @winter1994demand, @hart1996bargaining, @stole1996intra
+- The **Nash-program**: non-cooperative microfoundations [@nash1953two]
+  - Most well-known is **@rubinstein1982perfect**, @harsanyi1956approaches is an early example
+  - Microfoundations for the Shapley value: @gul1989bargaining, @winter1994demand, @hart1996bargaining, **@stole1996intra**
 :::
 
 
@@ -188,10 +190,10 @@ $\{P, A_1, A_2\}$  | 6
 Same idea as with the Nash bargaining solution
 
  - Axiomatic reasoning
-    - The Shapley-value is the only sharing rule that satisfies a nice set of axioms: efficiency, symmetry, linearity, dummy player axiom [@shapley1953additive]
- - Bargaining foundations
+    - The Shapley-value is the only sharing rule that satisfies a **nice set of axioms**: efficiency, symmetry, linearity, dummy player axiom [@shapley1953additive]
+ - **Bargaining foundations**
     - The value arises as the subgame-perfect equilibrium of various alternating-offer bargaining games [e.g. @gul1989bargaining; @winter1994demand; @hart1996bargaining; @stole1996intra; @inderst2003bargaining]
- - A tractable and sensible-looking gain-sharing rule
+ - A **tractable and sensible-looking** gain-sharing rule
     - Comparative statics show that it behaves as one would expect
 
 ::: {.notes}
@@ -203,6 +205,512 @@ Same idea as with the Nash bargaining solution
 
 # Chapter 1 – Theory
 The value of being indispensable
+
+
+## Motivation
+
+
+## Literature
+
+
+## Simplest model
+
+::: {.fragment}
+Set of all players: $N = \{P, A_1, \dots, A_n\}$
+:::
+
+::: {.highlight-block .fragment}
+**Assumptions**
+
+- Big player ($P$) is indispensable
+- Small players ($A_i$) are symmetric
+:::
+
+::: {.fragment}
+$$
+v(S) = \begin{cases}
+   0                                & \text{if } P \notin S \\
+   f\left(\frac{\#_A (S)}{n}\right) & \text{otherwise}.
+\end{cases}
+$$
+:::
+
+::: {.notes}
+ - Describes situations, such as
+   - platforms
+   - vertical relationships
+   - generally any setting with an important large players and many identical small ones
+:::
+
+
+## Shapley value
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+Characteristic fct.:
+$$
+\scriptsize
+v(S) = \begin{cases}
+   0                                & \text{if } P \notin S \\
+   f\left(\frac{\#_A (S)}{n}\right) & \text{o/w}.
+\end{cases}
+$$
+
+::: {.fragment .fade-in fragment-index=2}
+Shapley value:
+$$
+\scriptsize
+\varphi_P^n(f) = \frac{1}{n+1} \sum_{k=0}^{n} f(k)
+$$
+:::
+::: {.fragment .fade-in fragment-index=5}
+$$
+\scriptsize
+\to \int_0^1 f(t) \, \mathrm{d}t
+$$
+:::
+
+:::
+
+::: {.column width=5%}
+:::
+
+::: {.column width="58%"}
+
+::: {.r-stack}
+
+::: {.fragment fragment-index=1}
+   <video data-autoplay src="../../out/manim_figures/videos/proposition_main/800p60/sections/draw_bars.mp4" />
+:::
+::: {.fragment fragment-index=2}
+   <video data-autoplay src="../../out/manim_figures/videos/proposition_main/800p60/sections/add_brace.mp4" />
+:::
+::: {.fragment fragment-index=3}
+   <video data-autoplay src="../../out/manim_figures/videos/proposition_main/800p60/sections/more_firms.mp4" />
+:::
+::: {.fragment fragment-index=4}
+   <video data-autoplay src="../../out/manim_figures/videos/proposition_main/800p60/sections/continuous_approximation.mp4" />
+:::
+::: {.fragment fragment-index=6}
+   <video data-autoplay src="../../out/manim_figures/videos/proposition_main/800p60/sections/surplus_division.mp4" />
+:::
+
+:::
+
+:::
+
+::::
+
+::: {.notes}
+ - Think of the previous figure with the orderings
+ - Main insight: each ordering with the platform at position $k$ has the same probability
+:::
+
+
+## Random order values
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+Characteristic fct.:
+$$
+\scriptsize
+v(S) = \begin{cases}
+   0                                & \text{if } P \notin S \\
+   f\left(\frac{\#_A (S)}{n}\right) & \text{o/w}.
+\end{cases}
+$$
+
+::: {.fragment fragment-index=1}
+Random order value:
+$$
+\scriptsize
+\varphi_P^n(f) = \sum_{k=0}^{n} {\color{RoyalBlue}\Pr(|\mathrm{prec}P| = k)} f(k)
+$$
+:::
+::: {.fragment fragment-index=2}
+$$
+\scriptsize
+\to \int_0^1 f(t) \mathrm{d} {\color{RoyalBlue}G(t)}
+$$
+:::
+
+:::
+
+::: {.column width=5%}
+:::
+
+::: {.column width="58%"}
+
+::: {.highlight-block .fragment fragment-index=2 .smaller}
+**Theorem 1.1**
+
+- Let $f$ be continuous on $[0, 1]$.
+- Let $X_n \coloneqq \frac{|\mathrm{prec}_P|}{n} \xrightarrow[]{d} X$
+  - with cdf $G(t)$
+  - and, if exists, pdf $g(t)$
+
+Then
+
+$$
+\begin{aligned}
+    \varphi_P^\infty &\coloneqq \lim_{n \to \infty} \varphi_P^n = \int_0^1 f(t) \mathrm{d}G(t) \\
+    &= \int_0^1 g(t) f(t) \mathrm{d}t.
+\end{aligned}
+$$
+:::
+
+:::
+
+::::
+
+
+## Some comparative statics
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {.fragment fragment-index=1}
+The **big player** gets a **larger slice** when
+:::
+::: {.smaller}
+::: {.fragment fragment-index=2}
+- The **small players are substitutes** to each other
+:::
+::: {.fragment fragment-index=3}
+- The big player can **creates some value on its own**
+:::
+::: {.fragment fragment-index=4}
+- The small players cannot create value on their own
+:::
+:::
+
+:::
+
+::: {.column width=5%}
+:::
+
+::: {.column width="58%"}
+
+::: {.r-stack}
+
+::: {.fragment fragment-index=1}
+   <video data-autoplay src="../../out/manim_figures/videos/corollary_comparative/800p60/sections/draw_graph.mp4" />
+:::
+::: {.fragment fragment-index=2}
+   <video data-autoplay src="../../out/manim_figures/videos/corollary_comparative/800p60/sections/complements.mp4" />
+:::
+::: {.fragment fragment-index=3}
+   <video data-autoplay src="../../out/manim_figures/videos/corollary_comparative/800p60/sections/intrinsic_value.mp4" />
+:::
+::: {.fragment fragment-index=4}
+   <video data-autoplay src="../../out/manim_figures/videos/corollary_comparative/800p60/sections/outside_option.mp4" />
+:::
+
+:::
+
+:::
+
+::::
+
+::: {.notes}
+ - The comparative statics seem to coincide with one's intuition about bargaining
+:::
+
+
+## Special case: multiple big players {#sec-multiple-big-players}
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {.fragment}
+- Assume that
+  - There are **$m$ big players**
+  - Only **one of them is needed** to create value
+:::
+
+::: {.fragment}
+- It turns out that
+  - It's equivalent to a **random order value with one big player**
+  - Integrate wrt. the number of firms **before first big player**
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%"}
+
+::: {.highlight-block .fragment .smaller}
+**Theorem 1.2**
+
+- Let $X^j_n \coloneqq \frac{|\mathrm{prec}_{P_j}|}{n} \xrightarrow[]{d} X^j$
+  - with cdf $G(t) \, \forall j$
+  - $f$ continuous, $X^j_n$ independent of each other
+
+Then
+
+$$
+\varphi_P^{\infty, m} = \int_0^1 f(t) \mathrm{d}H(t)
+$$
+with $H(t) = 1 - (1 - G(t))^m$.
+
+:::
+
+:::
+
+::::
+
+::: {.crossref}
+Weighted value: @sec-weighted-value
+:::
+
+
+## Illustration: Shapley value
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {}
+- Assume that
+  - There are **$m$ big players**
+  - Only **one of them is needed** to create value
+:::
+
+::: {}
+- It turns out that
+  - It's equivalent to a **random order value with one big player**
+  - Integrate wrt. the number of firms **before first big player**
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%" .smaller}
+SV for **$m \in \{1, 2, 3\}$** big players
+
+![](/out/figures/weighting_functions_multiple_p-p1,2,3.svg){width=80% height=100%}
+:::
+
+::::
+
+::: {.crossref}
+Weighted value: @sec-weighted-value
+:::
+
+::: {.notes}
+ - Talk about comparative statics in terms of the number of big players
+:::
+
+
+## Heterogeneous small players
+
+:::: {.columns}
+
+::: {.column width="47.5%" .fragment}
+
+- Let us assume
+  - One **indispensable big player**
+  - **$L$ types** of small players
+
+:::
+
+::: {.column width="5%"}  
+:::
+
+::: {.column width="47.5%" .fragment .smaller}
+$$
+  v(S) = \begin{cases}
+      0 \; \text{ if } P \notin S \\
+      f\left(\frac{\#_{A_1}(S)}{n}, \dots, \frac{\#_{A_L}(S)}{n}\right).
+  \end{cases}
+$$
+:::
+
+::::
+
+::: {.highlight-block .fragment .smaller}
+**Theorem 1.4**
+
+- Assume that
+  - $f$ is continuous on $[0, 1]^L$
+  - $X_n \coloneqq \left( \frac{n_{A_1}(\mathrm{prec})}{n}, \dots, \frac{n_{A_L}(\mathrm{prec})}{n} \right) \xrightarrow[]{d} X$ with cdf $G(t_1, \dots, t_L)$
+
+$$
+\implies \varphi_P^\infty = \int_0^1 \dots \int_0^1 f(t_1, \dots, t_L) \mathrm{d}G(t_1, \dots t_L)
+$$
+:::
+
+
+## Heterogeneity – Shapley value  {#sec-heterogeneity-shapley}
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {.fragment}
+- **Diagonal formula**
+  - Unequal proportions of small players is *unlikely* (LLN)
+  - Only have to integrate over one dimension
+:::
+
+::: {.fragment}
+- As before, but
+  - $P$ gets area under the **diagonal of $f$**
+  - For $A_i^l$, **marginal contributions ≈ partial derivatives**
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%" .fragment .smaller}
+
+::: {.highlight-block}
+**Proposition 1.7**
+
+Let $f$ be continuous on $[0, 1]^L$.
+Then,
+$$
+\varphi_P^\infty = \int_0^1 f(t, \dots, t) \mathrm{d}t
+$$
+and
+$$
+\varphi_{A^l}^\infty = \int_0^1 t \partial_l f(t, \dots, t) \mathrm{d}t.
+$$
+:::
+
+:::
+
+::::
+
+::: {.crossref}
+General idea: @sec-heterogeneity-general
+:::
+
+
+
+## Heterogeneity – Shapley value
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {}
+- **Diagonal formula**
+  - Unequal proportions of small players is *unlikely* (LLN)
+  - Only have to integrate over one dimension
+:::
+
+::: {}
+- As before, but
+  - $P$ gets area under the **diagonal of $f$**
+  - For $A_i^l$, **marginal contributions ≈ partial derivatives**
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%" .smaller}
+Shapley value (diagonal formula)
+
+![](/out/figures/two_sided_lambda2-1.svg){width=90% height=100%}
+:::
+
+::::
+
+::: {.crossref}
+General idea: @sec-heterogeneity-general
+:::
+
+
+## Heterogeneity – Weighted value
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {.fragment}
+- Let us add **weights**
+  - $P$ has weight $\lambda_P$
+  - Type $A^l$ has weight $\lambda_l$
+:::
+
+::: {.fragment}
+- Similar to the diagonal formula, but
+  - The relevant manifold is curved
+  - The curvature depends on the weights
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%" .fragment .smaller}
+
+::: {.highlight-block}
+**Proposition 1.8**
+
+Let $f$ be continuous on $[0, 1]^L$.
+Then,
+$$
+\varphi_P^\infty = \int_0^1 \lambda_P t^{\lambda_P - 1} f(t^{\lambda_1}, \dots, t^{\lambda_L}) \mathrm{d}t
+$$
+and
+$$
+\varphi_{A^l}^\infty = \int_0^1 t^{\lambda_P} \lambda_l t^{\lambda_l - 1} \partial_l f(t^{\lambda_1}, \dots, t^{\lambda_L}) \mathrm{d}t.
+$$
+:::
+
+:::
+
+::::
+
+
+## Heterogeneity – Weighted value
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {}
+- Let us add **weights**
+  - $P$ has weight $\lambda_P$
+  - Type $A^l$ has weight $\lambda_l$
+:::
+
+::: {}
+- Similar to the diagonal formula, but
+  - The relevant manifold is curved
+  - The curvature depends on the weights
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%" .smaller}
+Weighted value with **$\lambda_1 < \lambda_2$**
+
+![](/out/figures/two_sided_lambda2-3.svg){width=90% height=100%}
+:::
+
+::::
+
 
 <!-- CHAPTER 2 -->
 # Chapter 2 – Application
@@ -500,6 +1008,126 @@ All chat messages: @sec-chat-topics-all
 :::
 
 
+# Appendix – Chapter 1 {visibility="uncounted" .unnumbered .unlisted}
+
+## Special case: weighted value {#sec-weighted-value}
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {.fragment}
+- Assume that
+  - Player $P$ has weight $\lambda \geq 0$
+  - Small players have weight $1$
+:::
+
+::: {.fragment}
+- In this case
+  - The weighted value corresponds to a **specific random order value**
+  - Probability distribution depends on the weights
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%"}
+
+::: {.highlight-block .fragment .smaller}
+**Theorem 1.2**
+
+Let $f$ be continuous on $[0, 1]$. Then
+
+$$
+\begin{aligned}
+\varphi_P^{\infty, \lambda} &= \int_0^1 f(t) \mathrm{d}G(t) \\
+&= \int_0^1 \lambda t^{\lambda-1} f(t) \mathrm{d}t.
+\end{aligned}
+$$
+with $G(t) = t^\lambda$.
+
+:::
+
+:::
+
+::::
+
+::: {.crossref}
+Weighted value: @sec-multiple-big-players
+:::
+
+::: {.notes}
+- Comparative statics in terms of the weight. In particular
+  - when $\lambda = 0$, the big player gets nothing
+  - when $\lambda \to \infty$, the big player gets everything
+:::
+
+
+## Special case: weighted value
+
+:::: {.columns}
+
+::: {.column width="37%"}
+
+::: {}
+- Assume that
+  - Player $P$ has weight $\lambda \geq 0$
+  - Small players have weight $1$
+:::
+
+::: {}
+- In this case
+  - The weighted value corresponds to a **specific random order value**
+  - Probability distribution depends on the weights
+:::
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="58%" .smaller}
+Weighted value for **$\lambda \in \{0.5, 1, 3\}$**
+
+![](/out/figures/weighting_functions_weighted_shapley-p0.5,1,3.svg){width=80% height=100%}
+:::
+
+::::
+
+::: {.crossref}
+Weighted value: @sec-multiple-big-players
+:::
+
+
+## Heterogeneity – general case {#sec-heterogeneity-general}
+
+::: {.highlight-block .smaller}
+**Lemma 1.2**
+
+Assume that
+
+- $X_n \xrightarrow[]{d} X$ where $X$ with cdf. $H$.
+- The whole probability mass of $X$ is concentrated on the manifold $(a_1(s), \dots a_L(s)), t \in [0, 1]$.
+
+Then
+$$
+\begin{aligned}
+  \varphi_P^\infty &= \int_0^1 f(a_1(s), \dots a_L(s)) \mathrm{d}H(s), \\
+  \varphi_{A^l}^\infty &= \int_0^1 H(s) a_l'(s) \partial_l f(a_1(s), \dots a_L(s)) \mathrm{d}s.
+\end{aligned}
+$$
+:::
+
+::: {.crossref}
+🔙 @sec-heterogeneity-shapley
+:::
+
+
+# Appendix – Chapter 2 {visibility="uncounted" .unnumbered .unlisted}
+
+
 # Appendix – Chapter 3 {visibility="uncounted" .unnumbered .unlisted}
 
 
@@ -671,5 +1299,5 @@ All chat messages: @sec-chat-topics-all
 ::::
 
 ::: {.crossref}
-Back: @sec-chat-topics
+🔙 @sec-chat-topics
 :::

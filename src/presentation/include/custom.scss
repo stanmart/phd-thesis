@@ -1,6 +1,5 @@
 $highlight: #5692e4;
 
-
 /*-- scss:rules --*/
 
 #section-title {
@@ -22,7 +21,7 @@ $highlight: #5692e4;
 
 .reveal .crossref {
   text-align: right;
-  font-size: smaller;
+  font-size: large;
 }
 
 .reveal div.slide-number {
@@ -88,12 +87,15 @@ nav[role="doc-toc"] a:hover {
   font-style: normal;
   border-style: solid;
   border-color: $highlight;
+  border-radius: 30px;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 30px;
   margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-width: 5px;
 }
 
@@ -120,6 +122,6 @@ nav[role="doc-toc"] a:hover {
 }
 
 // Fix incremental list spacing
-div.fragment > ul {
+div > ul {
   margin-bottom: 0 !important;
 }

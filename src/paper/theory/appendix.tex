@@ -299,11 +299,11 @@ As in the case of non-linear network effects, it depends on the bargaining weigh
 \end{proof}
 
 \begin{proof}[Proof of Corollary \ref{cor:platform_value_weighted}]
-    Let $X$ and $X'$ be random variables with cdfs $G_X = t^\lambda$ and $G_{X'}t^{\lambda'}$, respectively.
+    Let $X$ and $X'$ be random variables with cdfs $G = t^\lambda$ and $G_{X'}t^{\lambda'}$, respectively.
     For any $\lambda < \lambda'$, $t^\lambda > t^{\lambda'} \forall t \in [0, 1]$, meaning that $X'$ first-order stochastically dominates $X'$.
     As a result, for any monotonically increasing $f$,
     \begin{align*}
-        \int_0^1 g_X(t)f(t) \dt = \E[f(X)] \leq \E[f(X')] = \int_0^1 g_{X'}(t)f(t)
+        \int_0^1 g(t)f(t) \dt = \E[f(X)] \leq \E[f(X')] = \int_0^1 g_{X'}(t)f(t)
     \end{align*}
     with strict inequality unless $f$ is constant almost everywhere.
     As $f$ is continuous, the latter is equivalent to $f$ being constant on the whole $[0, 1]$ interval.
