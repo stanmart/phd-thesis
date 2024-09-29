@@ -209,8 +209,42 @@ The value of being indispensable
 
 ## Motivation
 
+::: {.fragment}
+- Using cooperative game theory to **model bargaining**
+  - Has precedents in labor and IO literature
+  - General solution concepts are **flexible** but often **not very tractable**
+:::
+
+::: {.fragment}
+- Focus on **one indispensable player / many small players**
+  - Economically **relevant**
+  - Even general solution concepts can be **tractable** in this case
+:::
+
+::: {.fragment}
+- **Generalize** existing results
+  - Use **random order values** instead of the Shapley value or weighted values
+  - **Relax** the **indispensable player** assumption
+  - New results for **heterogeneous small players**
+:::
+
 
 ## Literature
+
+::: {.fragment}
+- **Oceanic games** (theoretical)
+  - Focus on fundamental questions, such as existence and uniqueness
+  - E.g., @milnor1978values, @hart1973values, **@fogelman1980asymptotic**
+  - This paper focuses on a more specific setting to derive more concrete results
+:::
+
+::: {.fragment}
+- **IO and labor economics** (applied)
+  - Intermediation, vertical integration, multi-sided markets, wage bargaining
+  - Examples of oceanic games: **@stole1996intra**, @levy1997individual
+  - This paper generalizes those results in a more abstract setting
+  - An example application is based on @armstrong2006competition
+:::
 
 
 ## Simplest model
@@ -710,6 +744,25 @@ Weighted value with **$\lambda_1 < \lambda_2$**
 :::
 
 ::::
+
+
+## Conclusion
+
+::: {.fragment}
+- Provide a **tool-kit** for modeling **bargaining** in settings with one (few) **central player**(s) and many small ones
+  - Use **random order values as a general framework**
+  - **Relax** the **indispensable player** assumption
+  - **Generalize** existing results for the **heterogeneous small player case**
+  - Simple example application to two-sided markets (omitted here)
+:::
+
+::: {.fragment}
+- Random order values are a **convenient tool** for modeling bargaining
+  - **Analytically tractable**
+  - More **flexible** than the Shapley value or the we
+  - **Sensible** in terms of comparative statics
+:::
+
 
 
 <!-- CHAPTER 2 -->
