@@ -55,8 +55,9 @@ rule update_latex_deps:
         dep_file = "tl_packages.txt"
     shell:
         "python src/util/makeutils.py collect-latex-packages \
-            --add-biber --add-latexmk --add-manim-deps --check-against-tl \
-            --output-file tl_packages.txt --force-add ms {input.deps}"
+            --add-biber --add-latexmk --add-manim-deps --add-matplotlib-deps \
+            --check-against-tl --output-file tl_packages.txt --force-add ms \
+            {input.deps}"
 
 
 rule paper:

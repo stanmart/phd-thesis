@@ -99,6 +99,7 @@ def collect_latex_packages(
     add_biber: bool = False,
     add_latexmk: bool = False,
     add_manim_deps: bool = False,
+    add_matplotlib_deps: bool = False,
     check_against_tl: bool = False,
     force_add: list[str] = [],
     print_console: bool = False,
@@ -163,6 +164,9 @@ def collect_latex_packages(
                 "xkeyval",
             ]
         )
+
+    if add_matplotlib_deps:
+        deps.add("type1cm")
 
     packages = set()
     for dep in deps:

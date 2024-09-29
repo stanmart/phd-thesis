@@ -65,6 +65,7 @@ snapshot
 standalone
 tipa
 tools
+type1cm
 uniquecounter
 url
 wasy
