@@ -393,7 +393,7 @@ Then, the probability of player $P$ having at most $k$ players of type $A$ befor
 The following lemma establishes the continuous analogue of this statement.
 \begin{lemma}
     \label{lem:entry_distr}
-    As $n \to \infty$, $X_n \xrightarrow[]{d} X$ with the cdf $G_X(t) = \lambda^t$.
+    As $n \to \infty$, $X_n \xrightarrow[]{d} X$ with the cdf $G(t) = \lambda^t$.
     Consequently, the corresponding probability density function is $g(t) = \lambda t^{\lambda - 1}$.
 \end{lemma}
 
@@ -680,7 +680,7 @@ This is because the big player is not indispensable, as $s$ mass of fringe firms
 
 \begin{theorem}
     \label{prop:one_sided_non_indispensable}
-    Let $f$ be continuous on [0, 1]. Furthermore, let us denote the random variable $\frac{|\precede_P|}{n}$ as $X_n$. Assume that $X_n \xrightarrow[]{d} X$ with cdf $G_X(t)$ and (if exists) pdf $g(t)$.
+    Let $f$ be continuous on [0, 1]. Furthermore, let us denote the random variable $\frac{|\precede_P|}{n}$ as $X_n$. Assume that $X_n \xrightarrow[]{d} X$ with cdf $G(t)$ and (if exists) pdf $g(t)$.
     Then
     \begin{align*}
         \varphi_P^\infty = \lim_{n \to \infty} \varphi_P^n = \int_0^1 f(t) \dG(t) = \int_0^1 g(t) [f(t) - f_0(t)] \dt,
@@ -812,7 +812,7 @@ Let us establish the analog of \Cref{prop:one_sided_general} for the case of het
     \begin{align*}
         X_n = \left( \frac{n_{A_1}(\precede_P)}{n}, \dots, \frac{n_{A_L}(\precede_P)}{n} \right).
     \end{align*}
-    Assume that $X_n \xrightarrow[]{d} X$ with cdf $G_X(t_1, \dots, t_L)$ and (if exists) pdf $g(t_1, \dots, t_L)$.
+    Assume that $X_n \xrightarrow[]{d} X$ with cdf $G(t_1, \dots, t_L)$ and (if exists) pdf $g(t_1, \dots, t_L)$.
     Then
     \begin{align*}
         \varphi_P^\infty = \lim_{n \to \infty} \varphi_P^n &= \int_0^1 \dots \int_0^1 f(t_1, \dots, t_L) \dG(t_1, \dots t_L) \\
