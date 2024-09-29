@@ -166,7 +166,7 @@ As a consequence, the continuous fringe model can be considered a more tractable
 
 \begin{theorem}
     \label{prop:one_sided_general}
-    Let $f$ be continuous on [0, 1]. Furthermore, let us denote the random variable $\frac{|\precede_P|}{n}$ as $X_n$. Assume that $X_n \xrightarrow[]{d} X$ with cdf $G(t)$ and (if exists) pdf $g(t)$.
+    Let $f$ be continuous on $[0, 1]$. Furthermore, let us denote the random variable $\frac{|\precede_P|}{n}$ as $X_n$. Assume that $X_n \xrightarrow[]{d} X$ with cdf $G(t)$ and (if exists) pdf $g(t)$.
     Then
     \begin{align*}
         \varphi_P^\infty = \lim_{n \to \infty} \varphi_P^n = \int_0^1 f(t) \dG(t) = \int_0^1 g(t) f(t) \dt,
@@ -229,7 +229,7 @@ The following proposition and corollary derive the limit of the Shapley value fo
 
 \begin{proposition}
     \label{prop:one_sided}
-    Let $f$ be continuous on [0, 1]. Then
+    Let $f$ be continuous on $[0, 1]$. Then
     \begin{align*}
         \varphi_P^\infty = \lim_{n \to \infty} \varphi_P^n = \int_0^1 f(t) \dt .
     \end{align*}
@@ -520,7 +520,7 @@ Then, the value of individual big players can be obtained by relying on the assu
 The following proposition provides an expression for the limit of this total value.
 \begin{theorem}
     \label{prop:multiple_platforms_total}
-    Let $f$ be continuous on [0, 1].
+    Let $f$ be continuous on $[0, 1]$.
     Let us denote the number of fringe players in any coalition $S$ as $n_A(S)$.
     Furthermore, let us denote the random variable $\frac{n_A(\precede_{P_j})}{n}$ as $X_n^j$.
     Assume that $X_n^j$ and $X_n^k$ are independent for all $j \neq k$.
@@ -680,7 +680,7 @@ This is because the big player is not indispensable, as $s$ mass of fringe firms
 
 \begin{theorem}
     \label{prop:one_sided_non_indispensable}
-    Let $f$ be continuous on [0, 1]. Furthermore, let us denote the random variable $\frac{|\precede_P|}{n}$ as $X_n$. Assume that $X_n \xrightarrow[]{d} X$ with cdf $G(t)$ and (if exists) pdf $g(t)$.
+    Let $f$ be continuous on $[0, 1]$. Furthermore, let us denote the random variable $\frac{|\precede_P|}{n}$ as $X_n$. Assume that $X_n \xrightarrow[]{d} X$ with cdf $G(t)$ and (if exists) pdf $g(t)$.
     Then
     \begin{align*}
         \varphi_P^\infty = \lim_{n \to \infty} \varphi_P^n = \int_0^1 f(t) \dG(t) = \int_0^1 g(t) [f(t) - f_0(t)] \dt,
