@@ -380,7 +380,7 @@ $$
 ::: {.column width="58%"}
 
 ::: {.highlight-block .fragment fragment-index=2 .smaller}
-**Theorem 1.1**
+**Theorem 1.1.**
 
 - Let $f$ be continuous on $[0, 1]$.
 - Let $X_n \coloneqq \frac{|\mathrm{prec}_P|}{n} \xrightarrow[]{d} X$
@@ -482,7 +482,7 @@ The **big player** gets a **larger slice** when
 ::: {.column width="58%"}
 
 ::: {.highlight-block .fragment .smaller}
-**Theorem 1.2**
+**Theorem 1.2.**
 
 - Let $X^j_n \coloneqq \frac{|\mathrm{prec}_{P_j}|}{n} \xrightarrow[]{d} X^j$
   - with cdf $G(t) \, \forall j$
@@ -573,11 +573,10 @@ $$
 ::::
 
 ::: {.highlight-block .fragment .smaller}
-**Theorem 1.4**
+**Theorem. 1.4.** Assume that
 
-- Assume that
-  - $f$ is continuous on $[0, 1]^L$
-  - $X_n \coloneqq \left( \frac{n_{A_1}(\mathrm{prec})}{n}, \dots, \frac{n_{A_L}(\mathrm{prec})}{n} \right) \xrightarrow[]{d} X$ with cdf $G(t_1, \dots, t_L)$
+- $f$ is continuous on $[0, 1]^L$
+- $X_n \coloneqq \left( \frac{n_{A_1}(\mathrm{prec})}{n}, \dots, \frac{n_{A_L}(\mathrm{prec})}{n} \right) \xrightarrow[]{d} X$ with cdf $G(t_1, \dots, t_L)$
 
 $$
 \implies \varphi_P^\infty = \int_0^1 \dots \int_0^1 f(t_1, \dots, t_L) \mathrm{d}G(t_1, \dots t_L)
@@ -611,7 +610,7 @@ $$
 ::: {.column width="58%" .fragment .smaller}
 
 ::: {.highlight-block}
-**Proposition 1.7**
+**Proposition 1.7.**
 
 Let $f$ be continuous on $[0, 1]^L$.
 Then,
@@ -696,7 +695,7 @@ General idea: @sec-heterogeneity-general
 ::: {.column width="58%" .fragment .smaller}
 
 ::: {.highlight-block}
-**Proposition 1.8**
+**Proposition 1.8.**
 
 Let $f$ be continuous on $[0, 1]^L$.
 Then,
@@ -746,7 +745,7 @@ Weighted value with **$\lambda_1 < \lambda_2$**
 ::::
 
 
-## Conclusion
+## Summary
 
 ::: {.fragment}
 - Provide a **tool-kit** for modeling **bargaining** in settings with one (few) **central player**(s) and many small ones
@@ -764,10 +763,342 @@ Weighted value with **$\lambda_1 < \lambda_2$**
 :::
 
 
-
 <!-- CHAPTER 2 -->
 # Chapter 2 – Application
 Hybrid platforms and bargaining power
+
+
+## Motivation
+
+::: {.fragment}
+- Hybrid platforms are
+   - Getting more and more common
+   - Seemingly obvious concerns and high-profile competition policy cases
+   - Despite this, relatively little reserach
+:::
+::: {.fragment}
+- Bargaining between participants is not well understood in the platform setting
+  - Authors generally assume take-it-or-leave-it offers
+:::
+
+::: {.highlight-block .fragment}
+Examine the bargaining power implications of hybrid platforms and its welfare consequences
+:::
+
+
+## Main ideas
+
+::: {.fragment}
+- **Shapley-value** based bargaining rule
+  - Analytically more **tractable**
+  - Has **bargaining microfoundations** [e.g. @hart1996bargaining; @stole1996intra]
+  - Has precedents in the IO literature [e.g. @hart1990property; @montez2007downstream]
+:::
+::: {.fragment}
+- **Abstract away all frictions**
+  - Focus on the **bargaining channel**
+  - Offers a good benchmark model
+:::
+::: {.fragment}
+- Consider a **continuum of small players** case for tractability
+  - Good approximation of the finite player case even for not too many players
+:::
+
+
+## Related literature
+
+::: {.fragment}
+ - Multi-sided markets
+   - Platform markets: @rochet2003platform, @hagiu2004optimal, @armstrong2006competition
+   - Hybrid platforms: **@anderson2021hybrid**,  @gutierrez2021welfare,  @hagiu2022should
+:::
+::: {.fragment}
+ - Other similarly structured markets
+   - Private labels in retail: @steiner2004nature
+   - Vertical integration: @hart1990vertical, @de2005vertical, @montez2007downstream
+:::
+::: {.fragment}
+ - Cooperative games in IO
+   - @hart1990property, @levy1997individual, **@montez2007downstream**, **@anderson2021hybrid**
+:::
+
+
+## Model – Players
+
+::: {.fragment}
+ - One **platform**: $P$
+   - Without the platform, no value can be created
+   - Might have its own products (hybrid mode)
+:::
+
+::: {.fragment}
+ - A continuum of potential **fringe entrants**: $F_i, i \in \mathbb{R}_0^+$
+   - Infinitesimally small
+   - Have one product each
+   - Can only sell through the platform
+:::
+
+
+## Model – Timing and overview
+
+:::: {.columns}
+
+::: {.column width="50%" .fragment}
+**Benchmark model**
+
+```{dot}
+//| fig-width: 100%
+digraph G {
+    node [shape=box, fontsize=18, style=rounded, margin=0.2, penwidth=2];
+    edge [penwidth=2];
+
+    entry_fee [label=<<b>T1</b>: Platform unilaterally<br/><b>sets </b> the entry fee>];
+    entry_decision [label=<<b>T2</b>: Potential entrants decide to<br/><b>invest </b> in a product and <b>enter</b>>];
+    sales [label=<<b>T3</b>: Platform and fringe<br/>set product prices>];
+    final [label=<<b>T4</b>: Consumers make<br/>consumption decisions>];
+
+    entry_fee -> entry_decision;
+    entry_decision -> sales;
+    sales -> final;
+}
+```
+:::
+
+::: {.column width="50%" .fragment}
+**Bargaining model**
+
+```{dot}
+//| fig-width: 100%
+digraph G {
+    node [shape=box, fontsize=18, style=rounded, margin=0.2, penwidth=2];
+    edge [penwidth=2];
+
+    entry_decision [label=<<b>T1</b>: Potential entrants decide to<br/><b>invest </b> in a product>, color="#5692e4"];
+    entry_fee [label=<<b>T2</b>: Entry fees are <b>negotiated</b><br/>between platform and fringe entrants>, color="#5692e4"];
+    sales [label=<<b>T3</b>: Platform and fringe<br/>set product prices>];
+    final [label=<<b>T4</b>: Consumers make<br/>consumption decisions>];
+
+    entry_decision -> entry_fee;
+    entry_fee -> sales;
+    sales -> final;
+}
+```
+:::
+
+::::
+
+
+## Demand {#sec-demand}
+
+Logit-like demand for each product $T_i$
+
+::: {.fragment .smaller}
+- $T \in \{P, F\}$
+- $v$: value of the product
+- $p$: price
+
+$$
+x_{Ti} = \frac{\exp\left( \frac{v_T - p_{T_i}}{\mu} \right)}{A}
+$$
+:::
+::: {.fragment .smaller}
+where
+$$
+A = \int_0^{N_F} \exp\left( \frac{v_F - p_{Fi}}{\mu} \right) \mathrm{d}i + \int_0^{N_P} \exp\left( \frac{v_P - p_{Pi}}{\mu} \right) \mathrm{d}i + 1
+$$
+:::
+
+::: {.crossref}
+Utility function: @sec-utility-function
+:::
+
+
+## Production
+::: {.fragment}
+- Assume that the platform prices its products as if they were made by separate, competitive sellers
+  - Possible interpretation: profit-maximizing subsidiaries
+  - More importantly: "best case scenario"
+:::
+::: {.fragment .highlight-block .smaller}
+**Proposition 2.3.**
+
+The optimal price is an additive markup over marginal costs:
+
+- $p^*_{Ti} = c_T + \mu$
+- $\pi^{v*}_{T_i} = \mu \frac{\exp \left( \frac{v_T - c_T - \mu}{\mu} \right)}{A} \coloneqq \frac{V_T}{A}$
+:::
+
+
+## Free enetry
+
+::: {.fragment}
+- Potential entrants decide to enter if they can cover the
+  - Investment cost $I_F$
+  - Platform entry fee $K_F$
+:::
+
+::: {.fragment .highlight-block .smaller}
+**Proposition 2.4.**
+
+If $I_F$ and $K_F$ are low enough, the equilibrium size of the aggregate is
+$$
+A = \mu \frac{V_F}{K_F + I_F}
+$$
+:::
+
+::: {.fragment}
+- Does not directly depend on the platform's product variety
+:::
+
+
+## Benchmark model
+
+::: {.fragment .highlight-block .smaller}
+**Theorem. 2.1**
+The optimal entry fee is given by
+
+$$K_F^{opt} = \sqrt{\mu I_F V_F} - I_F$$
+:::
+
+::: {.fragment .highlight-block .smaller}
+**Theorem. 2.2**
+In the benchmark model under hybrid regime,
+
+- The equilibrium number of fringe firms is decreasing in the platform's product variety: $\frac{\mathrm{d} N_F}{\mathrm{d} N_P} = -\frac{V_P}{V_F} < 0$.
+- The equilibrium size of the aggregate and consumer surplus are independent of the platform's product variety: $\frac{\mathrm{d} A}{\mathrm{d} N_P} = \frac{\mathrm{d} CS}{\mathrm{d} N_P} = 0$.
+:::
+
+
+## Benchmark model
+
+::: {layout-ncol=2}
+![Entry fee](/out/figures/equilibrium_entry-fee_without-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
+
+![Number of fringe entrants](/out/figures/equilibrium_fringe-number_without-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
+:::
+
+
+## Bargaining model – profit division
+
+::: {.fragment}
+- Total profits (≈ characteristic function):
+
+$$
+\Pi(N_P, N_F) = \mu \frac{N_F V_F + N_P V_P}{N_F V_F + N_P V_P + 1}
+$$
+:::
+
+::: {.fragment}
+- Everyone gets their **Shapley-value**:
+
+$$
+\pi^t_P = \int_0^1 \Pi(N_P, sN_F) \mathrm{d}s
+$$
+:::
+
+
+## Bargaining model – fringe entry
+
+::::: {.columns}
+
+:::: {.column width="40%"}
+
+::: {.fragment fragment-index=1}
+- The fringe profits are hump-shaped
+:::
+::: {.fragment fragment-index=3}
+- Platform product variety reduces fringe entry
+:::
+::: {.fragment fragment-index=4}
+- In the bargaining case, more than proportionally
+:::
+
+::::
+
+:::: {.column width="60%"}
+
+::: {.r-stack}
+
+::: {.fragment fragment-index=1}
+  <video data-autoplay src="../../out/manim_figures/videos/comparative_equilibrium_entry/800p60/sections/draw_graph.mp4" />
+:::
+::: {.fragment fragment-index=2}
+  <video data-autoplay src="../../out/manim_figures/videos/comparative_equilibrium_entry/800p60/sections/mark_equilibrium.mp4" />
+:::
+::: {.fragment fragment-index=3}
+  <video data-autoplay src="../../out/manim_figures/videos/comparative_equilibrium_entry/800p60/sections/alternate_equilibrium.mp4" />
+:::
+::: {.fragment fragment-index=4}
+  <video data-autoplay src="../../out/manim_figures/videos/comparative_equilibrium_entry/800p60/sections/show_loss.mp4" />
+:::
+
+:::
+
+::::
+
+:::::
+
+
+## Bargaining model – outcomes
+
+::: {.fragment .highlight-block .smaller}
+**Proposition 2.9.**
+In the hybrid regime, the *implied entry fee* is increasing in the platform's product variety:
+
+$$
+\frac{\partial K_F^{impl}(N_P)}{\partial N_P} > 0
+$$
+:::
+
+::: {.fragment .highlight-block .smaller}
+**Theorem 2.3.**
+In the bargaining model under hybrid regime
+
+- The equilibrium number of fringe firms is decreasing *fast* in the platform's product variety: $\frac{\mathrm{d} N_F}{\mathrm{d} N_P} = -\frac{V_P}{V_F} < 0$.
+- The equilibrium size of the aggregate and consumer surplus are decreasing in the platform's product variety: $\frac{\mathrm{d} A}{\mathrm{d} N_P}, \frac{\mathrm{d} CS}{\mathrm{d} N_P} < 0$.
+:::
+
+
+## Bargaining model – outcomes
+
+::: {layout-ncol=2}
+![(Implied) Entry fee](/out/figures/equilibrium_entry-fee_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
+
+![Number of fringe entrants](/out/figures/equilibrium_fringe-number_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
+:::
+
+
+## Bargaining model – outcomes  {#sec-hybrid-mode-figures}
+
+::: {layout-ncol=2}
+![Consumer surplus](/out/figures/equilibrium_consumer-surplus_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
+
+![Platform profits](/out/figures/equilibrium_platform-profit_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
+:::
+
+::: {.crrossref}
+Platform's choice of product variety: @sec-appendix-platform-choice
+:::
+
+
+## Conclusion
+
+::: {.fragment}
+- Tractable model of **hybrid platforms** in which **bargaining** plays a key role
+  - Applicable to other settings, too (e.g. vertical markets, franchises)
+:::
+
+::: {.fragment}
+- Highlight an important aspect of hybrid platforms
+  - **Hybrid mode increases bargaining power** against entrants
+  - This can have **negative welfare consequences**
+:::
+
+::: {.fragment}
+- **Policy implications** for such markets
+  - Apple, Google, etc. having their own apps
+  - Microsoft acquiring Activision/Blizzard
+:::
 
 
 <!-- CHAPTER 3 -->
@@ -1179,6 +1510,31 @@ $$
 
 
 # Appendix – Chapter 2 {visibility="uncounted" .unnumbered .unlisted}
+
+## Utility function {#sec-utility-function}
+
+::: {.incremental}
+ - Follow @anderson2021hybrid
+ - Unit mass of customers, each choosing one product maximizing $$u_{ij}^T = v^T - p_i^T + \mu \varepsilon_{ij}^T$$
+   - $T \in \{P, F, 0\}$
+   - Unit mass of outside options at price $p_i^0 = 0$
+   - $v_T$: value of the product
+   - $\mu$: degree of horizontal differentiation
+   - $\varepsilon_{ij}^T \sim \mathrm{Gumbel}(0, 1)$: taste shocks
+:::
+
+::: {.crossref}
+🔙 @sec-demand
+:::
+
+
+## Platform's choice of product variety {#sec-appendix-platform-choice}
+
+TODO
+
+::: {.crossref}
+🔙 @sec-hybrid-mode-figures
+:::
 
 
 # Appendix – Chapter 3 {visibility="uncounted" .unnumbered .unlisted}

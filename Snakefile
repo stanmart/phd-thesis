@@ -157,6 +157,24 @@ rule manim_shapley_value:
                 out/manim_figures/videos/shapley_value_demo/{wildcards.height}p{wildcards.fps}/sections"
 
 
+rule manim_comparative_equilibrium_entry:
+    input:
+        script = "src/manim_figures/comparative_equilibrium_entry.py"
+    output:
+        videos = expand(
+            "out/manim_figures/videos/comparative_equilibrium_entry/{height}p{fps}/sections/{section}.mp4",
+            section = find_manim_sections("src/manim_figures/comparative_equilibrium_entry.py"),
+            allow_missing=True
+        )
+    params:
+        width = lambda wildcards: wildcards.height,
+    shell:
+        "manim render -qh {input.script} --save_sections --media_dir out/manim_figures \
+                      -r {params.width},{wildcards.height} --fps {wildcards.fps} && \
+         python src/util/makeutils.py rename-manim-sections \
+                out/manim_figures/videos/comparative_equilibrium_entry/{wildcards.height}p{wildcards.fps}/sections"
+
+
 rule figure_two_sided:
     output:
         fig = "out/figures/two_sided_lambda2-{lambda_2}.{ext}"
@@ -169,6 +187,15 @@ rule figure_weighting_functions:
         fig = "out/figures/weighting_functions_{type}-p{par_list}.{ext}"
     script:
         "src/figures/weighting_functions.py"
+
+
+rule figure_equilibrium_presentation:
+    input:
+        csv = "out/figures/equilibrium_{value_function}_{bargaining}_scale-{n_c}_lambda-{lambda_P}.csv"
+    output:
+        fig = "out/figures/equilibrium_{var}_{add_bargaining}-bargaining_{value_function}_{bargaining}_scale-{n_c}_lambda-{lambda_P}.{ext}"
+    script:
+        "src/figures/equilibrium_presentation.py"
 
 
 rule figure_equilibrium:
