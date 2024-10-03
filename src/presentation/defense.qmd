@@ -818,7 +818,7 @@ Examine the bargaining power implications of hybrid platforms and its welfare co
 :::
 ::: {.fragment}
  - Cooperative games in IO
-   - @hart1990property, @levy1997individual, **@montez2007downstream**, **@anderson2021hybrid**
+   - @hart1990property, @levy1997individual, **@montez2007downstream**
 :::
 
 
