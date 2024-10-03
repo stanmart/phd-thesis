@@ -1574,7 +1574,7 @@ $$
 :::
 
 ::: {.fragment .smaller .highlight-block}
-**Propositions 2.11, 1.12.**
+**Propositions 2.11, 2.12.**
 
 - In the benchmark model, $N_P^* > 0 \implies \frac{V_P}{I_P} \geq \frac{V_F}{I_F}$.
 - In the bargaining model, it can happen that $N_P^* > 0$ even if $\frac{V_P}{I_P} < \frac{V_F}{I_F}$.
