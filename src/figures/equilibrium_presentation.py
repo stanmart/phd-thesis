@@ -79,6 +79,8 @@ def plot_equilibrium_outcomes(
     ax.set_xlim(0, df["N_P"].max())
     ax.set_xticks([0, df["N_P"].max()])
 
+    ax.set_ylim(0, ax.get_ylim()[1])
+
     ax.spines[["right", "top"]].set_visible(False)
     ax.legend()
 

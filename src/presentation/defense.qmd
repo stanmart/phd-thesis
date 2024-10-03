@@ -1059,7 +1059,7 @@ In the bargaining model under hybrid regime
 :::
 
 
-## Bargaining model – outcomes
+## Bargaining model – outcomes  {#sec-bargaining-figures}
 
 ::: {layout-ncol=2}
 ![(Implied) Entry fee](/out/figures/equilibrium_entry-fee_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
@@ -1067,8 +1067,12 @@ In the bargaining model under hybrid regime
 ![Number of fringe entrants](/out/figures/equilibrium_fringe-number_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
 :::
 
+::: {.crossref}
+Other case: @sec-alternative-param
+:::
 
-## Bargaining model – outcomes  {#sec-hybrid-mode-figures}
+
+## Bargaining model – outcomes  {#sec-bargaining-figures-2}
 
 ::: {layout-ncol=2}
 ![Consumer surplus](/out/figures/equilibrium_consumer-surplus_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
@@ -1076,7 +1080,7 @@ In the bargaining model under hybrid regime
 ![Platform profits](/out/figures/equilibrium_platform-profit_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
 :::
 
-::: {.crrossref}
+::: {.crossref}
 Platform's choice of product variety: @sec-appendix-platform-choice
 :::
 
@@ -1394,7 +1398,7 @@ All chat messages: @sec-chat-topics-all
 
 # Appendix – Chapter 1 {visibility="uncounted" .unnumbered .unlisted}
 
-## Special case: weighted value {#sec-weighted-value}
+## Special case: weighted value {visibility="uncounted" #sec-weighted-value}
 
 :::: {.columns}
 
@@ -1449,7 +1453,7 @@ Weighted value: @sec-multiple-big-players
 :::
 
 
-## Special case: weighted value
+## Special case: weighted value {visibility="uncounted"}
 
 :::: {.columns}
 
@@ -1485,7 +1489,7 @@ Weighted value: @sec-multiple-big-players
 :::
 
 
-## Heterogeneity – general case {#sec-heterogeneity-general}
+## Heterogeneity – general case {visibility="uncounted" #sec-heterogeneity-general}
 
 ::: {.highlight-block .smaller}
 **Lemma 1.2**
@@ -1511,7 +1515,7 @@ $$
 
 # Appendix – Chapter 2 {visibility="uncounted" .unnumbered .unlisted}
 
-## Utility function {#sec-utility-function}
+## Utility function {visibility="uncounted" #sec-utility-function}
 
 ::: {.incremental}
  - Follow @anderson2021hybrid
@@ -1528,12 +1532,46 @@ $$
 :::
 
 
-## Platform's choice of product variety {#sec-appendix-platform-choice}
+## Bargaining model – outcomes (alternative)  {visibility="uncounted" #sec-alternative-param}
 
-TODO
+::: {layout-ncol=2}
+![(Implied) Entry fee](/out/figures/equilibrium_entry-fee_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
+
+![Number of fringe entrants](/out/figures/equilibrium_fringe-number_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
+:::
+
+
+## Bargaining model – outcomes (alternative) {visibility="uncounted"}
+
+::: {layout-ncol=2}
+![Consumer surplus](/out/figures/equilibrium_consumer-surplus_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
+
+![Platform profits](/out/figures/equilibrium_platform-profit_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
+:::
 
 ::: {.crossref}
-🔙 @sec-hybrid-mode-figures
+🔙 @sec-bargaining-figures
+:::
+
+
+## Platform's choice of product variety {visibility="uncounted" #sec-appendix-platform-choice}
+
+::: {.smaller}
+- Higher platform product variety → lower consumer surplus **when platform is operating in hybrid mode**
+- Does it want to have more products?
+- Assume that at time 0 the platform can invest in own products at cost $I_P$ per product
+:::
+
+::: {.fragment .smaller .highlight-block}
+**Propositions 2.11, 1.12.**
+
+- In the benchmark model, $N_P^* > 0 \implies \frac{V_P}{I_P} \geq \frac{V_F}{I_F}$.
+- In the bargaining model, it can happen that $N_P^* > 0$ even if $\frac{V_P}{I_P} < \frac{V_F}{I_F}$.
+:::
+
+
+::: {.crossref}
+🔙 @sec-bargaining-figures-2
 :::
 
 
@@ -1688,7 +1726,7 @@ TODO
 :::
 
 
-## Chat topics (all) #{#sec-chat-topics-all}
+## Chat topics (all) {visibility="uncounted" #sec-chat-topics-all}
 
 :::: {.columns}
 
