@@ -20,10 +20,9 @@ format:
     toc-depth: 1
     toc-title: Agenda
     transition: fade
-    slide-number: true
+    slide-number: c
 ---
 
-<!-- INTRO -->
 # Introduction
 
 ## Motivation
@@ -1069,10 +1068,14 @@ In the bargaining model under hybrid regime
 
 ::: {.crossref}
 Other case: @sec-alternative-param
+
+Platform's choice of product variety: @sec-appendix-platform-choice
+
+Extensiions: @sec-application-extensions
 :::
 
 
-## Bargaining model – outcomes  {#sec-bargaining-figures-2}
+## Bargaining model – outcomes
 
 ::: {layout-ncol=2}
 ![Consumer surplus](/out/figures/equilibrium_consumer-surplus_with-bargaining_profit_onesided_scale-1_lambda-1.svg){width=95% height=100%}
@@ -1081,7 +1084,11 @@ Other case: @sec-alternative-param
 :::
 
 ::: {.crossref}
+Other case: @sec-alternative-param
+
 Platform's choice of product variety: @sec-appendix-platform-choice
+
+Extensiions: @sec-application-extensions
 :::
 
 
@@ -1388,7 +1395,7 @@ All chat messages: @sec-chat-topics-all
 :::
 
 
-# Thank you {.unnumbered .unlisted}
+# Thank you {visibility="uncounted" .unnumbered .unlisted}
 
 ## References {visibility="uncounted"}
 
@@ -1532,7 +1539,7 @@ $$
 :::
 
 
-## Bargaining model – outcomes (alternative)  {visibility="uncounted" #sec-alternative-param}
+## Bargaining model – other case  {visibility="uncounted" #sec-alternative-param}
 
 ::: {layout-ncol=2}
 ![(Implied) Entry fee](/out/figures/equilibrium_entry-fee_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
@@ -1540,8 +1547,12 @@ $$
 ![Number of fringe entrants](/out/figures/equilibrium_fringe-number_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
 :::
 
+::: {.crossref}
+🔙 @sec-bargaining-figures
+:::
 
-## Bargaining model – outcomes (alternative) {visibility="uncounted"}
+
+## Bargaining model – other case {visibility="uncounted"}
 
 ::: {layout-ncol=2}
 ![Consumer surplus](/out/figures/equilibrium_consumer-surplus_with-bargaining_profit_onesided_scale-1_lambda-2.svg){width=95% height=100%}
@@ -1571,7 +1582,29 @@ $$
 
 
 ::: {.crossref}
-🔙 @sec-bargaining-figures-2
+🔙 @sec-bargaining-figures
+:::
+
+
+## Extensions {visibility="uncounted" #sec-application-extensions}
+
+::: {.fragment}
+- Difference in **innate bargaining power**
+  - Players get their **weighted value**
+  - More flexible but **no qualitative difference**
+:::
+
+::: {.fragment}
+- **Consumers** (customers) **take part in the bargaining**
+  - C.f. heterogeneous small players (@sec-heterogeneity-shapley)
+  - Platform and customers get the same share
+  - **What's good for the platform is good for the customers**
+  - Otherwise similar results
+:::
+
+
+::: {.crossref}
+🔙 @sec-bargaining-figures
 :::
 
 
