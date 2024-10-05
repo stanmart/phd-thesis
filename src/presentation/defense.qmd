@@ -1,11 +1,14 @@
 ---
 title: "Essays on Cooperative Bargaining"
-subtitle: "PhD Thesis Defense"
+subtitle: "PhD Defense"
+date: 16 October 2024
+date-format: "D MMMM YYYY"
 author:
  - name: Martin Stancsics
-   email: martin.stancsics@econ.uzh.ch
+   url: https://stanmart.github.io
    affiliations:
      - name: University of Zürich
+       url: https://www.econ.uzh.ch/
 format:
   revealjs:
     html-math-method: mathjax
