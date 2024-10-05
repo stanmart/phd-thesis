@@ -1,5 +1,5 @@
 ---
-title: "Essays on Cooperative Bargaining"
+title: "<a href='https://github.com/stanmart/phd-thesis' id='title-link'>Essays on Cooperative Bargaining</a>"
 subtitle: "PhD Defense"
 date: 16 October 2024
 date-format: "D MMMM YYYY"
