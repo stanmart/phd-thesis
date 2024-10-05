@@ -5,8 +5,9 @@ $highlight: #5692e4;
 a.title-link {
   color: var(--r-main-color);
 }
-a.title-link:hover {
-  color: var(--r-main-color);
+
+#title-slide a:hover {
+  color: $highlight;
 }
 
 #section-title {
