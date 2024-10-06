@@ -1071,7 +1071,7 @@ $$
 **Theorem 2.3.**
 In the bargaining model under hybrid regime
 
-- The equilibrium number of fringe firms is decreasing *fast* in the platform's product variety: $\frac{\mathrm{d} N_F}{\mathrm{d} N_P} = -\frac{V_P}{V_F} < 0$.
+- The equilibrium number of fringe firms is decreasing *fast* in the platform's product variety: $\frac{\mathrm{d} N_F}{\mathrm{d} N_P} < -\frac{V_P}{V_F}$.
 - The equilibrium size of the aggregate and consumer surplus are decreasing in the platform's product variety: $\frac{\mathrm{d} A}{\mathrm{d} N_P}, \frac{\mathrm{d} CS}{\mathrm{d} N_P} < 0$.
 :::
 
