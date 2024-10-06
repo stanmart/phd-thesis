@@ -989,7 +989,7 @@ In the benchmark model under hybrid regime,
 
 ## Bargaining model – profit division
 
-::: {.fragment}
+::: {.fragment .smaller}
 - Total profits (≈ characteristic function):
 
 $$
@@ -997,11 +997,19 @@ $$
 $$
 :::
 
-::: {.fragment}
+::: {.fragment .smaller}
 - Everyone gets their **Shapley-value**:
 
 $$
-\pi^t_P = \int_0^1 \Pi(N_P, sN_F) \mathrm{d}s
+\pi^t_P = \int_0^1 \Pi(N_P, sN_F) \mathrm{d}s, \quad \pi^t_{F_i} = \frac{\Pi(N_P, N_F) - \pi^t_P}{N_F}
+$$
+:::
+
+::: {.fragment .smaller}
+- Implied entry fee:
+
+$$
+K_F^{impl} = \pi^v_{F_i} - \pi^t_{F_i}
 $$
 :::
 
