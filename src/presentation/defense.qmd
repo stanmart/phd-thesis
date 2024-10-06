@@ -43,7 +43,7 @@ format:
 :::
 
 ::: {.fragment}
-- The **one indispensable / many smaller plyers** is an economically important special case
+- The **one indispensable / many smaller players** is an economically important special case
 :::
 
 
@@ -124,7 +124,7 @@ $\{P, A_1, A_2\}$  | 6
 
 ::: {.notes}
  - Two ingredients: players (left) and characteristic function (right)
- - We don't care about strategies, only about value achieved by coalitions
+ - We don't care about strategies, only about the value achieved by coalitions
 :::
 
 
@@ -201,13 +201,13 @@ Same idea as with the Nash bargaining solution
  - Axiomatic reasoning
     - The Shapley-value is the only sharing rule that satisfies a **nice set of axioms**: efficiency, symmetry, linearity, dummy player axiom [@shapley1953additive]
  - **Bargaining foundations**
-    - The value arises as the subgame-perfect equilibrium of various alternating-offer bargaining games [e.g. @gul1989bargaining; @winter1994demand; @hart1996bargaining; @stole1996intra; @inderst2003bargaining]
+    - The value arises as the subgame-perfect equilibrium of various alternating-offer bargaining games [e.g., @gul1989bargaining; @winter1994demand; @hart1996bargaining; @stole1996intra; @inderst2003bargaining]
  - A **tractable and sensible-looking** gain-sharing rule
     - Comparative statics show that it behaves as one would expect
 
 ::: {.notes}
  - You don't need to think about cooperative game theory in the following part
- - Think of it as a convenient gain sharing rule with some (cooperative and non-cooperative) micro-foundations
+ - Think of it as a convenient gain-sharing rule with some (cooperative and non-cooperative) micro-foundations
 :::
 
 <!-- CHAPTER 1 -->
@@ -238,7 +238,7 @@ The value of being indispensable
 :::
 
 
-## Relted literature
+## Related literature
 
 ::: {.fragment}
 - **Oceanic games** (theoretical)
@@ -282,7 +282,7 @@ $$
  - Describes situations, such as
    - platforms
    - vertical relationships
-   - generally any setting with an important large players and many identical small ones
+   - generally, any setting with an important large player and many identical small ones
 :::
 
 
@@ -783,7 +783,7 @@ Hybrid platforms and bargaining power
 - Hybrid platforms are
    - Getting more and more common
    - Seemingly obvious concerns and high-profile competition policy cases
-   - Despite this, relatively little reserach
+   - Despite this, relatively little research
 :::
 ::: {.fragment}
 - Bargaining between participants is not well understood in the platform setting
@@ -791,7 +791,7 @@ Hybrid platforms and bargaining power
 :::
 
 ::: {.highlight-block .fragment}
-Examine the bargaining power implications of hybrid platforms and its welfare consequences
+Examine the bargaining power implications of hybrid platforms and their welfare consequences
 :::
 
 
@@ -800,8 +800,8 @@ Examine the bargaining power implications of hybrid platforms and its welfare co
 ::: {.fragment}
 - **Shapley-value** based bargaining rule
   - Analytically more **tractable**
-  - Has **bargaining microfoundations** [e.g. @hart1996bargaining; @stole1996intra]
-  - Has precedents in the IO literature [e.g. @hart1990property; @montez2007downstream]
+  - Has **bargaining microfoundations** [e.g., @hart1996bargaining; @stole1996intra]
+  - Has precedents in the IO literature [e.g., @hart1990property; @montez2007downstream]
 :::
 ::: {.fragment}
 - **Abstract away all frictions**
@@ -810,7 +810,7 @@ Examine the bargaining power implications of hybrid platforms and its welfare co
 :::
 ::: {.fragment}
 - Consider a **continuum of small players** case for tractability
-  - Good approximation of the finite player case even for not too many players
+  - Good approximation of the finite player case, even for not too many players
 :::
 
 
@@ -938,7 +938,7 @@ The optimal price is an additive markup over marginal costs:
 :::
 
 
-## Free enetry
+## Free entry
 
 ::: {.fragment}
 - Potential entrants decide to enter if they can cover the
@@ -963,15 +963,15 @@ $$
 ## Benchmark model
 
 ::: {.fragment .highlight-block .smaller}
-**Theorem. 2.1**
+**Theorem. 2.1.**
 The optimal entry fee is given by
 
 $$K_F^{opt} = \sqrt{\mu I_F V_F} - I_F$$
 :::
 
 ::: {.fragment .highlight-block .smaller}
-**Theorem. 2.2**
-In the benchmark model under hybrid regime,
+**Theorem. 2.2.**
+In the benchmark model, under the hybrid regime,
 
 - The equilibrium number of fringe firms is decreasing in the platform's product variety: $\frac{\mathrm{d} N_F}{\mathrm{d} N_P} = -\frac{V_P}{V_F} < 0$.
 - The equilibrium size of the aggregate and consumer surplus are independent of the platform's product variety: $\frac{\mathrm{d} A}{\mathrm{d} N_P} = \frac{\mathrm{d} CS}{\mathrm{d} N_P} = 0$.
@@ -1069,7 +1069,7 @@ $$
 
 ::: {.fragment .highlight-block .smaller}
 **Theorem 2.3.**
-In the bargaining model under hybrid regime
+In the bargaining model, under the hybrid regime
 
 - The equilibrium number of fringe firms is decreasing *fast* in the platform's product variety: $\frac{\mathrm{d} N_F}{\mathrm{d} N_P} < -\frac{V_P}{V_F}$.
 - The equilibrium size of the aggregate and consumer surplus are decreasing in the platform's product variety: $\frac{\mathrm{d} A}{\mathrm{d} N_P}, \frac{\mathrm{d} CS}{\mathrm{d} N_P} < 0$.
@@ -1089,7 +1089,7 @@ Other case: @sec-alternative-param
 
 Platform's choice of product variety: @sec-appendix-platform-choice
 
-Extensiions: @sec-application-extensions
+Extensions: @sec-application-extensions
 :::
 
 
@@ -1106,7 +1106,7 @@ Other case: @sec-alternative-param
 
 Platform's choice of product variety: @sec-appendix-platform-choice
 
-Extensiions: @sec-application-extensions
+Extensions: @sec-application-extensions
 :::
 
 
@@ -1114,7 +1114,7 @@ Extensiions: @sec-application-extensions
 
 ::: {.fragment}
 - Tractable model of **hybrid platforms** in which **bargaining** plays a key role
-  - Applicable to other settings, too (e.g. vertical markets, franchises)
+  - Applicable to other settings, too (e.g., vertical markets, franchises)
 :::
 
 ::: {.fragment}
@@ -1125,7 +1125,7 @@ Extensiions: @sec-application-extensions
 
 ::: {.fragment}
 - **Policy implications** for such markets
-  - Apple, Google, etc. having their own apps
+  - Apple, Google, etc., having their own apps
   - Microsoft acquiring Activision/Blizzard
 :::
 
@@ -1150,14 +1150,14 @@ Characterizing multiplayer free-form bargaining
 - The **one indispensable player / multiple small players** setting has real-world relevance
   - Wage bargaining
   - An inventor with an idea and multiple investors
-  - A band, where one member owns the PA system
+  - A band where one member owns the PA system
 :::
 
 ::: {.notes}
  - Need some asymmetry for interesting bargaining outcomes
  - One player being indispensable is
    - Natural
-   - Maximally asymmetrix → stronger effect
+   - Maximally asymmetric → stronger effect
 :::
 
 
@@ -1165,7 +1165,7 @@ Characterizing multiplayer free-form bargaining
 
 ::: {.fragment}
 - Problem: non-cooperative game theory cannot provide predictions without structure
-  - E.g. timing of the game, who makes the offers
+  - E.g., timing of the game, who makes the offers
   - NCGT solution is alternating offer games, but a lot depends on minor details [@hart1996bargaining]
 :::
 
@@ -1195,7 +1195,7 @@ Characterizing multiplayer free-form bargaining
 :::
 
 ::: {.fragment}
-- We test, whether:
+- We test whether:
   - Outcomes vary as we would expect, based on bargaining power
   - Certain CGT solution concepts provide good predictions
 :::
@@ -1211,29 +1211,29 @@ Characterizing multiplayer free-form bargaining
 :::: {.smaller}
 ::: {.fragment}
 - Early unstructured bargaining papers (1950s-1990s):  
-  - E.g. @Kalischetal1952, @Maschler1965, @NydeggerOwen1974, @RapoportKahan1976, **@MurnighanRoth1977**, @MurnighanRoth1978, @Micheneretal1979, @MichenerPotter1981, **@LeopoldWildburger1992** 
-  - Face to face bargaining, different experimental standards
+  - e.g., @Kalischetal1952, @Maschler1965, @NydeggerOwen1974, @RapoportKahan1976, **@MurnighanRoth1977**, @MurnighanRoth1978, @Micheneretal1979, @MichenerPotter1981, **@LeopoldWildburger1992** 
+  - Face-to-face bargaining, different experimental standards
 :::
 ::: {.fragment}
 - Free-form bargaining
-  - E.g. @Galeottietal2018, @HossainLyonsSiow2020, **@NavarroVeszteg2020**
+  - e.g., @Galeottietal2018, @HossainLyonsSiow2020, **@NavarroVeszteg2020**
   - Almost always bilateral
 :::
 ::: {.fragment}
 - Multi-lateral bargaining
-  - E.g. @MonteroSeftonZhang2008, @MitsutsuneTakanori2014, @TremewanVanberg2016, @chessa2023experiment, **@ShinodaFunaki2022**
+  - e.g., @MonteroSeftonZhang2008, @MitsutsuneTakanori2014, @TremewanVanberg2016, @chessa2023experiment, **@ShinodaFunaki2022**
   - Structured or semi-structured
 :::
 ::: {.fragment}
 - Fairness views in bargaining
-  - E.g. @LuhanPoulsenRoos2019, @Schwaninger2022, **@ClippelRozen2022**
+  - e.g., @LuhanPoulsenRoos2019, @Schwaninger2022, **@ClippelRozen2022**
 :::
 ::::
 
 ::: {.notes}
 - @MurnighanRoth1977: shoes game ($Y=0$); series of papers: information and communication structure are important
 - @LeopoldWildburger1992: face to face, very long rounds, convex comb. of N + ES or SV + ES
-- @NavarroVeszteg2020: bilateral, chat, tests axioms (rejets scale invariance)
+- @NavarroVeszteg2020: bilateral, chat, tests axioms (rejects scale invariance)
 - @ShinodaFunaki2022: chat in some treatments, semi-unstructured; how existence of core affects outcomes
 - @ClippelRozen2022: outside party assigns payoffs, SV + ES
 :::
@@ -1267,7 +1267,7 @@ How to divide the value between the players?
 
 ::: {.notes}
 - Both are increasing in Y
-  - Nucleolus is flat for low Y (no real bargaiing power)
+  - Nucleolus is flat for low Y (no real bargaining power)
   - SV predictions are less extreme
 - Core would contain ES for Y < 67
 :::
@@ -1338,7 +1338,7 @@ How to divide the value between the players?
 ## Testing the axioms {#sec-axioms}
 
 ::: {.fragment}
-- Axioms charactetrizing the Shapley value and the core
+- Axioms characterizing the Shapley value and the core
   - Look at observed **behavior**
   - **Survey** at the end of the experiment
 :::
@@ -1377,7 +1377,7 @@ Details: @sec-axioms-appendix
   - Although **more** in treatments **with high bargaining power disparity**
 - Discussion **about the experiment** itself
   - Players can clarify the rules for others
-  - Provides feeddback for the experimenters
+  - Provides feedback for the experimenters
 :::
 
 ::::
@@ -1444,7 +1444,7 @@ $$
 :::
 
 ::: {.fragment .smaller}
-May be multi-valued, e.g.:
+It may be multi-valued, e.g.:
 
 | $\pi_P$  | $\pi_{A_1}$ | $\pi_{A_2}$ |
 |:--------:|:-----------:|:-----------:|
@@ -1487,7 +1487,7 @@ $\{P, A_1, A_2\}$  | 6
 
 ::: {.column width="50%"}
 
-Maximize smallest excess
+Maximize the smallest excess
 
 ::: {.r-stack}
 
@@ -1579,7 +1579,7 @@ $\{P, A_1, A_2\}$  | 6
 ::: {.column width="58%"}
 
 ::: {.highlight-block .fragment .smaller}
-**Theorem 1.2**
+**Theorem 1.2.**
 
 Let $f$ be continuous on $[0, 1]$. Then
 
@@ -1647,9 +1647,7 @@ Weighted value: @sec-multiple-big-players
 ## Heterogeneity – general case {visibility="uncounted" #sec-heterogeneity-general}
 
 ::: {.highlight-block .smaller}
-**Lemma 1.2**
-
-Assume that
+**Lemma 1.2.**. Assume that
 
 - $X_n \xrightarrow[]{d} X$ where $X$ with cdf. $H$.
 - The whole probability mass of $X$ is concentrated on the manifold $(a_1(s), \dots a_L(s)), t \in [0, 1]$.
@@ -1718,7 +1716,7 @@ $$
 ::: {.smaller}
 - Higher platform product variety → lower consumer surplus **when platform is operating in hybrid mode**
 - Does it want to have more products?
-- Assume that at time 0 the platform can invest in own products at cost $I_P$ per product
+- Assume that at time 0, the platform can invest in its own products at cost $I_P$ per product
 :::
 
 ::: {.fragment .smaller .highlight-block}

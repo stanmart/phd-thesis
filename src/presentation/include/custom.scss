@@ -27,9 +27,17 @@ a.title-link {
 
 }
 
-.reveal .crossref {
+.reveal div.crossref {
   text-align: right;
   font-size: large;
+  position: fixed;
+  bottom: 5px;
+  right: 0px;
+}
+
+.reveal .crossref p {
+  margin-top: 0px;
+  margin-bottom: 0.2em;
 }
 
 .reveal div.slide-number {

@@ -17,7 +17,7 @@ VARS = {
         "benchmark": "pi_P_bench",
         "bargaining": "pi_P",
         "pure_retail": "pi_P_noF",
-        "y_label": "$pi_P$",
+        "y_label": "$\\pi_P$",
     },
     "fringe-number": {
         "benchmark": "N_F_bench",
