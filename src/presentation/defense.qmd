@@ -238,7 +238,7 @@ The value of being indispensable
 :::
 
 
-## Literature
+## Relted literature
 
 ::: {.fragment}
 - **Oceanic games** (theoretical)
@@ -1207,7 +1207,7 @@ Characterizing multiplayer free-form bargaining
 :::
 
 
-## Literature
+## Related literature
 :::: {.smaller}
 ::: {.fragment}
 - Early unstructured bargaining papers (1950s-1990s):  
