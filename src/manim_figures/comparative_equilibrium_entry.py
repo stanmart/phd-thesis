@@ -52,7 +52,7 @@ class Baseline(Scene):
             y_axis_config={"include_ticks": False},
         )
         x_label = ax.get_x_axis_label(r"N_F")
-        y_label = ax.get_y_axis_label(r"\pi_F")
+        y_label = ax.get_y_axis_label(r"\pi^t_F")
 
         N_P_0 = 0
         N_P_1 = 0.5
@@ -71,12 +71,12 @@ class Baseline(Scene):
         pi_F_alt = ax.plot(lambda x: pi_F(N_P_1, x), color=RED_D)
         pi_F_orig_label = ax.get_graph_label(
             pi_F_orig,
-            r"\pi_F(N_P, N_F)",
+            r"\pi^t_F(N_P, N_F)",
             direction=UP,  # type: ignore
         )
         pi_F_alt_label = ax.get_graph_label(
             pi_F_alt,
-            r"\pi_F(N_P', N_F)",
+            r"\pi^t_F(N_P', N_F)",
             direction=DOWN,  # type: ignore
         )
 
@@ -97,7 +97,7 @@ class Baseline(Scene):
             N_F_opt_1_bar.get_bottom(),  # type: ignore
             N_F_opt_0_bar.get_bottom(),  # type: ignore
         )
-        brace_label = MathTex(r"> N_P' - N_P", color=BLACK)
+        brace_label = MathTex(r"> \frac{V_P}{V_F}(N_P' - N_P)", color=BLACK)
         brace_label.next_to(brace_loss, DOWN)
 
         # Moving objects
