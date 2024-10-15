@@ -37,7 +37,7 @@ format:
 :::
 
 ::: {.fragment}
-- Many of such situations are characterized by an **imbalance of power**
+- Many such situations are characterized by **power imbalance**
   - Employer vs. employees
   - Driver vs. passengers
 :::
@@ -70,7 +70,7 @@ format:
 ## This thesis
 
 ::: {.fragment}
-- Focus on the case of
+- Focus on
   - Predictions from **cooperative game theory**
   - **One** (few) **central player**(s) and many smaller ones
 :::
@@ -201,7 +201,7 @@ Same idea as with the Nash bargaining solution
  - Axiomatic reasoning
     - The Shapley-value is the only sharing rule that satisfies a **nice set of axioms**: efficiency, symmetry, linearity, dummy player axiom [@shapley1953additive]
  - **Bargaining foundations**
-    - The value arises as the subgame-perfect equilibrium of various alternating-offer bargaining games [e.g., @gul1989bargaining; @winter1994demand; @hart1996bargaining; @stole1996intra; @inderst2003bargaining]
+    - Subgame-perfect equilibrium of various alternating-offer bargaining games [e.g., @gul1989bargaining; @winter1994demand; @hart1996bargaining; @stole1996intra; @inderst2003bargaining]
  - A **tractable and sensible-looking** gain-sharing rule
     - Comparative statics show that it behaves as one would expect
 
@@ -273,7 +273,7 @@ Set of all players: $N = \{P, A_1, \dots, A_n\}$
 $$
 v(S) = \begin{cases}
    0                                & \text{if } P \notin S \\
-   f\left(\frac{\#_A (S)}{n}\right) & \text{otherwise}.
+   f\left(\frac{\#_A (S)}{n}\right) & \text{otherwise}
 \end{cases}
 $$
 :::
@@ -290,14 +290,14 @@ $$
 
 :::: {.columns}
 
-::: {.column width="37%"}
+::: {.column width="42%"}
 
 Characteristic fct.:
 $$
 \scriptsize
 v(S) = \begin{cases}
    0                                & \text{if } P \notin S \\
-   f\left(\frac{\#_A (S)}{n}\right) & \text{o/w}.
+   f\left(\frac{\#_A (S)}{n}\right) & \text{o/w}
 \end{cases}
 $$
 
@@ -305,7 +305,7 @@ $$
 Shapley value:
 $$
 \scriptsize
-\varphi_P^n(f) = \frac{1}{n+1} \sum_{k=0}^{n} f(k)
+\varphi_P^n(f) = \frac{1}{n+1} \sum_{k=0}^{n} f(k/n)
 $$
 :::
 ::: {.fragment .fade-in fragment-index=5}
@@ -315,9 +315,6 @@ $$
 $$
 :::
 
-:::
-
-::: {.column width=5%}
 :::
 
 ::: {.column width="58%"}
@@ -356,14 +353,14 @@ $$
 
 :::: {.columns}
 
-::: {.column width="37%"}
+::: {.column width="42%"}
 
 Characteristic fct.:
 $$
 \scriptsize
 v(S) = \begin{cases}
    0                                & \text{if } P \notin S \\
-   f\left(\frac{\#_A (S)}{n}\right) & \text{o/w}.
+   f\left(\frac{\#_A (S)}{n}\right) & \text{o/w}
 \end{cases}
 $$
 
@@ -371,7 +368,7 @@ $$
 Random order value:
 $$
 \scriptsize
-\varphi_P^n(f) = \sum_{k=0}^{n} {\color{RoyalBlue}\Pr(|\mathrm{prec}P| = k)} f(k)
+\varphi_P^n(f) = \sum_{k=0}^{n} {\color{RoyalBlue}\Pr(|\mathrm{prec}P| = k)} f(k/n)
 $$
 :::
 ::: {.fragment fragment-index=2}
@@ -383,10 +380,10 @@ $$
 
 :::
 
-::: {.column width=5%}
+::: {.column width=4%}
 :::
 
-::: {.column width="58%"}
+::: {.column width="52%"}
 
 ::: {.highlight-block .fragment fragment-index=2 .smaller}
 **Theorem 1.1.**
@@ -765,9 +762,9 @@ Weighted value with **$\lambda_1 < \lambda_2$**
 :::
 
 ::: {.fragment}
-- Random order values are a **convenient tool** for modeling bargaining
+- Random order values are a **convenient tool** for modeling bargaining in this setting
   - **Analytically tractable**
-  - More **flexible** than the Shapley value or the we
+  - More **flexible** than the Shapley value or the weighed value
   - **Sensible** in terms of comparative statics
 :::
 
@@ -782,7 +779,7 @@ Hybrid platforms and bargaining power
 ::: {.fragment}
 - Hybrid platforms are
    - Getting more and more common
-   - Seemingly obvious concerns and high-profile competition policy cases
+   - Apparent concerns and high-profile competition policy cases
    - Despite this, relatively little research
 :::
 ::: {.fragment}
@@ -799,7 +796,7 @@ Examine the bargaining power implications of hybrid platforms and their welfare 
 
 ::: {.fragment}
 - **Shapley-value** based bargaining rule
-  - Analytically more **tractable**
+  - Analytically **tractable**
   - Has **bargaining microfoundations** [e.g., @hart1996bargaining; @stole1996intra]
   - Has precedents in the IO literature [e.g., @hart1990property; @montez2007downstream]
 :::
@@ -926,7 +923,7 @@ Utility function: @sec-utility-function
 ::: {.fragment}
 - Assume that the platform prices its products as if they were made by separate, competitive sellers
   - Possible interpretation: profit-maximizing subsidiaries
-  - More importantly: "best case scenario"
+  - More importantly: best-case scenario
 :::
 ::: {.fragment .highlight-block .smaller}
 **Proposition 2.3.**
@@ -1186,7 +1183,7 @@ Characterizing multiplayer free-form bargaining
   - Almost no structure
   - Group-level unrestricted **chat**
   - An interface for proposing and accepting allocations
-  - No binding decision until the very last second
+  - No binding decisions until the very last second
 :::
 
 ::: {.fragment}
@@ -1196,7 +1193,7 @@ Characterizing multiplayer free-form bargaining
 
 ::: {.fragment}
 - We test whether:
-  - Outcomes vary as we would expect, based on bargaining power
+  - Outcomes vary based on bargaining power as one would expect
   - Certain CGT solution concepts provide good predictions
 :::
 
@@ -1211,22 +1208,22 @@ Characterizing multiplayer free-form bargaining
 :::: {.smaller}
 ::: {.fragment}
 - Early unstructured bargaining papers (1950s-1990s):  
-  - e.g., @Kalischetal1952, @Maschler1965, @NydeggerOwen1974, @RapoportKahan1976, **@MurnighanRoth1977**, @MurnighanRoth1978, @Micheneretal1979, @MichenerPotter1981, **@LeopoldWildburger1992** 
+  - @Kalischetal1952, @Maschler1965, @RapoportKahan1976, **@MurnighanRoth1977**, @MurnighanRoth1978, @MichenerPotter1981, **@LeopoldWildburger1992** 
   - Face-to-face bargaining, different experimental standards
 :::
 ::: {.fragment}
 - Free-form bargaining
-  - e.g., @Galeottietal2018, @HossainLyonsSiow2020, **@NavarroVeszteg2020**
+  - @Galeottietal2018, @HossainLyonsSiow2020, **@NavarroVeszteg2020**
   - Almost always bilateral
 :::
 ::: {.fragment}
 - Multi-lateral bargaining
-  - e.g., @MonteroSeftonZhang2008, @MitsutsuneTakanori2014, @TremewanVanberg2016, @chessa2023experiment, **@ShinodaFunaki2022**
+  - @MonteroSeftonZhang2008, @MitsutsuneTakanori2014, @TremewanVanberg2016, **@ShinodaFunaki2022**, @chessa2023experiment
   - Structured or semi-structured
 :::
 ::: {.fragment}
 - Fairness views in bargaining
-  - e.g., @LuhanPoulsenRoos2019, @Schwaninger2022, **@ClippelRozen2022**
+  - @LuhanPoulsenRoos2019, @Schwaninger2022, **@ClippelRozen2022**
 :::
 ::::
 
@@ -1328,11 +1325,15 @@ How to divide the value between the players?
   - Even in the dummy player treatment!
 - $Y=10$ and $Y=30$ treatments still look similar
 - In the $Y=90$ treatment
-  - $A$ only achieves significantly higher by excluding one small player (@sec-timing)
+  - $A$ only achieves significantly higher payoff by excluding one small player
   - Neither efficient nor stable
 :::
 
 ::::
+
+::: {.crossref}
+Timing of agreements: @sec-timing
+:::
 
 
 ## Testing the axioms {#sec-axioms}
@@ -1384,13 +1385,15 @@ Details: @sec-axioms-appendix
 
 ::: {.crossref}
 All chat messages: @sec-chat-topics-all
+
+Example chat messages: @sec-chat-example-stability
 :::
 
 
 ## Main takeaways
 
 ::: {.fragment}
-- Lots of **equal splits** in all treatments, but considerable **heterogeneity**
+- Lots of **equal splits** in all treatments, but considerable **heterogeneity** between participants
   - Heterogeneity in fairness concepts?
   - Norms established in early rounds?
 :::
@@ -1399,7 +1402,7 @@ All chat messages: @sec-chat-topics-all
   - No bargaining power advantage when there is no profitable deviation
 :::
 ::: {.fragment}
-- Both **overestimate big player's share**
+- Both **overestimate the big player's share**
   - They do not capture all relevant fairness considerations
   - Combining other-regarding preferences and CGT might be promising
 :::
@@ -1670,7 +1673,6 @@ $$
 
 ## Utility function {visibility="uncounted" #sec-utility-function}
 
-::: {.incremental}
  - Follow @anderson2021hybrid
  - Unit mass of customers, each choosing one product maximizing $$u_{ij}^T = v^T - p_i^T + \mu \varepsilon_{ij}^T$$
    - $T \in \{P, F, 0\}$
@@ -1678,7 +1680,6 @@ $$
    - $v_T$: value of the product
    - $\mu$: degree of horizontal differentiation
    - $\varepsilon_{ij}^T \sim \mathrm{Gumbel}(0, 1)$: taste shocks
-:::
 
 ::: {.crossref}
 🔙 @sec-demand
@@ -1864,25 +1865,35 @@ $$
 :::
 
 
-## Chat – Stability-based reasoning {visibility="uncounted"}
+## Chat – Stability-based reasoning {visibility="uncounted" #sec-chat-example-stability}
 
 ::: {layout-ncol=3}
-![Y = 10](/out/figures/chat_excerpt-2702-2707.svg){.chatlog}
+![Y = 90](/out/figures/chat_excerpt-6846-6847,6849,6851,6853,6855,6857,6859.svg){.chatlog}
 
 ![Y = 30](/out/figures/chat_excerpt-5640,5647-5648,5660-5663.svg){.chatlog}
 
-![Y = 90](/out/figures/chat_excerpt-6846-6847,6849,6851,6853,6855,6857,6859.svg){.chatlog}
+![Y = 10](/out/figures/chat_excerpt-2702-2707.svg){.chatlog}
 :::
+
+::: {.crossref}
+🔙 @sec-chat-topics
+:::
+
 
 ## Chat – Fairness-based reasoning {visibility="uncounted"}
 
 ::: {layout-ncol=3}
+![Rejecting small offers](/out/figures/chat_excerpt-7894-7901,7906.svg){.chatlog}
+
 ![Equal split](/out/figures/chat_excerpt-7052,7054,7057-7063.svg){.chatlog}
 
 ![A gets a bit more](/out/figures/chat_excerpt-7590-7596,7598-7599.svg){.chatlog}
-
-![Rejecting small offers](/out/figures/chat_excerpt-7894-7901,7906.svg){.chatlog}
 :::
+
+::: {.crossref}
+🔙 @sec-chat-topics
+:::
+
 
 ## Chat – Dummy player treatment {visibility="uncounted"}
 
@@ -1894,14 +1905,23 @@ $$
 ![Appeal to pity](/out/figures/chat_excerpt-1371-1376.svg){.chatlog}
 :::
 
+::: {.crossref}
+🔙 @sec-chat-topics
+:::
+
+
 ## Chat – Feedback about experiment {visibility="uncounted"}
 
 ::: {layout-ncol=3}
 ![Having a chat](/out/figures/chat_excerpt-6508-6509,6511,6513,6524,6527,6528-6529.svg){.chatlog}
 
-![Payouts](/out/figures/chat_excerpt-286-291.svg){.chatlog}
-
 ![Bargaining time](/out/figures/chat_excerpt-5501-5508.svg){.chatlog}
+
+![Payouts](/out/figures/chat_excerpt-286-291.svg){.chatlog}
+:::
+
+::: {.crossref}
+🔙 @sec-chat-topics
 :::
 
 
