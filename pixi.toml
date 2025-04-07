@@ -38,6 +38,7 @@ spacy = ">=3.7.4,<3.8"
 statsmodels = "0.14.*"
 sympy = "1.11.*"
 typer = ">=0.9.4,<0.10"
+libgfortran5 = ">=14"
 
 [environments]
 default = { solve-group = "main" }
@@ -49,7 +50,7 @@ ruff = "*"
 codespell = "*"
 pyright = "*"
 [feature.checks.tasks]
-checks = { depends_on = ["format", "lint", "typecheck", "spellcheck"] }
+checks = { depends-on = ["format", "lint", "typecheck", "spellcheck"] }
 format = "ruff check --fix --select I; ruff format; exit 0"
 lint = "ruff check --extend-select I; exit 0"
 spellcheck = "codespell --ignore-words codespell-ignore-words.txt --skip '*.bib,out,playground,gh-pages' && echo 'Spellcheck passed!'; exit 0"
